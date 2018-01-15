@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="indexstyle.css"/>
+	
+	<style>
+	/* Style the buttons that are used to open and close the accordion panel */
+button.accordion {
+    background-color: black;
+    background-color: rgba(0,0,0,0.92);
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 50%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin-left: 410px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+button.accordion.active, button.accordion:hover {
+    background-color: #151313;
+    width: 53.65%;
+
+}
+
+/* Style the accordion panel. Note: hidden by default */
+div.panel {
+    padding: 0 18px;
+    width: 50.65%;
+    margin-left:410px;
+    color:black;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-weight: 800;
+    background-color: #D5D5D5;
+    background-color: rgba(225,225,225,0.5);
+    display: none;
+}
+
+/* The "show" class is added to the accordion panel when the user clicks on one of the buttons. This will show the panel content */
+div.panel.show {
+    display: block;
+}
+
+	div.svg-wrapper {
+  height: 100%;
+  max-height: 60px;
+  margin-top: -150px;
+  margin-left: 550px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 320px;
+}
+
+.shape {
+  fill: transparent;
+  stroke-dasharray: 205 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+  /*stroke: #1cb779;*/
+  stroke: #19f6e8;
+}
+
+.text {
+  height: 100%;
+  max-height: 60px;
+  margin-left: 10px;
+  text-align: center;
+  color: #fff;
+  /*font-family: 'Roboto Condensed';*/
+  font-size: 22px;
+  letter-spacing: 8px;
+  line-height: 55px;
+  position: relative;
+  top: -80px;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 8px;
+  }
+  100% {
+    stroke-dasharray: 760;
+    stroke-dashoffset: 0;
+    stroke-width: 2px;
+  }
+}
+
+.svg-wrapper:hover .shape {
+  -webkit-animation: 0.5s draw linear forwards;
+  animation: 0.5s draw linear forwards;
+}
+</style>
+	
+
+
+</head>
+
+<body>
+
+	<!-- Header-i (logoja dhe search box) -->
+  <h1 id="header"><a href="../index.html">Music</a>Book</span> </a>
+   
+   
+   
+   
+   <span><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-right: 200px;" 
+  target="buton1">Login</button> <input type="text" name="search" placeholder="      Search.." target="searchbox"> </span></h1>
+  
+
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close login">&times;</span>
+      
+    </div>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username"
+      target="login" name="uname" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" target="login" name="psw" required>
+        
+      <button type="submit" target="buton2">Login</button>
+      <input type="checkbox" checked="checked"> Remember me
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <span class="psw" style="padding-right:50px; ">Forgotten <a href="../index.html#contact">password?</a></span>
+    </div>
+  </form>
+</div>
+
+  
+
+  <!-- Modal per navigation menu -->
+<div id="id02" class="modal1">
+  <div class="">
+    <div class="modal1-content">
+      <span onclick="document.getElementById('id02').style.display='none'" 
+      style="margin: 20px;cursor:pointer;color:white;">&times;</span>
+     <ul>
+
+      <li><a href="../Piano.html">Piano</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="id03" class="modal1">
+  <div>
+    <div class="modal1-content" style="background-image:url(images2.jpg);background-size: 170px 128px;">
+      <span onclick="document.getElementById('id03').style.display='none'" 
+      style="margin: 20px;cursor:pointer; color:white;">&times;</span>
+     <ul>
+      <li><a href="../Electric Guitars.html">Electric</a></li>
+      <li><a href="../Acoustic Guitars.html">Acoustic</a></li>
+      <li><a href="../Bass Guitars.html">Bass</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Navigation Lista -->
+  <nav class="navLista">
+    <ul class="lista">
+    <li> <table cellpadding="0px" cellspacing="0px" style="margin: 0;padding:0;" id="navBar">
+    <tr>
+        <td>
+            <a class="selected" href="../index.html" style="margin-left: 10px;">Home</a>
+        </td>
+        
+    </tr>
+</table></li>
+      <li><a style="margin-left: 11px;">Products</a>
+        <ul id="submenu">
+          <li><a href="#" onclick="document.getElementById('id02').style.display='block'"> Piano </a>
+            </li>
+          <li><a href="##" onclick="document.getElementById('id03').style.display='block'"> Guitar </a>
+          </li>
+          
+        </ul>
+      </li>
+      <li><span><br></span><a href="../artist.html">Artists</a></li>
+      <li><a href="https://www.ultimate-guitar.com/" target="_blank">Chords</a>
+      </li>
+      <li><a href="#contact">Contact</a></li>
+
+
+    </ul>
+  </nav>
+  <div class="svg-wrapper">
+  <svg height="80" width="330" >
+    <rect class="shape" height="80" width="330" />
+  </svg>
+
+<div class="text" style="border: 1px solid black;color:white;font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;">21 by          
+<span style="color:black;font-weight: bold;">Adele</span>
+</div>
+</div>
+
+<canvas id="c"  width="900px" height="600px" style="margin: 250px 0 0 280px;"></canvas>
+
+<button class="accordion" style="margin-left: 410px; margin-top: 5px;">Rumour Has It</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Adele Rumor Has It.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+There's a fire starting in my heart
+Reaching a fever pitch, it's bringing me out the dark
+Finally I can see you crystal clear
+[Clean version:] Go 'head and sell me out and I'll lay your ship bare
+[Explicit version:] Go 'head and sell me out and I'll lay your shit bare
+See how I leave with every piece of you
+Don't underestimate the things that I will do
+
+There's a fire starting in my heart
+Reaching a fever pitch
+And it's bringing me out the dark
+
+The scars of your love remind me of us
+They keep me thinking that we almost had it all
+The scars of your love, they leave me breathless
+I can't help feeling
+We could have had it all
+(You're gonna wish you never had met me)
+Rolling in the deep
+(Tears are gonna fall, rolling in the deep)
+You had my heart inside of your hand
+(You're gonna wish you never had met me)
+And you played it, to the beat
+(Tears are gonna fall, rolling in the deep)
+
+Baby, I have no story to be told
+But I've heard one on you
+And I'm gonna make your head burn
+Think of me in the depths of your despair
+Make a home down there
+As mine sure won't be shared
+
+(You're gonna wish you never had met me)
+The scars of your love remind me of us
+(Tears are gonna fall, rolling in the deep)
+They keep me thinking that we almost had it all
+(You're gonna wish you never had met me)
+The scars of your love, they leave me breathless
+(Tears are gonna fall, rolling in the deep)
+I can't help feeling
+We could have had it all
+(You're gonna wish you never had met me)
+Rolling in the deep
+(Tears are gonna fall, rolling in the deep)
+You had my heart inside of your hand
+(You're gonna wish you never had met me)
+And you played it, to the beat
+(Tears are gonna fall, rolling in the deep)
+We could have had it all
+Rolling in the deep
+You had my heart inside of your hand
+But you played it, with a beating
+
+Throw your soul through every open door (woah)
+Count your blessings to find what you look for (woah)
+Turn my sorrow into treasured gold (woah)
+You'll pay me back in kind and reap just what you sow (woah)
+(You're gonna wish you never had met me)
+We could have had it all
+(Tears are gonna fall, rolling in the deep)
+We could have had it all
+(You're gonna wish you never had met me)
+It all, it all, it all
+(Tears are gonna fall, rolling in the deep)
+
+We could have had it all
+(You're gonna wish you never had met me)
+Rolling in the deep
+(Tears are gonna fall, rolling in the deep)
+You had my heart inside of your hand
+(You're gonna wish you never had met me)
+And you played it to the beat
+(Tears are gonna fall, rolling in the deep)
+
+We could have had it all
+(You're gonna wish you never had met me)
+Rolling in the deep
+(Tears are gonna fall, rolling in the deep)
+You had my heart inside of your hand
+(You're gonna wish you never had met me)
+
+But you played it
+You played it
+You played it
+You played it to the beat.
+Self-destruct
+Self-destruct
+Self-destruct
+</pre>
+</div>
+
+<button class="accordion">Turning Tables</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Adele Turning Tables.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+Close enough to start a war
+All that I have is on the floor
+God only knows what we're fighting for
+All that I say, you always say more
+
+I can't keep up with your turning tables
+Under your thumb I can't breathe
+
+So, I won't let you close enough to hurt me
+No, I won't rescue you to just desert me
+I can't give you the heart you think you gave me
+It's time to say goodbye to turning tables
+To turning tables
+
+Under haunted skies I see you (ooh)
+Where love is lost your ghost is found
+I braved a hundred storms to leave you
+As hard as you try, no, I will never be knocked down, whoa
+
+I can't keep up with your turning tables
+Under your thumb I can't breathe
+
+So, I won't let you close enough to hurt me,
+No, I won't rescue you to just desert me
+I can't give you the heart you think you gave me
+It's time to say goodbye to turning tables
+Turning tables
+
+Next time I'll be braver
+I'll be my own savior
+When the thunder calls for me
+Next time I'll be braver
+I'll be my own savior
+Standing on my own two feet
+
+I won't let you close enough to hurt me,
+No, I won't rescue you to just desert me
+I can't give you the heart you think you gave me
+It's time to say goodbye to turning tables
+To turning tables
+Turning tables, yeah
+Turning, oh
+
+  </pre>
+</div>
+
+<button class="accordion">Don't You Remember</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Adele Don't You Remember.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+When will I see you again?
+You left with no goodbye,
+Not a single word was said,
+No final kiss to seal any sins,
+I had no idea of the state we were in,
+
+I know I have a fickle heart and a bitterness,
+And a wandering eye, and heaviness in my head,
+
+But don't you remember?
+Don't you remember?
+The reason you loved me before,
+Baby, please remember me once more,
+
+When was the last time you thought of me?
+Or have you completely erased me from your memory?
+I often think about where I went wrong,
+The more I do, the less I know,
+
+But I know I have a fickle heart and a bitterness,
+And a wandering eye, and a heaviness in my head,
+
+But don't you remember?
+Don't you remember?
+The reason you loved me before,
+Baby, please remember me once more,
+
+Gave you the space so you could breathe,
+I kept my distance so you would be free,
+And hoped that you'd find the missing piece,
+To bring you back to me,
+
+Why don't you remember?
+Don't you remember?
+The reason you loved me before,
+Baby, please remember me once more,
+[Another version says: "Baby, please remember you used to love me"]
+
+When will I see you again?
+
+  </pre>
+</div>
+
+<button class="accordion">Set Fire To The Rain</button>
+<div class="panel">
+  <pre>
+I let it fall, my heart,
+And as it fell you rose to claim it
+It was dark and I was over
+Until you kissed my lips and you saved me
+
+My hands, they're strong
+But my knees were far too weak,
+To stand in your arms
+Without falling to your feet
+
+But there's a side to you
+That I never knew, never knew.
+All the things you'd say
+They were never true, never true,
+And the games you play
+You would always win, always win.
+
+[Chorus:]
+But I set fire to the rain,
+Watched it pour as I touched your face,
+Well, it burned while I cried
+'Cause I heard it screaming out your name, your name!
+
+When I lay with you
+I could stay there
+Close my eyes
+Feel you here forever
+You and me together
+Nothing gets better
+
+'Cause there's a side to you
+That I never knew, never knew,
+All the things you'd say,
+They were never true, never true,
+And the games you'd play
+You would always win, always win.
+
+[Chorus:]
+But I set fire to the rain,
+Watched it pour as I touched your face,
+Well, it burned while I cried
+'Cause I heard it screaming out your name, your name!
+
+I set fire to the rain
+And I threw us into the flames
+When it fell, something died
+'Cause I knew that that was the last time, the last time!
+
+Sometimes I wake up by the door,
+That heart you caught must be waiting for you
+Even now when we're already over
+I can't help myself from looking for you.
+
+[Chorus:]
+I set fire to the rain,
+Watched it pour as I touched your face,
+Well, it burned while I cried
+'Cause I heard it screaming out your name, your name
+
+I set fire to the rain,
+And I threw us into the flames
+When it fell, something died
+'Cause I knew that that was the last time, the last time, ohhhh!
+
+Oh noooo
+Let it burn, oh
+Let it burn
+Let it burn
+
+  </pre>
+</div>
+
+<button class="accordion">He Won't Go</button>
+<div class="panel">
+  <pre>
+Some say I'll be better without you
+But they don't know you like I do
+Or at least the sides I thought I knew
+
+I can't beg this time
+It drags on as I lose my mind
+Reminded by things I find
+Like notes and clothes you left behind
+
+Wake me up, wake me up when all is done
+I won't rise until this battle's won
+My dignity's become undone
+
+But I won't go
+I can't do it on my own
+If this ain't love, then what is?
+I'm willing to take the risk
+
+I won't go
+I can't do it on my own
+If this ain't love, then what is?
+I'm willing to take the risk
+
+So petrified, I'm so scared to step into this ride
+What if I lose my heart and fail the climb?
+I won't forgive me if I give up trying
+
+I heard his voice today
+I didn't know a single word he said
+Not one resemblance to the man I met
+Just a vacant broken boy instead
+
+But I won't go
+I can't do it on my own
+If this ain't love, then what is?
+I'm willing to take the risk
+
+I won't go
+I can't do it on my own
+If this ain't love, then what is?
+I am willing to take the risk
+
+There will be times
+We'll try and give it up
+Bursting at the seams, no doubt
+We'll almost fall apart then burn the pieces
+To watch them turn to dust
+But nothing will ever taint us
+
+I won't go
+I can't do it on my own
+If this ain't love, then what is?
+I'm willing to take the risk
+
+I won't go
+I can't do it on my own
+If this ain't love, then what is?
+I am willing to take the risk
+
+Will he... will he still remember me?
+Will he still love me even when he's free?
+Or will he go back to the place where he would choose the poison over me?
+
+When we spoke yesterday,
+He said to hold my breath and sit and wait
+"I'll be home so soon, I won't be late"
+
+He won't go
+He can't do it on his own
+If this ain't love, then what is?
+He's willing to take the risk
+
+So I won't go
+He can't do it on his own
+If this ain't love, then what is?
+I'm willing to take the risk
+
+Cause he won't go
+He can't do it on his own
+If this ain't love, then what is?
+We're willing to take the risk
+
+I won't go
+I can't do it on my own
+If this ain't love, then what is?
+I'm willing to take the risk
+  </pre>
+</div>
+
+<button class="accordion">I'll Be Waiting</button>
+<div class="panel">
+  <pre>
+Hold me closer one more time,
+Say that you love me in your last goodbye,
+Please forgive me for my sins,
+Yes, I swam dirty waters,
+But you pushed me in,
+I've seen your face under every sky,
+Over every border and on every line,
+You know my heart more than I do,
+We were the greatest, me and you,
+
+But we had time against us,
+Miles between us,
+The heavens cried,
+I know I left you speechless,
+But now the sky has cleared and it's blue,
+And I see my future in you,
+
+I'll be waiting for you when you're ready to love me again,
+I'll put my hands up,
+I'll do everything different,
+I'll be better to you,
+I'll be waiting for you when you're ready to love me again,
+I'll put my hands up,
+I'll be somebody different,
+I'll be better to you,
+
+Let me stay here for just one more night,
+Build your world around me,
+And pull me to the light,
+So I can tell you that I was wrong,
+I was a child then, but now I'm willing to learn,
+
+But we had time against us,
+Miles between us,
+The heavens cried,
+
+I know I left you speechless,
+But now the sky has cleared and it's blue,
+And I see my future in you,
+
+I'll be waiting for you when you're ready to love me again,
+I'll put my hands up,
+I'll do everything different,
+I'll be better to you,
+I'll be waiting for you when you're ready to love me again,
+I'll put my hands up,
+I'll be somebody different,
+I'll be better to you,
+
+Time against us,
+Miles between us,
+Heavens cried,
+I know I left you speechless,
+Time against us,
+Miles between us,
+Heavens cried,
+I know I left you speechless,
+I know I left you speechless,
+I'll be waiting,
+
+I'll be waiting for you when you're ready to love me again,
+I'll put my hands up,
+I'll do everything different,
+I'll be better to you,
+I'll be waiting for you when you're ready to love me again,
+I'll put my hands up,
+I'll be somebody different,
+I'll be better to you.
+  </pre>
+</div>
+
+<button class="accordion">Confusion</button>
+<div class="panel">
+  <pre>
+Wake to face the day
+Grab this life and walk away
+War is never done
+Rub the patch and battle on
+Make it go away
+Please make it go away
+
+Confusion
+All sanity is now beyond me
+Delusion
+All sanity is but a memory
+My life…
+The war that never ends
+
+Leave the battlefield
+Yet its horrors never heal
+Coming home from war
+Pieces don't fit anymore
+Make it go away
+Please make it go away
+
+Confusion
+All sanity is now beyond me
+Delusion
+All sanity is but a memory
+My life…
+The war that never ends
+
+Father please come home
+Shell shocked all I've known
+Father please come home
+
+Label him a deadwood soldier now
+Cast away and left to roam
+Rapid is the road to sacrifice
+Just takes longer to come home
+
+Confusion
+All sanity is now beyond me
+Delusion
+Crossfire ricochets inside me
+Trapped in a memory forever
+My life…
+The war that never ends
+  </pre>
+</div>
+
+<button class="accordion">Someone Like You</button>
+<div class="panel">
+  <pre>
+I heard that you're settled down
+That you found a girl and you're married now.
+I heard that your dreams came true.
+Guess she gave you things I didn't give to you.
+
+Old friend, why are you so shy?
+Ain't like you to hold back or hide from the light.
+
+I hate to turn up out of the blue uninvited
+But I couldn't stay away, I couldn't fight it.
+I had hoped you'd see my face and that you'd be reminded
+That for me it isn't over.
+
+Never mind, I'll find someone like you
+I wish nothing but the best for you too
+Don't forget me, I beg
+I'll remember you said,
+"Sometimes it lasts in love but sometimes it hurts instead,
+Sometimes it lasts in love but sometimes it hurts instead"
+
+You know how the time flies
+Only yesterday was the time of our lives
+We were born and raised
+In a summer haze
+Bound by the surprise of our glory days
+
+I hate to turn up out of the blue uninvited
+But I couldn't stay away, I couldn't fight it.
+I'd hoped you'd see my face and that you'd be reminded
+That for me it isn't over.
+
+Never mind, I'll find someone like you
+I wish nothing but the best for you too
+Don't forget me, I beg
+I'll remember you said,
+"Sometimes it lasts in love but sometimes it hurts instead."
+
+Nothing compares
+No worries or cares
+Regrets and mistakes
+They are memories made.
+Who would have known how bittersweet this would taste?
+
+Never mind, I'll find someone like you
+I wish nothing but the best for you
+Don't forget me, I beg
+I'll remember you said,
+"Sometimes it lasts in love but sometimes it hurts instead".
+
+Never mind, I'll find someone like you
+I wish nothing but the best for you too
+Don't forget me, I beg
+I'll remember you said,
+"Sometimes it lasts in love but sometimes it hurts instead,
+Sometimes it lasts in love but sometimes it hurts instead."
+  </pre>
+</div>
+
+<button class="accordion">Rolling In The Deep</button>
+<div class="panel">
+  <pre>
+There's a fire starting in my heart
+Reaching a fever pitch, it's bringing me out the dark
+Finally I can see you crystal clear
+[Clean version:] Go 'head and sell me out and I'll lay your ship bare
+[Explicit version:] Go 'head and sell me out and I'll lay your shit bare
+See how I leave with every piece of you
+Don't underestimate the things that I will do
+
+There's a fire starting in my heart
+Reaching a fever pitch
+And it's bringing me out the dark
+
+The scars of your love remind me of us
+They keep me thinking that we almost had it all
+The scars of your love, they leave me breathless
+I can't help feeling
+We could have had it all
+(You're gonna wish you never had met me)
+Rolling in the deep
+(Tears are gonna fall, rolling in the deep)
+You had my heart inside of your hand
+(You're gonna wish you never had met me)
+And you played it, to the beat
+(Tears are gonna fall, rolling in the deep)
+
+Baby, I have no story to be told
+But I've heard one on you
+And I'm gonna make your head burn
+Think of me in the depths of your despair
+Make a home down there
+As mine sure won't be shared
+
+(You're gonna wish you never had met me)
+The scars of your love remind me of us
+(Tears are gonna fall, rolling in the deep)
+They keep me thinking that we almost had it all
+(You're gonna wish you never had met me)
+The scars of your love, they leave me breathless
+(Tears are gonna fall, rolling in the deep)
+I can't help feeling
+We could have had it all
+(You're gonna wish you never had met me)
+Rolling in the deep
+(Tears are gonna fall, rolling in the deep)
+You had my heart inside of your hand
+(You're gonna wish you never had met me)
+And you played it, to the beat
+(Tears are gonna fall, rolling in the deep)
+We could have had it all
+Rolling in the deep
+You had my heart inside of your hand
+But you played it, with a beating
+
+Throw your soul through every open door (woah)
+Count your blessings to find what you look for (woah)
+Turn my sorrow into treasured gold (woah)
+You'll pay me back in kind and reap just what you sow (woah)
+(You're gonna wish you never had met me)
+We could have had it all
+(Tears are gonna fall, rolling in the deep)
+We could have had it all
+(You're gonna wish you never had met me)
+It all, it all, it all
+(Tears are gonna fall, rolling in the deep)
+
+We could have had it all
+(You're gonna wish you never had met me)
+Rolling in the deep
+(Tears are gonna fall, rolling in the deep)
+You had my heart inside of your hand
+(You're gonna wish you never had met me)
+And you played it to the beat
+(Tears are gonna fall, rolling in the deep)
+
+We could have had it all
+(You're gonna wish you never had met me)
+Rolling in the deep
+(Tears are gonna fall, rolling in the deep)
+You had my heart inside of your hand
+(You're gonna wish you never had met me)
+
+But you played it
+You played it
+You played it
+You played it to the beat.
+
+  </pre>
+</div>
+
+
+
+
+
+
+
+<script type="text/javascript">
+	
+	var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+    }
+}
+</script>
+
+
+<script>
+// merre 'modal'-in
+var modal = document.getElementById('id01');
+
+// Kur useri klikon jasht 'modal'-it te mbyllet
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<script>
+// Grab the Canvas and Drawing Context
+var canvas = document.getElementById('c');
+var ctx = canvas.getContext('2d');
+
+
+
+// Create an image element
+var img = document.createElement('IMG');
+
+// When the image is loaded, draw it
+img.onload = function () {
+
+    // Save the state, so we can undo the clipping
+    ctx.save();
+    ctx.arc(450,300,380,0,2*Math.PI);      
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(450,300,380,0,2*Math.PI, false);
+    ctx.fill();
+    // Clip to the current path
+    ctx.clip();
+    
+    
+    ctx.drawImage(img, 0, 0);
+    
+    // Undo the clipping
+    ctx.restore();
+}
+
+// Specify the src to load the image
+img.src = "Images/adele.jpg";
+</script>
+
+	
+</body>
+
+</html>

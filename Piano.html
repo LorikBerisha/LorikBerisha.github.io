@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <script>
+function clickCounter()
+{
+if(typeof(Storage)!=="undefined")
+  {
+  if (sessionStorage.clickcount)
+    {
+    sessionStorage.clickcount=Number(sessionStorage.clickcount)+1;
+    }
+  else
+    {
+    sessionStorage.clickcount=1;
+    }
+  document.getElementById("result").innerHTML="Keni shikuar " + sessionStorage.clickcount + " piano.";
+  }
+else
+  {
+  document.getElementById("result").innerHTML="Sorry, your browser does not support web storage...";
+  }
+}
+</script>
+	<title>Products - Piano</title>
+	<link rel="stylesheet" href="productsstyle.css"/>
+	
+	<style>
+
+div#myDiv {
+  -webkit-transform: rotateX(150deg);
+  transform: rotateX(150deg);
+}
+
+body {
+	background-color: white;
+}
+
+div.img {
+
+    padding:60px 20px 0 0;
+    /*border: 1px solid #ccc;*/
+    width: 150px;
+ }
+
+div.img:hover {
+    border: 1px solid #777;
+}
+
+div.img img {
+    width: 100%;
+    height: 300px;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+	font-weight: bold;
+}
+#borderimg { 
+    border: 10px solid transparent;
+    padding: 15px;
+    -webkit-border-image: url(border.png) 30 round; /* Safari 3.1-5 */
+    -o-border-image: url(border.png) 30 round; /* Opera 11-12.1 */
+    border-image: url(border.png) 30 round;
+}
+	</style>
+
+
+</head>
+<body>
+
+	<!-- Header-i (logoja, login dhe search box) -->
+	<h1 id="header"><a href="index.html">Music</a><span>Book</span>
+
+  
+	<span><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-right: 200px;" target="buton1">Login</button> <input type="text" name="search" placeholder="      Search.." target="searchbox"> </span></h1>
+	
+
+<!-- Login Modal -->
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="action_page.php">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close login">&times;</span>
+      
+    </div>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username"
+      target="login" name="uname" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" target="login" name="psw" required>
+        
+      <button type="submit" target="buton2">Login</button>
+      <input type="checkbox" checked="checked"> Remember me
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <span class="psw" style="padding-right:50px; ">Forgotten <a href="index.html#contact">password?</a></span>
+    </div>
+  </form>
+</div>
+
+
+
+<!-- Modal per navigation menu -->
+<div id="id02" class="modal1">
+  <div class="">
+    <div class="modal1-content">
+      <span onclick="document.getElementById('id02').style.display='none'" 
+      style="margin: 20px;cursor:pointer;color:white;">&times;</span>
+     <ul>
+      <li><a href="Piano.html">Piano</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="id03" class="modal1">
+  <div>
+    <div class="modal1-content" style="background-image:url(Images/images2.jpg);background-size: 170px 128px;">
+      <span onclick="document.getElementById('id03').style.display='none'" 
+      style="margin: 20px;cursor:pointer; color:white;">&times;</span>
+     <ul>
+      <li><a href="Electric Guitars.html">Electric</a></li>
+      <li><a href="Acoustic Guitars.html">Acoustic</a></li>
+      <li><a href="Bass Guitars.html">Bass</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+	<!-- Navigation Lista -->
+	<nav class="test">
+		<ul class="lista">
+    <li><table cellpadding="0px" cellspacing="0px" style="margin: 0;padding:0;" id="navBar">
+    <tr>
+        <td>
+            <a class="selected" href="index.html" style="margin-left: 10px;">Home</a>
+        </td>
+        
+    </tr>
+</table></li>
+			<li><a href="#">Products</a>
+				<ul id="submenu">
+					<li><a href="#" onclick="document.getElementById('id02').style.display='block'"> Piano </a>
+						</li>
+					<li><a href="##" onclick="document.getElementById('id03').style.display='block'"> Guitar </a>
+					</li>
+					
+				</ul>
+			</li>
+			<li><span><br></span><a href="artist.html">Artists</a></li>
+			<li><a href="https://www.ultimate-guitar.com/" target="_blank">Chords</a></li>
+			<li><a href="index.html#contact">Contact</a></li>
+		</ul>
+	</nav>
+
+
+
+
+<table style="margin-left: 50px; border-color: blue;" cellpadding="0" cellspacing="2">
+	<tr>
+<td>
+
+<div class="img" style="margin-left: 380px;">
+	<a onclick="clickCounter()" href="Products/Piano/Grand Pianos XC Series.html" target="_blank">
+    <img src="Products/Piano/images/piano2.jpg" alt="Grand Pianos XC Series" width="300" height="200">
+  </a>
+  <div class="desc">Grand Pianos XC Series</div>
+  <div id="myDiv" class="desc">Grand Pianos XC Series</div>
+</div>
+</td>
+
+<td>
+<div class="img">
+  <a onclick="clickCounter()" target="_blank" href="Products/Piano/Hybrid Piano NU1.html">
+    <img src="Products/Piano/images/piano1.jpg" alt="Hybrid Piano NU1" width="300" height="200">
+  </a>
+  <div class="desc">Hybrid Piano NU1</div>
+  <div id="myDiv" class="desc">Hybrid Piano NU1</div>
+</div>
+</td>
+
+
+<td>
+<div class="img">
+  <a onclick="clickCounter()" target="_blank" href="Products/Piano/Disklavier™.html">
+    <img src="Products/Piano/images/piano4.jpg" alt="Disklavier" width="300" height="200">
+  </a>
+  <div class="desc">Disklavier</div>
+  <div id="myDiv" class="desc">Disklavier</div>
+</div>
+</td>
+
+<td>
+<div class="img">
+  <a onclick="clickCounter()" target="_blank" href="Products/Piano/Kawai MP10.html">
+    <img src="Products/Piano/images/piano8.jpg" alt="Kawai MP10" width="300" height="200">
+  </a>
+  <div class="desc">Kawai MP10</div>
+  <div id="myDiv" class="desc">Kawai MP10</div>
+	</div>
+	</td>
+</tr>
+
+<tr>
+	<td>
+	<div class="img" style="margin-left: 380px;">
+  <a onclick="clickCounter()" target="_blank" href="Products/Piano/SILENT Piano™.html">
+    <img src="Products/Piano/images/piano3.jpg" alt="SILENT Piano" width="300" height="200">
+  </a>
+  <div class="desc">SILENT Piano</div>
+  <div id="myDiv" class="desc">SILENT Piano</div>
+	</div>
+	</td>
+
+
+<td>
+<div class="img">
+  <a onclick="clickCounter()" target="_blank" href="Products/Piano/TransAcoustic™.html">
+    <img src="Products/Piano/images/piano7.jpg" alt="TransAcoustic" width="300" height="200">
+  </a>
+  <div class="desc">TransAcoustic</div>
+  <div id="myDiv" class="desc">TransAcoustic</div>
+	</div>
+	</td>
+
+	<td>
+<div class="img">
+  <a onclick="clickCounter()" target="_blank" href="Products/Piano/YUS Series.html">
+    <img src="Products/Piano/images/piano6.jpg" alt="YUS Series" width="300" height="200">
+  </a>
+  <div class="desc">YUS Series</div>
+  <div id="myDiv" class="desc">YUS Series</div>
+	</div>
+	</td>
+
+	<td>
+<div class="img">
+  <a onclick="clickCounter()" target="_blank" href="Products/Piano/Clavinova.html">
+    <img src="Products/Piano/Images/piano5.jpg" alt="Clavinova" width="100%" height="100%">
+  </a>
+  <div class="desc">Clavinova</div>
+  <div id="myDiv" class="desc">Clavinova</div>
+	</div>
+	</td>
+</tr>
+
+		
+
+<div>
+
+
+
+
+<div id="result" style="padding-right: 450px;margin-top: 120px;float: right;"></div>
+
+</div>
+
+ 	     
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+</script>
+</body>
+
+</html>

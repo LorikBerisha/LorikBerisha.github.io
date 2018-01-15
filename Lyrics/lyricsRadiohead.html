@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="indexstyle.css"/>
+	
+	<style>
+	/* Style the buttons that are used to open and close the accordion panel */
+button.accordion {
+    background-color: black;
+    background-color: rgba(0,0,0,0.92);
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 50%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin-left: 410px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+button.accordion.active, button.accordion:hover {
+    background-color: #151313;
+    width: 53.65%;
+
+}
+
+/* Style the accordion panel. Note: hidden by default */
+div.panel {
+    padding: 0 18px;
+    width: 50.65%;
+    margin-left:410px;
+    color:black;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-weight: 800;
+    background-color: #D5D5D5;
+    background-color: rgba(225,225,225,0.5);
+    display: none;
+}
+
+/* The "show" class is added to the accordion panel when the user clicks on one of the buttons. This will show the panel content */
+div.panel.show {
+    display: block;
+}
+
+	div.svg-wrapper {
+  height: 100%;
+  max-height: 60px;
+  margin-top: -150px;
+  margin-left: 550px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 320px;
+}
+
+.shape {
+  fill: transparent;
+  stroke-dasharray: 205 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+  /*stroke: #1cb779;*/
+  stroke: #19f6e8;
+}
+
+.text {
+  height: 100%;
+  max-height: 60px;
+  margin-left: 10px;
+  text-align: center;
+  color: #fff;
+  /*font-family: 'Roboto Condensed';*/
+  font-size: 22px;
+  letter-spacing: 8px;
+  line-height: 20px;
+  position: relative;
+  top: -80px;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 8px;
+  }
+  100% {
+    stroke-dasharray: 760;
+    stroke-dashoffset: 0;
+    stroke-width: 2px;
+  }
+}
+
+.svg-wrapper:hover .shape {
+  -webkit-animation: 0.5s draw linear forwards;
+  animation: 0.5s draw linear forwards;
+}
+</style>
+	
+
+
+</head>
+
+<body>
+
+	<!-- Header-i (logoja dhe search box) -->
+  <h1 id="header"><a href="../index.html">Music</a>Book</span> </a>
+   
+   
+   
+   
+   <span><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-right: 200px;" 
+  target="buton1">Login</button> <input type="text" name="search" placeholder="      Search.." target="searchbox"> </span></h1>
+  
+
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close login">&times;</span>
+      
+    </div>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username"
+      target="login" name="uname" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" target="login" name="psw" required>
+        
+      <button type="submit" target="buton2">Login</button>
+      <input type="checkbox" checked="checked"> Remember me
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <span class="psw" style="padding-right:50px; ">Forgotten <a href="../index.html#contact">password?</a></span>
+    </div>
+  </form>
+</div>
+
+  
+
+  <!-- Modal per navigation menu -->
+<div id="id02" class="modal1">
+  <div class="">
+    <div class="modal1-content">
+      <span onclick="document.getElementById('id02').style.display='none'" 
+      style="margin: 20px;cursor:pointer;color:white;">&times;</span>
+     <ul>
+
+      <li><a href="../Piano.html">Piano</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="id03" class="modal1">
+  <div>
+    <div class="modal1-content" style="background-image:url(images2.jpg);background-size: 170px 128px;">
+      <span onclick="document.getElementById('id03').style.display='none'" 
+      style="margin: 20px;cursor:pointer; color:white;">&times;</span>
+     <ul>
+      <li><a href="../Electric Guitars.html">Electric</a></li>
+      <li><a href="../Acoustic Guitars.html">Acoustic</a></li>
+      <li><a href="../Bass Guitars.html">Bass</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Navigation Lista -->
+  <nav class="navLista">
+    <ul class="lista">
+    <li> <table cellpadding="0px" cellspacing="0px" style="margin: 0;padding:0;" id="navBar">
+    <tr>
+        <td>
+            <a class="selected" href="../index.html" style="margin-left: 10px;">Home</a>
+        </td>
+        
+    </tr>
+</table></li>
+      <li><a style="margin-left: 11px;">Products</a>
+        <ul id="submenu">
+          <li><a href="#" onclick="document.getElementById('id02').style.display='block'"> Piano </a>
+            </li>
+          <li><a href="##" onclick="document.getElementById('id03').style.display='block'"> Guitar </a>
+          </li>
+          
+        </ul>
+      </li>
+      <li><span><br></span><a href="../artist.html">Artists</a></li>
+      <li><a href="https://www.ultimate-guitar.com/" target="_blank">Chords</a>
+      </li>
+      <li><a href="#contact">Contact</a></li>
+
+
+    </ul>
+  </nav>
+  <div class="svg-wrapper">
+  <svg height="80" width="330" >
+    <rect class="shape" height="80" width="330" />
+  </svg>
+
+<div class="text" style="border: 1px solid black;color:white;font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;">A Moon Shaped Pool by          
+<span style="color:black;font-weight: bold;">Radiohead</span>
+</div>
+</div>
+
+<canvas id="c"  width="900px" height="600px" style="margin: 250px 0 0 280px;"></canvas>
+
+<button class="accordion" style="margin-left: 410px; margin-top: 5px;">Burn The Witch</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Radiohead Burn The Witch.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+Stay in the shadows
+Cheer at the gallows
+This is a round up
+
+This is a low flying panic attack
+Sing a song on the jukebox that goes
+
+Burn the witch
+Burn the witch
+We know where you live
+
+Red crosses on wooden doors
+And if you float you burn
+Loose talk around tables
+Abandon all reason
+Avoid all eye contact
+Do not react
+Shoot the messengers
+
+This is a low flying panic attack
+Sing the song of sixpence that goes
+
+Burn the witch
+Burn the witch
+We know where you live
+We know where you live
+</pre>
+</div>
+
+<button class="accordion">Desert Island Disk</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Radiohead Desert Island Disk.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+Help as I go upon my way
+So let me go upon my way
+Born of a light
+Born of a light
+
+The wind rushing round my open heart
+An open ravine
+With my spirit white
+Totally alive
+And my spirit light
+
+Through an open doorway
+Across a stream
+To another life
+And catching my reflection in a window
+Switching on a light
+One I didn't know
+Totally alive
+Totally relieved
+
+Waking up, waking up from shutdown
+From a thousand years of sleep
+Yeah you, you know what I mean
+You know what I mean
+You know what I mean
+
+Standing on the edge of you
+You know what I mean
+You know what I mean
+You know what I mean
+Different types of love
+Different types of love
+Different types of love
+Are possible
+Are possible
+Are possible
+Are possible
+  </pre>
+</div>
+
+<button class="accordion">Ful Stop</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Radiohead Ful Stop.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+You really messed up everything
+You really messed up everything
+If you could take it all back again
+Strike up what's in the box
+Why should I be good if you're not?
+This is a foul tasting medicine
+A foul tasting medicine
+To be trapped in your full stop
+
+Truth will mess you up
+Truth will mess you up
+Truth will mess you up
+Truth will mess you up
+Truth will mess you up
+Truth will mess you up
+Truth will mess you up
+Truth will mess you up
+(All the good times)
+Truth will mess you up
+Truth will mess you up
+(All the good times)
+Truth will mess you up
+Truth will mess you up
+(All the good times)
+Truth will mess you up
+Truth will mess you up
+(All the good times)
+Truth will mess you up
+Truth will mess you up
+
+When you take me back
+Take me back again
+Take me back
+Take me back again
+You really me-
+Really mess-
+You really messed up
+You really messed up
+You really messed up
+You really messed up this time
+You really messed up
+You really messed up
+You really messed up
+You really messed up this time
+  </pre>
+</div>
+
+<button class="accordion">Glass Eyes</button>
+<div class="panel">
+  <pre>
+Hey it's me
+I just got off the train
+A frightening place
+The faces are concrete grey
+And I'm wondering, should I turn around?
+Buy another ticket
+Panic is coming on strong
+So cold, from the inside out
+No great drama, message coming in
+In the oh-so-smug
+Glassy eyed light of day
+Glassy eyed light of day
+
+Where the path trails off
+And heads down the mountain
+Through the dry bush, I don't know where it leads
+I don't really care
+And the path trails off
+And heads down a mountain
+Through the dry bush, I don't know where it leads
+I don't really care
+
+I feel this love to the core
+I feel this love to the core
+  </pre>
+</div>
+
+<button class="accordion">The Numbers</button>
+<div class="panel">
+  <pre>
+It holds us like a phantom
+The touch is like a breeze
+It shines its understanding
+See the moon smiling
+
+Open on all channels
+Ready to receive
+And we're not at the mercy
+Of your shimmerers or spells
+Your shimmerers or spells
+Mmmhm
+
+We are of the earth
+To her we do return
+The future is inside us
+It's not somewhere else
+It's not somewhere else
+It's not somewhere else
+
+(One day at a time)
+One day at a time
+
+We call upon the people
+People have this power
+The numbers don't decide
+Your system is a lie
+The river running dry
+The wings of a butterfly
+And you may pour us away like soup
+Like we're pretty broken flowers
+We'll take back what is ours
+Take back what is ours
+
+One day at a time
+
+  </pre>
+</div>
+
+<button class="accordion">True Love Waits</button>
+<div class="panel">
+  <pre>
+I'll drown my beliefs
+To have your babies
+I'll dress like your niece
+And wash your swollen feet
+
+Just don't leave
+Don't leave
+
+I'm not living, I'm just killing time
+Your tiny hands, your crazy-kitten smile
+
+Just don't leave
+Don't leave
+
+And true love waits
+In haunted attics
+And true love lives
+On lollipops and crisps
+
+Just don't leave
+Don't leave
+  </pre>
+</div>
+
+
+
+
+
+<script type="text/javascript">
+	
+	var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+    }
+}
+</script>
+
+
+<script>
+// merre 'modal'-in
+var modal = document.getElementById('id01');
+
+// Kur useri klikon jasht 'modal'-it te mbyllet
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<script>
+// Grab the Canvas and Drawing Context
+var canvas = document.getElementById('c');
+var ctx = canvas.getContext('2d');
+
+
+
+// Create an image element
+var img = document.createElement('IMG');
+
+// When the image is loaded, draw it
+img.onload = function () {
+
+    // Save the state, so we can undo the clipping
+    ctx.save();
+    ctx.arc(450,300,380,0,2*Math.PI);      
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(450,300,380,0,2*Math.PI, false);
+    ctx.fill();
+    // Clip to the current path
+    ctx.clip();
+    
+    
+    ctx.drawImage(img, 0, 0);
+    
+    // Undo the clipping
+    ctx.restore();
+}
+
+// Specify the src to load the image
+img.src = "Images/radiohead.jpg";
+</script>
+
+	
+</body>
+
+</html>

@@ -1,0 +1,455 @@
+* {	
+	padding: 0;
+	margin: 0;
+}
+
+/* Stilizimi i Background-it te faqes */
+body {
+	/*background:url(518084-background-hd.jpg);	 */
+    background-size:100%;
+    height: 100%;
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    font-family: "Lucida Bright",Georgia,serif
+}
+
+/* Stilizimi me 'ID' e Header-it */
+#header {		
+	padding-left: 30px;
+	padding-right: 20px;
+	font-family: arial, sans-serif;
+	font-weight:400;
+	height: 60px;
+	width: 100%;
+	/*background:#060606;*/
+	background: black;
+	color: white;
+	line-height: 60px;
+	position: fixed;
+	top:0; /* permirson pozicionimin ne top */
+	}
+
+
+#header span img {
+	/*display: inline-block;*/
+	padding: 10px 0 0 0;
+	margin:0 0 0 0;
+	height: 40px;
+}
+
+body h1#header a span:nth-child(1){
+	color: #1cb779;
+	/*color:#4ba8fb;*/
+}
+
+
+/* Stilizimi me 'Class' i listes se navigacionit */
+.test {
+	/*background: #000;*/
+	background:rgba(0,0,0,0.9);	
+	width: 200px;
+	margin-top: 60px;
+	height: 666px;
+	position: fixed;
+}
+
+.test a {
+	text-decoration: none;
+	/*color: #818181;*/
+	/*color: white;*/
+	color: #1cb779;
+	/*color:#4ba8fb;*/
+	font-weight: 600;	
+	padding: 10px;
+	padding-right: 90px;
+}
+
+.test ul li {
+	text-align: center;
+	list-style-type: none;
+	padding:10px;
+}
+
+
+/* Thirrja me 'Class' e blloqeve */
+#main  {
+	 /*color: blue;*/
+	 /*color: #1cb779;*/
+	 /*color: #63D8FA;*/
+	 color: #BBE5E3;
+	 padding: 60px 0 0 0;
+	 /*border: 2px dotted blue;*/
+
+	 /*margin: 60px 0 0 0;*/
+	 
+}
+
+#main td {
+	/*padding-left:10px;*/
+	/*margin-left:100px;*/
+}
+
+#main img {
+	max-width: 150px;
+	max-height: 500px;
+}
+
+#main td {
+	/*margin-right: 20px;	*/
+	box-shadow: 0px 0px 25px #888888;
+	background-color: rgba(0,0,0,0.7);
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 5px;
+	max-width: 150px;
+	max-height: 500px;
+}
+
+#main td:hover {
+	border: 2px solid #777 ;
+	cursor: pointer;
+}
+#main td a {
+	
+	color: #1cb779;	
+	text-decoration: none;
+}	
+
+
+/* thirrja me 'Class' e listes */
+.lista ul{
+	display:none;
+}
+
+.lista li:hover ul {
+	display:block;
+}
+
+#submenu li {
+	padding: 10px 0 0 15px;
+	/*padding-left:15px;*/
+	margin: 0;
+}
+
+
+#submenu ul {
+	display: none;
+}
+#submenu li:hover ul {
+	display:block;
+}
+
+#subsubmenu li {
+		padding: 10px 0 0 30px;
+		margin: 0;
+}
+/* Stilizimi i Search Box permes 'attribute' */
+		input[target=searchbox] {
+		    width: 140px;
+		    box-sizing: border-box;
+		    border: 2px solid #ccc;
+		    border-radius: 4px;
+		    font-size: 16px;
+		    background-color: white;
+		    background-image: url('Images/searchicon.png');
+		    /*background-position: 0.0001em 0.0001em; */
+		    background-repeat: no-repeat;
+		    background-size: 30px 30px;
+		    /*padding: 12px 20px 12px 40px;*/
+		    -webkit-transition: width 0.4s ease-in-out;
+		    transition: width 0.4s ease-in-out;
+		    float: right;
+		    line-height: 30px;
+		    margin: 12px 0 0 0;
+		}
+
+/* Kur input te fokusohet, ndrysho gjeresine per 30% */
+input[target=searchbox]:focus {
+    width: 30%;
+}
+
+/* Permirsimi e problemit ne mozilla ku teksti brenda placeholder shfaqet me nje transparence*/
+::-moz-placeholder{
+	opacity: 1;
+}
+
+
+/*Google maps stilizimi*/
+#map {
+    width: 20%;
+    height: 200px;
+    background-color: grey;
+}
+
+
+/* Full-width input fields */
+input[target=login]{
+
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Stilizimi i butonave */
+button[target=buton1] {
+    /*background-color: #4CAF50;*/
+    background-color: black;
+    /*color: white;*/
+    /*color: #4ba8fb;*/
+    color: #1cb779;
+    padding: 6px 20px;
+    margin: 8px 0 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    z-index: 1;
+	display: fixed;
+
+}
+
+button[target=buton2]{
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0 0 60px;
+	border: none;
+	cursor: pointer;
+	width: 20%;
+
+}
+
+/* Butoni 'cancel' */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    /*background-color: #f44336;*/
+    background-color: #867C7C;
+}
+
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 0 0 12px 0;
+    position: relative;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    /*float: right;*/
+    padding-top: 16px;
+    width: auto;
+    padding: 10px 50px;
+    /*background-color: #f44336;*/
+    /*background-color: #867C7C;*/
+    /*background-color: rgba(0,0,0,0.5);*/
+}
+	
+/* Stilizimi i background-it te 'Modal'-it  */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    z-index: 1; /* prioriteti ne shfaqje */
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); /* ngjyra e backgroundit */
+    background-color: rgba(0,0,0,0.4); /* ngjyra e backgroundit me opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+	max-width: 350px;
+	max-height: 500px;
+    background-color: #fefefe;
+    margin: 100px 100px 100px 500px;
+    /*margin: 5% auto 15% auto; */
+    /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.4s;
+    animation: animatezoom 0.4s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+
+.container{
+padding:0.01em 16px;
+text-align:center;
+}
+/*.w3-light-grey{
+	color:#000;
+	background-color:#f4f4f4;
+}*/
+.padding-32{
+	padding-top:32px;
+	padding-bottom:32px;
+	}
+.padding-large{
+	padding:12px 24px;
+}
+.content{
+	max-width:980px;
+	margin:100px auto;
+}
+
+.content label, .content h2, .content p{
+	color: #1cb779;
+	background-color: rgba(0,0,0,0.6);
+	padding: 0 10px 0 10px;
+}
+
+.center{
+	text-align:center;
+}
+
+.group{
+	margin-top:24px;
+	margin-bottom:24px;
+}
+
+.input{
+	display:block;
+	padding:8px 16px;
+	border:none;
+	outline:none;
+	width:100%;
+    text-align:center;
+}
+
+.border{
+	border:1px solid #ccc;
+}
+
+.btn-block{
+	border:none;
+	display:inline-block;
+	outline:0;
+	padding:6px 16px;
+	vertical-align:middle;
+	overflow:hidden;
+	text-decoration:none;
+	color:#fff;
+	background-color:#333333;
+	text-align:center;
+	cursor:pointer;
+	white-space:nowrap
+}
+	
+.btn-block{
+	-webkit-touch-callout:none;
+	-webkit-user-select:none;
+	-khtml-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+    width:100%;
+	-webkit-transition:background-color .25s,color .15s,box-shadow .25s,opacity 0.25s,filter 0.25s,border 0.15s;
+	transition:background-color .25s,color .15s,box-shadow .15s,opacity .25s,filter .25s,border .15s;
+}
+
+
+button[target==send]{
+	padding: 12px 24px;
+	margin-left: 20px;
+	margin-top: 10px;
+	color:#000;
+	background-color: #1cb779;
+}
+
+.margin-bottom{
+	margin-bottom:16px;
+}
+
+
+div#contact {
+	padding-left: 180px;
+}
+
+
+/*   Testing            */
+
+
+
+	/* Stilizimi i 'Modal'-it i navigation menus */
+		.modal1 {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    z-index: 1; /* prioriteti ne shfaqje */
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); /* ngjyra e backgroundit */
+    background-color: rgba(0,0,0,0.4); /* ngjyra e backgroundit me opacity */
+    padding-top: 60px;
+}
+
+.modal1-content a {
+	text-decoration: none;
+	color: #1cb779;
+}
+.modal1-content {
+	background-image: url(Images/images1.jpg); 
+	margin: 70px;
+	width: 200px;
+	background-color: white;
+	text-align: center;
+	border: 2px solid #777
+
+}
+
+h1#header a {
+	color: #1cb779;
+	text-decoration: none;
+
+}

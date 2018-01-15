@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="indexstyle.css"/>
+	
+	<style>
+	/* Style the buttons that are used to open and close the accordion panel */
+button.accordion {
+    background-color: black;
+    background-color: rgba(0,0,0,0.92);
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 50%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin-left: 410px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+button.accordion.active, button.accordion:hover {
+    background-color: #151313;
+    width: 53.65%;
+
+}
+
+/* Style the accordion panel. Note: hidden by default */
+div.panel {
+    padding: 0 18px;
+    width: 50.65%;
+    margin-left:410px;
+    color:black;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-weight: 800;
+    background-color: #D5D5D5;
+    background-color: rgba(225,225,225,0.5);
+    display: none;
+}
+
+/* The "show" class is added to the accordion panel when the user clicks on one of the buttons. This will show the panel content */
+div.panel.show {
+    display: block;
+}
+
+	div.svg-wrapper {
+  height: 100%;
+  max-height: 60px;
+  margin-top: -150px;
+  margin-left: 550px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 320px;
+}
+
+.shape {
+  fill: transparent;
+  stroke-dasharray: 205 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+  /*stroke: #1cb779;*/
+  stroke: #19f6e8;
+}
+
+.text {
+  height: 100%;
+  max-height: 60px;
+  margin-left: 10px;
+  text-align: center;
+  color: #fff;
+  /*font-family: 'Roboto Condensed';*/
+  font-size: 22px;
+  letter-spacing: 8px;
+  line-height: 26px;
+  position: relative;
+  top: -80px;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 8px;
+  }
+  100% {
+    stroke-dasharray: 760;
+    stroke-dashoffset: 0;
+    stroke-width: 2px;
+  }
+}
+
+.svg-wrapper:hover .shape {
+  -webkit-animation: 0.5s draw linear forwards;
+  animation: 0.5s draw linear forwards;
+}
+</style>
+	
+
+
+</head>
+
+<body>
+
+	<!-- Header-i (logoja dhe search box) -->
+  <h1 id="header"><a href="../index.html">Music</a>Book</span> </a>
+   
+   
+   
+   
+   <span><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-right: 200px;" 
+  target="buton1">Login</button> <input type="text" name="search" placeholder="      Search.." target="searchbox"> </span></h1>
+  
+
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close login">&times;</span>
+      
+    </div>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username"
+      target="login" name="uname" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" target="login" name="psw" required>
+        
+      <button type="submit" target="buton2">Login</button>
+      <input type="checkbox" checked="checked"> Remember me
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <span class="psw" style="padding-right:50px; ">Forgotten <a href="../index.html#contact">password?</a></span>
+    </div>
+  </form>
+</div>
+
+  
+
+  <!-- Modal per navigation menu -->
+<div id="id02" class="modal1">
+  <div class="">
+    <div class="modal1-content">
+      <span onclick="document.getElementById('id02').style.display='none'" 
+      style="margin: 20px;cursor:pointer;color:white;">&times;</span>
+     <ul>
+
+      <li><a href="../Piano.html">Piano</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="id03" class="modal1">
+  <div>
+    <div class="modal1-content" style="background-image:url(images2.jpg);background-size: 170px 128px;">
+      <span onclick="document.getElementById('id03').style.display='none'" 
+      style="margin: 20px;cursor:pointer; color:white;">&times;</span>
+     <ul>
+      <li><a href="../Electric Guitars.html">Electric</a></li>
+      <li><a href="../Acoustic Guitars.html">Acoustic</a></li>
+      <li><a href="../Bass Guitars.html">Bass</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Navigation Lista -->
+  <nav class="navLista">
+    <ul class="lista">
+    <li> <table cellpadding="0px" cellspacing="0px" style="margin: 0;padding:0;" id="navBar">
+    <tr>
+        <td>
+            <a class="selected" href="../index.html" style="margin-left: 10px;">Home</a>
+        </td>
+        
+    </tr>
+</table></li>
+      <li><a style="margin-left: 11px;">Products</a>
+        <ul id="submenu">
+          <li><a href="#" onclick="document.getElementById('id02').style.display='block'"> Piano </a>
+            </li>
+          <li><a href="##" onclick="document.getElementById('id03').style.display='block'"> Guitar </a>
+          </li>
+          
+        </ul>
+      </li>
+      <li><span><br></span><a href="../artist.html">Artists</a></li>
+      <li><a href="https://www.ultimate-guitar.com/" target="_blank">Chords</a>
+      </li>
+      <li><a href="#contact">Contact</a></li>
+
+
+    </ul>
+  </nav>
+  <div class="svg-wrapper">
+  <svg height="80" width="330" >
+    <rect class="shape" height="80" width="330" />
+  </svg>
+
+<div class="text" style="border: 1px solid black;color:white;font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;">Abbey Road by          
+<span style="color:black;font-weight: bold;">The Beatles</span>
+</div>
+</div>
+
+<canvas id="c"  width="900px" height="600px" style="margin: 250px 0 0 280px;"></canvas>
+
+<button class="accordion" style="margin-left: 410px; margin-top: 5px;">Something</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/The Beatles Something.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+Something in the way she moves
+Attracts me like no other lover
+Something in the way she woos me
+
+I don't want to leave her now
+You know I believe and how
+
+Somewhere in her smile she knows
+That I don't need no other lover
+Something in her style that shows me
+
+Don't want to leave her now
+You know I believe and how
+
+You're asking me will my love grow
+I don't know, I don't know
+You stick around now it may show
+I don't know, I don't know
+
+Something in the way she knows
+And all I have to do is think of her
+Something in the things she shows me
+
+Don't want to leave her now
+You know I believe and how
+</pre>
+</div>
+
+<button class="accordion">Maxwell's Silver Hammer</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/The Beatles Maxwell's Silver Hammer.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+Joan was quizzical, studied pataphysical
+Science in the home
+Late nights all alone with a test-tube ohh oh oh oh
+Maxwell Edison majoring in medicine
+Calls her on the phone
+Can I take you out to the pictures, Joan?
+But as she's getting ready to go
+A knock comes on the door
+
+Bang, bang, Maxwell's silver hammer
+Came down upon her head
+Bang, bang, Maxwell's silver hammer
+Made sure that she was dead
+
+Back in school again Maxwell plays the fool again
+Teacher gets annoyed
+Wishing to avoid an unpleasant scene
+She tells Max to stay when the class has gone away
+So he waits behind
+Writing 50 times "I must not be so" oh oh oh
+But when she turns her back on the boy
+He creeps up from behind
+
+Bang, bang, Maxwell's silver hammer
+Came down upon her head
+Do do do do do
+Bang, bang, Maxwell's silver hammer
+Made sure that she was dead
+
+P.C. Thirty-One said "We caught a dirty one"
+Maxwell stands alone
+Painting testimonial pictures ohh oh oh oh
+Rose and Valerie screaming from the gallery
+Say he must go free (Maxwell must go free)
+The judge does not agree and he tells them so oh oh oh
+But as the words are leaving his lips
+A noise comes from behind
+
+Bang, bang, Maxwell's silver hammer
+Came down upon his head
+Do do do do do
+Bang, Bang, Maxwell's silver hammer
+Made sure that he was dead
+Wow wow wow oh!
+Do do do do do
+
+Silver hammer Max
+
+
+  </pre>
+</div>
+
+<button class="accordion">Oh! Darling</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/The Beatles Oh Darling.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+Oh! Darling, please believe me
+I'll never do you no harm
+Believe me when I tell you
+I'll never do you no harm
+
+Oh! Darling, if you leave me
+I'll never make it alone
+Believe me when I beg you, ooh
+Don't ever leave me alone
+
+When you told me
+You didn't need me anymore
+Well you know I nearly broke down and cried
+When you told me
+You didn't need me anymore
+Well you know I nearly broke down and died
+
+Oh! Darling, if you leave me
+I'll never make it alone
+Believe me when I tell you
+I'll never do you no harm
+Believe me darling
+
+When you told me, ooh
+You didn't need me anymore
+Well you know I nearly broke down and cried
+When you told me
+You didn't need me anymore
+Well you know I nearly broke down and died
+
+Oh! Darling, please believe me
+I'll never let you down
+Oh, believe me darling
+Believe me when I tell you, ooh
+I'll never do you no harm
+  </pre>
+</div>
+
+<button class="accordion">Octopus's Garden</button>
+<div class="panel">
+  <pre>
+I'd like to be under the sea
+In an octopus's garden in the shade
+He'd let us in, knows where we've been
+In his octopus's garden in the shade
+
+I'd ask my friends to come and see
+An octopus's garden with me
+I'd like to be under the sea
+In an octopus's garden in the shade
+
+We would be warm below the storm
+In our little hideaway beneath the waves
+Resting our head on the sea bed
+In an octopus's garden near a cave
+
+We would sing and dance around
+Because we know we can't be found
+I'd like to be under the sea
+In an octopus's garden in the shade
+
+We would shout and swim about
+The coral that lies beneath the waves
+(Lies beneath the ocean waves)
+Oh what joy for every girl and boy
+Knowing they're happy and they're safe
+(Happy and they're safe)
+
+We would be so happy you and me
+No one there to tell us what to do
+I'd like to be under the sea
+In an octopus's garden with you
+In an octopus's garden with you
+In an octopus's garden with you
+
+  </pre>
+</div>
+
+<button class="accordion">I Want You (She's So Heavy)</button>
+<div class="panel">
+  <pre>
+I want you
+I want you so bad
+I want you
+I want you so bad
+It's driving me mad
+It's driving me mad
+
+I want you
+I want you so bad, babe
+I want you
+I want you so bad
+It's driving me mad
+It's driving me mad
+
+I want you
+I want you so bad, babe
+I want you
+I want you so bad
+It's driving me mad
+It's driving me mad
+
+I want you
+I want you so bad
+I want you
+I want you so bad
+It's driving me mad
+It's driving me mad
+
+She's so heavy
+Heavy, heavy, heavy
+
+She's so heavy
+She's so heavy
+Heavy, heavy, heavy
+
+I want you
+I want you so bad
+I want you
+I want you so bad
+It's driving me mad
+It's driving me mad
+
+I want you
+You know I want you so bad, babe
+I want you
+You know I want you so bad
+It's driving me mad
+It's driving me mad
+Yeah
+
+She's so
+  </pre>
+</div>
+
+<button class="accordion">Here Comes The Sun</button>
+<div class="panel">
+  <pre>
+Here comes the sun, here comes the sun
+And I say it's all right
+
+Little darling, it's been a long cold lonely winter
+Little darling, it feels like years since it's been here
+
+Here comes the sun, here comes the sun
+And I say it's all right
+
+Little darling, the smiles returning to the faces
+Little darling, it seems like years since it's been here 
+
+Here comes the sun, here comes the sun
+And I say it's all right
+
+Sun, sun, sun, here it comes
+Sun, sun, sun, here it comes
+Sun, sun, sun, here it comes
+Sun, sun, sun, here it comes
+Sun, sun, sun, here it comes
+
+Little darling, I feel that ice is slowly melting
+Little darling, it seems like years since it's been clear
+
+Here comes the sun, here comes the sun
+And I say it's all right
+Here comes the sun, here comes the sun
+It's all right, it's all right
+
+  </pre>
+</div>
+
+<button class="accordion">Because</button>
+<div class="panel">
+  <pre>
+Aaaaaahhhhhh...
+Because the world is round it turns me on
+Because the world is round...aaaaaahhhhhh
+
+Because the wind is high it blows my mind
+Because the wind is high...aaaaaaaahhhh
+
+Love is old, love is new
+Love is all, love is you
+
+Because the sky is blue, it makes me cry
+Because the sky is blue...aaaaaaaahhhh
+
+Aaaaahhhhhhhhhh...
+Aaaaahhhhhhhhhh...
+Aaaaahhhhhhhhhh...
+
+  </pre>
+</div>
+
+<button class="accordion">You Never Give Me Your Money</button>
+<div class="panel">
+  <pre>
+You never give me your money
+You only give me your funny paper
+And in the middle of negotiations
+You break down
+
+I never give you my number
+I only give you my situation
+And in the middle of investigation
+I break down
+
+Out of college, money spent
+See no future, pay no rent
+All the money's gone, nowhere to go
+Any jobber got the sack
+Monday morning, turning back
+Yellow lorry slow, nowhere to go
+But oh, that magic feeling, nowhere to go
+Oh, that magic feeling, nowhere to go
+Nowhere to go
+
+Aaaaahhhhhhhhhh...
+Aaaaahhhhhhhhhh...
+Aaaaahhhhhhhhhh...
+
+One sweet dream
+Pick up the bags and get in the limousine
+Soon we'll be away from here
+Step on the gas and wipe that tear away
+One sweet dream came true today
+Came true today
+Came true today (Yes it did)
+
+One two three four five six seven
+All good children go to Heaven
+One two three four five six seven
+All good children go to Heaven
+One two three four five six seven
+All good children go to Heaven
+One two three four five six seven
+All good children go to Heaven
+One two three four five six seven
+All good children go to Heaven
+One two three four five six seven
+All good children go to Heaven
+One two three four five six seven
+All good children go to Heaven
+One two three four five six seven
+All good children go to Heaven (fade out)
+
+  </pre>
+</div>
+
+<button class="accordion">Come Together</button>
+<div class="panel">
+  <pre>
+Here come old flat top
+He come grooving up slowly
+He got joo joo eyeball
+He one holy roller
+He got hair down to his knee
+Got to be a joker he just do what you please.
+
+He wear no shoe shine
+He got toe jam football
+He got monkey finger
+He shoot Coca-Cola
+He say I know you, you know me
+One thing I can tell you is you got to be free
+Come together right now over me
+
+He bag production
+He got walrus gumboot
+He got Ono sideboard
+He one spinal cracker
+He got feet down below his knee
+Hold you in his armchair you can feel his disease
+Come together right now over me
+
+Right!
+Come
+Come...
+Come...
+Come...
+
+He roller coaster
+He got early warning
+He got Muddy Water
+He one Mojo filter
+He say. "One and one and one is three"
+Got to be good looking 'cause he so hard to see
+Come together right now over me
+
+Oh!
+Come together
+Yeah
+Come together
+Yeah
+Come together
+Yeah
+Come together
+Yeah
+Come together
+Yeah
+Come together
+Yeah
+Come together
+Yeah
+Ahh
+Come together
+Yeah
+Come together...
+  </pre>
+</div>
+
+
+
+
+
+
+
+<script type="text/javascript">
+	
+	var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+    }
+}
+</script>
+
+
+<script>
+// merre 'modal'-in
+var modal = document.getElementById('id01');
+
+// Kur useri klikon jasht 'modal'-it te mbyllet
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<script>
+// Grab the Canvas and Drawing Context
+var canvas = document.getElementById('c');
+var ctx = canvas.getContext('2d');
+
+
+
+// Create an image element
+var img = document.createElement('IMG');
+
+// When the image is loaded, draw it
+img.onload = function () {
+
+    // Save the state, so we can undo the clipping
+    ctx.save();
+    ctx.arc(450,300,380,0,2*Math.PI);      
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(450,300,380,0,2*Math.PI, false);
+    ctx.fill();
+    // Clip to the current path
+    ctx.clip();
+    
+    
+    ctx.drawImage(img, 0, 0);
+    
+    // Undo the clipping
+    ctx.restore();
+}
+
+// Specify the src to load the image
+img.src = "Images/thebeatles.jpg";
+</script>
+
+	
+</body>
+
+</html>

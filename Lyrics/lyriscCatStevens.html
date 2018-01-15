@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="indexstyle.css"/>
+	
+	<style>
+	/* Style the buttons that are used to open and close the accordion panel */
+button.accordion {
+    background-color: black;
+    background-color: rgba(0,0,0,0.92);
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 50%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin-left: 410px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+button.accordion.active, button.accordion:hover {
+    background-color: #151313;
+    width: 53.65%;
+
+}
+
+/* Style the accordion panel. Note: hidden by default */
+div.panel {
+    padding: 0 18px;
+    width: 50.65%;
+    margin-left:410px;
+    color:black;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-weight: 800;
+    background-color: #D5D5D5;
+    background-color: rgba(225,225,225,0.5);
+    display: none;
+}
+
+/* The "show" class is added to the accordion panel when the user clicks on one of the buttons. This will show the panel content */
+div.panel.show {
+    display: block;
+}
+
+	div.svg-wrapper {
+  height: 100%;
+  max-height: 60px;
+  margin-top: -150px;
+  margin-left: 550px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 320px;
+}
+
+.shape {
+  fill: transparent;
+  stroke-dasharray: 205 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+  /*stroke: #1cb779;*/
+  stroke: #19f6e8;
+}
+
+.text {
+  height: 100%;
+  max-height: 60px;
+  margin-left: 10px;
+  text-align: center;
+  color: #fff;
+  /*font-family: 'Roboto Condensed';*/
+  font-size: 22px;
+  letter-spacing: 8px;
+  line-height: 20px;
+  position: relative;
+  top: -80px;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 8px;
+  }
+  100% {
+    stroke-dasharray: 760;
+    stroke-dashoffset: 0;
+    stroke-width: 2px;
+  }
+}
+
+.svg-wrapper:hover .shape {
+  -webkit-animation: 0.5s draw linear forwards;
+  animation: 0.5s draw linear forwards;
+}
+</style>
+	
+
+
+</head>
+
+<body>
+
+	<!-- Header-i (logoja dhe search box) -->
+  <h1 id="header"><a href="../index.html">Music</a>Book</span> </a>
+   
+   
+   
+   
+   <span><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-right: 200px;" 
+  target="buton1">Login</button> <input type="text" name="search" placeholder="      Search.." target="searchbox"> </span></h1>
+  
+
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close login">&times;</span>
+      
+    </div>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username"
+      target="login" name="uname" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" target="login" name="psw" required>
+        
+      <button type="submit" target="buton2">Login</button>
+      <input type="checkbox" checked="checked"> Remember me
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <span class="psw" style="padding-right:50px; ">Forgotten <a href="../index.html#contact">password?</a></span>
+    </div>
+  </form>
+</div>
+
+  
+
+  <!-- Modal per navigation menu -->
+<div id="id02" class="modal1">
+  <div class="">
+    <div class="modal1-content">
+      <span onclick="document.getElementById('id02').style.display='none'" 
+      style="margin: 20px;cursor:pointer;color:white;">&times;</span>
+     <ul>
+
+      <li><a href="../Piano.html">Piano</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="id03" class="modal1">
+  <div>
+    <div class="modal1-content" style="background-image:url(images2.jpg);background-size: 170px 128px;">
+      <span onclick="document.getElementById('id03').style.display='none'" 
+      style="margin: 20px;cursor:pointer; color:white;">&times;</span>
+     <ul>
+      <li><a href="../Electric Guitars.html">Electric</a></li>
+      <li><a href="../Acoustic Guitars.html">Acoustic</a></li>
+      <li><a href="../Bass Guitars.html">Bass</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Navigation Lista -->
+  <nav class="navLista">
+    <ul class="lista">
+    <li> <table cellpadding="0px" cellspacing="0px" style="margin: 0;padding:0;" id="navBar">
+    <tr>
+        <td>
+            <a class="selected" href="../index.html" style="margin-left: 10px;">Home</a>
+        </td>
+        
+    </tr>
+</table></li>
+      <li><a style="margin-left: 11px;">Products</a>
+        <ul id="submenu">
+          <li><a href="#" onclick="document.getElementById('id02').style.display='block'"> Piano </a>
+            </li>
+          <li><a href="##" onclick="document.getElementById('id03').style.display='block'"> Guitar </a>
+          </li>
+          
+        </ul>
+      </li>
+      <li><span><br></span><a href="../artist.html">Artists</a></li>
+      <li><a href="https://www.ultimate-guitar.com/" target="_blank">Chords</a>
+      </li>
+      <li><a href="#contact">Contact</a></li>
+
+
+    </ul>
+  </nav>
+  <div class="svg-wrapper">
+  <svg height="80" width="330" >
+    <rect class="shape" height="80" width="330" />
+  </svg>
+
+<div class="text" style="border: 1px solid black;color:white;font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;">Tea For The Tillerman by          
+<span style="color:black;font-weight: bold;">Cat Stevens</span>
+</div>
+</div>
+
+<canvas id="c"  width="900px" height="600px" style="margin: 250px 0 0 280px;"></canvas>
+
+<button class="accordion" style="margin-left: 410px; margin-top: 5px;">Where Do The Children Play</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Cat Stevens Where Do The Children Play.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+Well I think it's fine, building jumbo planes.
+Or taking a ride on a cosmic train.
+Switch on summer from a slot machine.
+Get what you want to if you want, 'cause you can get anything.
+
+I know we've come a long way,
+We're changing day to day,
+But tell me, where do the children play?
+
+Well you roll on roads over fresh green grass.
+For your lorryloads pumping petrol gas.
+And you make them long, and you make them tough.
+But they just go on and on, and it seems you can't get off.
+
+Oh, I know we've come a long way,
+We're changing day to day,
+But tell me, where do the children play?
+
+When you crack the sky, scrapers fill the air.
+Will you keep on building higher
+'til there's no more room up there?
+Will you make us laugh, will you make us cry?
+Will you tell us when to live, will you tell us when to die?
+
+I know we've come a long way,
+We're changing day to day,
+But tell me, where do the children play?
+
+
+</pre>
+</div>
+
+<button class="accordion">Hard-Headed Woman</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Cat Stevens Hard Headed Woman.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+I'm looking for a hard headed woman,
+One who will take me for myself,
+And if I find my hard headed woman,
+I will need nobody else, no, no.
+
+I'm looking for a hard headed woman,
+One who will make me do my best,
+And if I find my hard headed woman
+I know the rest of my life will be blessed -- yes, yes, yes.
+
+I know a lot of fancy dancers,
+people who can glide you on a floor,
+They move so smooth but have no answers.
+When you ask "Why'd you come here for?"
+"I don't know" "Why?"
+
+I know many fine feathered friends
+but their friendliness depends on how you do.
+They know many sure fired ways
+to find out the one who pays
+and how you do.
+
+I'm looking for a hard headed woman,
+One who will make me feel so good,
+And if I find my hard headed woman,
+I know my life will be as it should -- yes, yes, yes.
+
+I'm looking for a hard headed woman,
+One who will make me do my best,
+And if I find my hard headed woman...
+  </pre>
+</div>
+
+<button class="accordion">Wild World</button>
+<div class="panel"><audio controls>
+  <source src="Songs/Cat Stevens Wild World.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+Now that I've lost everything to you
+You say you wanna start something new
+And it's breakin' my heart you're leavin'
+Baby, I'm grievin'
+But if you wanna leave, take good care
+I hope you have a lot of nice things to wear
+But then a lot of nice things turn bad out there
+
+[Chorus:]
+Oh, baby, baby, it's a wild world
+It's hard to get by just upon a smile
+Oh, baby, baby, it's a wild world
+I'll always remember you like a child, girl
+
+You know I've seen a lot of what the world can do
+And it's breakin' my heart in two
+Because I never wanna see you a sad girl
+Don't be a bad girl
+But if you wanna leave, take good care
+I hope you make a lot of nice friends out there
+But just remember there's a lot of bad and beware
+
+[Chorus]
+
+Baby, I love you
+But if you wanna leave, take good care
+I hope you make a lot of nice friends out there
+But just remember there's a lot of bad and beware
+
+[Chorus]
+</pre>
+</div>
+
+<button class="accordion">Sad Lisa</button>
+<div class="panel">
+  <pre>
+She hangs her head and cries on my shirt.
+She must be hurt very badly.
+Tell me what's making you sad, Li?
+Open your door, don't hide in the dark.
+You're lost in the dark, you can trust me.
+'Cause you know that's how it must be.
+
+Lisa Lisa, sad Lisa Lisa.
+
+Her eyes like windows, trickle in rain
+Upon the pain getting deeper.
+Though my love wants to relieve her.
+She walks alone from wall to wall.
+Lost in her hall, she can't hear me.
+Though I know she likes to be near me.
+
+Lisa Lisa, sad Lisa Lisa.
+
+She sits in a corner by the door.
+There must be more I can tell her.
+If she really wants me to help her.
+I'll do what I can to show her the way.
+And maybe one day I will free her.
+Though I know no one can see her.
+
+Lisa Lisa, sad Lisa Lisa.
+
+  </pre>
+</div>
+
+<button class="accordion">Miles From Nowhere</button>
+<div class="panel">
+  <pre>
+Miles from nowhere
+I guess I'll take my time
+Oh yeah, to reach there
+
+Look up at the mountain
+I have to climb
+Oh yeah, to reach there.
+
+Lord my body has been a good friend
+But I won't need it when I reach the end
+
+Miles from nowhere
+Guess I'll take my time
+Oh yeah, to reach there
+
+I creep through the valleys
+And I grope through the woods
+'cause I know when I find it my honey
+It's gonna make me feel good
+
+I love everything
+So don't it make you feel sad
+'cause I'll drink to you, my baby
+I'll think to that, I'll think to that.
+
+Miles from nowhere
+Not a soul in sight
+Oh yeah, but it's alright
+
+I have my freedom
+I can make my own rules
+Oh yeah, the ones that I choose
+
+Lord my body has been a good friend
+But I won't need it when I reach the end
+
+Miles from nowhere
+I Guess I'll take my time
+Oh yeah, to reach there.
+
+  </pre>
+</div>
+
+<button class="accordion">But I Might Die Tonight</button>
+<div class="panel">
+  <pre>
+I don't want to work away
+Doing just what they all say
+Work hard boy and you'll find
+One day you'll have a job like mine
+
+'Cause I know for sure
+Nobody should be that poor
+To say yes or sink low
+Because you happen to say so, say so, you say so
+
+I don't want to work away
+Doing just what they all say
+Work hard boy and you'll find
+One day you'll have a job like mine, job like mine, a job like mine
+
+Be wise, look ahead
+Use your eyes he said
+Be straight, think right
+But I might die tonight!
+
+  </pre>
+</div>
+
+<button class="accordion">Longer Boats</button>
+<div class="panel">
+  <pre>
+[Chorus:]
+Longer boats are coming to win us
+They're coming to win us, they're coming to win us
+Longer boats are coming to win us
+Hold on to the shore, they'll be taking the key from the door.
+
+I don't want no god on my lawn
+Just a flower I can help along
+'Cause the soul of no body knows
+how a flower grows... Oh how a flower grows.
+
+[Chorus]
+
+Mary dropped her pants by the sand
+And let a parson come and take her hand
+But the soul of no body knows
+Where the parson goes, where does the parson go?
+
+[Chorus]
+
+[Addition verse performed in live version of this song.]
+
+Raise your mind up and look around
+You can see them, yes they're looking down
+From a lonely asteroid, in a vacant void.
+Dyin', but not destroyed.
+
+
+  </pre>
+</div>
+
+<button class="accordion">Into White</button>
+<div class="panel">
+  <pre>
+
+I built my house from barley rice
+Green pepper walls and water ice
+Tables of paper wood, windows of light
+And everything emptying into white.
+
+A simple garden, with acres of sky
+A Brown-haired dogmouse
+If one dropped by
+Yellow Delanie would sleep well at night
+With everything emptying into white.
+
+A sad Blue eyed drummer rehearses outside
+A Black spider dancing on top of his eye
+Red legged chicken stands ready to strike
+And everything emptying into white.
+
+I built my house from barley rice
+Green pepper walls and water ice
+And everything emptying into white
+
+
+  </pre>
+</div>
+
+
+<script type="text/javascript">
+	
+	var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+    }
+}
+</script>
+
+
+<script>
+// merre 'modal'-in
+var modal = document.getElementById('id01');
+
+// Kur useri klikon jasht 'modal'-it te mbyllet
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<script>
+// Grab the Canvas and Drawing Context
+var canvas = document.getElementById('c');
+var ctx = canvas.getContext('2d');
+
+
+
+// Create an image element
+var img = document.createElement('IMG');
+
+// When the image is loaded, draw it
+img.onload = function () {
+
+    // Save the state, so we can undo the clipping
+    ctx.save();
+    ctx.arc(450,300,380,0,2*Math.PI);      
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(450,300,380,0,2*Math.PI, false);
+    ctx.fill();
+    // Clip to the current path
+    ctx.clip();
+    
+    
+    ctx.drawImage(img, 0, 0);
+    
+    // Undo the clipping
+    ctx.restore();
+}
+
+// Specify the src to load the image
+img.src = "Images/catstevens.jpg";
+</script>
+
+	
+</body>
+
+</html>

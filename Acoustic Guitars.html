@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Products - Acoustic Guitars</title>
+	<link rel="stylesheet" href="productsstyle.css"/>
+	
+	<style>
+body {
+	background-color: white;
+}
+
+div.img {
+
+    margin: 80px 0 0 80px;
+    /*border: 1px solid #ccc;*/
+    float: left;
+    width: 100px;
+ }
+
+div.img:hover {
+    border: 1px solid #777;
+}
+
+div.img img {
+    width: 100%;
+    height: 300px;
+}
+
+div.desc {
+    /*padding: 15px;*/
+    text-align: center;
+	  font-weight: bold;
+    width: 80%;
+}
+	</style>
+
+
+</head>
+<body>
+
+	<!-- Header-i (logoja, login dhe search box) -->
+	<h1 id="header"><a href="index.html">Music</a><span>Book</span> 
+
+	<span><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-right: 200px;" target="buton1">Login</button> <input type="text" name="search" placeholder="      Search.." target="searchbox"> </span></h1>
+	
+
+<!-- Login Modal -->
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="action_page.php">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close login">&times;</span>
+      
+    </div>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username"
+      target="login" name="uname" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" target="login" name="psw" required>
+        
+      <button type="submit" target="buton2">Login</button>
+      <input type="checkbox" checked="checked"> Remember me
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <span class="psw" style="padding-right:50px; ">Forgotten <a href="index.html#contact">password?</a></span>
+    </div>
+  </form>
+</div>
+
+
+
+<!-- Modal per navigation menu -->
+<div id="id02" class="modal1">
+  <div class="">
+    <div class="modal1-content">
+      <span onclick="document.getElementById('id02').style.display='none'" 
+      style="margin: 20px;cursor:pointer;color:white;">&times;</span>
+     <ul>
+
+      <li><a href="Piano.html">Piano</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="id03" class="modal1">
+  <div>
+    <div class="modal1-content" style="background-image:url(Images/images2.jpg);background-size: 170px 128px;">
+      <span onclick="document.getElementById('id03').style.display='none'" 
+      style="margin: 20px;cursor:pointer; color:white;">&times;</span>
+     <ul>
+      <li><a href="Electric Guitars.html">Electric</a></li>
+      <li><a href="Acoustic Guitars.html">Acoustic</a></li>
+      <li><a href="Bass Guitars.html">Bass</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+	<!-- Navigation Lista -->
+	<nav class="test">
+		<ul class="lista">
+    <li><table cellpadding="0px" cellspacing="0px" style="margin: 0;padding:0;" id="navBar">
+    <tr>
+        <td>
+            <a class="selected" href="index.html" style="margin-left: 10px;">Home</a>
+        </td>
+        
+    </tr>
+</table></li>
+			<li><a href="#">Products</a>
+				<ul id="submenu">
+					<li><a href="#" onclick="document.getElementById('id02').style.display='block'"> Piano </a>
+						</li>
+					<li><a href="##" onclick="document.getElementById('id03').style.display='block'"> Guitar </a>
+					</li>
+					
+				</ul>
+			</li>
+			<li><span><br></span><a href="artist.html">Artists</a></li>
+			<li><a href="https://www.ultimate-guitar.com/" target="_blank">Chords</a></li>
+			<li><a href="index.html#contact">Contact</a></li>
+		</ul>
+	</nav>
+
+
+
+
+<table>
+	<tr>
+<td>
+<div class="img" style="margin-left: 380px;">
+	<a target="_blank" href="Products/Acoustic Guitars/ALKALINE TRIO MALIBU™.html">
+    <img src="Products/Acoustic Guitars/images/acostic77.jpg" alt="ALKALINE TRIO MALIBU" width="10" height="200">
+  </a>
+  <div class="desc">ALKALINE TRIO MALIBU</div>
+</div>
+</td>
+
+<td>
+<div class="img">
+  <a target="_blank" href="Products/Acoustic Guitars/Bob Dylan SJ-200 Player's Edition.html">
+    <img src="Products/Acoustic Guitars/images/acostic44.jpg" alt="Ibanez GIO" width="300" height="200">
+  </a>
+  <div class="desc">Bob Dylan SJ-200 Player's Edition</div>
+</div>
+</td>
+
+
+<td>
+<div class="img">
+  <a target="_blank" href="Products/Acoustic Guitars/CD-60CE ALL MAHOGANY.html">
+    <img src="Products/Acoustic Guitars/images/acostic66.jpg" alt="CD-60CE ALL MAHOGANY" width="800" height="200">
+  </a>
+  <div class="desc">CD-60CE ALL MAHOGANY</div>
+</div>
+</td>
+
+<td>
+<div class="img">
+  <a target="_blank" href="Products/Acoustic Guitars/Hummingbird.html">
+    <img src="Products/Acoustic Guitars/images/acustic11.jpg" alt="Hummingbird" width="300" height="200">
+  </a>
+  <div class="desc">Hummingbird</div>
+	</div>
+	</td>
+
+</tr>
+<tr>
+	<td>
+	<div class="img" style="margin-left: 380px;">
+  <a target="_blank" href="Acoustic Guitars/J-45 Progressive.html">
+    <img src="Products/Acoustic Guitars/images/acostic22.jpg" alt="J-45 Progressive" width="300" height="200">
+  </a>
+  <div class="desc">J-45 Progressive</div>
+	</div>
+	</td>
+
+
+<td>
+<div class="img">
+  <a  target="_blank" href="Products/Acoustic Guitars/LG-2 American Eagle.html">
+    <img src="Products/Acoustic Guitars/images/acostic33.jpg" alt="LG-2 American Eagle" width="300" height="200">
+  </a>
+  <div class="desc">LG-2 American Eagle</div>
+	</div>
+	</td>
+
+	<td>
+<div class="img">
+  <a  target="_blank" href="Acoustic Guitars/PM-1 Standard Dreadnought.html">
+    <img src="Products/Acoustic Guitars/images/acostic55.jpg" alt="PM-1 Standard Dreadnought" width="300" height="200">
+  </a>
+  <div class="desc">PM-1 Standard Dreadnought</div>
+	</div>
+	</td>
+
+	<td>
+<div class="img">
+  <a target="_blank" href="Products/Acoustic Guitars/STANDARD STRATACOUSTIC™.html">
+    <img src="Products/Acoustic Guitars/Images/acostic88.jpg" alt="STANDARD STRATACOUSTIC" width="300" height="200">
+  </a>
+  <div class="desc">STANDARD STRATACOUSTIC</div>
+	</div>
+	</td>
+</tr>
+
+		<!-- Google Maps -->
+		<!-- <div id="map"></div>
+    <script>
+      function initMap() {
+        var uluru = {lat: 42.6629, lng: 21.1655};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: {lat:42.6026, lng:20.9030}
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map,
+          zoom: 15,
+
+        });
+      }
+
+
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfIrHCwKjMfSGl69AzYrayrtJbtQH-pIU&callback=initMap">
+    </script>
+ -->
+
+
+ 	     
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+</script>
+</body>
+
+</html>

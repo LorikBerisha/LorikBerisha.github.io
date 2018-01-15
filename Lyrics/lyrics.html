@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="indexstyle.css"/>
+	
+<style>
+	/* Style the buttons that are used to open and close the accordion panel */
+button.accordion {
+    background-color: black;
+    background-color: rgba(0,0,0,0.92);
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 50%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin-left: 410px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+button.accordion.active, button.accordion:hover {
+    background-color: #151313;
+    width: 53.65%;
+
+}
+
+/* Style the accordion panel. Note: hidden by default */
+div.panel {
+    padding: 0 18px;
+    width: 50.65%;
+    margin-left:410px;
+    color:black;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-weight: 800;
+    background-color: #D5D5D5;
+    background-color: rgba(225,225,225,0.5);
+    display: none;
+}
+
+/* The "show" class is added to the accordion panel when the user clicks on one of the buttons. This will show the panel content */
+div.panel.show {
+    display: block;
+}
+
+	div.svg-wrapper {
+  height: 100%;
+  max-height: 60px;
+  margin-top: -150px;
+  margin-left: 550px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 320px;
+}
+
+.shape {
+  fill: transparent;
+  stroke-dasharray: 205 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+  /*stroke: #1cb779;*/
+  stroke: #19f6e8;
+}
+
+.text {
+  height: 100%;
+  max-height: 60px;
+  margin-left: 10px;
+  text-align: center;
+  color: #fff;
+  /*font-family: 'Roboto Condensed';*/
+  font-size: 22px;
+  letter-spacing: 8px;
+  line-height: 26px;
+  position: relative;
+  top: -80px;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 8px;
+  }
+  100% {
+    stroke-dasharray: 760;
+    stroke-dashoffset: 0;
+    stroke-width: 2px;
+  }
+}
+
+.svg-wrapper:hover .shape {
+  -webkit-animation: 0.5s draw linear forwards;
+  animation: 0.5s draw linear forwards;
+}
+
+	</style>	
+
+</head>
+<body>
+
+	<!-- Header-i (logoja dhe search box) -->
+  <h1 id="header"><a href="../index.html">Music</a><span>Book</span>
+   
+
+
+  <span><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-right: 200px;" target="buton1">Login</button> <input type="text" name="search" placeholder="      Search.." target="searchbox"> </span></h1>
+  
+
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close login">&times;</span>
+      
+    </div>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username"
+      target="login" name="uname" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" target="login" name="psw" required>
+        
+      <button type="submit" target="buton2">Login</button>
+      <input type="checkbox" checked="checked"> Remember me
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <span class="psw" style="padding-right:50px; ">Forgotten <a href="../index.html#contact">password?</a></span>
+    </div>
+  </form>
+</div>
+
+  
+
+  <!-- Modal per navigation menu -->
+<div id="id02" class="modal1">
+  <div class="">
+    <div class="modal1-content">
+      <span onclick="document.getElementById('id02').style.display='none'" 
+      style="margin: 20px;cursor:pointer;color:white;">&times;</span>
+     <ul>
+
+      <li><a href="../Piano.html">Piano</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="id03" class="modal1">
+  <div>
+    <div class="modal1-content" style="background-image:url(images2.jpg);background-size: 170px 128px;">
+      <span onclick="document.getElementById('id03').style.display='none'" 
+      style="margin: 20px;cursor:pointer; color:white;">&times;</span>
+     <ul>
+      <li><a href="../Electric Guitars.html">Electric</a></li>
+      <li><a href="../Acoustic Guitars.html">Acoustic</a></li>
+      <li><a href="../Bass Guitars.html">Bass</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Navigation Lista -->
+  <nav class="navLista">
+    <ul class="lista">
+    <li> <table cellpadding="0px" cellspacing="0px" style="margin: 0;padding:0;" id="navBar">
+    <tr>
+        <td>
+            <a class="selected" href="../index.html" style="margin-left: 10px;">Home</a>
+        </td>
+        
+    </tr>
+</table></li>
+      <li><a style="margin-left: 11px;">Products</a>
+        <ul id="submenu">
+          <li><a href="#" onclick="document.getElementById('id02').style.display='block'"> Piano </a>
+            </li>
+          <li><a href="##" onclick="document.getElementById('id03').style.display='block'"> Guitar </a>
+          </li>
+          
+        </ul>
+      </li>
+      <li><span><br></span><a href="../artist.html">Artists</a></li>
+      <li><a href="https://www.ultimate-guitar.com/" target="_blank">Chords</a>
+      </li>
+      <li><a href="#contact">Contact</a></li>
+
+
+    </ul>
+  </nav>
+
+
+<div class="svg-wrapper">
+  <svg height="80" width="330" >
+    <rect class="shape" height="80" width="330" />
+  </svg>
+
+<div class="text" style="border: 1px solid black;color:white;font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;">Hardwired by          
+<span style="color:black;font-weight: bold;">Metallica</span>
+</div>
+</div>
+
+<canvas id="c"  width="900px" height="600px" style="margin: 250px 0 0 280px;"></canvas>
+
+
+
+<button class="accordion" style="margin-left: 410px; margin-top: 5px;">Hardwired</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Metallica Hardwired.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+In the name of desperation
+In the name of wretched pain
+In the name of all creation
+Gone insane
+
+We're so fucked
+Shit outta luck
+Hardwired to self-destruct
+
+On the way to paranoia
+On the crooked borderline
+On the way to great destroyer
+Doom design
+
+We're so fucked
+Shit outta luck
+Hardwired to self-destruct
+
+Once upon a planet burning
+Once upon a flame
+Once upon a fear returning
+All in vain
+
+Do you feel that hope is fading?
+Do you comprehend?
+Do you feel it terminating?
+In the end
+
+We're so fucked
+Shit outta luck
+Hardwired to self-destruct
+Hardwired to self-destruct
+
+Self-destruct
+Self-destruct
+Self-destruct
+</pre>
+</div>
+
+<button class="accordion">Atlas, Rise!</button>
+<div class="panel">
+  <audio controls>
+  <source src="Songs/Metallica Atlas Rise.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+<pre>
+Bitterness and burden
+Curses rest on thee
+Solitaire and sorrow
+All Eternity
+
+Save the Earth and claim perfection
+Deem the mass and blame rejection
+Hold the pose, reign perception
+Grudges break your back
+
+All you bear
+All you carry
+All you bear
+Place it right on, right on me
+
+Die as you suffer in vain
+Own all the grief and the pain
+Die as you hold up the skies
+Atlas, Rise!
+
+How does it feel on your own?
+Bound by the world all alone
+Crushed under heavy skies
+Atlas, Rise!
+
+Crucify and witness
+Circling the sun
+Bastardize and ruin
+What have you become?
+
+Blame the world, and blame your maker
+Wish ‘em to the undertaker
+Crown yourself the other savior
+So you carry on
+
+All you bear
+All you carry
+All you bear
+Place it right on, right on me
+
+Die as you suffer in vain
+Own all the grief and the pain
+Die as you hold up the skies
+Atlas, Rise!
+
+How does it feel on your own?
+Bound by the world all alone
+Crushed under heavy skies
+Crushed under heavy skies
+Atlas, Rise!
+
+Masquerade as maker
+Heavy is the crown
+Beaten down and broken
+Drama wears you down
+
+Overload, the martyr stumbles
+Hit the ground and heaven crumbles
+All alone, the fear shall humble
+Swallow all your pride
+
+All you bear
+All you carry
+All you bear
+Place it right on, right on me
+
+Die as you suffer in vain
+Own all the grief and the pain
+Die as you hold up the skies
+Atlas, Rise!
+
+How does it feel on your own?
+Bound by the world all alone
+Crushed under heavy skies
+Crushed under heavy skies
+Atlas, Rise!
+  </pre>
+</div>
+
+<button class="accordion">Now That We're Dead</button>
+<div class="panel">
+ <audio controls>
+  <source src="Songs/Metallica Now That We're Dead.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+ <pre>
+When darkness falls
+May it be
+That we should see the light
+
+When reaper calls
+May it be
+That we walk straight and right
+
+When doubt returns
+May it be
+That faith shall permeate our scars
+
+When we're seduced
+Then may it be
+That we not deviate our cause
+
+All sinners, a future
+All saints, a past
+Beginning, the ending
+Return to ash
+
+Now that we're dead, my dear
+We can be together
+Now that we're dead, my dear
+We can live forever
+
+When all is pain
+May it be
+It's all we've ever known
+
+When flame consumes
+May it be
+It warms our dying bones
+
+When loss has won
+May it be
+It's you I'm madly fighting for
+
+When Kingdom comes
+May it be
+We walk right through that open door
+
+All sinners, a future
+All saints, a past
+Beginning, the ending
+Return to ash
+
+Now that we're dead, my dear
+We can be together
+Now that we're dead, my dear
+We can live forever
+
+All sinners, a future
+All saints, a past
+Beginning, the ending
+Return to ash
+
+Now that we're dead, my dear
+We can be together
+Now that we're dead, my dear
+We can live, we can live forever
+
+Return to ashes, shed this skin
+Beyond the black, we rise again
+We shall live forever
+
+  </pre>
+</div>
+
+<button class="accordion">Moth Into Flame</button>
+<div class="panel">
+  <pre>
+Blacked out
+Pop queen, amphetamine
+The screams crashed into silence
+
+Tapped out
+Doused in the gasoline
+The high times going timeless
+
+Decadence
+Death of the innocence
+The pathway starts to spiral
+
+Infamy
+All for publicity
+Destruction going viral
+
+Light it up
+Ah, light it up
+Another hit erases all the pain
+Bulletproof
+Ah, kill the truth
+You're falling, but you think you're flying high
+High again
+
+Sold your soul
+Built a higher wall
+Yesterday
+Now you're thrown away
+
+Same rise and fall
+Who cares at all?
+Seduced by fame
+A moth into the flame
+
+Twisted
+Backstabbing wicked
+The delusion absolution
+
+Perjurer
+Fame is the murderer
+Seduce you into ruin
+
+Light it up
+Ah, light it up
+Another hit erases all the pain
+Bulletproof
+Ah, tell the truth
+You're falling, but you think you're flying high
+High again
+
+Sold your soul
+Built the higher wall
+Yesterday
+Now you're thrown away
+
+Same rise and fall
+Who cares at all?
+Seduced by fame
+A moth into the flame
+Burn
+
+Guarantee your name, you go and kill yourself
+The vultures feast around you still
+Overdose on shame and insecurity
+If one won't do that fistful will
+
+Death scene
+Black hearse the limousine
+A grave filled with seduction
+
+Vaccine
+Fame does the murdering
+She builds up for destruction
+
+So light it up
+Ah, light it up
+Another hit erases all the pain
+Bulletproof
+Ah, no excuse
+You're falling, but you think you're flying high
+High again
+
+Sold your soul
+Built the higher wall
+Yesterday
+Now you're thrown away
+
+Same rise and fall
+Who cares at all?
+Seduced by fame
+A moth into the flame
+
+Addicted to the
+Fame
+  </pre>
+</div>
+
+<button class="accordion">Dream No More</button>
+<div class="panel">
+  <pre>
+He sleeps under black seas waiting
+Lies dreaming in death
+He sleeps under cosmos shaking
+Stars granting his breath
+
+He wakes as the world dies screaming
+All horrors arrive
+He wakes giving earth its bleeding
+Pure madness alive
+
+And He haunts you
+And He binds your soul
+And He loathes you
+And reclaims it all
+
+You turn to stone
+Can't look away
+You turn to stone
+Madness, they say
+
+Cthulhu, awaken
+
+He sways in abyss returning
+Inhaling black skies
+He shakes with a torture burning
+All lost in his eyes
+
+And He haunts you
+And He binds your soul
+And He loathes you
+And reclaims it all
+
+You turn to stone
+Can't look away
+You turn to stone
+Madness, they say
+
+Cthulhu, awaken
+
+You turn to stone
+Can't look away
+You turn to stone
+Madness, they say
+
+Sanity taken
+Seething damnation
+Cthulhu, awaken
+(Wake) Winged salvation
+Death by creation
+Cthulhu, awaken
+(Wake) Dreaming no more
+
+Cthulhu, awaken
+(Wake) Dreaming no more
+Cthulhu, awaken
+(Wake) Dreaming no more
+  </pre>
+</div>
+
+<button class="accordion">Halo On Fire</button>
+<div class="panel">
+  <pre>
+Obey
+Obey
+Come won't you stay
+Sincere
+Sincere
+All ends in tears
+Endure
+Endure
+Thoughts most impure
+Concede
+Concede
+But both shall we bleed
+
+Oh, Halo on fire
+The midnight knows it well
+Fast, is desire
+Creates another hell
+I fear to turn on the light
+For the darkness won't go away
+Fast, is desire
+Turn out the light
+Halo on fire
+
+Allure
+Allure
+Sweetness obscure
+Abide
+Abide
+Secrets inside
+Deprive
+Deprive
+To feel so alive
+Obey
+Obey
+Just don't turn away
+
+Oh, Halo on fire
+The midnight knows it well
+Fast, is desire
+Creates another hell
+I fear to turn on the light
+For the darkness won't go away
+Fast, is desire
+Turn out the light
+Halo on fire
+
+Prayers cannot get through
+Return to sender
+Unto which of you
+Shall I surrender
+Twisting in disguise
+Dark resurrection
+Lighting up the skies
+Wicked perfection
+
+Too dark to sleep
+Can't slip away
+Open or close
+My eyes betray
+Beyond the black
+Come won't you stay
+
+Hello darkness
+Say goodbye
+Hello darkness
+Say goodbye
+Hello darkness
+Say goodbye
+  </pre>
+</div>
+
+<button class="accordion">Confusion</button>
+<div class="panel">
+  <pre>
+Wake to face the day
+Grab this life and walk away
+War is never done
+Rub the patch and battle on
+Make it go away
+Please make it go away
+
+Confusion
+All sanity is now beyond me
+Delusion
+All sanity is but a memory
+My life…
+The war that never ends
+
+Leave the battlefield
+Yet its horrors never heal
+Coming home from war
+Pieces don't fit anymore
+Make it go away
+Please make it go away
+
+Confusion
+All sanity is now beyond me
+Delusion
+All sanity is but a memory
+My life…
+The war that never ends
+
+Father please come home
+Shell shocked all I've known
+Father please come home
+
+Label him a deadwood soldier now
+Cast away and left to roam
+Rapid is the road to sacrifice
+Just takes longer to come home
+
+Confusion
+All sanity is now beyond me
+Delusion
+Crossfire ricochets inside me
+Trapped in a memory forever
+My life…
+The war that never ends
+  </pre>
+</div>
+
+<button class="accordion">ManUNkind</button>
+<div class="panel">
+  <pre>
+Chaos,
+Awaiting for Adams return
+Madness,
+Smiling as we watch it burn
+
+I've become
+
+Hostage to my mind
+Left myself behind
+Blind lead blind
+Quest to find
+Faith in man(un)kind
+
+Garden,
+Of Eden, so simple and pure
+Greedy,
+Needy, must we have more
+
+I've become
+
+Hostage to my mind
+Left myself behind
+Blind lead blind
+Quest to find
+Faith in man(un)kind
+
+Fascinate
+Partner of insanity
+Decimate
+Lessons we never learn
+
+Dominate
+Killing of the innocence
+Deviate
+And to dust you return
+Yeah
+
+Seized by the day
+Frozen captive by the night
+Seized by the day
+All the dark days of your life
+
+Seized by the day
+Frozen captive by the night
+Led so astray
+All the dark days of your life
+
+Zero,
+Reset, creation of man
+Foolish,
+Ready, to witness again?
+
+I've become
+
+Hostage to my mind
+Left myself behind
+Blind lead blind
+Quest to find
+Faith in man(un)kind
+
+Faith in man(un)kind
+Oh, faith in man(un)kind
+Faith in man(un)kind
+Oh, faith in man(un)kind
+  </pre>
+</div>
+
+<button class="accordion">Here Comes Revenge</button>
+<div class="panel">
+  <pre>
+Little grave I'm grieving, I will mend you
+Sweet revenge I'm dreaming, I will end you
+
+I've been here since dawn of time
+Countless hatreds built my shrine
+I was born in anger's flame
+He was Abel, I was Cain
+I am here
+I'm hell unbound
+Burn your kingdom to the ground
+To the ground
+
+Here comes revenge, just for you
+Revenge, you can't undo
+Revenge, is killing me
+Revenge, set me free
+Eye for an eye, tooth for a tooth
+A life for a life, it's my burden of proof
+Revenge, just for you
+Revenge
+You ask forgiveness, I give you sweet revenge
+
+I return this nightmare, I will find you
+Sleepless, cloaked in despair, I'm behind you
+
+Man has made me oh so strong
+Blurring lines of right and wrong
+Far too late for frail amends
+Now it's come to sweet revenge
+Desperate hands
+That lose control
+Have no mercy on your soul
+On your soul
+
+Here comes revenge, just for you
+Revenge, you can't undo
+Revenge, is killing me
+Revenge, just set me free
+Eye for an eye, tooth for a tooth
+A life for a life, it's my burden of proof
+Revenge, just for you
+Revenge
+You ask forgiveness, I give you sweet revenge
+
+Here comes revenge, just for you
+Revenge, you can't undo
+Revenge, is killing me
+Revenge, set me free
+Eye for an eye, tooth for a tooth
+A life for a life, it's my burden of proof
+Revenge, just for you
+Revenge
+You ask forgiveness, I give you sweet revenge
+
+Sweet revenge
+
+  </pre>
+</div>
+
+<button class="accordion">Am I Savage?</button>
+<div class="panel">
+  <pre>
+Ooooh,
+Run away, the past will bite again
+Ooooh,
+No matter where you dwell
+You,
+Here again, a captive of the howl
+You,
+Welcome back to hell
+
+Faithful, as the full moon is rising
+Beauty and the Beast are colliding
+
+Sharpened edge touch liquid flame
+Deepened seed soaks angers reign
+Arching back, shape-shift derange
+Father, how I watched you change
+
+Am I savage?
+Scratching at the door
+Am I savage?
+I don't recognize you anymore
+
+Ooooh,
+Tooth is fang, twisting under skin
+Ooooh,
+Foul tongue, black breath
+Change,
+Snap inside, the Beast about complete
+Change,
+Soon infects the rest
+
+Faithful, as the full moon is rising
+Beauty and the Beast are colliding
+
+Sharpened edge touch liquid flame
+Deepened seed soaks angers reign
+Arching back, shape-shift derange
+Father, how I watched you change
+
+Am I savage?
+Howling at the door
+Am I savage?
+I don't recognize you anymore
+Anymore
+
+
+Ooooh,
+Inheritance, the past has bit again
+Ooooh,
+The next heir of anarchy
+Feel,
+Stretching skin so far beyond belief
+I feel,
+The ever changing, you, in me
+
+Am I savage?
+Scratching at the door
+Am I savage?
+Howling evermore
+Am I savage?
+I don't recognize me anymore
+Anymore
+
+Anymore, ha ha ha
+Am I savage?
+  </pre>
+</div>
+
+<button class="accordion">Murder One</button>
+<div class="panel">
+  <pre>
+One crown
+Shines on through the sound
+One crown
+Born to lose
+One man
+Does not give a damn
+One man
+No excuse
+
+Aces wild
+Aces high
+All the aces
+Aces 'til you die
+
+White lines fading
+The iron horse rolls on and on and on
+
+Hear your thunder
+Still feeding back
+Still hear your thunder
+The man in black
+Born to lose
+Living to win
+
+One fist
+Hammers through the mist
+One fist
+Steady on
+One heart
+Die hard from the start
+One heart
+Beats its song
+
+Murder all
+Murder one
+Gimme murder
+Second class to none
+
+Headlights fading
+The iron horse rolls on and on and on
+
+Hear your thunder
+Still feeding back
+Still hear your thunder
+The man in black
+Born to lose
+Living to win
+
+Hear your thunder
+Still feeding back
+Still hear your thunder
+The man in black
+Born to lose
+No excuse
+
+Till the end
+Been living to win
+Been living to win
+  </pre>
+</div>
+
+<button class="accordion">Spit Out The Bone</button>
+<div class="panel">
+  <pre>
+Come unto me and you will feel perfection
+Come unto me and dedicate
+Come unto me, you'll never feel rejection
+Come unto me and terminate
+Remove your heart, it's only good for bleeding
+Bleeding through your fragile skin
+Remove your thought cause it's only for deceiving
+Deceiving thoughts destroy within
+Disappear like man was never here
+
+Long live machine
+The future supreme
+Man overthrown
+Spit out the bone
+
+Plug into me I guarantee devotion
+Plug into me and dedicate
+Plug into me and I'll save you from emotion
+Plug into me and terminate
+Accelerate, Utopian solution
+Finally cure the Earth of man
+Exterminate, speeding up the evolution
+Set on course a master plan
+Reinvent the earth inhabitant
+
+Long live machine
+The future supreme
+Man overthrown
+Spit out the bone
+
+The flesh betrays the flesh
+Your man has had his time
+We lay him down to rest
+Machined the new divine
+
+Stop breathing
+And dedicate to me
+Stop dreaming
+And terminate for me
+All meaning
+You dedicate to me
+All feelings
+You terminate for me
+
+Disappear like man was never here
+
+Long live machine
+Our future supreme
+Your man overthrown
+Spit out the bone, yeah
+  </pre>
+</div>
+
+
+
+
+<script type="text/javascript">
+	
+	var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+    }
+}
+</script>
+
+
+<script>
+// merre 'modal'-in
+var modal = document.getElementById('id01');
+
+// Kur useri klikon jasht 'modal'-it te mbyllet
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<script type="text/javascript">
+	
+	var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+    }
+}
+</script>
+
+
+<script>
+// merre 'modal'-in
+var modal = document.getElementById('id01');
+
+// Kur useri klikon jasht 'modal'-it te mbyllet
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<script>
+// Grab the Canvas and Drawing Context
+var canvas = document.getElementById('c');
+var ctx = canvas.getContext('2d');
+
+
+
+// Create an image element
+var img = document.createElement('IMG');
+
+// When the image is loaded, draw it
+img.onload = function () {
+
+    // Save the state, so we can undo the clipping
+    ctx.save();
+    ctx.arc(450,300,380,0,2*Math.PI);      
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(450,300,380,0,2*Math.PI, false);
+    ctx.fill();
+    // Clip to the current path
+    ctx.clip();
+    
+    
+    ctx.drawImage(img, 0, 0);
+    
+    // Undo the clipping
+    ctx.restore();
+}
+
+// Specify the src to load the image
+img.src = "Images/metallica.jpg";
+</script>
+
+	
+</body>
+
+</html>

@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="indexstyle.css"/>
+	
+	<style>
+	/* Style the buttons that are used to open and close the accordion panel */
+button.accordion {
+    background-color: black;
+    background-color: rgba(0,0,0,0.92);
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 50%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin-left: 410px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+button.accordion.active, button.accordion:hover {
+    background-color: #151313;
+    width: 53.65%;
+
+}
+
+/* Style the accordion panel. Note: hidden by default */
+div.panel {
+    padding: 0 18px;
+    width: 50.65%;
+    margin-left:410px;
+    color:black;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-weight: 800;
+    background-color: #D5D5D5;
+    background-color: rgba(225,225,225,0.5);
+    display: none;
+}
+
+/* The "show" class is added to the accordion panel when the user clicks on one of the buttons. This will show the panel content */
+div.panel.show {
+    display: block;
+}
+
+	div.svg-wrapper {
+  height: 100%;
+  max-height: 60px;
+  margin-top: -150px;
+  margin-left: 550px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 320px;
+}
+
+.shape {
+  fill: transparent;
+  stroke-dasharray: 205 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+  /*stroke: #1cb779;*/
+  stroke: #19f6e8;
+}
+
+.text {
+  height: 100%;
+  max-height: 60px;
+  margin-left: 10px;
+  text-align: center;
+  color: #fff;
+  /*font-family: 'Roboto Condensed';*/
+  font-size: 22px;
+  letter-spacing: 8px;
+  line-height: 20px;
+  position: relative;
+  top: -80px;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 8px;
+  }
+  100% {
+    stroke-dasharray: 760;
+    stroke-dashoffset: 0;
+    stroke-width: 2px;
+  }
+}
+
+.svg-wrapper:hover .shape {
+  -webkit-animation: 0.5s draw linear forwards;
+  animation: 0.5s draw linear forwards;
+}
+</style>
+	
+
+
+</head>
+
+<body>
+
+	<!-- Header-i (logoja dhe search box) -->
+  <h1 id="header"><a href="../index.html">Music</a><span>Book</span> </a>
+   
+   
+   
+   
+   <span><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-right: 200px;" 
+  target="buton1">Login</button> <input type="text" name="search" placeholder="      Search.." target="searchbox"> </span></h1>
+  
+
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close login">&times;</span>
+      
+    </div>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username"
+      target="login" name="uname" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" target="login" name="psw" required>
+        
+      <button type="submit" target="buton2">Login</button>
+      <input type="checkbox" checked="checked"> Remember me
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <span class="psw" style="padding-right:50px; ">Forgotten <a href="../index.html#contact">password?</a></span>
+    </div>
+  </form>
+</div>
+
+  
+
+  <!-- Modal per navigation menu -->
+<div id="id02" class="modal1">
+  <div class="">
+    <div class="modal1-content">
+      <span onclick="document.getElementById('id02').style.display='none'" 
+      style="margin: 20px;cursor:pointer;color:white;">&times;</span>
+     <ul>
+
+      <li><a href="../Piano.html">Piano</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="id03" class="modal1">
+  <div>
+    <div class="modal1-content" style="background-image:url(images2.jpg);background-size: 170px 128px;">
+      <span onclick="document.getElementById('id03').style.display='none'" 
+      style="margin: 20px;cursor:pointer; color:white;">&times;</span>
+     <ul>
+      <li><a href="../Electric Guitars.html">Electric</a></li>
+      <li><a href="../Acoustic Guitars.html">Acoustic</a></li>
+      <li><a href="../Bass Guitars.html">Bass</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Navigation Lista -->
+  <nav class="navLista">
+    <ul class="lista">
+    <li> <table cellpadding="0px" cellspacing="0px" style="margin: 0;padding:0;" id="navBar">
+    <tr>
+        <td>
+            <a class="selected" href="../index.html" style="margin-left: 10px;">Home</a>
+        </td>
+        
+    </tr>
+</table></li>
+      <li><a style="margin-left: 11px;">Products</a>
+        <ul id="submenu">
+          <li><a href="#" onclick="document.getElementById('id02').style.display='block'"> Piano </a>
+            </li>
+          <li><a href="##" onclick="document.getElementById('id03').style.display='block'"> Guitar </a>
+          </li>
+          
+        </ul>
+      </li>
+      <li><span><br></span><a href="../artist.html">Artists</a></li>
+      <li><a href="https://www.ultimate-guitar.com/" target="_blank">Chords</a>
+      </li>
+      <li><a href="#contact">Contact</a></li>
+
+
+    </ul>
+  </nav>
+  <div class="svg-wrapper">
+  <svg height="80" width="330" >
+    <rect class="shape" height="80" width="330" />
+  </svg>
+
+<div class="text" style="border: 1px solid black;color:white;font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;">I Am Sasha Fierce by          
+<span style="color:black;font-weight: bold;">Beyonce</span>
+</div>
+</div>
+
+<canvas id="c"  width="900px" height="600px" style="margin: 250px 0 0 280px;"></canvas>
+
+<button class="accordion" style="margin-left: 410px; margin-top: 5px;">If I Were A Boy</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Beyonce If I Were A Boy.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+[Verse]
+If I were a boy
+Even just for a day
+I’d roll outta bed in the morning
+And throw on what I wanted and go
+Drink beer with the guys
+And chase after girls
+I’d kick it with who I wanted
+And I’d never get confronted for it.
+'Cause they’d stick up for me.
+
+[Chorus]
+If I were a boy
+I think I could understand
+How it feels to love a girl
+I swear I’d be a better man.
+I’d listen to her
+'Cause I know how it hurts
+When you lose the one you wanted
+'Cause he’s taken you for granted
+And everything you had got destroyed
+
+[Verse]
+If I were a boy
+I would turn off my phone
+Tell everyone it’s broken
+So they’d think that I was sleepin’ alone
+I’d put myself first
+And make the rules as I go
+'Cause I know that she’d be faithful
+Waitin’ for me to come home (to come home)
+
+[Chorus]
+If I were a boy
+I think I could understand
+How it feels to love a girl
+I swear I’d be a better man.
+I’d listen to her
+'Cause I know how it hurts
+When you lose the one you wanted (wanted)
+'Cause he’s taken you for granted (granted)
+And everything you had got destroyed
+
+[Bridge]
+It’s a little too late for you to come back
+Say it's just a mistake
+Think I’d forgive you like that
+If you thought I would wait for you
+You thought wrong
+
+[Chorus 2]
+But you’re just a boy
+You don’t understand
+Yeah, you don’t understand, oh
+How it feels to love a girl someday
+You wish you were a better man
+You don’t listen to her
+You don’t care how it hurts
+Until you lose the one you wanted
+'Cause you’ve taken her for granted
+And everything you had got destroyed
+
+But you’re just a boy
+</pre>
+</div>
+
+<button class="accordion">Disappear</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Beyonce Disappear.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+If I begged and if I cried
+Would it change the sky tonight?
+Would it give me some light?
+Should I wait for you to call?
+Is there any hope at all?
+Are you drifting by...
+
+When I think about it
+I know that I was never there or even cared
+The more I think about it
+The less that I was able to share with you
+I try to reach for you, I can almost feel you
+You're nearly here
+And then you disappear
+(Disappear, disappear, disappear)
+You disappear
+(Disappear, disappear, disappear)
+
+And when I lie all by myself
+I see your face, I hear your voice
+My heart stays faithful
+And time has come and time has passed
+If it's good it's got to last
+It feels so right
+
+When I think about it
+I know that I was never there or even cared
+The more I think about it
+The less that I was able to share with you
+I try to reach for you, I can almost feel you
+You're nearly here
+And then you disappear
+(Disappear, disappear, disappear)
+You disappear
+(Disappear, disappear, disappear)
+You, you disappear
+
+I missed all the signs, one at a time...
+You were ready
+What did I know?
+Starting our lives...
+Now my love, I'm ready to show
+
+When I think about it
+I know that I was never there or even cared
+The more I think about it
+The less that I was able to share with you
+I try to reach for you, I can almost feel you
+You're nearly here
+And then you disappear
+You disappear, you disappear
+You disappear, disappear
+  </pre>
+</div>
+
+<button class="accordion">Broken-Hearted Girl</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Beyonce Broken Hearted Girl.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+You're everything I thought you never were
+And nothing like I thought you could have been
+But still you live inside of me,
+So tell me how is that?
+
+You're the only one I wish I could forget
+The only one I love to not forgive
+And though you break my heart,
+You're the only one
+
+And though there are times when I hate you
+'Cause I can't erase
+The times that you hurt me and put tears on my face
+And even now, while I hate you,
+It pains me to say
+I know I'll be there at the end of the day
+
+I don't wanna be without you, babe
+I don't want a broken heart
+Don't wanna take a breath without you, babe
+I don't wanna play that part
+I know that I love you, but let me just say
+I don't wanna love you in no kind of way, no no
+I don't want a broken heart
+I don't wanna play the broken-hearted girl
+No, no, no broken-hearted girl
+I'm no broken-hearted girl
+
+There's something that I feel I need to say
+But up til' now I've always been afraid
+That you would never come around
+And still I wanna put this out
+
+You say you've got the most respect for me
+But, sometimes I feel you're not deserving of me
+And still, you're in my heart
+But you're the only one
+
+And yes, there are times when I hate you,
+But I don't complain
+'Cause I've been afraid that you would walk away
+Oh, but now I don't hate you
+I'm happy to say
+That I will be there at the end of the day
+
+I don't wanna be without you, babe
+I don't want a broken heart
+Don't wanna take a breath without you, babe
+I don't wanna play that part
+I know that I love you, but let me just say
+I don't wanna love you in no kind of way, no no
+I don't want a broken heart
+I don't wanna play the broken-hearted girl
+No, no, no broken-hearted girl
+
+Now I'm at a place I thought I'd never be, ooh
+I'm living in a world that's all about you and me, yeah
+Ain't gotta be afraid, my broken heart is free
+To spread my wings and fly away, away with you..., yeah, yeah, yeah
+
+I don't wanna be without my baby
+I don't want a broken heart
+Don't wanna take a breath without my baby
+I don't wanna play that part
+I know that I love you, but let me just say
+I don't wanna love you in no kind of way, no no
+I don't want a broken heart
+I don't wanna play the broken-hearted girl
+No, no, no broken-hearted girl
+Broken-hearted girl
+No, no, no broken-hearted girl
+
+No broken-hearted girl
+  </pre>
+</div>
+
+<button class="accordion">Satellites</button>
+<div class="panel">
+  <pre>
+Satellites
+Flashing by.....
+It's a beautiful state were in
+But, how can we love in isolation?
+Think how happy we can be when we just try
+
+We're nothing like we seem
+Passionate words are never spoken
+You don't know how I bleed when I leave your side
+
+In your eyes, love's alive
+I've come untied 'cause we're flashing by
+Like satellites
+Satellites......
+
+Take all the rules away
+How can we live if we don't change?
+We're always on display...let's run and hide
+
+In our eyes, love's alive
+We've come untied 'cause we're flashing by
+Like satellites
+Satellites......
+
+If we don't communicate, we'll exist in our own space
+We have all the love we need
+While we're apart, I cannot breathe
+
+Satellites.....
+Flashing by.....
+Satellites.....
+  </pre>
+</div>
+
+<button class="accordion">That's Why You're Beautiful</button>
+<div class="panel">
+  <pre>
+Diamonds used to be coal
+Look young cause they got soul
+That's why they're beautiful
+And my heart used to be cold
+'Til your hands laid on my soul
+Baby, that's why you're beautiful
+
+I'm not wondering why....
+The sky's blue; that's not my business
+All I know is I....
+Look up and tell myself
+"Be patient, love...that could be us..."
+
+Lovers used to make love
+And die just to give us
+Their piece of the beautiful
+Remember when we made love?
+Love......
+Wasn't it beautiful?
+Don't ask me why
+The sky's blue; that's not my business
+All I know is I....
+Look up and tell myself
+"Be patient, love...that could be us..."
+
+Diamonds used to be coal
+Look young cause they got soul
+That's why they're beautiful
+And my heart used to be cold
+'Til your hands laid on my soul
+Baby, that's why you're beautiful
+Somebody's got to stay deep in love
+That could be us..
+That's why we're beautiful
+That's why you're beautiful
+Ooh
+Why, why
+That's why you're beautiful
+That's why you're beautiful
+That's why you're beautiful
+
+  </pre>
+</div>
+
+<button class="accordion">Diva</button>
+<div class="panel">
+  <pre>
+I'm a-a diva (hey), I'm a, I'm a-a diva (hey)
+I'm a, I'm a-a diva (hey), I'm a, I'm a-a diva
+I'm a, I'm a-a diva (hey), I'm a, I'm a a diva
+I'm a, I'm a a diva (hey), I'm a, I'm a a di...
+
+Na-na-na, diva is a female version of a hustla, of a hustla, of a, of a hustla...
+Na-na-na, diva is a female version of a hustla, of a hustla, of a, of a hustla...
+
+Stop the track, lemme state facts:
+I told you, gimme a minute and I'll be right back
+Fifty million round the world and they say that I couldn't get it;
+I done got so sick and filthy with Benjis, I can't spend it
+How you gon' be talking shit? You act like I just got up in it;
+Been the number one diva in this game for a minute!
+I know you read the paper - the one that they call a queen,
+Every radio round the world know me cause that's where I be (first!)
+
+I'm a-a diva (hey), I'm a, I'm a-a diva (hey)
+I'm a, I'm a-a diva (hey), I'm a, I'm a-a diva
+I'm a, I'm a-a diva (hey), I'm a, I'm a a diva
+I'm a, I'm a a diva (hey), I'm a, I'm a a di...
+
+Na-na-na, diva is a female version of a hustla, of a hustla, of a, of a hustla...
+Na-na-na, diva is a female version of a hustla, of a hustla, of a, of a hustla...
+
+When he pull up, wanna pop my hood up,
+Bet he better have a six-pack in the cooler
+Getting money, divas gettin' money,
+If you ain't gettin' money, then you ain't got nothing fo' me
+Tell me somethin', (tell me somethin'): Where yo boss at? (Where yo' boss at?)
+Where my ladies up in here that like to talk back? (that like to talk back)
+I wanna see her (I wanna see her), I'd like to meet ya (I'd like to meet her)
+What you say? (NOT TO ME!), she ain't no diva (she ain't no diva!)...
+
+Na-na-na, diva is a female version of a hustla, of a hustla, of a, of a hustla...
+Na-na-na, diva is a female version of a hustla, of a hustla, of a, of a hustla...
+
+Since 15 in my stilettos, been strutting in this game,
+"What's yo age? " That's the question they ask when I hit the stage
+I'm a diva, best believe her, you see how she getting paid?
+She ain't calling him to grade-up, don't need him, her best maid
+
+This is a stick-up, stick-up (I need them bags and the money...)
+We're gonna stick-up, stick-up (You see them ask, "Where that money? ")
+All my ladies get it up, I see you, I do the same;
+Take it to another level, no passengers on my plane...
+
+I'm a-a diva (hey), I'm a, I'm a-a diva (hey)
+I'm a, I'm a-a diva (hey), I'm a, I'm a-a diva...
+
+This is a stick-up, stick-up (I need them bags, all that money...)
+Stick-up, stick-up (You see them ask, "where that money? ")
+
+Na-na-na, diva is a female version of a hustla, of a hustla, of a, of a hustla...
+Na-na-na, diva is a female version of a hustla, of a hustla, of a, of a hustla...
+
+I'm a, I'm a-a diva, I'm a, I'm a-a diva, I'm a, I'm a-a diva...
+  </pre>
+</div>
+
+<button class="accordion">Sweet Dreams</button>
+<div class="panel">
+  <pre>
+(Turn the lights on!)
+Every night I rush to my bed
+With hopes that maybe I'll get a chance to see you when I close my eyes
+I'm going outta my head
+Lost in a fairytale
+Can you hold my hands and be my guide?
+Clouds filled with stars cover your skies
+And I hope it rains
+You're the perfect lullaby
+What kind of dream is this?
+
+You can be a sweet dream or a beautiful nightmare
+Either way I, don't wanna wake up from you
+(Turn the lights on!)
+Sweet dream or a beautiful nightmare
+Somebody pinch me, your loves to good to be true
+(Turn the lights on!)
+My guilty pleasure I ain't goin nowhere
+Baby, long as you're here
+I'll be floating on air cause you're my, you're my....
+You can be a sweet dream or a beautiful nightmare
+Either way I, don't wanna wake up from you
+
+(Turn the lights on!)
+
+I mention you when I say my prayers
+I wrap you around all of my thoughts
+Boy, you're my temporary high
+I wish that when I wake up you're there
+To wrap your arms around me for real and tell me you'll stay by my side
+Clouds filled with stars cover the skies
+And I hope it rains
+You're the perfect lullaby
+What kind of dream is this?
+
+You can be a sweet dream or a beautiful nightmare
+Either way I, don't wanna wake up from you
+(Turn the lights on!)
+Sweet dream or a beautiful nightmare
+Somebody pinch me, your loves to good to be true
+(Turn the lights on!)
+My guilty pleasure I ain't goin nowhere
+Baby, long as you're here
+I'll be floating on air cause you're my, you're my....
+You can be a sweet dream or a beautiful nightmare
+Either way I, don't wanna wake up from you
+
+(Turn the lights on!)
+Tattoo your name across my heart
+So it will remain....
+Not even death can make us part
+What kind of dream is this?
+
+You can be a sweet dream or a beautiful nightmare
+Either way I, don't wanna wake up from you
+(Turn the lights on!)
+Sweet dream or a beautiful nightmare
+Somebody pinch me, your loves to good to be true
+(Turn the lights on!)
+My guilty pleasure I ain't goin nowhere
+Baby, long as you're here
+I'll be floating on air cause you're my, you're my....
+You can be a sweet dream or a beautiful nightmare
+Either way I, don't wanna wake up from you
+Turn the lights out
+  </pre>
+</div>
+
+<button class="accordion">Hello</button>
+<div class="panel">
+  <pre>
+Oh!
+Oh oh, oh oh oh oh......
+
+I love to see you walk into the room
+Body shining lighting up the place
+And when you talk, everybody stops
+Cause they know you know just what to say
+And the way that you protect your friends
+Baby, I respect you for that
+And when you grow, you take everyone you love along
+I love that shit
+
+don't fly me away
+Don't need to buy a diamond key to unlock my heart
+You shelter my soul
+You're my fire when I'm cold
+I want you to know
+
+You had me at hello
+Hello
+Hello
+You had me at hello
+Hello
+Hello
+It was many years ago
+Baby when you
+Stole my cool
+Cause you had me at hello
+Hello
+Hello, oh oh oh oh oh
+
+I get so excited when you travel with me
+Baby, while I'm on my grind
+And never would I ever let my hustle
+Come between me and my family time
+You keep me humble out of this hype
+Cause you know there's more to life
+If I need you, you will be here
+You will make the sacrifice
+
+Don't fly me away
+Don't need to buy a diamond key to unlock my heart
+You shelter my soul
+You're my fire when I'm cold
+Just want you to know
+
+You had me at hello
+Hello
+Hello
+You had me at hello
+Hello
+Hello
+It was many years ago
+Baby when you
+Stole my cool
+Cause you had me at hello
+Hello
+Hello, oh oh oh oh oh
+
+Gotta feel you and be near you
+You're the air that I breathe to survive
+Gotta hold you, wanna show you
+That without you my sun doesn't shine
+You don't have to try so hard for me to love you
+Boy, without you my life just ain't the same
+You don't have to try so hard for me to love you
+You had me at hello!
+
+You had me at hello
+Hello
+Hello
+You had me at hello
+Hello
+Hello
+It was many years ago
+Baby when you
+Stole my cool
+Cause you had me at hello
+Hello
+Hello, oh oh oh oh oh
+It was many years ago
+Baby when you
+Stole my cool
+You had me at hello
+Hello
+Hello, oh oh oh oh oh........
+  </pre>
+</div>
+
+<button class="accordion">Ego</button>
+<div class="panel">
+  <pre>
+Aw, baby, how you doing?
+You know I'm gonna cut right to the chase, huh?
+Some women were made
+But me, myself?
+I like to think that I was created
+For a special purpose
+You know?
+What's more special than YOU?
+You feel me?
+
+It's on, baby let's get lost
+You don't need to call in to work 'cause you're the boss
+For real, want you to show me how you feel
+I consider myself lucky, that's a big deal
+Why?
+Well, you got the key to my heart
+But you ain't gonna need it
+I'd rather you open up my body
+And show me secrets you didn't know was inside
+No need for me to lie
+
+It's too big (big)
+It's too wide (wide)
+It's too strong (strong)
+It won't fit (fit)
+It's too much (much)
+It's too tough (tough)
+He talk like this 'cause he can back it up
+He got a big ego
+Such a huge ego
+I love his big ego
+It's too much
+He walk like this 'cause he can back it up
+
+Usually I'm humble
+Right now, I don't choose
+You can leave with me
+Or, you could have the blues
+Some call it arrogant
+I call it confident
+You decide when you find out what I'm working with
+Damn, I know
+I'm killing you with them legs
+Better yet, them thighs
+Matter of fact it's my smile, or maybe my eyes?
+Boy, you're a sight to see
+Kinda something like me
+
+It's too big (big)
+It's too wide (wide)
+It's too strong (strong)
+It won't fit (fit)
+It's too much (much)
+It's too tough (tough)
+I talk like this 'cause I can back it up
+I got a big ego
+Such a huge ego
+But, he loves my big ego
+It's too much
+I walk like this 'cause I can back it up
+I, I walk like this 'cause I can back it up
+I, I talk like this 'cause I can back it up
+I, I, I can back it up,
+I can back it up
+I Walk like this 'cause I can back it up
+
+It's too big (big)
+It's too wide (wide)
+It's too strong (strong)
+It won't fit (fit)
+It's too much (much)
+It's too tough (tough)
+He talk like this 'cause he can back it up
+He got a big ego
+Such a huge ego... such a huge ego
+But, I love his big ego
+It's too much
+He walk like this 'cause he can back it up
+
+Ego so big you must admit
+I got every reason to feel like I'm that bitch
+Ego so strong, you ain't know?
+I don't need no beat, I can sing it with piano...
+  </pre>
+</div>
+
+<button class="accordion">Scared Of Lonely</button>
+<div class="panel">
+  <pre>
+I'm in this fight, and I'm swinging and my arms are getting tired
+I'm trying to beat this emptiness but I'm running out of time
+I'm sinking in the sand, and I can barely stand
+I'm lost in this dream, I need you to hold me
+I'm scared of lonely
+I try to be patient, but I'm hurting deep inside
+And I can't keep waiting, I need comfort late at night
+And I can't find my way, won't you lead me home
+'Cause I'm lost in this dream, I need you to hold me
+
+I'm scared of lonely
+And I'm scared of being the only shadow I see along the wall
+And I'm scared the only heartbeat I hear beating is my own
+And I'm scared of being alone
+I can't seem to breathe when I am lost in this dream, I need you to hold me
+I'm scared of lonely
+I'm scared of lonely...
+
+I cry at night, 'cause my baby's too far to be by my side
+To wipe away these tears of mine, so I hold my pillow tight
+To imagine you would stretch your hand looking for mine
+'Cause I'm lost in this dream , I need you to hold me
+
+I'm scared of lonely
+And I'm scared of being the only shadow I see along the wall
+And I'm scared the only heartbeat I hear beating is my own
+And I'm scared of being alone
+I can't seem to breathe when I am lost in this dream, I need you to hold me
+
+I need your strength when nobody is around
+'Cause I'm tired of this emptiness, I think I'm drowning
+I can't be lonely no more
+And I'm lost in this dream, I need you to hold me
+
+I'm scared of lonely
+And I'm scared of being the only shadow I see along the wall
+And I'm scared the only heartbeat I hear beating is my own
+And I'm scared of being alone
+I can't seem to breathe when I am lost in this dream, I need you to hold me
+I'm scared of lonely
+
+  </pre>
+</div>
+
+
+
+
+
+<script type="text/javascript">
+	
+	var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+    }
+}
+</script>
+
+
+<script>
+// merre 'modal'-in
+var modal = document.getElementById('id01');
+
+// Kur useri klikon jasht 'modal'-it te mbyllet
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<script>
+// Grab the Canvas and Drawing Context
+var canvas = document.getElementById('c');
+var ctx = canvas.getContext('2d');
+
+
+
+// Create an image element
+var img = document.createElement('IMG');
+
+// When the image is loaded, draw it
+img.onload = function () {
+
+    // Save the state, so we can undo the clipping
+    ctx.save();
+    ctx.arc(450,300,380,0,2*Math.PI);      
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(450,300,380,0,2*Math.PI, false);
+    ctx.fill();
+    // Clip to the current path
+    ctx.clip();
+    
+    
+    ctx.drawImage(img, 0, 0);
+    
+    // Undo the clipping
+    ctx.restore();
+}
+
+// Specify the src to load the image
+img.src = "Images/beyonce.jpg";
+</script>
+
+	
+</body>
+
+</html>

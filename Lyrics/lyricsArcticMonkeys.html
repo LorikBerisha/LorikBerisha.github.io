@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="indexstyle.css"/>
+	
+	<style>
+	/* Style the buttons that are used to open and close the accordion panel */
+button.accordion {
+    background-color: black;
+    background-color: rgba(0,0,0,0.92);
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 50%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin-left: 410px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+button.accordion.active, button.accordion:hover {
+    background-color: #151313;
+    width: 53.65%;
+
+}
+
+/* Style the accordion panel. Note: hidden by default */
+div.panel {
+    padding: 0 18px;
+    width: 50.65%;
+    margin-left:410px;
+    color:black;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-weight: 800;
+    background-color: #D5D5D5;
+    background-color: rgba(225,225,225,0.5);
+    display: none;
+}
+
+/* The "show" class is added to the accordion panel when the user clicks on one of the buttons. This will show the panel content */
+div.panel.show {
+    display: block;
+}
+
+	div.svg-wrapper {
+  height: 100%;
+  max-height: 60px;
+  margin-top: -150px;
+  margin-left: 550px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 320px;
+}
+
+.shape {
+  fill: transparent;
+  stroke-dasharray: 205 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+  /*stroke: #1cb779;*/
+  stroke: #19f6e8;
+}
+
+.text {
+  height: 100%;
+  max-height: 60px;
+  margin-left: 10px;
+  text-align: center;
+  color: #fff;
+  /*font-family: 'Roboto Condensed';*/
+  font-size: 22px;
+  letter-spacing: 8px;
+  line-height: 26px;
+  position: relative;
+  top: -80px;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 8px;
+  }
+  100% {
+    stroke-dasharray: 760;
+    stroke-dashoffset: 0;
+    stroke-width: 2px;
+  }
+}
+
+.svg-wrapper:hover .shape {
+  -webkit-animation: 0.5s draw linear forwards;
+  animation: 0.5s draw linear forwards;
+}
+</style>
+	
+
+
+</head>
+
+<body>
+
+	<!-- Header-i (logoja dhe search box) -->
+  <h1 id="header"><a href="../index.html">Music</a><span>Book</span> </a>
+   
+   
+   
+   
+   <span><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-right: 200px;" 
+  target="buton1">Login</button> <input type="text" name="search" placeholder="      Search.." target="searchbox"> </span></h1>
+  
+
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close login">&times;</span>
+      
+    </div>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username"
+      target="login" name="uname" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" target="login" name="psw" required>
+        
+      <button type="submit" target="buton2">Login</button>
+      <input type="checkbox" checked="checked"> Remember me
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <span class="psw" style="padding-right:50px; ">Forgotten <a href="../index.html#contact">password?</a></span>
+    </div>
+  </form>
+</div>
+
+  
+
+  <!-- Modal per navigation menu -->
+<div id="id02" class="modal1">
+  <div class="">
+    <div class="modal1-content">
+      <span onclick="document.getElementById('id02').style.display='none'" 
+      style="margin: 20px;cursor:pointer;color:white;">&times;</span>
+     <ul>
+
+      <li><a href="../Piano.html">Piano</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="id03" class="modal1">
+  <div>
+    <div class="modal1-content" style="background-image:url(images2.jpg);background-size: 170px 128px;">
+      <span onclick="document.getElementById('id03').style.display='none'" 
+      style="margin: 20px;cursor:pointer; color:white;">&times;</span>
+     <ul>
+      <li><a href="../Electric Guitars.html">Electric</a></li>
+      <li><a href="../Acoustic Guitars.html">Acoustic</a></li>
+      <li><a href="../Bass Guitars.html">Bass</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Navigation Lista -->
+  <nav class="navLista">
+    <ul class="lista">
+    <li> <table cellpadding="0px" cellspacing="0px" style="margin: 0;padding:0;" id="navBar">
+    <tr>
+        <td>
+            <a class="selected" href="../index.html" style="margin-left: 10px;">Home</a>
+        </td>
+        
+    </tr>
+</table></li>
+      <li><a style="margin-left: 11px;">Products</a>
+        <ul id="submenu">
+          <li><a href="#" onclick="document.getElementById('id02').style.display='block'"> Piano </a>
+            </li>
+          <li><a href="##" onclick="document.getElementById('id03').style.display='block'"> Guitar </a>
+          </li>
+          
+        </ul>
+      </li>
+      <li><span><br></span><a href="../artist.html">Artists</a></li>
+      <li><a href="https://www.ultimate-guitar.com/" target="_blank">Chords</a>
+      </li>
+      <li><a href="#contact">Contact</a></li>
+
+
+    </ul>
+  </nav>
+  <div class="svg-wrapper">
+  <svg height="80" width="330" >
+    <rect class="shape" height="80" width="330" />
+  </svg>
+
+<div class="text" style="border: 1px solid black;color:white;font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;">AM by          
+<span style="color:black;font-weight: bold;">Arctic Monkeys</span>
+</div>
+</div>
+
+<canvas id="c"  width="900px" height="600px" style="margin: 250px 0 0 280px;"></canvas>
+
+
+<button class="accordion" style="margin-left: 410px; margin-top: 5px;">R U Mine?</button>
+
+<div class="panel">
+<audio controls>
+  <source src="Songs/Arctic Monkeys  R U Mine.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+I'm a puppet on a string
+Tracy Island, time-traveling
+Diamond could've shaped heartaches
+Come to find you four in some velvet morning
+Years too late
+She's a silver lining lone ranger riding
+Through an open space
+In my mind when she's not right there beside me
+
+I go crazy 'cause here isn't where I wanna be
+And satisfaction feels like a distant memory
+And I can't help myself,
+All I wanna hear her say is "Are you mine?"
+
+Well, are you mine?
+Are you mine?
+Are you mine?
+
+I guess what I'm trying to say is I need the deep end
+Keep imagining meeting, wished away entire lifetimes
+Unfair we're not somewhere misbehaving for days
+Great escape lost track of time and space
+She's a silver lining climbing on my desire
+
+And I go crazy 'cause here isn't where I wanna be
+And satisfaction feels like a distant memory
+And I can't help myself,
+All I wanna hear her say is "Are you mine?"
+
+Well, are you mine? (are you mine tomorrow?)
+Are you mine? (or just mine tonight?)
+Are you mine? (are you mine? Mine?)
+
+And the thrill of the chase moves in mysterious ways
+So in case I'm mistaken,
+I just wanna hear you say you got me baby
+Are you mine?
+
+She's a silver lining lone ranger riding through an open space
+In my mind when she's not right there beside me
+I go crazy cause here isn't where I wanna be
+
+And satisfaction feels like a distant memory
+And I can't help myself,
+All I wanna hear her say is "Are you mine?"
+
+Well, are you mine? (are you mine tomorrow?)
+Are you mine? (or just mine tonight?)
+Are you mine? (are you mine tomorrow, or just mine tonight?)
+
+</pre>
+
+</div>
+
+<button class="accordion">One For The Road</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Arctic Monkeys  One For the Road.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+One for the road, ooh ooh
+One for the road, ooh ooh
+
+From the bottom of your heart
+The relegation zone
+I saw this coming from the start
+The shake, rattle and roll
+The cracks in blackout blinds
+Cast patterns on the ceiling but you're feeling fine
+I thought it was dark outside
+I thought it was dark outside
+
+So we all go back to yours and you sit and talk to me on the floor
+There's no need to show me round baby, I feel like I've been in here before
+I've been wondering whether later when you tell everybody to go,
+Will you pour me one for the road?
+
+I knew this would be on the cards
+I knew you wouldn't fold
+I saw this coming from the start
+The shake, rattle and roll
+
+One for the road, ooh ooh
+
+So we all go back to yours and you sit and talk to me on the floor
+There's no need to show me round baby, I feel like I've been in here before
+I've been wondering whether later when you tell everybody to go,
+Will you pour me one for the road?
+
+The mixture hits you hard
+Don't get that sinking feeling, don't fall apart
+Some out of tune guitar
+Soundtrack to disaster
+
+Ooh ooh, one for the road
+Ooh ooh, one for the road
+Ooh ooh, one for the road
+Ooh ooh, one for the road
+
+So we all go back to yours and you sit and talk to me on the floor
+There's no need to show me round baby, I feel like I've been in here before
+I've been wondering whether later when you tell everybody to go,
+Will you pour me one for the road?
+</pre> 
+</div>
+
+<button class="accordion">Arabella</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Arctic Monkeys Arabella.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+Arabella's got some interstellagator skin boots
+And a helter skelter around her little finger and I ride it endlessly
+She's got a Barbarella silver swimsuit
+And when she needs a shelter from reality she takes a dip in my daydreams
+
+My days end best when this sunset gets itself
+Behind that little lady sitting on the passenger side
+It's much less picturesque without her catching the light
+The horizon tries but it's just not as kind on the eyes
+
+As Arabella, oh
+As Arabella
+Just might have tapped into your mind and soul
+You can't be sure
+
+Arabella's got a 70s head
+But she's a modern lover
+It's an exploration, she's made of outer space
+And her lips are like the galaxy's edge
+And a kiss the colour of a constellation falling into place
+
+My days end best when this sunset gets itself
+Behind that little lady sitting on the passenger side
+It's much less picturesque without her catching the light
+The horizon tries but it's just not as kind on the eyes
+
+As Arabella, oh
+As Arabella
+Just might have tapped into your mind and soul
+You can't be sure
+
+That's magic in a cheetah print coat
+Just a slip underneath it I hope
+Asking if I can have one of those
+Organic cigarettes that she smokes
+Wraps her lips round the Mexican coke
+Makes you wish that you were the bottle
+Takes a sip of your soul and it sounds like...
+
+Just might have tapped into your mind and soul
+You can't be sure
+  </pre>
+</div>
+
+<button class="accordion">I Want It All</button>
+<div class="panel">
+  <pre>
+Blind faith
+Heartache
+Mind games
+Mistakes
+My sweet fireball
+My sweet rigmarole
+I want it all
+I want it all
+
+Old dogs
+New tricks
+Can you feel it?
+Space age country girl
+Stone cold miracle
+I want it all
+I want it all
+
+And then suddenly it hit me it's a year ago
+Since I drank miniature whiskey and we shared your coke
+Ain't it just like you to kiss me and then hit the road
+Leave me listening to the stones
+2000 light years from home
+
+[4x]
+Shoo wop shoo wop shoo wop shoo wah
+
+[4x]
+I want it all
+  </pre>
+</div>
+
+<button class="accordion">Fireside</button>
+<div class="panel">
+  <pre>
+I can't explain but I want to try
+There's this image of you and I
+And it goes dancing by in the morning and in the night time
+
+There's all these secrets that I can't keep
+Like in my heart there's that hotel suite and you lived there so long,
+It's kinda strange now you're gone
+
+I'm not sure if I should show you what I've found
+Has it gone for good?
+Or is it coming back around?
+Isn't it hard to make up your mind?
+When you're losing and your fuse is fireside
+
+There's all those places we used to go
+And I suspect you already know
+But that place on memory lane you liked still looks the same
+But something about it's changed
+
+I'm not sure if I should show you what I've found
+Has it gone for good?
+Or is it coming back around?
+Isn't it hard to make up your mind?
+When you're losing and your fuse is fireside
+
+And I thought I was yours forever
+Maybe I was mistaken but I just cannot manage to make it through the day
+Without thinking of you lately
+
+I'm not sure if I should show you what I've found
+Has it gone for good?
+Or is it coming back around?
+Isn't it hard to make up your mind?
+When you're losing and your fuse is fireside
+  </pre>
+</div>
+
+<button class="accordion">Why'd You Only Call Me When You're High?</button>
+<div class="panel">
+  <pre>
+The mirror's image
+Tells me it's home time
+But I'm not finished
+'Cause you're not by my side
+And as I arrived I thought I saw you leaving
+Carrying your shoes
+Decided that once again I was just dreaming
+Of bumping into you
+
+Now it's three in the morning and I'm trying to change your mind
+Left you multiple missed calls and to my message you reply,
+"Why'd you only call me when you're high?
+Hi, why'd you only call me when you're high?"
+
+Somewhere darker
+Talking the same shite
+I need a partner (hey)
+Well, are you out tonight?
+It's harder and harder to get you to listen
+More I get through the gears
+Incapable of making alright decisions
+And having bad ideas
+
+Now it's three in the morning and I'm trying to change your mind
+Left you multiple missed calls and to my message you reply (message you reply),
+"Why'd you only call me when you're high? (why'd you only call me when you're high?)
+Hi, why'd you only call me when you're high?"
+
+And I can't see you here wonder where I might?
+Sort of feels like I'm running out of time
+I haven't found what I was hoping to find
+You said, "You gotta be up in the morning, gonna have an early night.
+And you're starting to bore me, baby.
+Why'd you only call me when you're high?"
+
+Why'd you only ever phone me when you're high?
+Why'd you only ever phone me when you're high?
+Why'd you only ever phone me when you're high?
+Why'd you only ever phone me when you're high?
+  </pre>
+</div>
+
+<button class="accordion">Knee Socks</button>
+<div class="panel">
+  <pre>
+You got the lights on in the afternoon
+And the nights are drawn out long
+And you're kissing to cut through the gloom
+With a cough-drop-coloured tongue
+And you were sitting in the corner with the coats all piled high
+And I thought you might be mine
+In a small world on an exceptionally rainy Tuesday night
+In the right place and time
+
+When the zeros line up on the 24 hour clock
+When you know who's calling even though the number is blocked
+When you walked around your house wearing my sky blue Lacoste
+And your knee socks
+
+Well you cured my January blues
+Yeah you made it all alright
+I got a feeling I might have lit the very fuse
+That you were trying not to light
+You were a stranger in my phone book I was acting like I knew
+'Cause I had nothing to lose
+When the winter's in full swing and your dreams just aren't coming true
+Ain't it funny what you'll do
+
+When the zeros line up on the 24 hour clock
+When you know who's calling even though the number is blocked
+When you walked around your house wearing my sky blue Lacoste
+And your knee socks
+
+The late afternoon
+The ghost in your room that you always thought didn't approve of you knocking boots
+Never stopped you letting me get hold of the sweet spot by the scruff of your
+Knee socks
+
+You and me could have been a team
+Each had a half of a king and queen seat
+Like the beginning of Mean Streets
+You could Be My Baby
+[4x]
+
+(All the zeros lined up but the number's blocked when you've come undone)
+
+When the zeros line up on the 24 hour clock
+When you know who's calling even though the number is blocked
+When you walked around your house wearing my sky blue Lacoste
+And your knee socks
+[2x]
+
+  </pre>
+</div>
+
+<button class="accordion">I Wanna Be Yours</button>
+<div class="panel">
+  <pre>
+I wanna be your vacuum cleaner
+Breathing in your dust
+I wanna be your Ford Cortina
+I won't ever rust
+If you like your coffee hot
+Let me be your coffee pot
+You call the shots babe
+I just wanna be yours
+
+Secrets I have held in my heart
+Are harder to hide than I thought
+Maybe I just wanna be yours
+I wanna be yours, I wanna be yours
+Wanna be yours, wanna be yours, wanna be yours
+
+Let me be your 'leccy meter and I'll never run out
+And let me be the portable heater that you'll get cold without
+I wanna be your setting lotion (I wanna be)
+Hold your hair in deep devotion (how deep?)
+At least as deep as the Pacific Ocean
+I wanna be yours
+
+Secrets I have held in my heart
+Are harder to hide than I thought
+Maybe I just wanna be yours
+I wanna be yours, I wanna be yours
+Wanna be yours, wanna be yours, wanna be yours
+Wanna be yours, wanna be yours, wanna be yours...
+
+I wanna be your vacuum cleaner
+Breathing in your dust
+I wanna be your Ford Cortina
+I won't ever rust
+I just wanna be yours
+(Wanna be yours)
+I just wanna be yours
+(Wanna be yours)
+I just wanna be yours
+(Wanna be yours)
+  </pre>
+</div>
+
+
+<script type="text/javascript">
+	
+	var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+    }
+}
+</script>
+
+
+<script>
+// merre 'modal'-in
+var modal = document.getElementById('id01');
+
+// Kur useri klikon jasht 'modal'-it te mbyllet
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<script>
+// Grab the Canvas and Drawing Context
+var canvas = document.getElementById('c');
+var ctx = canvas.getContext('2d');
+
+
+
+// Create an image element
+var img = document.createElement('IMG');
+
+// When the image is loaded, draw it
+img.onload = function () {
+
+    // Save the state, so we can undo the clipping
+    ctx.save();
+    ctx.arc(450,300,380,0,2*Math.PI);      
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(450,300,380,0,2*Math.PI, false);
+    ctx.fill();
+    // Clip to the current path
+    ctx.clip();
+    
+    
+    ctx.drawImage(img, 0, 0);
+    
+    // Undo the clipping
+    ctx.restore();
+}
+
+// Specify the src to load the image
+img.src = "Images/ArcticMonkeys.jpg";
+</script>
+
+	
+</body>
+
+</html>

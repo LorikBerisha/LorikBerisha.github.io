@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="indexstyle.css"/>
+	
+	<style>
+	/* Style the buttons that are used to open and close the accordion panel */
+button.accordion {
+    background-color: black;
+    background-color: rgba(0,0,0,0.92);
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 50%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin-left: 410px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+button.accordion.active, button.accordion:hover {
+    background-color: #151313;
+    width: 53.65%;
+
+}
+
+/* Style the accordion panel. Note: hidden by default */
+div.panel {
+    padding: 0 18px;
+    width: 50.65%;
+    margin-left:410px;
+    color:black;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-weight: 800;
+    background-color: #D5D5D5;
+    background-color: rgba(225,225,225,0.5);
+    display: none;
+}
+
+/* The "show" class is added to the accordion panel when the user clicks on one of the buttons. This will show the panel content */
+div.panel.show {
+    display: block;
+}
+
+	div.svg-wrapper {
+  height: 100%;
+  max-height: 60px;
+  margin-top: -150px;
+  margin-left: 550px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 320px;
+}
+
+.shape {
+  fill: transparent;
+  stroke-dasharray: 205 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+  /*stroke: #1cb779;*/
+  stroke: #19f6e8;
+}
+
+.text {
+  height: 100%;
+  max-height: 60px;
+  margin-left: 10px;
+  text-align: center;
+  color: #fff;
+  /*font-family: 'Roboto Condensed';*/
+  font-size: 22px;
+  letter-spacing: 8px;
+  line-height: 26px;
+  position: relative;
+  top: -80px;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 8px;
+  }
+  100% {
+    stroke-dasharray: 760;
+    stroke-dashoffset: 0;
+    stroke-width: 2px;
+  }
+}
+
+.svg-wrapper:hover .shape {
+  -webkit-animation: 0.5s draw linear forwards;
+  animation: 0.5s draw linear forwards;
+}
+</style>
+	
+
+
+</head>
+
+<body>
+
+	<!-- Header-i (logoja dhe search box) -->
+  <h1 id="header"><a href="../index.html">Music</a>Book</span> </a>
+   
+   
+   
+   
+   <span><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-right: 200px;" 
+  target="buton1">Login</button> <input type="text" name="search" placeholder="      Search.." target="searchbox"> </span></h1>
+  
+
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close login">&times;</span>
+      
+    </div>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username"
+      target="login" name="uname" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" target="login" name="psw" required>
+        
+      <button type="submit" target="buton2">Login</button>
+      <input type="checkbox" checked="checked"> Remember me
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <span class="psw" style="padding-right:50px; ">Forgotten <a href="../index.html#contact">password?</a></span>
+    </div>
+  </form>
+</div>
+
+  
+
+  <!-- Modal per navigation menu -->
+<div id="id02" class="modal1">
+  <div class="">
+    <div class="modal1-content">
+      <span onclick="document.getElementById('id02').style.display='none'" 
+      style="margin: 20px;cursor:pointer;color:white;">&times;</span>
+     <ul>
+
+      <li><a href="../Piano.html">Piano</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="id03" class="modal1">
+  <div>
+    <div class="modal1-content" style="background-image:url(images2.jpg);background-size: 170px 128px;">
+      <span onclick="document.getElementById('id03').style.display='none'" 
+      style="margin: 20px;cursor:pointer; color:white;">&times;</span>
+     <ul>
+      <li><a href="../Electric Guitars.html">Electric</a></li>
+      <li><a href="../Acoustic Guitars.html">Acoustic</a></li>
+      <li><a href="../Bass Guitars.html">Bass</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Navigation Lista -->
+  <nav class="navLista">
+    <ul class="lista">
+    <li> <table cellpadding="0px" cellspacing="0px" style="margin: 0;padding:0;" id="navBar">
+    <tr>
+        <td>
+            <a class="selected" href="../index.html" style="margin-left: 10px;">Home</a>
+        </td>
+        
+    </tr>
+</table></li>
+      <li><a style="margin-left: 11px;">Products</a>
+        <ul id="submenu">
+          <li><a href="#" onclick="document.getElementById('id02').style.display='block'"> Piano </a>
+            </li>
+          <li><a href="##" onclick="document.getElementById('id03').style.display='block'"> Guitar </a>
+          </li>
+          
+        </ul>
+      </li>
+      <li><span><br></span><a href="../artist.html">Artists</a></li>
+      <li><a href="https://www.ultimate-guitar.com/" target="_blank">Chords</a>
+      </li>
+      <li><a href="#contact">Contact</a></li>
+
+
+    </ul>
+  </nav>
+  <div class="svg-wrapper">
+  <svg height="80" width="330" >
+    <rect class="shape" height="80" width="330" />
+  </svg>
+
+<div class="text" style="border: 1px solid black;color:white;font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;">Transformer by          
+<span style="color:black;font-weight: bold;">Lou Reed</span>
+</div>
+</div>
+
+<canvas id="c"  width="900px" height="600px" style="margin: 250px 0 0 280px;"></canvas>
+
+<button class="accordion" style="margin-left: 410px; margin-top: 5px;">Vicious</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Lou Reed Vicious.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+
+
+Vicious, you hit me with a flower
+You do it every hour
+Oh, baby you're so vicious
+Vicious, you want me to hit you with a stick
+But all I've got is a guitar pick
+Oh baby, you're so vicious
+
+When I watch you come, baby, I just want to run far away
+You're not the kind of person around I want to stay
+When I see you walking down the street
+I step on your hands and I mangle your feet
+You're not the kind of person that I want to meet
+Baby, oh you're so vicious, you're so vicious
+
+Vicious, you hit me with a flower
+You do it every hour
+Oh, baby you're so vicious
+Vicious, hey why don't you swallow razor blades
+You must think that I'm some kind of gay blade
+But baby, you're so vicious
+
+When I see you coming I just have to run
+You're not good and you certainly aren't very much fun
+When I see you walking down the street
+I step on your hand and I mangle your feet
+You're not the kind of person that I'd even want to meet
+'Cause you're so vicious, baby, you're so vicious
+Vicious, vicious...
+</pre>
+</div>
+
+<button class="accordion">Andy's Chest</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Lou Reed Andy's Chest.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+
+
+If I could be anything
+in the world that flew
+I would be a bat and come
+swooping after you
+And if the last time you were here
+things were a bit askew
+
+Well, you know what happens after dark
+When rattlesnakes lose their skins and their hearts
+And all the missionaries lose their bark
+
+Oh, all the trees are calling after you
+And all the venom snipers after you
+Are all the mountains boulder after you
+
+If I could be any one of the things
+in this world that bite
+Instead of a dentured ocelot on a leash
+I'd rather be a kite
+And be tied to the end of your string
+and flying in the air, baby, at night
+
+'Cause you know what they say about honey bears
+When you shave off all their baby hair
+You have a hairy minded pink bare bear
+
+And all the bells are rolling out for you
+And stones are all erupting out for you
+And all the cheap bloodsuckers are flying after you
+
+Yesterday, Daisy Mae and Biff
+were groovin' on the street
+And just like in a movie
+her hands became her feet
+Her belly button was her mouth
+which meant she tasted what she'd speak, ooohhh
+
+But the funny thing is what happened to her nose, ooohhh
+It grew until it reached all of her toes, ooohhh
+Now, when people say her feet smell, they mean her nose
+
+And curtains laced with diamonds, dear for you
+And all the Roman noblemen for you
+And kingdom's Christian soldiers, dear for you
+And melting ice cap mountains tops for you
+Oh, oh, and knights in flaming silver robes for you
+And bats that with a kiss turn prince for you
+Swoop, swoop, oh, baby, rock, rock
+Swoop, swoop, rock, rock
+Swoop, swoop, rock, rock
+
+
+  </pre>
+</div>
+
+<button class="accordion">Perfect Day</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Lou Reed Perfect Day.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+
+
+Just a perfect day
+Drink sangria in the park
+And then later, when it gets dark
+We go home
+
+Just a perfect day
+Feed animals in the zoo
+Then later a movie, too
+And then home
+
+Oh, it's such a perfect day
+I'm glad I spent it with you
+Oh, such a perfect day
+You just keep me hanging on
+You just keep me hanging on
+
+Just a perfect day
+Problems all left alone
+Weekenders on our own
+It's such fun
+
+Just a perfect day
+You made me forget myself
+I thought I was someone else
+Someone good
+
+Oh, it's such a perfect day
+I'm glad I spent it with you
+Oh, such a perfect day
+You just keep me hanging on
+You just keep me hanging on
+
+You're going to reap just what you sow
+You're going to reap just what you sow
+You're going to reap just what you sow
+You're going to reap just what you sow
+
+
+</pre>
+</div>
+
+<button class="accordion">Satellite Of Love</button>
+<div class="panel">
+  <pre>
+Satellite's gone up to the skies
+Things like that drive me out of my mind
+I watched it for a little while
+I like to watch things on TV
+
+(Mm-mm-mm-mm)
+(Bum, bum, bum) Satellite of love
+(Bum, bum, bum) Satellite of love
+(Bum, bum, bum) Satellite of love
+Satellite of
+
+Satellite's gone way up to Mars
+Soon it'll be filled with parkin' cars
+I watched it for a little while
+I love to watch things on TV
+
+(Mm-mm-mm-mm)
+(Bum, bum, bum) Satellite of love
+(Bum, bum, bum) Satellite of love
+(Bum, bum, bum) Satellite of love
+Satellite of
+
+I've been told that you've been bold
+With Harry, Mark, and John
+Monday and Tuesday, Wednesday through Thursday
+With Harry, Mark, and John
+
+Satellite's gone up to the skies
+Things like that drive me out of my mind
+I watched it for a little while
+I love to watch things on TV
+
+(Mm-mm-mm-mm)
+(Bum, bum, bum) Satellite of love
+(Bum, bum, bum) Satellite of love
+(Bum, bum, bum) Satellite of love
+Satellite of
+
+Satellite
+Of love
+Satellite
+Of love (Ah, ah, ah, ah)
+Satellite (Ooh)
+Of love (Ah, ah, ah, ah)
+Satellite (Satellite)
+Of love (Ah, ah, ah, ah)
+Satellite (Satellite)
+Of love (Ah, ah, ah, ah)
+Satellite (Satellite)
+Of love (Ah, ah, ah, ah)
+Satellite (Satellite)
+Of love (Ah, ah, ah, ah)
+Satellite (Satellite)
+Of love (Ah, ah, ah, ah)
+Satellite (Satellite)
+
+  </pre>
+</div>
+
+<button class="accordion">Walk On The Wild Side</button>
+<div class="panel">
+  <pre>
+Holly came from Miami, F.L.A.
+Hitch-hiked her way across the U.S.A.
+Plucked her eyebrows on the way
+Shaved her legs and then he was a she
+She says, "Hey, babe,
+Take a walk on the wild side."
+Said, "Hey, honey,
+Take a walk on the wild side."
+
+Candy came from out on the Island
+In the back room she was everybody's darling
+But she never lost her head
+Even when she was giving head
+She says, "Hey, babe,
+Take a walk on the wild side."
+Said, "Hey, babe,
+Take a walk on the wild side."
+And the colored girls go
+"Doo do doo do doo do do doo..."
+
+Little Joe never once gave it away
+Everybody had to pay and pay
+A hustle here and a hustle there
+New York City's the place
+Where they said, "Hey, babe,
+Take a walk on the wild side."
+I said, "Hey, Joe,
+Take a walk on the wild side."
+
+Sugar Plum Fairy came and hit the streets
+Looking for soul food and a place to eat
+Went to the Apollo
+You should've seen them go, go, go
+They said, "Hey, sugar,
+Take a walk on the wild side."
+I said, "Hey, babe,
+Take a walk on the wild side."
+All right, huh
+
+Jackie is just speeding away
+Thought she was James Dean for a day
+Then I guess she had to crash
+Valium would have helped that bash
+Said, "Hey, babe,
+Take a walk on the wild side."
+I said, "Hey, honey,
+Take a walk on the wild side."
+And the colored girls say,
+"Doo do doo do doo do do doo..."
+  </pre>
+</div>
+
+<button class="accordion">Make Up</button>
+<div class="panel">
+  <pre>
+Your face when sleeping is sublime
+And then you open up your eyes
+
+Then comes pancake factor number one
+eyeliner, rose hips and lip gloss, such fun
+You're a slick little girl
+you're a slick little girl
+
+Rouge and coloring, incense and ice
+perfume and kisses, ooohhh, it's all so nice
+You're a slick little girl
+you're such a slick little girl
+
+Now, we're coming out
+out of our closets
+Out on the streets
+yeah, we're coming out
+
+When you're in bed it's so wonderful
+it'd be so nice to fall in love
+When you get dressed I really get my fill
+people say that it's impossible
+
+Gowns lovely made out of lace
+and all the things that you do to your face
+You're a slick little girl
+oh, you're a slick little girl
+
+Eyeliner, whitener then color the eyes
+yellow and green, ooohhh, what a surprise
+You're a slick little girl
+oh, you're such a slick little girl
+
+Now, we're coming out
+out of our closets
+Out on the streets
+yes, we're coming out
+Yeah, we're coming out
+yeah, we're coming out
+
+  </pre>
+</div>
+
+
+
+
+
+
+<script type="text/javascript">
+	
+	var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+    }
+}
+</script>
+
+
+<script>
+// merre 'modal'-in
+var modal = document.getElementById('id01');
+
+// Kur useri klikon jasht 'modal'-it te mbyllet
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<script>
+// Grab the Canvas and Drawing Context
+var canvas = document.getElementById('c');
+var ctx = canvas.getContext('2d');
+
+
+
+// Create an image element
+var img = document.createElement('IMG');
+
+// When the image is loaded, draw it
+img.onload = function () {
+
+    // Save the state, so we can undo the clipping
+    ctx.save();
+    ctx.arc(450,300,380,0,2*Math.PI);      
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(450,300,380,0,2*Math.PI, false);
+    ctx.fill();
+    // Clip to the current path
+    ctx.clip();
+    
+    
+    ctx.drawImage(img, 0, 0);
+    
+    // Undo the clipping
+    ctx.restore();
+}
+
+// Specify the src to load the image
+img.src = "Images/loureed.jpg";
+</script>
+
+	
+</body>
+
+</html>

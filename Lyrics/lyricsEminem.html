@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="indexstyle.css"/>
+	
+	<style>
+	/* Style the buttons that are used to open and close the accordion panel */
+button.accordion {
+    background-color: black;
+    background-color: rgba(0,0,0,0.92);
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 50%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin-left: 410px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+button.accordion.active, button.accordion:hover {
+    background-color: #151313;
+    width: 53.65%;
+
+}
+
+/* Style the accordion panel. Note: hidden by default */
+div.panel {
+    padding: 0 18px;
+    width: 50.65%;
+    margin-left:410px;
+    color:black;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-weight: 800;
+    background-color: #D5D5D5;
+    background-color: rgba(225,225,225,0.5);
+    display: none;
+}
+
+/* The "show" class is added to the accordion panel when the user clicks on one of the buttons. This will show the panel content */
+div.panel.show {
+    display: block;
+}
+
+	div.svg-wrapper {
+  height: 100%;
+  max-height: 60px;
+  margin-top: -150px;
+  margin-left: 550px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 320px;
+}
+
+.shape {
+  fill: transparent;
+  stroke-dasharray: 205 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+  /*stroke: #1cb779;*/
+  stroke: #19f6e8;
+}
+
+.text {
+  height: 100%;
+  max-height: 60px;
+  margin-left: 10px;
+  text-align: center;
+  color: #fff;
+  /*font-family: 'Roboto Condensed';*/
+  font-size: 22px;
+  letter-spacing: 8px;
+  line-height: 26px;
+  position: relative;
+  top: -80px;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 8px;
+  }
+  100% {
+    stroke-dasharray: 760;
+    stroke-dashoffset: 0;
+    stroke-width: 2px;
+  }
+}
+
+.svg-wrapper:hover .shape {
+  -webkit-animation: 0.5s draw linear forwards;
+  animation: 0.5s draw linear forwards;
+}
+</style>
+	
+
+
+</head>
+
+<body>
+
+	<!-- Header-i (logoja dhe search box) -->
+  <h1 id="header"><a href="../index.html">Music</a>Book</span> </a>
+   
+   
+   
+   
+   <span><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-right: 200px;" 
+  target="buton1">Login</button> <input type="text" name="search" placeholder="      Search.." target="searchbox"> </span></h1>
+  
+
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close login">&times;</span>
+      
+    </div>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username"
+      target="login" name="uname" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" target="login" name="psw" required>
+        
+      <button type="submit" target="buton2">Login</button>
+      <input type="checkbox" checked="checked"> Remember me
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <span class="psw" style="padding-right:50px; ">Forgotten <a href="../index.html#contact">password?</a></span>
+    </div>
+  </form>
+</div>
+
+  
+
+  <!-- Modal per navigation menu -->
+<div id="id02" class="modal1">
+  <div class="">
+    <div class="modal1-content">
+      <span onclick="document.getElementById('id02').style.display='none'" 
+      style="margin: 20px;cursor:pointer;color:white;">&times;</span>
+     <ul>
+
+      <li><a href="../Piano.html">Piano</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="id03" class="modal1">
+  <div>
+    <div class="modal1-content" style="background-image:url(images2.jpg);background-size: 170px 128px;">
+      <span onclick="document.getElementById('id03').style.display='none'" 
+      style="margin: 20px;cursor:pointer; color:white;">&times;</span>
+     <ul>
+      <li><a href="../Electric Guitars.html">Electric</a></li>
+      <li><a href="../Acoustic Guitars.html">Acoustic</a></li>
+      <li><a href="../Bass Guitars.html">Bass</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Navigation Lista -->
+  <nav class="navLista">
+    <ul class="lista">
+    <li> <table cellpadding="0px" cellspacing="0px" style="margin: 0;padding:0;" id="navBar">
+    <tr>
+        <td>
+            <a class="selected" href="../index.html" style="margin-left: 10px;">Home</a>
+        </td>
+        
+    </tr>
+</table></li>
+      <li><a style="margin-left: 11px;">Products</a>
+        <ul id="submenu">
+          <li><a href="#" onclick="document.getElementById('id02').style.display='block'"> Piano </a>
+            </li>
+          <li><a href="##" onclick="document.getElementById('id03').style.display='block'"> Guitar </a>
+          </li>
+          
+        </ul>
+      </li>
+      <li><span><br></span><a href="../artist.html">Artists</a></li>
+      <li><a href="https://www.ultimate-guitar.com/" target="_blank">Chords</a>
+      </li>
+      <li><a href="#contact">Contact</a></li>
+
+
+    </ul>
+  </nav>
+  <div class="svg-wrapper">
+  <svg height="80" width="330" >
+    <rect class="shape" height="80" width="330" />
+  </svg>
+
+<div class="text" style="border: 1px solid black;color:white;font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;">Recovery by          
+<span style="color:black;font-weight: bold;">Eminem</span>
+</div>
+</div>
+
+<canvas id="c"  width="900px" height="600px" style="margin: 250px 0 0 280px;"></canvas>
+
+<button class="accordion" style="margin-left: 410px; margin-top: 5px;">Cold Wind Blows</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Eminem Cold Wind Blows.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+
+[Intro]
+Cause some things just don't change
+It's better when they stay the same
+Although the whole world knows your name
+So on a bigger stage they came to see you spit your game
+Ooooohhhhhhh
+It shouldn't be difficult to explain
+Just why you came back again, you hate the fame
+Love the game, cold as ice you remain
+Fuck em' all, tell 'em all eat shit, here we go again
+
+So, god damn... is it that time again already
+Haha, you don't look too happy to see me
+Fuck man, don't everybody welcome me back at once
+All right, fuck ya'll then
+
+[Verse 1]
+You can get the dick, just call me the ballsack, I'm nuts
+Michael Vick in this bitch, dog fall back you mutts
+Fuck your worms, you never seen such a sick puppy
+Fuck it a sick duck, I want my duck sick mummy
+And my nuts, licked, gobble 'em up trick, yummy
+Bitch you don't fucking think I know that you suck dick dummy?
+You'll get your butt kicked, fuck all that love shit honey
+Yeah I laugh when I call you a slut, it's funny!
+Shawty dance while I diss you to the beat, fuck the words
+You don't listen to 'em anyway, yeah struck a nerve sucker
+Motherfucker might as well let my lips pucker
+Like Elton John, cause I'm just a mean cock sucker
+This shit is on, cause you went and pissed me off
+Now I'm shitting and pissing on everybody
+Give a fuck if it's right or wrong
+So buck the Buddha, light a bong
+But take a look at mariah the next time I inspire you to write a song, c'mon
+
+[Chorus]
+Oh oh oh oh oh oh oh, I'm as cold as the cold wind blows
+When it snows and it's twenty be-low
+Ask me why man I just don't know know know know know know know
+I'm as cold as the cold wind blows blo-blo-blo-blo-blo-blows
+Oh oh oh oh oh
+
+[Verse 2]
+Fuck it I'm a loose cannon, Bruce Banner's back in the booth
+Ya'll are sitting ducks, I'm the only goose standing
+I set the world on fire, piss on it, put it out
+Stick my dick in a circle, but I'm not fucking around motherfucker
+I'll show you pussy footin, I'll kick a bitch in the cunt
+'Til it makes her queef and sounds like a fucking whoopy cushion
+Who the fuck is you pushin', you musta mistook me for some sissy
+Soft punk looking for some nookie or bosom
+Go ahead, fucking hater push me
+I told you ain't no fucking way to shush me
+Call me a faggot cause I hate a pussy
+Man the fuck up sissy, G's up
+All you gardeners freeze up, put your hoes down (shady ease up!)
+Man chill, nah I can't god damnit
+Rap is a landfill, drop the anvil
+These are shoes that you can't fill
+Shit the day that happens the world'll stop spinning
+And Michael J. Fox'll come to a stand still
+During an earthquake, urine in your face
+Cause you're fake, ahh what the fuck, that hurt wait!
+Ahh what the fuck, I just got struck by lightening
+Alright then I quit, god I give up
+Call it evil that men do, lord forgive me for what my pen do
+This is for your sins, I cleanse you
+You can repent but I warn you, if you continue
+To hell I'll send you, and just then the wind blew and I said
+
+Oh oh oh oh oh oh oh, I'm as cold as the cold wind blows
+When it snows and it's twenty be-low
+Ask me why man I just don't know know know know know know know
+I'm as cold as the cold wind blows blo-blo-blo-blo-blo-blows
+Oh oh oh oh oh
+
+[Verse 3]
+How long will I be this way? Shady until my dying day
+'Til I hang up the mic and it's time for me to say
+So long, 'til then I drop the fucking bombs
+Like I miss the pass when I went long
+If you don't like it you can kiss my ass in a lint thong
+Now sing along, slut this, slut that, learn the words to the song
+Oh bitches don't like that, homie I'll be nicer to women
+When the aqua man drowns and the human torch starts swimming
+Man I'm a cold soul, I roll solo so
+So don't compare me to them other bums over there
+It's like apples to oranges, peaches to plums yeah
+I'm bananas pussy, cut off the grapes and grow a pair
+But I swear, you try to diss me, I'll slaughter you
+I put that on everything, like everyone does with auto-tune
+That last thing you wanna do is have me spit out a rhyme
+And say I was writing this and I thought of you so
+
+Oh oh oh oh oh oh oh, I'm as cold as the cold wind blows
+When it snows and it's twenty be-low
+Ask me why man I just don't know know know know know know know
+I'm as cold as the cold wind blows blo-blo-blo-blo-blo-blo-blows
+Oh oh oh oh oh
+
+[Outro]
+Oh oh oh oh oh oh
+I don't know, I don't know what caused, I don't know what caused me to be this way
+I don't know, I don't know but I probably be this way 'til my dying day
+I don't know why I'm so, I'm so cold mean things I don't mean to say
+I guess this is how you made me
+</pre>
+</div>
+
+<button class="accordion">Talkin' 2 Myself</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Eminem Talking To Myself.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+
+[Intro:]
+Ayo Before I start this song man
+I just want to thank everybody for being so patient
+And bearing with me over these last couple of years
+While I figure this shit out
+
+[Chorus: Kobe]
+Is anybody out there?
+It feels like I'm talkin to myself
+No one seems to know my struggle
+And everything I come from
+Can anybody hear me?
+I guess I keep talkin to myself
+It feels like I'm going insane
+Am I the one who's crazy?
+
+Yeayah
+Woah wah
+Woah wah (oh oh oh oh oh)
+Woah wah
+Woah wah (oh oh oh oh oh oh oh oh)
+
+[Bridge: Eminem]
+So why in the world do I feel so alone
+Nobody but me, I'm on my own
+Is there anyone out there
+Who feels the way I feel
+If there is, let me hear just so I know I'm not the only one
+
+[Verse 1: Eminem]
+I went away I guess to open up some lanes
+But there was no one who even knew that I was going through growin' pains
+Hatred was flowing through my veins
+On the verge of going insane
+I almost made a song dissin Lil Wayne
+It's like I was jealous of him 'cause of the attention he was gettin'
+I felt horrible about myself
+He was spittin and I wasn't
+Anyone who was buzzin back then coulda got it
+Almost went at Kanye too
+God it feels like I'm goin' psychotic
+Thank God that I didn't do it
+I would've had my ass handed to me
+And I knew it but Proof wasn't here to see me through it
+I'm in the booth poppin another pill tryna talk myself into it
+Are you stupid? You gon' start dissin people for no reason?
+Especially when you can't even write a decent punchline even
+You're lying to yourself, you're slowly dying, you're denying
+Your health is declining with your self-esteem, you're crying out for help
+
+[Chorus: Kobe]
+
+[Bridge: Eminem]
+
+[Verse 2: Eminem]
+Marshall you're no longer the man, that's a bitter pill to swallow
+All I know is I'm wallowin', self-loathing and hollow
+Bottoms up on the pill bottle
+Maybe I'll hit my bottom tomorrow
+My sorrow echoes in this hall though
+But I must be talkin to the wall though
+I don't see nobody else (I guess I keep talkin to myself)
+But all these other rappers suck is all that I know
+I've turned into a hater, I've put up a false bravado
+But Marshall is not a egomaniac that's not his motto
+He's not a desperado he's desperate, it's starting to bottle inside 'em
+One foot on the brake one on the throttle
+Fallin asleep with writers block in the parking lot of McDonald's
+But instead of feeling sorry for yourself do something about it
+Admit you got a problem you brain is clouded you pouted long enough
+It isn't them it's you you fuckin baby
+Quit worrying about what they do and do shady
+I'm fucking going crazy
+
+[Chorus: Kobe]
+
+[Bridge: Eminem]
+
+[Verse 3: Eminem]
+So I pick myself off the ground and fuckin swam 'fore I drowned
+Hit my bottom so hard I bounced twice suffice this time around
+It's different them last two albums didn't count
+Encore I was on drugs, Relapse I was flushing em out
+I've come to make it up to you no more fucking around
+I've got something to prove to fans cause I feel like I've let em down
+So please accept my apology I finally feel like I'm back to normal
+I feel like me again, let me formally reintroduce myself to you for those of you who don't know
+The new me's back to the old me and homie I don't show no
+Signs of slowin up, pullin up, blowin up, all over
+My life is no longer a movie but the show ain't over homos
+I'm back with a vengeance, homie, Weezy keep ya head up,
+T.I., keep ya head up, Kanye, keep ya head up,
+Don't let up, keep slayin em
+Rest in Peace to DJ AM
+Cause I know what it's like
+I struggle with this shit every single day
+
+[Chorus: Kobe]
+
+[Bridge: Eminem]
+
+[Talking: Eminem]
+So there it is (there it is)
+Damn
+It feels like I just woke up or something
+I guess I just... forgot who the fuck I was man
+Ay yo
+And to anybody who thought about going there, it was never nothing personal, some shit I was going through
+And to everybody else...
+I'm back! (I'm back) haha
+
+
+  </pre>
+</div>
+
+<button class="accordion">On Fire</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Eminem On Fire.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+
+Yeah.. Ya Know?.. Critics Man
+Critics Never Got Nothin Nice To Say man
+You know the one thing I notice about critics man?
+Is.. critics never ask me how my day went
+Well imma tell em
+
+[Verse 1:]
+Yesterday my dog died, I hog tied a ho, tied her in a bow
+Said next time you blow up try to spit a flow
+You wanna criticize dog try a little mo
+I'm so tired of this I could blow, fire in the hole
+I'm fired up so fire up the lighter and the dro
+Better hold on a little tighter here I go
+Flows tighter, hot headed as ghostrider
+Cold hearted as spiderman throwin a spider in the snow
+So ya better get lower than Flo-Rida inside of a lowrider with no tires in the hole
+Why am I like this? why is winter cold
+Why is it when I talk I'm so biased to the hoes
+Listen dog Christmas is off this is as soft as it gets
+This isnt golf this is a blisterin' assault
+Those are your wounds this is the salt
+So get lost
+Shit dissin me is just like pissin off the wizard of oz
+Wrap a lizard in gauze beat you in the jaws with it
+Grab the scissors and saws and
+Cut out your livers gizzards and balls
+Throw you in the middle of the ocean in the blizzard with jaws
+So sip piss like sizzurp through a straw
+Then discribe how it tasted like dessert to us all
+Got the gall to make chris piss in his draws
+Ticklin him go to his grave, skip him and visit his dog
+
+[Hook:]
+You on fire
+Thats how ya know your on a roll
+Cause when you hot its like your burnin up everyone elses cold
+Your on fire
+Man I'm so fuckin sick I got ambulances pullin me over and shit
+Your on fire
+Ya need to stop drop and roll cause when you say the shit to get the whole hip hop shop the blow
+Your on fire.. your on fire
+
+[Verse 2:]
+I just wrote a bullshit hook in between two long ass verses if you mistook the for a song, look
+This aint a song its a warnin to brooke, hogan and david cook
+That the crook just took over so book
+Run as fast as you can, stop writin and kill it
+Im lightning in a skillet your a fuckin flash in a pan
+I pop up you bitches scatter like hot grease splashin a fan
+Mr mathers is the man
+Yeah I'm pissed but I would rather take this energy and stash it in a can
+Come back and whip your ass with it again
+Salivas like sufiric acid in your hand itll eat through anything metal the ass of iron man
+Turn him into plastic so for you to think that you could stand a fuckin chance is assanine
+Yeah ask the nine man
+Hit a blind man with a coloring book and told him color inside the lines or get hit with a flying crayon
+Fuck it I aint playin
+Pull up in a van and hop out at a homeless man holdin a sign sayin
+Vietnam vet.. I'm out my fuckin mind man
+Kick over the can beat his ass and leave him 9 grand
+So if I seem a little mean to you this aint savage you aint never seen a brute
+You wanna get graphic we can go the scenic route
+You couldnt make a belemic puke on a piece of fuckin corn and peanut poop
+Sayin you sick quit playin you prick dont nobody care
+Then why the fuck am I yellin at air
+I aint even talkin to noone cause aint nobody there
+Nobody will fuckin test me cause these hos wont even dare
+Im wastin punchlines but I got so many to spare I just thought of another one that might go here
+Naw dont waste it save it psycho yeah
+Plus you gotta rewrite those lines that you said about michaels hair
+
+[Hook:]
+You're on fire
+Thats how ya know your on a roll
+Cause when you hot its like your burnin up everyone elses cold
+Your on fire
+Man I'm so hot my motherfuckin firetrucks on fire homie
+Your on fire
+Ya need to stop drop and roll cause when you say the shit to give the whole hip hop shop the blow
+Your on fire.. your on fire
+Your on fire
+</pre>
+</div>
+
+<button class="accordion">Won't Back Down</button>
+<div class="panel">
+  <pre>
+
+
+[Chorus - Pink:]
+You can sound the alarm
+you can call out your guards
+you can fence in your yard
+you can hold all the cards
+but I won't back down
+oh no I wont back down
+oh no
+
+[Verse 1 - Eminem:]
+Cadillac Sevilles, Coupe Devilles
+brain dead rims yeah stupid wheels
+girl I'm too for real
+lose your tooth and nails
+try to fight it, try to deny it
+stupid you will feel
+what I do, I do it well
+shooting from the hip, yeah boy shoot to kill
+half a breath left on my death bed
+screaming, "F that!" yeah super ill
+baby what the deal
+we can chill, split half a pill and a happy meal
+fuck a steak slut
+I cut my toes off and step on the receipt before I foot the bill
+listen garden tool don't make me introduce you to my power tool
+you know the fucking drill
+how you douche bags feel knowing you're disposable?
+summer's eve Massengill
+shady's got the mass appeal baby crank the shit
+cause it's your Goddamn jam
+you say that you want your punchlines a little more compact
+well shawty I'm that man
+these other cats ain't metaphorically where I'm at man
+I gave Bruce Wayne a Valium and said
+settle ya fucking ass down I'm ready for combat, man
+get it calm Batman?
+nah, ain't nobody whose as bomb and as nuts
+lines are like mom's cat scans
+cause they fucking go bananas
+honey I applaud that ass
+swear to God, man, these broads can't dance
+ma, show ‘em how it's done
+spazz like a God Damn Tas, yeah
+
+[Chorus - Pink]
+
+[Verse 2 - Eminem:]
+Girl, shake that ass like a Donkey with Parkinson's
+Make like Michael J Fox in the drawers playin' with a etch-a-sketch
+bet you that you'll never guess who's knocking at your door
+people hit the floors
+yeah tonight ladies you gon get divorced
+girl forget remorse, I'ma hit you broads with
+Chris's force like you pissed him off
+talented with the tongue motherfucker
+you ain't gotta lick in yours
+hittin' licks like I'm robbin' liquor stores
+makin' cash registers shit their draws
+think you spit the rawest
+I'm an uncooked slab of beef
+laying on your kitchen floor
+in other words I'm off the meat rack
+bring the beat back
+bring me two extension chords
+I'mma measure my dick shit I need 6 inches more
+fuck my dicks big bitch
+need I remind you that I don't need the fucking swine flu to be a sick pig?
+you're addicted I'm dope
+I'm the longest needle around here
+need a fix up I'm the big shot
+get it dicks snots
+you're just small boats little pricks
+girl you think that other prick's hot
+I'll drink gasoline and eat a lit match
+‘fore I sit back and let ‘em get hot
+better call the cops on ‘em quick fast
+shady's right back on your bitch ass
+white trash with a half a six pack in his hatchback
+trailer hitch attached to the back (dispatch)
+
+[Chorus - Pink]
+
+[Verse 3 - Eminem:]
+Bitch, am I the reason that your boyfriend stopped rapping?
+does a bird chirp? Lil' Wayne slurps syrup til he burps
+and smokes purp
+does a word search gets circles wrapped around it like you do when I come through?
+I'd like you to remind yourself
+of what the fuck I can do when I'm on the mic
+or you're the kind of girl that I can take a liking to
+psych I'm spiking you like a football
+been this way since I've stood a foot tall
+you're a good catch with a shitty spouse
+got a pretty mouth and a good jaw
+gimme good brain
+watch the wood grain, don't want no cum stain
+bitch, you listening? Tryna' turn me down
+slut, I'm talking to you, turn me back up
+are you insane tryna talk over me in the car
+shut the fuck up while my shit's playin'
+I'ma shit stain on the underwear of life
+what's the saying? where there's thunder there's lightning
+and they say that it never strikes twice in the same place
+then how the fuck have I been hit six times
+in three different locations
+on four separate occasions?
+and you can bet your stinking ass
+that I've come to smash everything in my path
+fork was in the road took the psychopath
+poison ivy wouldn't have me thinking rash
+so hit the dance floor cutie while I do my duty on this microphone
+shake your booty shawty I'm the shit
+why you think Proof used to call me Doody?
+
+[Chorus - Pink]
+
+  </pre>
+</div>
+
+<button class="accordion">W.T.P.</button>
+<div class="panel">
+  <pre>
+[Intro]
+Yeah! Oh! Get Up! I said get up! Let's go!
+Better watch out, now
+Here we come (come)
+And we ain't stoppin' until
+We see the mornin' sun (sun)
+So give us room to do our thing
+Cause we ain't come to hurt no one (one)
+So everybody come on get up on the floor
+Right now and grab someone (one)
+
+[Verse 1]
+Now first of all I'm the boss
+I just wanna get that across
+Man even my Dentist hates when I floss
+Pull up to the club in a Pinto likes it's a Porsche
+Garbage bag for one of the windows
+Spray-painted doors with the flames on 'em
+Michigan plates and my name's on 'em
+Baby, Shady's here come on get him
+If you dames want 'em
+But he ain't stupid so quit tryin' to run them games on him
+He's immune to Cupid, why you tryin' to put your claims on him?
+Cause you won't do to me what you did to the last man
+Now climb in back try not to kick over the gas can
+There's a half a gallon in it, that could be our last chance
+We have of just gettin' home, now could I get that lap dance?
+She's got a tattoo of me right above her ass man
+In the streets of Warren, Michigan we call 'em tramp stamps
+That means she belongs to me, time to put the damn clamps
+Down and show this hussy who's the man
+Now, get in, dance!
+
+[Chorus]
+Now you can do this on your own
+But everyone knows that no one likes to be alone
+So get on the floor and grab somebody!
+Ain't nothin' but a White Trash Party!
+So let's have us a little bash
+And if anyone asks
+It ain't no one but us trash
+You dunno, you better ask somebody
+Cause we're havin' a White Trash Party!
+
+[Verse 2]
+Pull a fifth of Bacardi from outta my underwear
+And walk around the party without a care
+Like a body without a head
+Lookin' like a zombie from Night of the Livin' Dead
+And tomorrow I probably still be too high to get outta bed
+Til I feel like I been hit wit the sharp part'a the hammer
+Mixin' Hennessey and Fanta with Pepto and Mylanta
+I shoot the gift like I'm hollerin' "Die Santa!"
+Missed the tree and hit Rudolph and two innocent bystanders
+So quit tryin' ta play the wall like you balling
+Get on the floor when the beat drops and stop stallin'
+They call me the Stephon Marbury of rap, darlin'
+Cause as soon as they throw on some R-Kelly I start ballin'
+Makin' it rain for the ladies in the mini's
+But I'm not throwin' ones, fives, tens, or even twenties
+I'm throwin' quarters, nickels, dimes, pennies up at skinnies
+Man I do this for them bunnies up at Denny's
+From the north, east and west, but when
+It comes to them trailers in them South Parks
+Muffle it, cause homie that hood's tighter than Kenny's
+So ladies if your belly button's not an innie then I'm outie
+Now hop in my minivan, let's get rowdy
+C'mon
+
+[Chorus]
+Now you can do this on your own
+But everyone knows that no one likes to be alone
+So get on the floor and grab somebody!
+Ain't nothin' but a White Trash Party!
+So let's have us a little bash
+And if anyone asks
+If there ain't no one but us trash
+You dunno, you better ask somebody
+Cause we're havin' a White Trash Party!
+
+[Verse 3]
+Now whether you're black, white or purple
+If you're misunderstood
+But you don't give a fuck
+You ain't doin' shit that you should
+Long as you know you're up to evil
+And you're no damn good
+Get on the floor, man, and rep your 'hood
+Now honey, don't let them pricks trip
+We should make a quick dip
+And go do some donuts in the hospital parkin' lot
+Cause girl I got a sick wip
+Kick the back window outta my Gremlin
+Put two milk crates in the trunk
+Rip out the stick shift and
+Make a five seater
+I'll be damned if I feed a chick
+It ain't like me to split a piece 'a dry pita
+I'll be the S-L to the I-M to the S-H-A-D-Y
+And I don't need a tank top to be a wife beater
+I'll rip a tree out the ground
+And flip it upside down
+'Fore I turn over a new leaf, clown
+I'll tell ya now
+I'm so raw I still need to un-thaw
+You feel me, yall?
+I shut the club down like Drake in the mall
+But baby, a body like that's against the law
+You the baddest little chain with the blades I ever saw
+Cold slaw containers, empty straw wrappers and all
+You got more junk in your trunk than I do in my car
+Now get up!
+
+[Chorus]
+Now you can do this on your own
+But everyone knows that no one likes to be alone
+So get on the floor and grab somebody!
+Ain't nothin' but a White Trash Party!
+So let's have us a little bash
+And if anyone asks
+If there ain't no one but us trash
+You dunno, you better ask somebody
+Cause we're havin' a White Trash Party!
+
+  </pre>
+</div>
+
+<button class="accordion">Going Through Changes</button>
+<div class="panel">
+  <pre>
+[Ozzy]
+I'm going through changes
+I'm going through changes
+
+[Eminem]
+Lately I really, feel like I'm rolling for delf like Philly,
+feel like I'm losing control of myself, I sincerely
+Apologize if all that I sound like is I'm complaining,
+But life keeps on complicating, and I'm debating,
+On leaving this world, this evening, even my girls
+Can see I'm grievin', I try and hide it,
+But I can't, why do I act like I'm all high and mighty,
+When inside I'm dying, I am finally realizing I need help.
+can't do it myself, too weak, two weeks I've been having ups and downs,
+going through peaks and valleys, dilly dallying,
+round with the idea of ending the shit right here.
+I'm hatin' my reflection, I walk around the house tryin' to fight mirrors,
+I can't stand what I look like, yeah, I look fat, but what do I care?
+I give a fuck, only thing I fear is Hailie,
+I'm afraid if I close my eyes and I might see her,
+Shit...
+
+[Chorus]
+
+[Eminem]
+I lock myself in the bedroom, bathroom, nappin' at noon,
+Yeah dad's in a bad mood, he's always snappin' at you.
+Marshall, what happened that you can't stop with these pills,
+And you falling off with yer skills, and your own fans are laughin' at you?
+It become a problem you're too pussy to tackle, get up,
+Be a man, stand, a real man would've had this shit handled.
+(I) know you just had your heart ripped out and crushed,
+They say Proof just flipped out, homie just whipped out and bust,
+Nah, it ain't like Doody to do that,
+He wouldn't fuckin' shoot at nobody, he'd fight first,
+But dwellin' on it only makes the night worse,
+Now I'm popping Vic's, Perks and Methadone pills.
+"Yeah Em, tight verse, you killed it"
+Fuckin' drug dealers hang around me like yes men,
+And they gon' do whatever I says when I says it,
+It's in their best interest to protect their investment.
+And I just lost my fuckin' best friend, so fuck it, I guess then...
+
+[Chorus]
+
+(don't know what I'm gonna do, but I just keep on going through changes)
+
+My friends can't understand this new me,
+That's understandable, man, but think how bananas you'd be,
+You'd be an animal too, if you were trapped in this fame and caged in it like a zoo.
+And everybody's lookin' at you, what you want me to do?
+I'm startin' to live like a recluse and the truth is
+Fame's startin' to give me an excuse to be at a all time low.
+I sit alone in my home theater watchin' the same damn DVD
+Of the first tour, the last tour he was still alive.
+And it hurts so I fast forward, sleepin' pills will make me feel alright.
+And if I'm still awake in the middle of the night,
+I'll just take a couple more, yeah you're motherfuckin' right,
+I ain't slowin' down for no one, I am almost homeward bound.
+Almost in a coma, yeah homie come on dole 'em out
+Daddy, don't you die on me, daddy, better hold your ground.
+Fuck, don't I know the sound of that voice,
+Yeah baby hold me down.
+
+[Chorus]
+
+(don't know what I'm gonna do, but I just keep on going through changes)
+
+[Eminem]
+Wake up in the hospital, full of tubes, but somehow I'm pullin' through.
+Swear when I come back I'ma be bulletproof.
+I'ma do it just for Proof, I think I should state a few
+Facts, 'cause I may not get a chance again to say the truth.
+Shit, it just hit me that what if I would not have made it through?
+I think about the things I would have never got to say to you,
+I'd never get to make it right, so here's what I came to do.
+Hailie, this one is for you, Whitney and Alaina, too,
+I still love your mother, that'll never change,
+Think about her every day, we just could never get it together.
+Hey, wish there was a better way, for me to say it,
+But I swear on everything, I'd do anything for her on any day.
+There are just too many things to explain, when it rains,
+guess it pours, yes, it does, wish there wasn't any pain.
+But I can't pretend there ain't, I ain't placin' any blame,
+I ain't pointin' fingers, heaven knows I've never been a saint.
+I know that it feels like we just pissed away our history,
+And just today I looked at your picture, almost if to say,
+"I miss you" subconsciously, wish it didn't end this way.
+But I just had to get away, don't know why,
+I don't know what else to say, I guess I'm...
+
+[Chorus]
+
+(don't know what I'm gonna do, but I just keep on going through changes)
+
+ </pre>
+</div>
+
+<button class="accordion">Not Afraid</button>
+<div class="panel">
+  <pre>
+
+[Chorus:]
+I'm not afraid (I'm not afraid)
+To take a stand (to take a stand)
+Everybody (everybody)
+Come take my hand (come take my hand)
+We'll walk this road together, through the storm
+Whatever weather, cold or warm
+Just letting you know that you're not alone
+Holler if you feel like you've been down the same road (same road)
+
+[Intro (during Chorus):]
+Yeah, it's been a ride
+I guess I had to, go to that place, to get to this one
+Now some of you, might still be in that place
+If you're trying to get out, just follow me
+I'll get you there
+
+You can try and read my lyrics off of this paper before I lay 'em
+But you won't take the sting out these words before I say 'em
+Cause ain't no way I'ma let you stop me from causing mayhem
+When I say I'ma do something I do it,
+I don't give a damn what you think,
+I'm doing this for me, so fuck the world
+Feed it beans, it's gassed up, if it thinks it's stopping me
+I'ma be what I set out to be, without a doubt undoubtedly
+And all those who look down on me I'm tearing down your balcony
+No ifs, ands or buts, don't try to ask him why or how can he
+From "Infinite" down to the last "Relapse" album
+He's still shitting, whether he's on salary paid hourly
+Until he bows out or he shits his bowels out of him
+Whichever comes first, for better or worse
+He's married to the game, like a fuck you for Christmas
+His gift is a curse, forget the Earth, he's got the urge
+To pull his dick from the dirt, and fuck the whole universe
+
+[Chorus]
+
+Okay quit playing with the scissors and shit, and cut the crap
+I shouldn't have to rhyme these words in the rhythm for you to know it's a rap
+You said you was king, you lied through your teeth, for that
+Fuck your fillings, instead of getting crowned you're getting capped
+And to the fans, I'll never let you down again, I'm back
+I promise to never go back on that promise, in fact
+Let's be honest, that last "Relapse" CD was ehhh
+Perhaps I ran them accents into the ground
+Relax, I ain't going back to that now
+All I'm trying to say is get back, click-clack, blow
+Cause I ain't playing around
+It's a game called circle and I don't know how, I'm way too up to back down
+But I think I'm still trying to figure this crap out
+Thought I had it mapped out but I guess I didn't, this fucking black cloud
+Still follows me around but it's time to exorcise these demons
+These motherfuckers are doing jumping jacks now!
+
+[Chorus]
+
+And I just can't keep living this way
+So starting today, I'm breaking out of this cage
+I'm standing up, I'ma face my demons
+I'm manning up, I'ma hold my ground
+I've had enough, now I'm so fed up
+Time to put my life back together right now! (now)
+
+It was my decision to get clean, I did it for me
+Admittedly, I probably did it subliminally
+For you, so I could come back a brand new me you helped see me through
+And don't even realize what you did, 'cause believe me you
+I been through the ringer, but they could do little to the middle finger
+I think I got a tear in my eye, I feel like the king of
+My world, haters can make like bees with no stingers
+And drop dead, no more beef lingers
+No more drama from now on, I promise
+To focus solely on handling my responsibilities as a father
+So I solemnly swear to always treat this roof, like my daughters
+And raise it, you couldn't lift a single shingle on it!
+Cause the way I feel, I'm strong enough to go to the club
+Or the corner pub, and lift the whole liquor counter up
+Cause I'm raising the bar
+I'd shoot for the moon but I'm too busy gazing at stars
+I feel amazing and I'm...
+
+[Chorus]
+
+
+
+
+  </pre>
+</div>
+
+
+
+
+
+<script type="text/javascript">
+	
+	var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+    }
+}
+</script>
+
+
+<script>
+// merre 'modal'-in
+var modal = document.getElementById('id01');
+
+// Kur useri klikon jasht 'modal'-it te mbyllet
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<script>
+// Grab the Canvas and Drawing Context
+var canvas = document.getElementById('c');
+var ctx = canvas.getContext('2d');
+
+
+
+// Create an image element
+var img = document.createElement('IMG');
+
+// When the image is loaded, draw it
+img.onload = function () {
+
+    // Save the state, so we can undo the clipping
+    ctx.save();
+    ctx.arc(450,300,380,0,2*Math.PI);      
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(450,300,380,0,2*Math.PI, false);
+    ctx.fill();
+    // Clip to the current path
+    ctx.clip();
+    
+    
+    ctx.drawImage(img, 0, 0);
+    
+    // Undo the clipping
+    ctx.restore();
+}
+
+// Specify the src to load the image
+img.src = "Images/eminem.jpg";
+</script>
+
+	
+</body>
+
+</html>

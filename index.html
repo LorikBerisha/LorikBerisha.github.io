@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en" manifest="index.appcache">
+<head>
+	<meta charset="UTF-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="script.js"></script>
+	<script type="text/javascript" src="sound-mouseover.js"></script>
+	<script type="text/javascript" src="changeBackground.js"></script>
+	<script>
+$(document).ready(function() 
+{
+    var warn_on_unload="";           					/* 'one' funksion qe ekzekutohet vetem 1 here per dallim nga 'on'  */
+    $('input:text,input:checkbox,input:radio,textarea,select').one('change', function() 
+    {
+        warn_on_unload = "Leaving this page will cause any unsaved data to be lost.";
+
+        $('#submit').click(function(e) { 
+            warn_on_unload = "";}); 
+
+            window.onbeforeunload = function() { 
+            if(warn_on_unload != ''){
+                return warn_on_unload;
+            }   
+        }
+    });
+});
+
+
+
+	</script>
+	<title>MusicBook - Homepage</title>
+	<link rel="stylesheet" href="indexstyle.css"/>
+		
+		<style>
+@media screen and (max-width:992px)
+{
+.navLista 
+	{
+		display:none;
+	}
+}	
+@media screen and (min-width:993px)
+{
+.navLista 
+	{
+	    display:block!important;
+	}
+}
+@media screen and (min-width:993px)
+{
+.hide-large
+	{
+		display:none!important;
+	}
+}
+
+#grad1 {
+    height: 50px;
+    background: #121212; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#121212); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#121212); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#121212); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#121212); /* Standard syntax (must be last) */
+}
+		</style>
+
+</head>
+<body>
+	
+	<!-- Header-i (logoja dhe search box) -->
+	<h1 id="header"><a href="#" class="hide-large" style="border:1px solid #1cb779;">☰</a><a href="index.html"><span>Music</a><span>Book</span>
+
+	<span><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-right: 200px;" target="buton1">Login</button> <input type="text" name="search" placeholder="      Search.." target="searchbox"> </span></h1>
+	
+
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close login">&times;</span>
+      
+    </div>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username"
+      target="login" name="uname" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" target="login" name="psw" required>
+        
+      <button type="submit" target="buton2">Login</button>
+      <input type="checkbox" checked="checked"> Remember me
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <span class="psw" style="padding-right:50px; ">Forgotten <a href="index.html#contact">password?</a></span>
+    </div>
+  </form>
+</div>
+
+
+
+
+<!-- Modal per navigation menu -->
+<div id="id02" class="modal1">
+  <div>
+    <div class="modal1-content">
+      <span onclick="document.getElementById('id02').style.display='none'" 
+      style="margin: 20px;cursor:pointer;color:white;">&times;</span>
+     <ul>
+
+      <li><a href="Piano.html">Piano</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="id03" class="modal1">
+  <div>
+    <div class="modal1-content" style="background-image:url(Images/images2.jpg);background-size: 170px 128px;">
+      <span onclick="document.getElementById('id03').style.display='none'" 
+      style="margin: 20px;cursor:pointer; color:white;">&times;</span>
+     <ul>
+      <li><a href="Electric Guitars.html">Electric</a></li>
+      <li><a href="Acoustic Guitars.html">Acoustic</a></li>
+      <li><a href="Bass Guitars.html">Bass</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+	<!-- Navigation Lista -->
+	<nav class="navLista">
+		<ul class="lista">
+		<li> <table cellpadding="0px" cellspacing="0px" style="margin: 0;padding:0;" id="navBar">
+    <tr>
+        <td>
+            <a class="selected" href="index.html" style="margin-left: 10px;" onmouseover="playclip()">Home</a>
+        </td>
+        
+    </tr>
+</table></li>
+			<li><a style="margin-left: 11px;" onmouseover="playclip()">Products</a>
+				<ul id="submenu">
+					<li><a href="#" onclick="document.getElementById('id02').style.display='block'" onmouseover="playclip()"> Piano </a>
+						</li>
+					<li><a href="##" onclick="document.getElementById('id03').style.display='block'" onmouseover="playclip()"> Guitar </a>
+					</li>
+					
+				</ul>
+			</li>
+			<li><span><br></span><a href="artist.html" onmouseover="playclip()">Artists</a></li>
+			<li><a href="https://www.ultimate-guitar.com/" target="_blank" onmouseover="playclip()">Chords</a>
+			</li>
+			<li><a href="#contact" onmouseover="playclip()">Contact</a></li>
+
+
+		</ul>
+	</nav>
+
+	<header class="hide-large">
+		<a href="#">☰</a>
+
+
+	</header>
+
+
+
+
+<div id="main">
+	<table  style="margin-left: 400px; border-color: blue;" cellpadding="0" cellspacing="2">
+		<tr>
+			<td>
+				<a href="Lyrics/lyrics.html" title="Metallica" align="center"><img src="Lyrics/Images/metallica hardwired.png"/>
+				 <br><strong> Metallica </strong></a><br><figcaption>Hardwired</figcaption> 
+			</td> 
+			<td>
+				<a href="Lyrics/lyricsWeeknd.html" title="The Weeknd"><img src="Lyrics/Images/weeknd starboy.png"/>
+				<br><strong> The Weeknd </strong></a><br><figcaption>Starboy</figcaption>  
+			</td>
+			<td>
+				<a href="Lyrics/lyricsJCole.html" title="J. Cole"><img src="Lyrics/Images/J Cole 4 ur eyez only.png"/>
+				<br><strong> J. Cole </strong></a><br><figcaption>4 ur eyez only</figcaption> 
+			</td>
+			<td>
+				<a href="Lyrics/lyricsJohnLegend.html" title="John Legend"><img src="Lyrics/Images/John Legend Darkness n Light.png"/><br><strong> John Legend </strong></a><br><figcaption>Darkness and Light</figcaption>
+			</td>
+		</tr>
+		
+
+	<br>
+
+		<tr>
+			<td>
+				<a href="Lyrics/lyricsArcticMonkeys.html" title="arcticmonkeys"><img src="Lyrics/Images/arcticmonkeys.png"/>
+				 <br><strong> Arctic Monkeys </strong></a><br><figcaption>AM</figcaption>
+			</td> 
+			<td>
+				<a href="Lyrics/lyricsSwedish.html" title="swedishhousemafia"><img src="Lyrics/Images/swedishmafia.png"/>
+				<br><strong> Swedish House Mafia </strong></a><br><figcaption>One</figcaption>
+			</td>
+			<td>
+				<a href="Lyrics/lyricsJayZ.html" title="JayZ"><img src="Lyrics/Images/JayZ.png"/>
+				<br><strong> JayZ </strong></a><br><figcaption>Magna Carta Holy</figcaption> 
+			</td>
+			<td>
+				<a href="Lyrics/lyricsColdplay.html" title="Coldplay"><img src="Lyrics/Images/Coldplay.png"/>
+				<br><strong> Coldplay </strong></a><br><figcaption>A Head Full Of Dreams</figcaption>
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				<a href="Lyrics/lyricsBeyonce.html" title="Beyonce"><img src="Lyrics/Images/Beyonce.png"/>
+				 <br><strong> Beyonce </strong></a><br><figcaption>I Am... Sasha Fierce</figcaption> 
+			</td> 
+			<td>
+				<a href="Lyrics/lyricsOneRepublic.html" title="OneRepublic"><img src="Lyrics/Images/OneRepublic.png"/>
+				<br><strong> One Republic </strong></a><br><figcaption>Native</figcaption>
+			</td>
+			<td>
+				<a href="Lyrics/lyricsRihanna.html" title="Rihanna"><img src="Lyrics/Images/Rihanna.png"/>
+				<br><strong> Rihanna </strong></a><br><figcaption>Loud</figcaption>
+			</td>
+			<td>
+				<a href="Lyrics/lyricsBruno.html" title="BrunoMars"><img src="Lyrics/Images/BrunoMars.png"/>
+				<br><strong> Bruno Mars </strong></a><br><figcaption>Unorthodox Jukebox</figcaption> 
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+			    <a href="Lyrics/lyricsScorpions.html" title="Scorpions"><img src="Lyrics/Images/Scorpions.png"/>
+			    <br><strong> Scorpions </strong></a><br><figcaption>Crazy World</figcaption> 
+			</td> 
+			<td>
+				<a href="Lyrics/lyricsRobin.html" title="Robin Schulz"><img src="Lyrics/Images/RobinSchulz.png"/>
+				<br><strong> Robin Schulz </strong></a><br><figcaption>Prayer</figcaption> 
+			</td>
+			<td>
+				<a href="Lyrics/lyricsLana.html" title="Lana Del Rey"><img src="Lyrics/Images/LanaDelRey.png"/>
+				<br><strong> Lana Del Rey </strong></a><br><figcaption>Born to Die</figcaption>
+			</td>
+			<td>
+				<a href="Lyrics/lyricsBonjovi.html" title="Bon Jovi"><img src="Lyrics/Images/BonJovi.png"/>
+				<br><strong> Bon Jovi </strong></a><br><figcaption>Bounce</figcaption> 
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+			    <a href="Lyrics/lyricsKanye.html" title="Kanye West"> <img src="Lyrics/Images/KanyeWest.png"/>
+			    <br><strong> Kanye West </strong></a><br><figcaption>Graduation</figcaption> 
+
+			</td> 
+			<td>
+				<a href="Lyrics/lyricsRadiohead.html" title="Radiohead"><img src="Lyrics/Images/Radiohead.png"/>
+				<br><strong> Radiohead </strong></a><br><figcaption>A Moon Shaped Pool</figcaption> 
+			</td>
+			<td>
+				<a href="Lyrics/lyricsReed.html" title="Lou Reed"><img src="Lyrics/Images/LouReed.png"/>
+				<br><strong> Lou Reed </strong></a><br><figcaption>Transformer</figcaption> 
+			</td>
+			<td>
+				<a href="Lyrics/lyricsEminem.html" title="Eminem"><img src="Lyrics/Images/Eminem.png"/>
+				<br><strong> Eminem </strong></a><br><figcaption>Recovery</figcaption>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+			    <a href="Lyrics/lyriscJohnnyCash.html" title="Johnny Cash"><img src="Lyrics/Images/JohnnyCash.png"/>
+			    <br><strong> Johnny Cash </strong></a><br><figcaption>At Folsom Prison</figcaption> 
+			</td> 
+			<td>
+				<a href="Lyrics/lyricsSinatra.html" title="Frank Sinatra"><img src="Lyrics/Images/FrankSinatra.png"/>
+				<br><strong> Frank Sinatra </strong></a><br><figcaption>My Way</figcaption> 
+			</td>
+			<td>
+				<a href="Lyrics/lyriscJenniferLopez.html" title="Jennifer Lopez"><img src="Lyrics/Images/JenniferLopez.png"/>
+				<br><strong> Jennifer Lopez </strong></a><br><figcaption>On the 6</figcaption> 
+			</td>
+			<td>
+				<a href="Lyrics/lyriscJassieJ.html" title="Jessie J"><img src="Lyrics/Images/JessieJ.png"/>
+				<br><strong> Jessie J </strong></a><br><figcaption>Sweet Talker</figcaption> 
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<a href="Lyrics/lyrisCqueen.html" title="Queen"><img src="Lyrics/Images/Queen.png"/>
+				<br><strong> Queen </strong></a><br><figcaption>Greatest Hits II</figcaption> 
+			</td> 
+			<td>
+				<a href="Lyrics/lyriscCatStevens.html" title="Cat Stevens"><img src="Lyrics/Images/catstevens.jpeg"/>
+				<br><strong> Cat Stevens </strong></a><br><figcaption>Tea for the Tillerman</figcaption> 
+			</td>
+			<td>
+				<a href="Lyrics/lyricsDion.html" title="Celine Dion"><img src="Lyrics/Images/CelineDion.png"/>
+				<br><strong> Celine Dion </strong></a><br><figcaption>Falling into You</figcaption> 
+			</td>
+			<td>
+				<a href="Lyrics/lyriscJohnLennon.html" title="John Lennon"><img src="Lyrics/Images/JohnLennon.png"/>
+				<br><strong> John Lennon  </strong></a><br><figcaption>Double Fantasy</figcaption> 
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<a href="Lyrics/lyriscKendricKlamar.html" title="Kendrick Lamar"><img src="Lyrics/Images/KendrickLamar.png"/>
+				<br><strong> Kendrick Lamar </strong></a><br><figcaption>Good Kid, M.A.A.D City</figcaption> 
+			</td> 
+			<td>
+				<a href="Lyrics/lyriscDaftPunk.html" title="Daft Punk"><img src="Lyrics/Images/DaftPunk.png"/>
+				<br><strong> DaftPunk </strong></a><br><figcaption>Random Access Memories</figcaption>
+			</td>
+			<td>
+				<a href="Lyrics/lyriscThebeatles.html" title="The Beatels"><img src="Lyrics/Images/TheBeatels.png"/>
+				<br><strong> The Beatels </strong></a><br><figcaption>Abbey Road</figcaption> 
+			</td>
+			<td>
+				<a href="Lyrics/lyriscAdele.html" title="Adele"><img src="Lyrics/Images/Adele.png"/>
+				<br><strong> Adele </strong></a><br><figcaption>21</figcaption> 
+			</td>
+			</tr>
+
+	</table><br>
+	</div>
+	
+<button id="Button" onclick="NotifyMe()" style="margin-left: 400px" target="java">Message</button>
+		
+
+		
+<!-- Contact section -->
+  <div class="container padding" id="contact" >
+    <div class="content" style="max-width:600px;">
+      <h2 id="about" class="center"><b style="font-weight: 600;color: #BBE5E3;">Contact Us</b></h2>
+      <p align="center" style=" color: #BBE5E3;">Do you want to buy/sell products with our site? Feel free to contact us!</p>
+      <form style="font-size:120%">
+        <div class="group">
+          <label style="font-family: impact;float:left;">Name</label>
+          <input class="input border" type="text" name="Name" required>
+        </div>
+        <div class="group">
+          <label style="font-family: impact;float:left;">Email</label>
+          <input class="input border" type="text" name="Email" required>
+        </div>
+        <div class="group">
+          <label style="font-family: impact;float:left;">Message</label>
+          <input class="input border" type="text" name="Message" required>
+        </div>
+        <button type="submit"  id="submit" class="btn-block margin-bottom" target="send"><a href="mailto:admin@support.com" style="text-decoration: none;color:#BBE5E3;width:600px;">Send Message</a></button>
+	   <form >
+       <input type="checkbox" name="subscribe" value="subscribe" id="subscribe"><label for="subscribe" style="font-family: impact;"> Check to subscribe!</label>
+       </form>
+		<a href="http://www.facebook.com">
+        <img src="Images/facebook.svg" alt="share logo" title="Click to share" style="width:42px; height:42px; border:0; padding-right:2px">
+        </a>
+        <a href="http://www.twitter.com">
+        <img src="Images/twitter.svg" alt="share logo" title="Click to share" style="width:42px;height:42px;border:0;">
+        </a>
+        <a href="http://www.instagram.com">
+        <img src="Images/instagram.svg" alt="share logo" title="Click to share" style="width:42px;height:42px;border:0;">
+        </a>
+      </form>
+    </div>
+  </div>
+
+<audio>
+<source src="Audio Files/click.mp3">
+<source src="Audio Files/click.ogg">
+</audio>
+<div id="sounddiv"><bgsound id="sound"></div>
+
+
+
+<div id="map" style="margin-left: 590px;margin-bottom: 30px;"></div>
+<footer id="grad1">
+<address style="color: white;">
+<italic>
+The one's who made this possible: </italic> <a target="_blank" href="us.html"> us </a> .<br> 
+
+</address>
+</footer>
+
+
+		<!-- Google Maps -->
+		
+    <script>
+      function initMap() {
+        var uluru = {lat: 42.6629, lng: 21.1655};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: {lat:42.6026, lng:20.9030}
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map,
+          zoom: 15,
+
+        });
+      }
+
+
+
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfIrHCwKjMfSGl69AzYrayrtJbtQH-pIU&callback=initMap">
+    </script>
+
+
+
+<script>
+// merre 'modal'-in
+var modal = document.getElementById('id01');
+
+// Kur useri klikon jasht 'modal'-it te mbyllet
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+</script>
+<script>
+		function NotifyMe()
+			{
+					if (!("Notification" in window))
+					{
+						alert("This browser does not support notifications.");
+					}
+					else if (Notification.permission == "granted")
+							{
+								var notification = new Notification("Hi there! :)");
+							}
+					else if (Notification.permission != "denied")
+							{
+								Notification.requestPermission(function(permission) 
+								{
+									if ("permission"=="granted")
+									{
+										var notification = new Notification("Hi there");
+									}
+								}
+								);
+							}
+			}
+			
+</script>
+
+<!-- <script>
+
+window.onbeforeunload = function(e) {
+  var dialogText = 'Dialog text here';
+  e.returnValue = dialogText;
+  return dialogText;
+};
+
+</script> -->
+</body>
+
+</html>

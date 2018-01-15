@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="indexstyle.css"/>
+	
+	<style>
+	/* Style the buttons that are used to open and close the accordion panel */
+button.accordion {
+    background-color: black;
+    background-color: rgba(0,0,0,0.92);
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 50%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin-left: 410px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+button.accordion.active, button.accordion:hover {
+    background-color: #151313;
+    width: 53.65%;
+
+}
+
+/* Style the accordion panel. Note: hidden by default */
+div.panel {
+    padding: 0 18px;
+    width: 50.65%;
+    margin-left:410px;
+    color:black;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-weight: 800;
+    background-color: #D5D5D5;
+    background-color: rgba(225,225,225,0.5);
+    display: none;
+}
+
+/* The "show" class is added to the accordion panel when the user clicks on one of the buttons. This will show the panel content */
+div.panel.show {
+    display: block;
+}
+
+	div.svg-wrapper {
+  height: 100%;
+  max-height: 60px;
+  margin-top: -150px;
+  margin-left: 550px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 320px;
+}
+
+.shape {
+  fill: transparent;
+  stroke-dasharray: 205 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+  /*stroke: #1cb779;*/
+  stroke: #19f6e8;
+}
+
+.text {
+  height: 100%;
+  max-height: 60px;
+  margin-left: 10px;
+  text-align: center;
+  color: #fff;
+  /*font-family: 'Roboto Condensed';*/
+  font-size: 22px;
+  letter-spacing: 8px;
+  line-height: 26px;
+  position: relative;
+  top: -80px;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 8px;
+  }
+  100% {
+    stroke-dasharray: 760;
+    stroke-dashoffset: 0;
+    stroke-width: 2px;
+  }
+}
+
+.svg-wrapper:hover .shape {
+  -webkit-animation: 0.5s draw linear forwards;
+  animation: 0.5s draw linear forwards;
+}
+</style>
+	
+
+
+</head>
+
+<body>
+
+	<!-- Header-i (logoja dhe search box) -->
+  <h1 id="header"><a href="../index.html">Music</a>Book</span> </a>
+   
+   
+   
+   
+   <span><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-right: 200px;" 
+  target="buton1">Login</button> <input type="text" name="search" placeholder="      Search.." target="searchbox"> </span></h1>
+  
+
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close login">&times;</span>
+      
+    </div>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username"
+      target="login" name="uname" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" target="login" name="psw" required>
+        
+      <button type="submit" target="buton2">Login</button>
+      <input type="checkbox" checked="checked"> Remember me
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <span class="psw" style="padding-right:50px; ">Forgotten <a href="../index.html#contact">password?</a></span>
+    </div>
+  </form>
+</div>
+
+  
+
+  <!-- Modal per navigation menu -->
+<div id="id02" class="modal1">
+  <div class="">
+    <div class="modal1-content">
+      <span onclick="document.getElementById('id02').style.display='none'" 
+      style="margin: 20px;cursor:pointer;color:white;">&times;</span>
+     <ul>
+
+      <li><a href="../Piano.html">Piano</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="id03" class="modal1">
+  <div>
+    <div class="modal1-content" style="background-image:url(images2.jpg);background-size: 170px 128px;">
+      <span onclick="document.getElementById('id03').style.display='none'" 
+      style="margin: 20px;cursor:pointer; color:white;">&times;</span>
+     <ul>
+      <li><a href="../Electric Guitars.html">Electric</a></li>
+      <li><a href="../Acoustic Guitars.html">Acoustic</a></li>
+      <li><a href="../Bass Guitars.html">Bass</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Navigation Lista -->
+  <nav class="navLista">
+    <ul class="lista">
+    <li> <table cellpadding="0px" cellspacing="0px" style="margin: 0;padding:0;" id="navBar">
+    <tr>
+        <td>
+            <a class="selected" href="../index.html" style="margin-left: 10px;">Home</a>
+        </td>
+        
+    </tr>
+</table></li>
+      <li><a style="margin-left: 11px;">Products</a>
+        <ul id="submenu">
+          <li><a href="#" onclick="document.getElementById('id02').style.display='block'"> Piano </a>
+            </li>
+          <li><a href="##" onclick="document.getElementById('id03').style.display='block'"> Guitar </a>
+          </li>
+          
+        </ul>
+      </li>
+      <li><span><br></span><a href="../artist.html">Artists</a></li>
+      <li><a href="https://www.ultimate-guitar.com/" target="_blank">Chords</a>
+      </li>
+      <li><a href="#contact">Contact</a></li>
+
+
+    </ul>
+  </nav>
+  <div class="svg-wrapper">
+  <svg height="80" width="330" >
+    <rect class="shape" height="80" width="330" />
+  </svg>
+
+<div class="text" style="border: 1px solid black;color:white;font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;">Graduation by          
+<span style="color:black;font-weight: bold;">Kanye West</span>
+</div>
+</div>
+
+<canvas id="c"  width="900px" height="600px" style="margin: 250px 0 0 280px;"></canvas>
+
+<button class="accordion" style="margin-left: 410px; margin-top: 5px;">Good Morning</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Kanye West Good Morning.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+Good morning [x4]
+
+Wake up, Mr. West, Mr. West, Mr. Fresh
+Mr. by-his-self-he-so-impressed
+I mean, damn, did you even see the test
+You got D's mother fucker, D's, Rosie Perez
+And yes, barely pass any and every class
+Looking at every ass
+Cheated on every test
+I guess this is my dissertation
+Homie, this shit is basic
+Welcome to graduation
+
+Good morning
+Good morning
+Good morning
+Good morning
+
+Good morning
+On this day we become legendary
+Everything we dreamed of
+I'm like a fly Malcolm X
+Buy any jeans necessary
+Detroit Red cleaned up
+From the streets of the league
+From an eighth to a key
+But you graduate when you make it up outta the streets
+From the moments of pain
+Look how far we done came
+Haters saying ya changed
+Now ya doing ya thing
+
+Good morning
+Good morning
+Good morning
+Good morning
+
+Good morning
+Look at the valedictorian scared of the future
+While I hop in the Delorean
+Scared-to-face-the-world complacent career student
+Some people graduate, but we still stupid
+They tell you read this, eat this, don't look around
+Just peep this, preach us, teach us, Jesus
+Okay, look up now, they done stole your streetness
+After all of that, you receive this
+
+Good morning
+Hustlers, that's if you're still living
+Get on down
+Every time that we hear them
+Good morning
+Hustlers, that's if you're still living
+Get on down
+Every time that we hear them
+Good morning
+Hustlers, that's if you're still living
+Get on down
+Every time that we hear them
+Good morning
+Hustlers, that's if you're still living
+Get on down
+
+Get on down
+Get, get on down
+Get on down
+Get, get on down
+</pre>
+</div>
+
+<button class="accordion">Champion</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Kanye West Champion.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+[chorus:]
+(Did you realize
+That you were a champion?
+In their eyes)
+Yes I did, so I packed it up and brought it back to the crib
+Just a little somethin' show you how we live
+Everybody want it but it ain't that serious
+That's that shit
+So if you're gonna do it, do it just like this
+(Did you realize
+That you were a champion?
+In their eyes)
+
+You don't see just how wild the crowd is?
+You don't see just how fly my style is?
+I don't see why I need a stylist
+When I shop so much I can speak Italian
+I don't know I just wanted better for my kids
+And I ain't sayin' we was from the projects
+But everytime I want it, layaway or a deposit
+My dad'll say "When you see clothes close your eyelids"
+We was sort of like Will Smith and his son
+In the movie I ain't talkin' 'bout the rich ones
+'cause every summer he'll get some
+Brand new hare-brained scheme to get rich from
+And I don't know what he did for dough
+But he'd sent me back to school with a new wardrobe and hey!
+
+[chorus]
+
+When it feel like living's harder than dyin'
+For me givin' up's way harder than tryin'
+Lauryn Hill say her heart was in Zion
+I wish her heart still was in rhymin'
+'cause who the kids gonna listen to? Huh?
+I guess me if it isn't you
+Last week I paid a visit to the institute
+They got the Drop Out keepin' kids in the school
+I guess I'll clean up my act like Prince'll do
+If not for the pleasure, least for the principle
+They got the CD then got to see me drop gems
+Like I dropped out of P.E.
+They used to feel invisible
+Now they know they invincible
+
+(Did you realize
+That you were a champion?
+In their eyes)
+This is the story of a champion
+Rounders in the mob and they pop the guns
+Stand up stand up! Here he comes
+Tell me what it takes to be number one?
+Tell me what it takes to be number one?
+This is the story of a champion
+Rounders in the mob and they pop the guns
+Stand up stand up! Here he comes
+Tell me what it takes to be number one?
+Tell me what it takes to be number one?
+
+[chorus]
+
+  </pre>
+</div>
+
+<button class="accordion">Stronger</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Kayne West Stronger.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+Work it, make it, do it,
+Makes us harder, better, faster, stronger!
+
+[played in background, continuously:]
+Work it harder, make it better,
+do it faster, makes us stronger,
+more than ever, hour after,
+Our work is never over.
+
+[Chorus:]
+Na-na-na that that don't kill me
+Can only make me stronger
+I need you to hurry up now
+'Cause I can't wait much longer
+I know I got to be right now
+'Cause I can't get much wronger
+Man I've been waitin' all night now
+That's how long I've been on you
+
+I need you right now
+I need you right now
+
+Let's get lost tonight
+You could be my black Kate Moss tonight
+Play secretary, I'm the boss tonight
+And you don't give a fuck what they all say right?
+Awesome, the Christian and Christian Dior
+Damn, they don't make 'em like this anymore
+I ask 'cause I'm not sure
+Do anybody make real shit anymore?
+Bow in the presence of greatness
+'cause right now thou hast forsaken us
+You should be honored by my lateness
+That I would even show up to this fake shit
+So go ahead go nuts go ape shit
+Especially in my pastel on my bape shit
+Act like you can't tell who made this
+New gospel homie, take six, and take this, haters
+
+[Chorus]
+
+I need you right now
+I need you right now
+
+Me likey
+
+I don't know if you got a man or not,
+If you made plans or not
+If God put me in your plans or not
+I'm trippin' this drink got me sayin' a lot
+But I know that God put you in front of me
+
+So how the hell could you front on me?
+There's a thousand you's, there's only one of me
+I'm trippin', I'm caught up in the moment right?
+Cause it's Louis Vuitton Don night
+So we gon' do everything that Kan like
+Heard they'd do anything for a Klondike
+Well, I'd do anything for a blonde-dike
+And she'll do anything for the limelight
+And we'll do anything when the time's right
+Ugh, baby, you're makin' it (harder, better, faster, stronger)
+
+[Chorus]
+
+I need you right now
+I need you right now
+
+You know how long I've been on you?
+Since Prince was on Appolonia
+Since OJ had Isotoners
+Don't act like I never told you [x6]
+Baby, you're making it (harder, better, faster, stronger)
+
+[Chorus]
+
+I need you right now [x4]
+
+You know how long I've been on you?
+Since Prince was on Appolonia
+Since OJ had Isotoners
+Don't act like I never told you
+Never told you [x4]
+
+Never over [x8]
+  </pre>
+</div>
+
+<button class="accordion">I Wonder</button>
+<div class="panel">
+  <pre>
+Find your dreams come true
+And I wonder if you know
+What it means, what it means
+And I wonder if you know
+What it means, what it means
+And I wonder if you know
+What it means to find your dreams
+
+I've been waiting on this my whole life
+These dreams be waking me up at night
+You say I think I'm never wrong
+You know what, maybe you're right, aight
+
+And I wonder if you know
+What it means, what it means
+And I wonder if you know
+What it means to find your dreams
+
+You say he get on your fucking nerves
+You hope that he get what he deserves, word
+Do you even remember what the issue is
+You just trying to find where the tissue is
+You can still be who you wish you is
+It ain't happen yet
+And that's what the intuition is
+When you hop back in the car
+Drive back to the crib
+Run back to their arms
+The smokescreens
+The chokes and the screams
+You ever wonder what it all really mean
+
+And I wonder if you know
+What it means, what it means
+And I wonder if you know
+What it means to find your dreams
+
+And I'm back on my grind
+A psychic read my lifeline
+Told me in my lifetime
+My name would help light up the Chicago skyline
+And that's what I'm
+Seven o'clock, that's primetime
+Heaven'll watch, God calling from the hot lines
+Why he keep giving me hot lines
+I'm a star, how could I not shine
+How many ladies in the house
+How many ladies in the house without a spouse
+Something in your blouse got me feeling so aroused
+What you about
+On that independent shit
+Trade it all for a husband and some kids
+You ever wonder what it all really mean
+You ever wonder if you'll find your dreams
+  </pre>
+</div>
+
+<button class="accordion">Can't Tell Me Nothing</button>
+<div class="panel">
+  <pre>
+I had a dream I can buy my way to heaven
+When I awoke, I spent that on a necklace.
+I told God I'd be back in a second,
+Man it's so hard not to act reckless.
+To whom much is given much is tested.
+Get arrested, guess until, they get the message.
+I feel the pressure, under more scrutiny,
+and what I do? Act more stupidly.
+bought more jewelry, more Louis V, my momma couldn't get through to me.
+The drama, people suing me,
+I'm on T.V. talking like it's just you and me.
+I'm just saying how I feel man,
+I ain't one of the Cosby's I ain't go to Hill man
+I guess the money should've changed him,
+I guess I should've forgot where I came from.
+
+[Chorus:]
+La, la, la, la wait till I get my money right
+la, la, la, la then you cant tell me nothing right
+Excuse Me, is you saying something?
+Uh, uh, you can't tell me nothing
+(Ha ha) you can't tell me nothing
+Uh, uh, you can't tell me nothing
+
+Let up the suicide doors.
+This is my life homey, you decide yours.
+I know that Jesus died for us,
+But I couldn't tell you who decide wars.
+So I parallel double parked that motherfucker sideways
+Old folks talking about back in my day
+But homey this is my day.
+Class started 2 hours ago, oh am I late?
+You know I already graduated
+And you can live through anything if magic made it.
+
+They say I talk with so much emphasis,
+Oh, they're so sensitive.
+Don't ever fix your lips like collagen
+Say something were you gone end up apologising.
+Let me know if it's a problem man,
+Alright man, holla then.
+
+[Chorus]
+
+Let the champagne splash, let that man get cash,
+Let that man get past.
+You don't need a stop to get gas,
+If he can move through the rumors, he can drive off the fumes cause
+How he move in a room full of no's?
+How he stay faithful in a room full of h**s?
+Must be the pharaohs, he in tune with his soul,
+So when he buried in a tomb full of gold.
+Treasure. What's you pleasure?
+Life is a, uh, depending how you dress her.
+So if the devil wear Prada,
+Adam Eve wear Nada,
+I'm in between, but way more fresher.
+With way less effort, 'cause when you try hard,
+That's when you die hard.
+Ya homies looking like "Why God?"
+When they reminisce over you, my god.
+
+[Chorus]
+
+  </pre>
+</div>
+
+<button class="accordion">Drunk &amp; Hot Girls</button>
+<div class="panel">
+  <pre>
+Ra ra ra ra ra ra... brrraaa
+
+[Kanye West]
+We go through too much bullshit just to mess with these drunk and hot girls
+We go through too much bullshit just to mess with these drunk and hot girls
+
+[Mos Def (Kanye West)]
+Looks like that mami can't buy everything up [x3]
+(We go- through too- much bullshit- to mess- mess with- these drunk-
+all of these drunk and hot girls)
+
+[Kanye West (Mos Def)]
+Driving around town looking for the best spot for the
+(Drunk and hot girls)
+Up in the club look at here what we got some
+(Drunk and hot girls)
+Stop dancing with your girlfriend and come dance with me
+Stop talking about your boyfriend since he is not me
+Stop running up my tab cause these drinks is not free
+You drunk and hot girl
+
+[Kanye West]
+We go through too much bullshit just to mess with these drunk and hot girls
+We go through too much bullshit just to mess with these drunk and hot girls
+
+[Mos Def (Kanye West)]
+(We go- through too- much bullshit- to mess- mess with- these all-
+all of these drunk and hot girls)
+
+[Kane West (Mos Def)]
+I don't wanna drop your friends off, I just want you
+(You drunk and hot girl)
+You wanna sit down but we hit the drive through
+(You drunk and hot girl)
+Please don't fall asleep baby we almost back
+Please don't throw up in the car we almost crash
+Oh now you sober, how'd I know you'd say that
+You drunk an hot girl
+
+[Kanye West]
+We gonna through too much bullshit just to mess with these drunk and hot girls
+We go through too much bullshit just to mess with these drunk and hot girls
+
+[Mos Def (Kanye West)]
+(We go- through too- much bullshit- to mess- mess with- these drunk-
+all of these drunk and hot girls)
+
+[Mos Def]
+Lot of dangerous necessity that people seek without regard
+To where they are, the human heart is curious above all things,
+laa the lights are low
+your eyes are bright
+the music, makes it sweet delight
+It's out inside, I'm feeling right
+your dress is tight
+Oh waaaa ow, I want you right now
+
+[Kanye West]
+Don't tell me you sing,you bout to get a deal
+(You drunk and hot girls)
+Aaa aaa aa aa aa, that's how the fuck you sound
+(You drunk and hot girl)
+You only live once do whatever you like
+I thought I'd be with you for only one night
+Now I'm with this girl for the rest of my life
+That drunk and hot girl
+
+[Kanye West]
+We go through too much bullshit just to mess with these drunk and hot girls
+(A little sippy sippy)
+We gonna through too much bullshit just to mess with these drunk and hot girls
+(Want a little whisky)
+
+[Mos Def (Kanye West)]
+(We go- through too- much bullshit- to mess- mess with- these drunk-
+all of these drunk and hot girls)
+
+Ra ra ra ra ra ra... brrraaa
+  </pre>
+</div>
+
+<button class="accordion">Flashing Lights</button>
+<div class="panel">
+  <pre>
+Flashing lights, lights
+Flashing lights, lights
+Flashing lights, lights
+Flashing lights, lights
+
+[Kanye West]
+She don't believe in shootin' stars,
+but she believe in shoes & cars
+Wood floors in the new apartment,
+couture from the store's department
+You more like L'eau de Stardee shit,
+I'm more of the, trips to Florida
+Order the h'orderves, views of the Water
+Straight from the page of your favorite author
+And the weather so breezy,
+man why can't life always be this easy
+She in the mirror dancing so sleazy,
+I get a call like where are you Yeezy
+Try to hit you with a 'Oeur de Whopee'
+Till I get flashed by the paparazzi
+Damn, these nigga's got me,
+I hate these nigga's more than the Nazis
+
+[Dwele]
+As I recall, I know you love to show off
+But I never thought that you would take it this far
+What do I know? Flashing lights, lights
+What do I know? Flashing lights, lights
+
+[Kanye West]
+I know it's been a while,
+Sweetheart, we hard-ly talk, I was doing my thing
+I know I was foul bay-bay,
+a-bay late-ly you been all on my brain,
+And if somebody would've told me a month ago
+Fronting though, yo I wouldn't wanna know
+If somebody would've told me a year ago
+it'd go, get this difficult
+Feeling like Katrina with no fema
+Like Martin with no Gina
+Like a flight with no visa
+First class with the seat back I still see ya
+In my past, you on the other side of the glass
+Of my memory's museum,
+I'm just saying, Hey Mona Lisa,
+come home you know you can't Rome without Caesar
+
+[Dwele]
+As I recall, I know you love to show off
+But I never thought that you would take it this far
+What do I know? Flashing lights, lights
+What do I know? Flashing lights, lights
+
+As you recall, you know I love to show off
+But you never thought that I would take it this far
+What do you know? Flashing lights, lights
+What do you know? Flashing lights, lights
+
+Flashing lights, lights
+Flashing lights, lights
+
+[Fade out]
+Lights, lights, lights, lights...
+
+  </pre>
+</div>
+
+<button class="accordion">Everything I Am</button>
+<div class="panel">
+  <pre>
+Oh oh oho.
+damn, here we go again.
+Oh oh oho.
+Common passed on this beat, I made it to a jam,
+
+now everything I'm not, made me everything I am.
+damn, here we go again.
+people talking shit, but when the shit hit the fan
+everything I'm not, made me everything I am.
+
+I never be picture-perfect-Beyonce
+Be light as Al B or black as Chauncey
+Remember him from Blackstreet
+He was as black as the street was
+I'll never be laid back as his beat was
+I never could see why people'll reach a
+Fake-ass facade they couldn't keep up
+You see how I creeped up?
+You see how I played a big role in Chicago like Queen Latifah?
+I never rock a mink coat in the winter time like Killa Cam
+Or rock some mink boots in the summertime like Will.I.am
+Let me know if you feel it man
+'cause everything I'm not, made me everything I am
+
+Damn, here we go again.
+everybody sayin' what's not for him
+everything I'm not, made me everything I am
+damn, here we go again.
+people talk shit, but when shit hits the fan
+everything I'm not, made me everything I am
+
+and I'm back to tear it up
+haters, start your engines
+I hear 'em gearin' up
+people talk so much shit about me at barbershops
+they forget to get their haircut
+OK fair enough, the streets is flarin' up
+'cause they want gun-talk, or I don't wear enough
+baggy clothes, Reebok's, or Adidas
+can I add that he do spaz out at his shows
+so say goodbye to the NAACP award
+goodbye to the India.Arie award
+they'd rather give me the nigga-please award
+but I'll just take the I-got-a-lot-of-cheese award
+
+damn, here we go again.
+everything I'm not, made me everything I am
+damn, here we go again.
+people talk shit, but when shit hits the fan
+everything I'm not, made me everything I am
+
+I know that people wouldn't usually rap this
+but I got the facts to back this
+just last year, Chicago had over 600 caskets
+man, killing's some wack shit
+oh, I forgot, 'cept for when niggas is rappin'
+do you know what it feel like when people is passin'?
+he got changed over his chains, a block off Ashland
+I need to talk to somebody, pastor
+the church want tithe, so I can't afford to pay
+the slip on the door, cause I can't afford to stay
+my 15 seconds up, but I got more to say
+That's enough Mr. West, please no more today
+
+damn, here we go again.
+everybody sayin' what's not for him
+everything I'm not, made me everything I am
+damn, here we go again.
+people talk shit, but when shit hits the fan
+everything I'm not, made me everything I am
+
+  </pre>
+</div>
+
+<button class="accordion">The Glory</button>
+<div class="panel">
+
+  <pre>
+"I got fury in my soul,
+fury's gonna take me to the glory goal.
+In my mind I can't study war no more."
+
+Gonna take you to the glory
+Oh I can't study war
+Yeah
+I can't study war
+No no
+I can't study war
+Yeah
+I can't study war
+Uh
+I can't study war
+Now where the south side
+I can't study war
+Uh uh uh
+I can't study war
+Now where the west side
+I can't study war
+Yep
+I can't study war
+Uh
+
+Can I talk my shit again?
+Even if I don't hit again
+Dog are you fucking kidding?
+My hat, my shoes, my coat, Louis Vuitton stitch, with Donatello Versace,
+That's Louis Vuitton bitch
+I think Hennessy, I drank I'm gone on that Bacardi Lemon, Corona, I'm zoning
+Class back in session so I up't it a grade
+Two years the Dwayne Wayne became the Dwyane Wade
+And A
+Please don't start me
+I'm like Gnarls Barkley meets Charles Barkley
+I'm pop the barkers, I'm hood like parkers
+While you all was in limbo I raised the bar up
+I touched on everything
+Married to the game rock a chain stead of a wedding ring
+You all brides maids catch the garter
+On nights when romance
+Cameras flash so much
+That I gotta do that yayo dance
+I'm on a world tour with Common my man
+After each and every show a couple dykes in the van
+It's easy
+The hood love to listen to jeezy and weezy and o yeah yeezy
+I did it for the glory
+
+[chorus sample]
+
+I can't study war
+No no
+I can't study war
+No no
+The glory
+I can't study war
+No no
+I can't study war
+I did it for the glory
+I can't study war
+No no I can't study war
+No no I can't study war
+I did it for the glory
+No no I can't study war
+No no I can't study war
+The glory
+No no
+I can't study war
+Uh
+
+What am I supposed to do now?
+Man the game all messed up
+How I suppose to stand out when everyone get dressed up
+So yeah at the Grammies I went ultra Travolta
+Yeah that tuxedo might have been a little gweedo
+But with my ego, I can stand there with a speedo
+And still be looked at like a fucking hero
+The glory the story the chain the polo the Nike the chronic
+Empty bottles of no do's
+Tank on empty whipping my mamma's Volvo
+I spent that gas money on clothes with logo's
+The furrest man that shit that you don't floss
+The Goyard so hard man, I'm Hugo's boss
+Why I gotta ask what that to door cost
+House on the hill
+Two doors from Tracey Ross
+And I'm asking about her girlfriends yeah the dark skinned ones
+She asking about the speed boats yeah I admit we rented 'em
+When you meet me in person what does it feel like
+I know, I know I look better in real life
+I hear people compare themselves to BIG a lot
+You know BIG and Pac, you know to get it hot
+I guess after I live I wanna be compared to BIG
+Anyone big pun big l or notorious
+Fit in
+Get money and stunt and stay glorious
+And I'm gonna start killin' these niggas as soon as the chorus hit
+
+[chorus sample]
+
+No no I can't study war
+Yeah I'm gonna start killin' these niggas soon as the chorus hit
+I can't study war
+No no
+Uh
+These haters be killing themselves they wanna come and get the glory
+No no I can't study war
+No no I can't study war
+Uh
+No no I can't study war
+The glory
+No no I can't study war
+No no I can't study war
+Uh ha
+No no I can't study war
+No no I can't study war
+Now where the south side
+No no I can't study war
+No no I can't study war
+Yeah
+Now where the west side
+No no I can't study war
+Yeah
+I can't study war
+No no
+I can't study war
+No no
+  </pre>
+</div>
+
+
+
+
+<script type="text/javascript">
+	
+	var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+    }
+}
+</script>
+
+
+<script>
+// merre 'modal'-in
+var modal = document.getElementById('id01');
+
+// Kur useri klikon jasht 'modal'-it te mbyllet
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<script>
+// Grab the Canvas and Drawing Context
+var canvas = document.getElementById('c');
+var ctx = canvas.getContext('2d');
+
+
+
+// Create an image element
+var img = document.createElement('IMG');
+
+// When the image is loaded, draw it
+img.onload = function () {
+
+    // Save the state, so we can undo the clipping
+    ctx.save();
+    ctx.arc(450,300,380,0,2*Math.PI);      
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(450,300,380,0,2*Math.PI, false);
+    ctx.fill();
+    // Clip to the current path
+    ctx.clip();
+    
+    
+    ctx.drawImage(img, 0, 0);
+    
+    // Undo the clipping
+    ctx.restore();
+}
+
+// Specify the src to load the image
+img.src = "Images/kanyewest.jpg";
+</script>
+
+	
+</body>
+
+</html>

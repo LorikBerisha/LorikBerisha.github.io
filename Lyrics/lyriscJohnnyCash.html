@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="indexstyle.css"/>
+	
+	<style>
+	/* Style the buttons that are used to open and close the accordion panel */
+button.accordion {
+    background-color: black;
+    background-color: rgba(0,0,0,0.92);
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 50%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin-left: 410px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+button.accordion.active, button.accordion:hover {
+    background-color: #151313;
+    width: 53.65%;
+
+}
+
+/* Style the accordion panel. Note: hidden by default */
+div.panel {
+    padding: 0 18px;
+    width: 50.65%;
+    margin-left:410px;
+    color:black;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-weight: 800;
+    background-color: #D5D5D5;
+    background-color: rgba(225,225,225,0.5);
+    display: none;
+}
+
+/* The "show" class is added to the accordion panel when the user clicks on one of the buttons. This will show the panel content */
+div.panel.show {
+    display: block;
+}
+
+	div.svg-wrapper {
+  height: 100%;
+  max-height: 60px;
+  margin-top: -150px;
+  margin-left: 550px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 320px;
+}
+
+.shape {
+  fill: transparent;
+  stroke-dasharray: 205 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+  /*stroke: #1cb779;*/
+  stroke: #19f6e8;
+}
+
+.text {
+  height: 100%;
+  max-height: 60px;
+  margin-left: 10px;
+  text-align: center;
+  color: #fff;
+  /*font-family: 'Roboto Condensed';*/
+  font-size: 22px;
+  letter-spacing: 8px;
+  line-height: 20px;
+  position: relative;
+  top: -80px;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 8px;
+  }
+  100% {
+    stroke-dasharray: 760;
+    stroke-dashoffset: 0;
+    stroke-width: 2px;
+  }
+}
+
+.svg-wrapper:hover .shape {
+  -webkit-animation: 0.5s draw linear forwards;
+  animation: 0.5s draw linear forwards;
+}
+</style>
+	
+
+
+</head>
+
+<body>
+
+	<!-- Header-i (logoja dhe search box) -->
+  <h1 id="header"><a href="../index.html">Music</a>Book</span> </a>
+   
+   
+   
+   
+   <span><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-right: 200px;" 
+  target="buton1">Login</button> <input type="text" name="search" placeholder="      Search.." target="searchbox"> </span></h1>
+  
+
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close login">&times;</span>
+      
+    </div>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username"
+      target="login" name="uname" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" target="login" name="psw" required>
+        
+      <button type="submit" target="buton2">Login</button>
+      <input type="checkbox" checked="checked"> Remember me
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <span class="psw" style="padding-right:50px; ">Forgotten <a href="../index.html#contact">password?</a></span>
+    </div>
+  </form>
+</div>
+
+  
+
+  <!-- Modal per navigation menu -->
+<div id="id02" class="modal1">
+  <div class="">
+    <div class="modal1-content">
+      <span onclick="document.getElementById('id02').style.display='none'" 
+      style="margin: 20px;cursor:pointer;color:white;">&times;</span>
+     <ul>
+
+      <li><a href="../Piano.html">Piano</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="id03" class="modal1">
+  <div>
+    <div class="modal1-content" style="background-image:url(images2.jpg);background-size: 170px 128px;">
+      <span onclick="document.getElementById('id03').style.display='none'" 
+      style="margin: 20px;cursor:pointer; color:white;">&times;</span>
+     <ul>
+      <li><a href="../Electric Guitars.html">Electric</a></li>
+      <li><a href="../Acoustic Guitars.html">Acoustic</a></li>
+      <li><a href="../Bass Guitars.html">Bass</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Navigation Lista -->
+  <nav class="navLista">
+    <ul class="lista">
+    <li> <table cellpadding="0px" cellspacing="0px" style="margin: 0;padding:0;" id="navBar">
+    <tr>
+        <td>
+            <a class="selected" href="../index.html" style="margin-left: 10px;">Home</a>
+        </td>
+        
+    </tr>
+</table></li>
+      <li><a style="margin-left: 11px;">Products</a>
+        <ul id="submenu">
+          <li><a href="#" onclick="document.getElementById('id02').style.display='block'"> Piano </a>
+            </li>
+          <li><a href="##" onclick="document.getElementById('id03').style.display='block'"> Guitar </a>
+          </li>
+          
+        </ul>
+      </li>
+      <li><span><br></span><a href="../artist.html">Artists</a></li>
+      <li><a href="https://www.ultimate-guitar.com/" target="_blank">Chords</a>
+      </li>
+      <li><a href="#contact">Contact</a></li>
+
+
+    </ul>
+  </nav>
+  <div class="svg-wrapper">
+  <svg height="80" width="330" >
+    <rect class="shape" height="80" width="330" />
+  </svg>
+
+<div class="text" style="border: 1px solid black;color:white;font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;">At Folsom Prison by          
+<span style="color:black;font-weight: bold;">Johnny Cash</span>
+</div>
+</div>
+
+<canvas id="c"  width="900px" height="600px" style="margin: 250px 0 0 280px;"></canvas>
+
+<button class="accordion" style="margin-left: 410px; margin-top: 5px;">Rock Island Line</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Johnny Cash Rock Island Line.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+
+Now this here's a story about the Rock Island Line
+Well the Rock Island Line she runs down into New Orleans
+There's a big tollgate down there and you know
+If you got certain things on board when you go through the tollgate
+Well you don't have to pay the man no toll
+Well a train driver he pulled up to the tollgate
+And a man hollered and asked him what all he had on board and said
+
+I got livestock
+I got livestock
+I got cows
+I got pigs
+I got sheep
+I got mules
+I got all live stock
+
+Well he said you're alright boy you don't have to pay no toll
+You can just go right on through so he went on through the tollgate
+And as he went through he started pickin' up a little bit of speed
+Pickin' up a little bit of steam
+He got on through he turned and looked back at the man he said
+
+Well I fooled you
+I fooled you
+I got pigiron
+I got pigiron
+I got old pigiron
+
+[Chorus]
+Down the Rock Island Line she's a mighty good road
+Rock Island Line it's the road to ride
+Rock Island Line it's a mighty good road
+Well if you ride it you got to ride it like you find it
+Get your ticket at the station for the Rock Island Line
+
+Looked cloudy in the west and it looked like rain
+Round the curve came a passenger train
+North bound train on a southbound track
+He's alright a leavin' but he won't be back
+
+[Chorus]
+
+Oh I may be right and I may be wrong
+But you're gonna miss me when I'm gone
+Well the engineer said before he died
+There were two more drinks that he'd like to try
+The conductor said what could they be
+A hot cup of coffee and a cold glass of tea
+
+[Chorus]
+</pre>
+</div>
+
+<button class="accordion">Country Boy</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Johnny Cash Country Boy.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+Country boy, ain't got no shoes.
+Country boy, ain't got no blues.
+Well, you work all day
+While you're wantin' to play
+In the sun and the sand,
+With a face that's tan.
+At the end of the day,
+When your work is done,
+You ain't got nothin' but fun.
+
+Country boy, ain't got no ills.
+Country boy, don't owe no bills.
+
+Country boy, ain't got no ills.
+Country boy, don't owe no bills.
+You get a wiggly worm,
+And then you watch him squirm.
+While you put him on a hook,
+And you drop him in a brook.
+If everything's gonna turn out right,
+You're gonna fry fish tonight.
+
+Country boy, got a lot to lose.
+Country boy, how I wish I was in your shoes.
+
+[Instrumental break]
+
+Country boy, you got a shaggy dog.
+Country boy, up a holler log.
+Well, he comes in a run,
+When you pick up your gun.
+And with a shell or two,
+And your dog and you,
+When you get your rabbit,
+You'll skin his hide,
+He's gonna be good fried.
+
+Country boy, you got a lot to lose.
+Country boy, how I wish I was in your shoes.
+
+[Instrumental break]
+
+Country boy, you got work to do.
+Country boy, in the morning dew,
+You gotta plant the seed,
+You gotta cut the weeds.
+There's many a row,
+You know you gotta hoe
+When it's quittin' time,
+And your work is through.
+There's a lot of life in you
+
+Country boy, you lucky thing.
+Country boy, I wish I was you, and you were me.
+
+
+  </pre>
+</div>
+
+<button class="accordion">If The Good Lord's Willing</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Johnny Cash If The Good Lord's Willing.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+If the good Lord's willing and the creek stays down
+I'll be in your arms time the moon come around
+For a taste of love that's shining in your eyes
+If the rooster crows at the crackin' of the dawn
+I'll be there just as sure as you're born
+
+If the good Lord's willing and the creeks don't rise
+I'll comb my hair down brush my teeth
+Shine up slick up dress up neat
+Get everything looking just right
+
+'Cause I want to look pretty when I see you tonight
+Just as sure as the rabbits are a jumping in the hollow
+I'll be there you can bet your bottom dollar
+If the good Lord's willing and the creeks don't rise
+
+If the good Lord's willing and the creek stays low
+I'll be there a knockin' at your door
+With a hug and a kiss for the one I idolize
+I'll wear my suit, my Sunday best, I'll be there lookin' my best
+
+If the good Lord's willing and the creeks don't rise
+I'll feed the mules and stop the hogs feed the cows and chop all the logs
+Get all of my working done cause tonight we're gonna have lots of fun
+Just as sure as there ever was a preacher man
+I'll be there with a ring for your hand
+
+If the good Lord's willing and the creek don't rise
+
+</pre>
+</div>
+
+<button class="accordion">Cry, Cry, Cry</button>
+<div class="panel">
+  <pre>
+
+
+Everybody knows where you go when the sun goes down.
+I think you only live to see the lights uptown.
+I wasted my time when I would try, try, try.
+'Cause when the lights have lost their glow, you'll cry, cry, cry.
+
+Soon your sugar-daddies will all be gone.
+You'll wake up some cold day and find you're alone.
+You'll call for me but I'm gonna tell you: "Bye, bye, bye, "
+When I turn around and walk away, you'll cry, cry, cry,
+
+You're gonna cry, cry, cry and you'll cry alone,
+When everyone's forgotten and you're left on your own.
+You're gonna cry, cry, cry.
+
+I lie awake at night to wait 'til you come in
+You stay a little while and then you're gone again
+Every question that I ask, I get a lie, lie, lie
+For every lie you tell, you're gonna cry, cry, cry
+
+When your fickle love gets old, no one will care for you.
+Then you'll come back to me for a little love that's true.
+I'll tell you no and then you'll ask me why, why, why?
+When I remind you of all of this, you'll cry, cry, cry.
+
+You're gonna cry, cry, cry and you'll want me then,
+It'll hurt when you think of the fool you've been.
+You're gonna cry, cry, cry.
+  </pre>
+</div>
+
+<button class="accordion">Remember Me (I'm The One Who Loves You)</button>
+<div class="panel">
+  <pre>
+When you're all alone and blue
+No one to tell your troubles to
+Remember me, I'm the one who loves you
+
+When this world turns you down
+Not a true friend can be found
+Remember me, I'm the one who loves you
+
+And through all kinds of weather
+You'll find, I'll never change
+Through the sunshine and the shadows
+I'll always be the same
+
+We're together right or wrong
+Where you go I'll tag along
+Remember me, I'm the one who loves you
+
+And through all kinds of weather
+You'll find, I'll never change
+Through the sunshine and the shadows
+I'll always be the same
+
+We're together right or wrong
+Where you go I'll tag along
+Remember me, I'm the one who loves you
+
+  </pre>
+</div>
+
+<button class="accordion">So Doggone Lonesome</button>
+<div class="panel">
+  <pre>
+I do my best to hide this lowdown feelin'
+I try to make believe there's nothin' wrong
+But they're always askin' me about you darlin'
+And it hurts me so to tell 'em that you're gone
+
+If they ask me, I guess, I'd be denyin'
+That I've been unhappy all alone
+But if they heard my heart they'd hear it cryin'
+Where's my darlin' when's she comin' home
+
+I ask myself a million times what's right for me to do
+To try to lose my blues alone or hang around for you
+Well I make it pretty good until that moon comes shinin' through
+And that I get so doggone lonesome
+
+Time stands still when you're a waitin'
+Sometimes I think my heart is stoppin' too
+One lonely hour seems forever
+Sixty minutes more to wait for you
+
+But I guess I'll keep waitin' till you're with me
+'Cause I believe that lovin' you is right
+But I don't care if the sun don't rise tomorrow
+If I can't have you with me tonight
+
+Well I know, I'll keep on loving you 'cause true love can't be killed
+I ought to get you off of my mind but I guess I never will
+I could have a dozen others but I know, I'd love you still
+'Cause I get so doggone lonesome
+ </pre>
+</div>
+
+<button class="accordion">I Was There When It Happened</button>
+<div class="panel">
+  <pre>
+There are some people who say we cannot tell
+Whether we are saved or whether all is well
+They say we only can hope and trust that it is so
+Well, I was there when it happened and so I guess I ought to know
+
+Yes, I know when Jesus saved me, saved my soul
+The very moment He forgave me, made me whole
+He took away my heavy burdens
+Lord, He gave me peace within, peace within
+
+Satan can't make me doubt it, I won't doubt it
+It's real and I'm gonna shout it, I'm gonna shout it
+I was there when it happened
+And so I guess I ought to know
+
+I don't care who tells me salvation is not real
+Though the world may argue, that we cannot feel
+The heavy burden's lifted and the vile sins go
+I was there when it happened and so I guess I ought to know
+
+Yes, I know when Jesus saved me, saved my soul
+The very moment He forgave me, made me whole
+He took away my heavy burdens
+Lord, He gave me peace within, peace within
+
+Satan can't make me doubt it, I won't doubt it
+It's real and I'm gonna shout it, I'm gonna shout it
+I was there when it happened
+And so I guess I ought to know
+
+
+  </pre>
+</div>
+
+
+
+
+
+<script type="text/javascript">
+	
+	var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+    }
+}
+</script>
+
+
+<script>
+// merre 'modal'-in
+var modal = document.getElementById('id01');
+
+// Kur useri klikon jasht 'modal'-it te mbyllet
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<script>
+// Grab the Canvas and Drawing Context
+var canvas = document.getElementById('c');
+var ctx = canvas.getContext('2d');
+
+
+
+// Create an image element
+var img = document.createElement('IMG');
+
+// When the image is loaded, draw it
+img.onload = function () {
+
+    // Save the state, so we can undo the clipping
+    ctx.save();
+    ctx.arc(450,300,380,0,2*Math.PI);      
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(450,300,380,0,2*Math.PI, false);
+    ctx.fill();
+    // Clip to the current path
+    ctx.clip();
+    
+    
+    ctx.drawImage(img, 0, 0);
+    
+    // Undo the clipping
+    ctx.restore();
+}
+
+// Specify the src to load the image
+img.src = "Images/johnnycash.jpg";
+</script>
+
+	
+</body>
+
+</html>

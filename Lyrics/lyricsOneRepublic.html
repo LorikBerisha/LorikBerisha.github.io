@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="indexstyle.css"/>
+	
+	<style>
+	/* Style the buttons that are used to open and close the accordion panel */
+button.accordion {
+    background-color: black;
+    background-color: rgba(0,0,0,0.92);
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 50%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin-left: 410px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+button.accordion.active, button.accordion:hover {
+    background-color: #151313;
+    width: 53.65%;
+
+}
+
+/* Style the accordion panel. Note: hidden by default */
+div.panel {
+    padding: 0 18px;
+    width: 50.65%;
+    margin-left:410px;
+    color:black;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-weight: 800;
+    background-color: #D5D5D5;
+    background-color: rgba(225,225,225,0.5);
+    display: none;
+}
+
+/* The "show" class is added to the accordion panel when the user clicks on one of the buttons. This will show the panel content */
+div.panel.show {
+    display: block;
+}
+
+	div.svg-wrapper {
+  height: 100%;
+  max-height: 60px;
+  margin-top: -150px;
+  margin-left: 550px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 320px;
+}
+
+.shape {
+  fill: transparent;
+  stroke-dasharray: 205 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+  /*stroke: #1cb779;*/
+  stroke: #19f6e8;
+}
+
+.text {
+  height: 100%;
+  max-height: 60px;
+  margin-left: 10px;
+  text-align: center;
+  color: #fff;
+  /*font-family: 'Roboto Condensed';*/
+  font-size: 22px;
+  letter-spacing: 8px;
+  line-height: 26px;
+  position: relative;
+  top: -80px;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 8px;
+  }
+  100% {
+    stroke-dasharray: 760;
+    stroke-dashoffset: 0;
+    stroke-width: 2px;
+  }
+}
+
+.svg-wrapper:hover .shape {
+  -webkit-animation: 0.5s draw linear forwards;
+  animation: 0.5s draw linear forwards;
+}
+</style>
+	
+
+
+</head>
+
+<body>
+
+	<!-- Header-i (logoja dhe search box) -->
+  <h1 id="header"><a href="../index.html">Music</a>Book</span> </a>
+   
+   
+   
+   
+   <span><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-right: 200px;" 
+  target="buton1">Login</button> <input type="text" name="search" placeholder="      Search.." target="searchbox"> </span></h1>
+  
+
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close login">&times;</span>
+      
+    </div>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username"
+      target="login" name="uname" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" target="login" name="psw" required>
+        
+      <button type="submit" target="buton2">Login</button>
+      <input type="checkbox" checked="checked"> Remember me
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <span class="psw" style="padding-right:50px; ">Forgotten <a href="../index.html#contact">password?</a></span>
+    </div>
+  </form>
+</div>
+
+  
+
+  <!-- Modal per navigation menu -->
+<div id="id02" class="modal1">
+  <div class="">
+    <div class="modal1-content">
+      <span onclick="document.getElementById('id02').style.display='none'" 
+      style="margin: 20px;cursor:pointer;color:white;">&times;</span>
+     <ul>
+
+      <li><a href="../Piano.html">Piano</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="id03" class="modal1">
+  <div>
+    <div class="modal1-content" style="background-image:url(images2.jpg);background-size: 170px 128px;">
+      <span onclick="document.getElementById('id03').style.display='none'" 
+      style="margin: 20px;cursor:pointer; color:white;">&times;</span>
+     <ul>
+      <li><a href="../Electric Guitars.html">Electric</a></li>
+      <li><a href="../Acoustic Guitars.html">Acoustic</a></li>
+      <li><a href="../Bass Guitars.html">Bass</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Navigation Lista -->
+  <nav class="navLista">
+    <ul class="lista">
+    <li> <table cellpadding="0px" cellspacing="0px" style="margin: 0;padding:0;" id="navBar">
+    <tr>
+        <td>
+            <a class="selected" href="../index.html" style="margin-left: 10px;">Home</a>
+        </td>
+        
+    </tr>
+</table></li>
+      <li><a style="margin-left: 11px;">Products</a>
+        <ul id="submenu">
+          <li><a href="#" onclick="document.getElementById('id02').style.display='block'"> Piano </a>
+            </li>
+          <li><a href="##" onclick="document.getElementById('id03').style.display='block'"> Guitar </a>
+          </li>
+          
+        </ul>
+      </li>
+      <li><span><br></span><a href="../artist.html">Artists</a></li>
+      <li><a href="https://www.ultimate-guitar.com/" target="_blank">Chords</a>
+      </li>
+      <li><a href="#contact">Contact</a></li>
+
+
+    </ul>
+  </nav>
+  <div class="svg-wrapper">
+  <svg height="80" width="330" >
+    <rect class="shape" height="80" width="330" />
+  </svg>
+
+<div class="text" style="border: 1px solid black;color:white;font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;">Native by
+<span style="color:black;font-weight: bold;">One Republic</span>
+</div>
+</div>
+
+<canvas id="c"  width="900px" height="600px" style="margin: 250px 0 0 280px;"></canvas>
+
+<button class="accordion" style="margin-left: 410px; margin-top: 5px;">Counting Stars</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/One Republic Counting Stars.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+Lately I've been, I've been losing sleep
+Dreaming about the things that we could be
+But, baby I've been, I've been praying hard
+Said no more counting dollars, we'll be counting stars
+Yeah, we'll be counting stars
+
+I see this life like a swinging vine,
+Swing my heart across the line
+In my face is flashing signs,
+Seek it out and ye shall find.
+
+Old but I'm not that old
+Young but I'm not that bold
+And I don't think the world is sold
+I'm just doing what we're told
+
+I I I I feel something so right by doing the wrong thing
+And I I I I feel something so wrong by doing the right thing
+
+I could lie, couldn't I, couldn't I?
+Every thing that kills me makes me feel alive.
+
+Lately I've been, I've been losing sleep
+Dreaming about the things that we could be
+Baby I've been, I've been praying hard
+Said no more counting dollars, we'll be counting stars
+Lately I've been, I've been losing sleep
+Dreaming about the things that we could be
+But, baby I've been, I've been praying hard
+Said no more counting dollars, we'll be-we'll be counting stars
+
+Ye-e-yeah
+
+I feel her love
+And I feel it burn down this river every time
+Hope is our four-letter word, make that money watch it burn
+
+Old but, I'm not that old
+Young, but I'm not that bold
+And I don't think the world is sold
+I'm just doing what we're told
+
+And I I I I feel something so wrong by doing the right thing
+I could lie, couldn't I, couldn't I?
+Everything that drowns me makes me wanna fly
+
+Lately I've been, I've been losing sleep
+Dreaming about the things that we could be
+Baby I've been, I've been praying hard
+Said no more counting dollars, we'll be counting stars
+Lately I've been, I've been losing sleep
+Dreaming about the things that we could be
+But, baby I've been, I've been praying hard
+Said no more counting dollars, we'll be-we'll be counting stars
+
+Oh, take that money watch it burn,
+Sing in the river the lessons I learned
+Take that money watch it burn,
+Sing in the river the lessons I learned
+Take that money watch it burn,
+Sing in the river the lessons I learned
+Take that money watch it burn,
+Sing in the river the lessons I learned
+
+Everything that kills me makes me feel alive
+
+Lately I've been, I've been losing sleep
+Dreaming about the things that we could be
+Baby I've been, I've been praying hard
+Said no more counting dollars, we'll be counting stars
+Lately I've been, I've been losing sleep
+Dreaming about the things that we could be
+But, baby I've been, I've been praying hard
+Said no more counting dollars, we'll be-we'll be counting stars
+
+Take that money watch it burn,
+Sing in the river the lessons I learned
+Take that money watch it burn,
+Sing in the river the lessons I learned
+Take that money watch it burn,
+Sing in the river the lessons I learned
+Take that money watch it burn,
+Sing in the river the lessons I learned
+</pre>
+</div>
+
+<button class="accordion">If I Lose Myself</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/One Republic If I Lose Myself.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+I stared up at the sun,
+Thought of all of the people, places and things I’ve loved.
+I stared up just to see
+With all of the faces, you were the one next to me.
+
+You can feel the light start to tremble,
+Washing what you know out to sea.
+You can see your life out of the window tonight.
+
+If I lose myself tonight,
+It’ll be by your side.
+I lose myself tonight...
+(oh) yeah, yeah, yeah.
+
+If I lose myself tonight,
+It’ll be you and I.
+Lose myself tonight...
+
+[Instrumental break]
+
+I woke up with the sun,
+Thought of all of the people, places and things I’ve loved.
+I woke up just to see
+With all of the faces, you were the one next to me.
+
+You can feel the light start to tremble,
+Washing what you know out to sea.
+You can see your life out of the window tonight.
+
+If I lose myself tonight,
+It’ll be by your side.
+I lose myself tonight...
+(oh) yeah, yeah, yeah.
+
+If I lose myself tonight,
+It’ll be you and I.
+Lose myself tonight...
+Whoooooooooo
+
+[Instrumental] (Whoooooooooo)
+
+Take us down and we keep trying,
+Forty thousand feet, keep flying.
+Take us down and we keep trying,
+Forty thousand feet, keep flying.
+Take us down and we keep trying,
+Forty thousand feet, keep flying.
+Take us down and we keep trying,
+Forty thousand feet, keep flying.
+
+(Lose myself)
+If I lose myself tonight...
+
+Whoooooooooo
+Whoooooo, whoooo,
+Whooooooo
+
+Whoooooooooo
+Whoooooo, whoooo,
+Whooooooo
+  </pre>
+</div>
+
+<button class="accordion">Feel Again</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/One Republic Feel Again.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+It's been a long time coming since I've seen your face
+I've been everywhere and back trying to replace
+Everything that I had 'til my feet went numb
+Praying like a fool that's been on the run
+
+Heart's still beating but it's not working
+It's like a million dollar phone that you just can't ring
+I reached out trying to love but I feel nothing
+Yeah, my heart is numb
+
+But with you
+I feel again
+Yeah, with you
+I can feel again
+
+Yeah
+
+Woo-hoo [x4]
+
+I'm feeling better ever since you know me
+I was a lonely soul but that's the old me
+
+It's been a long time coming since I've seen your face
+I've been everywhere and back trying to replace
+Everything that I broke 'til my feet went numb
+[Album version:] Praying like a fool just shot the gun
+[Radio version:] Praying like a fool just shy of a gun
+
+Heart still beating but it's not working
+It's like a hundred thousand voices that just can't sing
+I reached out trying to love but I feel nothing
+Oh, my heart is numb
+
+But with you
+I feel again
+Yeah, with you
+I can feel again
+
+But with you
+(I'm feeling better ever since you know me)
+I feel again
+(I was a lonely soul but that's the old me)
+Yeah, with you
+(I'm feeling better ever since you know me)
+I can feel again
+(I was a lonely soul)
+
+Woo-hoo [x5]
+
+(I'm feeling better ever since you know me)
+(I was a lonely soul, but that's the old me)
+(I'm feeling better ever since you know me)
+(I was a lonely soul, but that's the old me)
+(I'm feeling better ever since you know me)
+(I was a lonely soul, but that's the old me)
+
+I'm feeling better ever since you know me
+I was a lonely soul but that's the old me
+A little wiser now from what you've shown me
+Yeah, I feel again
+Feel again...
+
+Woo-hoo
+
+  </pre>
+</div>
+
+<button class="accordion">What You Wanted</button>
+<div class="panel">
+  <pre>
+I'll find the places where you hide
+I'll be the dawn on your worst night
+The only thing left that I like
+Yeah I would kill for you, that's right
+
+If that's what you wanted
+If that's what you wanted
+If that's what you wanted
+If that's what you wanted
+
+I'll put your poison in my veins
+They say the best love is insane, yeah
+I'll light your fire till my last day
+I'll let your fields burn around me, around me
+
+If that's what you wanted
+If that's what you wanted
+If that's what you wanted
+If that's what you wanted
+
+I'll run out of this town
+Oh, my love is true
+Tell me, something I wouldn't do.
+
+[2x]
+If that's what you wanted
+If that's what you wanted
+If that's what you wanted
+If that's what you wanted
+  </pre>
+</div>
+
+<button class="accordion">I Lived</button>
+<div class="panel">
+  <pre>
+Hope when you take that jump, you don't fear the fall
+Hope when the water rises, you built a wall
+Hope when the crowd screams out, they're screaming your name
+Hope if everybody runs, you choose to stay
+
+Hope that you fall in love, and it hurts so bad
+The only way you can know is give it all you have
+And I hope that you don't suffer but take the pain
+Hope when the moment comes, you'll say...
+
+I, I did it all
+I, I did it all
+I owned every second that this world could give
+I saw so many places, the things that I did
+With every broken bone, I swear I lived
+
+Hope that you spend your days, but they all add up
+And when that sun goes down, hope you raise your cup
+Oh, I wish that I could witness all your joy and all your pain
+But until my moment comes, I'll say...
+
+I, I did it all
+I, I did it all
+I owned every second that this world could give
+I saw so many places, the things that I did
+With every broken bone, I swear I lived
+
+Oh [4x]
+
+With every broken bone, I swear I lived.
+With every broken bone, I swear I...
+
+I, I did it all
+I, I did it all
+I owned every second that this world could give
+I saw so many places, the things that I did
+With every broken bone, I swear I lived.
+
+Oh [4x]
+
+I swear I lived. Ohhh [2x]
+  </pre>
+</div>
+
+<button class="accordion">Light It Up</button>
+<div class="panel">
+  <pre>
+Like a stone you watch it fall
+And let it roll out over the fields
+You take your time and watch it crawl
+Like you're the big shot symphony
+But oh what would you say if I told you 'the pitch is wrong' with a smile?
+I took a trip to wonderland,
+Gonna get you nowhere by a mile
+
+I,
+I could light it up for you
+I,
+I could light it up for you
+We
+We ain't got a shot to lose
+Put it on but fade it out
+Tell you that you weren't enough
+Acting like your favourite drug
+Raise a cup
+We can light it up
+
+I took a shot and missed the mark
+Well every single day I multiply
+A million drums of kerosene
+Baby, like a hotel in the sky
+I just want to see
+All the sparks you're trying to hide
+Let's take a trip to wonderland
+We can just tune this fire tonight
+
+I,
+I could light it up for you
+I,
+I could light it up for you
+We
+We ain't got a shot to lose
+Put it on but fade it out
+Tell you that you weren't enough
+Acting like your favourite drug
+Raise a cup
+We can light it up
+We can light it up
+  </pre>
+</div>
+
+<button class="accordion">Can't Stop</button>
+<div class="panel">
+  <pre>
+I guess this is what it's supposed to feel like
+No, we don't talk, no, we don't talk, we don't talk anymore.
+I guess this is what it's supposed to sound like
+The universe, the universe, universe is torn.
+
+I don't want to live without you
+I can't live without you half the day, hey hey
+I don't want to live without you
+And put life off for another day, hey-hey yeah hey-hey yeah
+
+[Chorus:]
+But I can't stop thinking about, thinking about us anymore, oh, oh
+I said I can't stop thinking about, thinking about us anymore, oh, oh
+I said I can't stop, no, thinking about, thinking about this anymore, oh, oh
+And all I've got, uh, is nothing I want anymore, oh, oh
+
+No I never get used to silence
+But I don't hear, no, I don't hear, I don't hear you anymore.
+I know I had to look hard to find it
+Everything, everything, everything is gone.
+
+I don't want to live without you
+And put life off for another day, hey-hey yeah hey-hey yeah
+
+[Chorus]
+I can't stop thinking about, thinking about us anymore, oh, oh
+I said I can't stop thinking about, thinking about us anymore, oh, oh
+I said I can't stop, no, thinking about, thinking about this anymore, oh, oh
+And all I've got, uh, is nothing I want anymore, oh, oh
+
+I can see stars, I can see our lights,
+And I swear that they're shining here
+I can see stars, I can see lights shining here.
+
+[Chorus:]
+I can't stop thinking about, thinking about us anymore, oh, oh
+I said I can't stop thinking about, thinking about us anymore, oh, oh
+I said I can't stop thinking about, thinking about this anymore, oh, oh
+And all I've got, uh, is nothing I want anymore, oh, oh
+
+Uh uh uh uh.
+  </pre>
+</div>
+
+<button class="accordion">Au Revoir</button>
+<div class="panel">
+  <pre>
+Today I'm not myself
+And you, you're someone else
+And all these rules don't fit
+And all that starts can quit
+
+What a peculiar state we're in
+What a peculiar state we're in
+
+Let's play a game
+Where all of the lives we lead can change
+Let's play a game
+Where nothing that we can see, the same
+
+We'll find other pieces to the puzzles
+Slipping out under the locks
+I can show you how many moves to check mate right now
+We can take apart this life we're building
+And pack it up inside a box
+All that really matters is we're doing it right now
+Right now
+
+We'll find other pieces to the puzzles
+Slipping out under the locks
+I can show you how many moves to check mate right now
+We can take apart this life we're building
+And pack it up inside a box
+All that really matters is we're doing it right now
+Right now
+  </pre>
+</div>
+
+<button class="accordion">Burning Bridges</button>
+<div class="panel">
+  <pre>
+You and I were meant to be, ain't no doubt about it no way to hide that sort of thing
+Now I'm waiting for something better ain't nothing better worth imagining
+I, I keep on running I'm building bridges that I know you never wanted
+Look for my heart you stole it away
+Now I'll never sing the road that I could take
+
+Listen, I want you to burn my bridges down
+I said, I want you to burn my bridges down
+Set me on Fire. You set me, set me on fire
+You can burn my bridges down
+Send this out to sea, send it where you wanted you can take your no for no or not at all
+There's no filling up your spaces with fictionary places imaginary faces they don't work at all
+
+I, I keep on running. I'm building bridges that I know you never wanted
+Look for my heart you stole it away
+Now I'll never sing the road that I could take
+Listen, I want you to burn my bridges down
+I said, I want you to burn my bridges down
+Set me on Fire. You set me, set me on fire
+Girl you burnt my bridges down
+
+I want you to burn my bridges down, down
+I want you to burn my bridges down
+
+Set me on fire. You set me
+Set me on Fire [x2]
+I want you to burn my bridges down
+
+I said, I want you to burn my bridges down down, down
+Set me on fire [x2]
+
+  </pre>
+</div>
+
+<button class="accordion">Something I Need</button>
+<div class="panel">
+  <pre>
+I had a dream the other night
+About how we only get one life
+Woke me up right after two
+Stayed awake and stared at you
+So I wouldn't lose my mind
+
+And I had the week that came from hell
+And yes I know that you could tell
+But you're like the net under the ledge
+When I go flying off the edge
+You go flying off as well
+
+And if you only die once I wanna die with
+You got something I need
+In this world full of people there's one killing me
+And if we only die once, (hey)
+I wanna die with you (you, you, you)
+You got something I need
+In this world full of people there's one killing me
+And if we only die once, (hey)
+I wanna die with you (you, you)
+
+Last night I think I drank too much, yeah
+Call it our temporary crutch, hey
+With broken words I've tried to say
+Honey don't you be afraid
+If we got nothing we got us (Yeah)
+
+And if you only die once I wanna die with
+You got something I need
+In this world full of people there's one killing me
+And if we only die once, (hey)
+I wanna die with you (you, you, you)
+You got something I need
+In this world full of people there's one killing me
+And if we only die once, (hey)
+I wanna die with you (you, you, you)
+
+I know that we're not the same
+But I'm so damn glad that we made it
+To this time, this time, now (yeah)
+
+You got something I need
+Yeah in this world full of people there's one killing me
+And if we only die once I wanna die with you (heeyy)
+You got something I need
+In this world full of people there's one killing me
+And if we only die once, (hey)
+I wanna die with you (you, you, you)
+You got something I need
+In this world full of people there's one killing me
+And if we only die once, (hey)
+I wanna die with you (you, you, you)
+
+If we only die once (hey) I wanna die with
+If we only live once I wanna live with you
+  </pre>
+</div>
+
+<button class="accordion">Preacher</button>
+<div class="panel">
+  <pre>
+When I was a kid
+I used to buy and sell gravity
+I knew how to fly
+And I would teach you for a fee
+Broke every window
+In my hotel heart
+When I was only 5 years old but 12 years scarred
+And I'd hear the same voice
+Echo in my mind
+Said, "Son you got an angel,
+To chase the devil at night."
+Yeah
+
+When I was a kid
+My grandfather was a preacher
+He'd talk about God
+Yeah he was something like a teacher
+He said, "God only helps those
+Who learn to help themselves."
+He was a million miles from a million dollars
+But you could never spend his wealth
+
+I took a little faith
+And put it in a parking lot
+I drove to a strange town
+Full of "have" and "have nots"
+And as I walked through that storybook life
+I was looking for an angel to chase the devil at night
+Oh! Oh! Oh!
+
+When I was a kid
+My grandfather was a preacher
+He'd talk about love
+Yeah he was something like a teacher
+He said, "God only helps those
+Who learn to help themselves."
+He was a million miles from a million dollars
+But you could never spend his wealth
+
+Oh! Oh! Oh!
+Ooh! Ooh! Ooh!
+
+Wave
+Put your hands up and hands down
+[3x]
+
+When I was a kid
+My grandfather was a preacher
+He'd talk about life
+Yeah he was something like a teacher
+He said, "God only helps those
+Who learn to help themselves."
+He was a million miles from a million dollars
+But you could never spend his wealth
+
+He was a million miles from a million dollars
+But you could never spend his wealth.
+  </pre>
+</div>
+
+
+
+
+
+<script type="text/javascript">
+	
+	var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+    }
+}
+</script>
+
+
+<script>
+// merre 'modal'-in
+var modal = document.getElementById('id01');
+
+// Kur useri klikon jasht 'modal'-it te mbyllet
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<script>
+// Grab the Canvas and Drawing Context
+var canvas = document.getElementById('c');
+var ctx = canvas.getContext('2d');
+
+
+
+// Create an image element
+var img = document.createElement('IMG');
+
+// When the image is loaded, draw it
+img.onload = function () {
+
+    // Save the state, so we can undo the clipping
+    ctx.save();
+    ctx.arc(450,300,380,0,2*Math.PI);      
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(450,300,380,0,2*Math.PI, false);
+    ctx.fill();
+    // Clip to the current path
+    ctx.clip();
+    
+    
+    ctx.drawImage(img, 0, 0);
+    
+    // Undo the clipping
+    ctx.restore();
+}
+
+// Specify the src to load the image
+img.src = "Images/onerepublic.jpg";
+</script>
+
+	
+</body>
+
+</html>

@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="indexstyle.css"/>
+	
+	<style>
+	/* Style the buttons that are used to open and close the accordion panel */
+button.accordion {
+    background-color: black;
+    background-color: rgba(0,0,0,0.92);
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 50%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin-left: 410px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+button.accordion.active, button.accordion:hover {
+    background-color: #151313;
+    width: 53.65%;
+
+}
+
+/* Style the accordion panel. Note: hidden by default */
+div.panel {
+    padding: 0 18px;
+    width: 50.65%;
+    margin-left:410px;
+    color:black;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-weight: 800;
+    background-color: #D5D5D5;
+    background-color: rgba(225,225,225,0.5);
+    display: none;
+}
+
+/* The "show" class is added to the accordion panel when the user clicks on one of the buttons. This will show the panel content */
+div.panel.show {
+    display: block;
+}
+
+	div.svg-wrapper {
+  height: 100%;
+  max-height: 60px;
+  margin-top: -150px;
+  margin-left: 550px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 320px;
+}
+
+.shape {
+  fill: transparent;
+  stroke-dasharray: 205 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+  /*stroke: #1cb779;*/
+  stroke: #19f6e8;
+}
+
+.text {
+  height: 100%;
+  max-height: 60px;
+  margin-left: 10px;
+  text-align: center;
+  color: #fff;
+  /*font-family: 'Roboto Condensed';*/
+  font-size: 22px;
+  letter-spacing: 8px;
+  line-height: 20px;
+  position: relative;
+  top: -80px;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 8px;
+  }
+  100% {
+    stroke-dasharray: 760;
+    stroke-dashoffset: 0;
+    stroke-width: 2px;
+  }
+}
+
+.svg-wrapper:hover .shape {
+  -webkit-animation: 0.5s draw linear forwards;
+  animation: 0.5s draw linear forwards;
+}
+</style>
+	
+
+
+</head>
+
+<body>
+
+	<!-- Header-i (logoja dhe search box) -->
+  <h1 id="header"><a href="../index.html">Music</a>Book</span> </a>
+   
+   
+   
+   
+   <span><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-right: 200px;" 
+  target="buton1">Login</button> <input type="text" name="search" placeholder="      Search.." target="searchbox"> </span></h1>
+  
+
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close login">&times;</span>
+      
+    </div>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username"
+      target="login" name="uname" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" target="login" name="psw" required>
+        
+      <button type="submit" target="buton2">Login</button>
+      <input type="checkbox" checked="checked"> Remember me
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <span class="psw" style="padding-right:50px; ">Forgotten <a href="../index.html#contact">password?</a></span>
+    </div>
+  </form>
+</div>
+
+  
+
+  <!-- Modal per navigation menu -->
+<div id="id02" class="modal1">
+  <div class="">
+    <div class="modal1-content">
+      <span onclick="document.getElementById('id02').style.display='none'" 
+      style="margin: 20px;cursor:pointer;color:white;">&times;</span>
+     <ul>
+
+      <li><a href="../Piano.html">Piano</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="id03" class="modal1">
+  <div>
+    <div class="modal1-content" style="background-image:url(images2.jpg);background-size: 170px 128px;">
+      <span onclick="document.getElementById('id03').style.display='none'" 
+      style="margin: 20px;cursor:pointer; color:white;">&times;</span>
+     <ul>
+      <li><a href="../Electric Guitars.html">Electric</a></li>
+      <li><a href="../Acoustic Guitars.html">Acoustic</a></li>
+      <li><a href="../Bass Guitars.html">Bass</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Navigation Lista -->
+  <nav class="navLista">
+    <ul class="lista">
+    <li> <table cellpadding="0px" cellspacing="0px" style="margin: 0;padding:0;" id="navBar">
+    <tr>
+        <td>
+            <a class="selected" href="../index.html" style="margin-left: 10px;">Home</a>
+        </td>
+        
+    </tr>
+</table></li>
+      <li><a style="margin-left: 11px;">Products</a>
+        <ul id="submenu">
+          <li><a href="#" onclick="document.getElementById('id02').style.display='block'"> Piano </a>
+            </li>
+          <li><a href="##" onclick="document.getElementById('id03').style.display='block'"> Guitar </a>
+          </li>
+          
+        </ul>
+      </li>
+      <li><span><br></span><a href="../artist.html">Artists</a></li>
+      <li><a href="https://www.ultimate-guitar.com/" target="_blank">Chords</a>
+      </li>
+      <li><a href="#contact">Contact</a></li>
+
+
+    </ul>
+  </nav>
+  <div class="svg-wrapper">
+  <svg height="80" width="330" >
+    <rect class="shape" height="80" width="330" />
+  </svg>
+
+<div class="text" style="border: 1px solid black;color:white;font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;">Unorthodox Jukebox by          
+<span style="color:black;font-weight: bold;">Bruno Mars</span>
+</div>
+</div>
+
+<canvas id="c"  width="900px" height="600px" style="margin: 250px 0 0 280px;"></canvas>
+
+<button class="accordion" style="margin-left: 410px; margin-top: 5px;">Young Girls</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Bruno Mars Young Girls.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+I spent all my money, bought a big old fancy car
+For these bright-eyed honies
+Oh, yeah, you know who you are
+Keep me up 'til the sun is high
+'Til the birds start calling my name
+I'm addicted and I don't know why
+Guess I've always been this way
+
+[PRE-CHORUS]
+All these roads steer me wrong
+But I still drive them all night long, all night long
+
+[CHORUS]
+All you young wild girls
+You make a mess of me
+Yeah, you young wild girls
+You'll be the death for me, the death for me
+All you young wild girls
+No matter what you do
+Yeah, you young wild girls
+I'll always come back to you, come back to you
+
+I get lost under these lights
+I get lost in the words I say
+Start believing my own lies
+Like "Everything will be okay"
+Oh, I still dream of a simple life
+Boy meets girl, makes her his wife
+But love don't exist
+When you live like this
+That much I know, yes I know
+
+[PRE-CHORUS]
+All these roads steer me wrong
+But I still drive them all night long, all night long
+
+[CHORUS]
+All you young wild girls
+You make a mess of me
+Yeah, you young wild girls
+You'll be the death for me, the death for me
+All you young wild girls
+No matter what you do
+Yeah, you young wild girls
+I'll always come back to you, come back to you
+
+You, you, you,
+You, you, you
+Yeah, you, you, you
+You, you, you, you
+
+All you young wild girls
+You make a mess of me
+Yeah, you young wild girls
+You'll be the death for me, the death for me
+All you young wild girls
+No matter what you do
+Yeah, you young wild girls
+I'll always come back to you, come back to you
+
+</pre>
+</div>
+
+<button class="accordion">Locked Out Of Heaven</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Bruno Mars Locked Out Of Heaven.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+One, two, one, two, three
+
+Oh, yeah, yeah,
+Oh, yeah, yeah, yeah, yeah,
+Ooh!
+Oh, yeah, yeah,
+Oh, yeah, yeah, yeah, yeah,
+Ooh!
+
+Never had much faith in love or miracles
+Ooh!
+Never wanna put my heart on the line
+Ooh!
+But swimming in your water is something spiritual
+Ooh!
+I'm born again every time you spend the night
+Ooh!
+
+'Cause your sex takes me to paradise
+Yeah, your sex takes me to paradise
+And it shows, yeah, yeah, yeah
+
+'Cause you make me feel like I've been locked out of heaven
+For too long, for too long
+Yeah, you make me feel like I've been locked out of heaven
+For too long, for too long
+
+Oh, yeah, yeah, yeah, yeah,
+Ooh!
+Oh, yeah, yeah,
+Oh, yeah, yeah, yeah, yeah,
+Ooh!
+
+You bring me to my knees, you make me testify
+You can make a sinner change his ways
+Open up your gates 'cause I can't wait to see the light
+And right there is where I wanna stay
+
+'Cause your sex takes me to paradise
+Yeah, your sex takes me to paradise
+And it shows, yeah, yeah, yeah
+
+'Cause you make me feel like I've been locked out of heaven
+For too long, for too long
+Yeah, you make me feel like I've been locked out of heaven
+For too long, for too long
+
+Oh, oh, oh, oh, yeah, yeah, yeah
+Can I just stay here?
+Spend the rest of my days here?
+Oh, oh, oh, oh, yeah, yeah, yeah
+Can't I just stay here?
+Spend the rest of my days here?
+
+'Cause you make me feel like I've been locked out of heaven
+For too long, for too long
+Yeah, you make me feel like I've been locked out of heaven
+For too long, for too long
+
+Oh, yeah, yeah, yeah, yeah,
+Ooh!
+Oh, yeah, yeah,
+Oh, yeah, yeah, yeah, yeah,
+Ooh!
+  </pre>
+</div>
+
+<button class="accordion">Gorilla</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Bruno Mars Gorilla.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+Ooh I got a body full of liquor
+With a cocaine kicker
+And I'm feeling like I'm thirty feet tall
+So lay it down, lay it down
+
+You got your legs up in the sky
+With the devil in your eyes
+Let me hear you say you want it all
+Say it now, say it now
+
+Look what you're doing, look what you've done
+But in this jungle you can't run
+'Cause what I got for you
+I promise it's a killer,
+You'll be banging on my chest
+Bang bang, gorilla
+
+Ooh, yeah
+You and me baby making love like gorillas
+Ooh, yeah
+You and me baby making love like gorillas
+
+Yeah, I got a fistful of your hair
+But you don't look like you're scared
+You just smile and tell me, "Daddy, it's yours."
+'Cause you know how I like it,
+You's a dirty little lover
+
+If the neighbors call the cops,
+Call the sheriff, call the SWAT ‒ we don't stop,
+We keep rocking while they're knocking on our door
+And you're screaming, "Give it to me baby,
+[Clean version:] Give it like you wanna!"
+[Explicit version:] Give it to me motherfucker!"
+
+Oh, look what you're doing, look what you've done
+But in this jungle you can't run
+'Cause what I got for you
+I promise it's a killer,
+You'll be banging on my chest
+Bang bang, gorilla
+
+Ooh, yeah
+You and me baby making love like gorillas
+Ooh, yeah
+You and me baby making love like gorillas
+
+I bet you never ever felt so good, so good
+I got your body trembling like it should, it should
+You'll never be the same baby once I'm done with you
+You [x3]
+
+Oh, you with me baby making love like gorillas
+
+Ooh, yeah
+You and me baby we'll be fuckin' like gorillas
+Ooh, yeah (Yeah, yeah, baby, baby, oh yeah, yeah)
+You and me baby making love like gorillas
+  </pre>
+</div>
+
+<button class="accordion">Moonshine</button>
+<div class="panel">
+  <pre>
+Hello
+You know you look even better than the way you did the night before
+And the moment that you kissed my lips you know I started to feel wonderful
+It's something incredible, there's sex in your chemicals
+Ooh, let's go
+You're the best way I know to escape the extraordinary
+This world ain't for you, and I know for damn sure this world ain't for me
+Lift off and say goodbye
+Just let your fire set me free
+Oh
+
+Moonshine, take us to the stars tonight
+Take us to that special place
+That place we went the last time, the last time
+
+I know, I was with you last night but it feels like it's been so long
+And everybody that's around they know that I'm not myself when you're gone
+It's good to see you again, good to see you again
+On top of the world, is where I stand when you're back in my life
+Life's not so bad when you're way up this high
+Everything is alright, everything is alright
+
+Moonshine, take us to the stars tonight
+Take us to that special place
+That place we went the last time, the last time, oh
+
+Moonshine, your love it makes me come alive
+Take us to that special place
+That place we went the last time, the last time
+
+Don't look down, don't you never look back
+We are not afraid to die young and live fast
+Give me good times, give me love, give me laughs
+Let's take a ride to the sky before the night is gone
+
+Moonshine, take us to the stars tonight
+Take us to that special place
+That place we went the last time, the last time, oh
+
+Moonshine, your love it makes me come alive
+Take us to that special place
+That place we went the last time, the last time
+  </pre>
+</div>
+
+<button class="accordion">When I Was Your Man</button>
+<div class="panel">
+  <pre>
+Same bed but it feels just a little bit bigger now
+Our song on the radio but it don't sound the same
+When our friends talk about you, all it does is just tear me down
+'Cause my heart breaks a little when I hear your name
+
+It all just sounds like oooooh…
+Mmm, too young, too dumb to realize
+That I should've bought you flowers
+And held your hand
+Should've gave you all my hours
+When I had the chance
+Take you to every party
+'Cause all you wanted to do was dance
+Now my baby's dancing
+But she's dancing with another man
+
+My pride, my ego, my needs, and my selfish ways
+Caused a good strong woman like you to walk out my life
+Now I never, never get to clean up the mess I made, ohh…
+And it haunts me every time I close my eyes
+
+It all just sounds like oooooh…
+Mmm, too young, too dumb to realize
+That I should've bought you flowers
+And held your hand
+Should've gave you all my hours
+When I had the chance
+Take you to every party
+'Cause all you wanted to do was dance
+Now my baby's dancing
+But she's dancing with another man
+
+Although it hurts
+I'll be the first to say that I was wrong
+Oh, I know I'm probably much too late
+To try and apologize for my mistakes
+But I just want you to know
+
+I hope he buys you flowers
+I hope he holds your hand
+Give you all his hours
+When he has the chance
+Take you to every party
+'Cause I remember how much you loved to dance
+Do all the things I should have done
+When I was your man
+Do all the things I should have done
+When I was your man
+  </pre>
+</div>
+
+<button class="accordion">Show Me</button>
+<div class="panel">
+  <pre>
+Oh yeah, oh yeah baby here we are again
+
+I can see it in your eyes, you want a good time
+You wanna put your body on mine
+Alright but don't change your mind, don't you change it, oh no
+
+Oh yeah you called me today, drove all this way
+So don't let this buzz go to waste
+So no, your pleasure pleasure island is where we can go
+No I won't think you're easy, no I won't think you're fast
+Your eyes say, "Oh, please me," but your lips scared to ask
+No need to fight it, when you know it feels alright
+You say you're a woman who knows what she likes
+
+Then show me, you gotta, you gotta show me
+And tell me all day that you're lonely
+But show me show me show me tonight, yeah
+Girl show me, you gotta, you gotta show me
+You tell me all day that you're lonely
+But show me show me show me tonight, yeah
+
+Love the way that you laugh, the way that you smile
+Makes me feel like you been waiting a while
+But guess what darling, I been waiting too
+So let's run, we can get freaky tonight
+Right is your ticket to ride
+Tell me girl what you gonna do
+
+No I won't think you're easy, no I won't think you're fast
+Your eyes say, "Oh, please me," but your lips scared to ask
+No need to fight it, when you know it feels alright
+You say you're a woman who knows what she likes
+
+Then show me, you gotta, you gotta show me
+And tell me all day that you're lonely
+But show me show me show me tonight, yeah
+Girl show me, you gotta, you gotta show me
+You tell me all day that you're lonely
+But show me show me show me tonight, yeah
+
+It's getting freaky in this room room room
+Now let me hear you say you want that boom boom boom
+We can take it slow, we can zoom zoom zoom
+Baby if you're ready for that I I I
+
+It's getting freaky in this room room room
+Now let me hear you say you want that boom boom boom
+We can take it slow, we can zoom zoom zoom
+Baby if you're ready for that I I I
+
+Then show me, you gotta, you gotta show me
+And tell me all day that you're lonely
+But show me show me show me tonight, yeah
+Girl show me, you gotta, you gotta show me
+You tell me all day that you're lonely
+But show me show me show me tonight, yeah
+
+  </pre>
+</div>
+
+<button class="accordion">Money Make Her Smile</button>
+<div class="panel">
+  <pre>
+All you get back, coming to the stage, is a girl who's new in town
+She go by the name where your stacks at
+This pretty little thing I swear won't let you down
+Watch her drop it like... hey
+
+It's not complicated, so this won't take a while
+You see music make her dance, and money money money make her smile
+
+Money money money make her smile
+Money money money make her smile
+
+She's a super freak
+You wouldn't know it if you saw her outside these velvet walls
+No, she don't go where preachers preach
+She only go to the church where dollars fall
+Watch her drop it like... hey
+
+It's not complicated, so this won't take a while
+You see music make her dance, and money money money make her smile
+
+Money money money make her smile
+Money money money make her smile
+
+Watch her...
+
+It's not complicated, so this won't take a while
+You see music make her dance, and money money money make her smile
+
+Money money money make her smile
+Money money money make her smile
+  </pre>
+</div>
+
+<button class="accordion">If I Knew</button>
+<div class="panel">
+  <pre>
+Oh, oh, oh I, I was a city boy
+Riding to danger's where I'd always run a boy who had his fun
+But I wouldn't've done
+All the things that I have done
+If I knew one day you'd come
+
+Now baby, now baby, now baby, now baby
+Oh, oh, oh, I, I know it breaks your heart
+To picture the only one you wanna love
+In someone else's arms
+But I wouldn't have done
+All the things that I have done
+If I knew one day you'd come
+
+Now, baby, now, baby, now, baby
+Oh, baby, please
+Let's leave the past behind us, behind us
+So that we can go where love will find us
+Yeah, will find us
+
+I know most girls would leave me
+But I know that you believe me
+
+Baby, I, I wish we were seventeen
+So I could give you all the innocence
+That you give to me
+No, I wouldn't have done
+All the things that I've done
+If I knew one day you'd come
+If I knew one day you'd come
+  </pre>
+</div>
+
+
+
+
+<script type="text/javascript">
+	
+	var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+    }
+}
+</script>
+
+
+<script>
+// merre 'modal'-in
+var modal = document.getElementById('id01');
+
+// Kur useri klikon jasht 'modal'-it te mbyllet
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<script>
+// Grab the Canvas and Drawing Context
+var canvas = document.getElementById('c');
+var ctx = canvas.getContext('2d');
+
+
+
+// Create an image element
+var img = document.createElement('IMG');
+
+// When the image is loaded, draw it
+img.onload = function () {
+
+    // Save the state, so we can undo the clipping
+    ctx.save();
+    ctx.arc(450,300,380,0,2*Math.PI);      
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(450,300,380,0,2*Math.PI, false);
+    ctx.fill();
+    // Clip to the current path
+    ctx.clip();
+    
+    
+    ctx.drawImage(img, 0, 0);
+    
+    // Undo the clipping
+    ctx.restore();
+}
+
+// Specify the src to load the image
+img.src = "Images/brunomars.jpg";
+</script>
+
+	
+</body>
+
+</html>

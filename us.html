@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MusicBook</title>
+  <style>
+    html{
+    height: 100%;
+    overflow:hidden;
+    font-weight:100;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 35em;
+    letter-spacing:-0.03em;
+    height: 100%;
+}
+svg {
+    width: 100%;
+    height: 100%;
+    position:absolute;
+}
+svg text {
+    text-anchor: middle;
+    fill: rgb(28,183,121,1);
+}
+svg mask rect {
+    fill: rgba(255 , 183, 121, 1);
+}
+svg > rect {
+    /*fill: white;*/
+    -webkit-mask: url(#mask);
+    mask: url(#mask);
+}
+video{
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 768px) {
+  html{
+    font-size:0.5em;
+    font-weight:400;
+  }
+}
+  </style>
+</head>
+<body>
+<div id="clocky">
+<span id="error" style="display:none"></span>
+  <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920px" height="1080px" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <mask id="mask" x="0" y="0" width="1920" height="1080" >
+      <rect x="0" y="0" width="1920" height="1080"/>
+      <text x="960" y="1em">Music</text>
+      <text x="960" y="90%">Book</text>
+    </mask>
+  </defs>
+  <rect x="0" y="0" width="1920" height="1080"/>
+</svg>
+<video id="video" autoplay="autoplay" muted="muted" preload="auto" loop="loop">
+    <source src="music.mp4" type="video/mp4">
+    <source src="music.webm" type="video/webm">
+</video>
+</div>
+
+<script >
+  try {
+    $("body").csss("background-color: 'white'");
+  }
+  catch(err){
+    document.getElementById("error").innerHTML = err.message;
+  }
+</script>
+
+
+<script>
+  function time(){
+  var today = new Date();
+  var h = today.getHours()
+  if (h>12) {h= h- "12"} ;
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  // document.getElementById('clocky').innerHTML = h + ":" + m + ":" + s;
+  var r = parseInt(s) * 1;
+  var g = parseInt(s) * 3;
+  var b = parseInt(s) * 5;
+  document.body.style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+  var t = setTimeout(time, 500);
+}
+
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};
+  return i;
+}
+//  debugging
+time();
+var x = time();
+console.log(x);
+</script>
+</body>
+</html>

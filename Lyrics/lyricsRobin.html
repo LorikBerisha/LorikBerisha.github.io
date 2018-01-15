@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="indexstyle.css"/>
+	
+	<style>
+	/* Style the buttons that are used to open and close the accordion panel */
+button.accordion {
+    background-color: black;
+    background-color: rgba(0,0,0,0.92);
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 50%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin-left: 410px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+button.accordion.active, button.accordion:hover {
+    background-color: #151313;
+    width: 53.65%;
+
+}
+
+/* Style the accordion panel. Note: hidden by default */
+div.panel {
+    padding: 0 18px;
+    width: 50.65%;
+    margin-left:410px;
+    color:black;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-weight: 800;
+    background-color: #D5D5D5;
+    background-color: rgba(225,225,225,0.5);
+    display: none;
+}
+
+/* The "show" class is added to the accordion panel when the user clicks on one of the buttons. This will show the panel content */
+div.panel.show {
+    display: block;
+}
+
+	div.svg-wrapper {
+  height: 100%;
+  max-height: 60px;
+  margin-top: -150px;
+  margin-left: 550px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 320px;
+}
+
+.shape {
+  fill: transparent;
+  stroke-dasharray: 205 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+  /*stroke: #1cb779;*/
+  stroke: #19f6e8;
+}
+
+.text {
+  height: 100%;
+  max-height: 60px;
+  margin-left: 10px;
+  text-align: center;
+  color: #fff;
+  /*font-family: 'Roboto Condensed';*/
+  font-size: 22px;
+  letter-spacing: 8px;
+  line-height: 26px;
+  position: relative;
+  top: -80px;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 8px;
+  }
+  100% {
+    stroke-dasharray: 760;
+    stroke-dashoffset: 0;
+    stroke-width: 2px;
+  }
+}
+
+.svg-wrapper:hover .shape {
+  -webkit-animation: 0.5s draw linear forwards;
+  animation: 0.5s draw linear forwards;
+}
+</style>
+	
+
+
+</head>
+
+<body>
+
+	<!-- Header-i (logoja dhe search box) -->
+  <h1 id="header"><a href="../index.html">Music</a>Book</span> </a>
+   
+   
+   
+   
+   <span><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-right: 200px;" 
+  target="buton1">Login</button> <input type="text" name="search" placeholder="      Search.." target="searchbox"> </span></h1>
+  
+
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close login">&times;</span>
+      
+    </div>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username"
+      target="login" name="uname" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" target="login" name="psw" required>
+        
+      <button type="submit" target="buton2">Login</button>
+      <input type="checkbox" checked="checked"> Remember me
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <span class="psw" style="padding-right:50px; ">Forgotten <a href="../index.html#contact">password?</a></span>
+    </div>
+  </form>
+</div>
+
+  
+
+  <!-- Modal per navigation menu -->
+<div id="id02" class="modal1">
+  <div class="">
+    <div class="modal1-content">
+      <span onclick="document.getElementById('id02').style.display='none'" 
+      style="margin: 20px;cursor:pointer;color:white;">&times;</span>
+     <ul>
+
+      <li><a href="../Piano.html">Piano</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="id03" class="modal1">
+  <div>
+    <div class="modal1-content" style="background-image:url(images2.jpg);background-size: 170px 128px;">
+      <span onclick="document.getElementById('id03').style.display='none'" 
+      style="margin: 20px;cursor:pointer; color:white;">&times;</span>
+     <ul>
+      <li><a href="../Electric Guitars.html">Electric</a></li>
+      <li><a href="../Acoustic Guitars.html">Acoustic</a></li>
+      <li><a href="../Bass Guitars.html">Bass</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Navigation Lista -->
+  <nav class="navLista">
+    <ul class="lista">
+    <li> <table cellpadding="0px" cellspacing="0px" style="margin: 0;padding:0;" id="navBar">
+    <tr>
+        <td>
+            <a class="selected" href="../index.html" style="margin-left: 10px;">Home</a>
+        </td>
+        
+    </tr>
+</table></li>
+      <li><a style="margin-left: 11px;">Products</a>
+        <ul id="submenu">
+          <li><a href="#" onclick="document.getElementById('id02').style.display='block'"> Piano </a>
+            </li>
+          <li><a href="##" onclick="document.getElementById('id03').style.display='block'"> Guitar </a>
+          </li>
+          
+        </ul>
+      </li>
+      <li><span><br></span><a href="../artist.html">Artists</a></li>
+      <li><a href="https://www.ultimate-guitar.com/" target="_blank">Chords</a>
+      </li>
+      <li><a href="#contact">Contact</a></li>
+
+
+    </ul>
+  </nav>
+  <div class="svg-wrapper">
+  <svg height="80" width="330" >
+    <rect class="shape" height="80" width="330" />
+  </svg>
+
+<div class="text" style="border: 1px solid black;color:white;font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;">Prayer In C by          
+<span style="color:black;font-weight: bold;">Robin Schulz</span>
+</div>
+</div>
+
+<canvas id="c"  width="900px" height="600px" style="margin: 250px 0 0 280px;"></canvas>
+
+<button class="accordion" style="margin-left: 410px; margin-top: 5px;">Prayer In C</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Robin Schulz Prayer In C.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+Yah, you never said a word
+You didn't send me no letter
+Don't think I could forgive you
+
+See our world is slowly dying
+I'm not wasting no more time
+Don't think I could believe you
+
+Yah, you never said a word
+You didn't send me no letter
+Don't think I could forgive you
+
+See our world is slowly dying
+I'm not wasting no more time
+Don't think I could believe you
+
+Yah, our hands will get more wrinkled
+And our hair will be grey
+Don't think I could forgive you
+
+And see the children are starving
+And their houses were destroyed
+Don't think they could forgive you
+
+Hey, when seas will cover lands
+And when men will be no more
+Don't think you can forgive you
+
+Yah when there'll just be silence
+And when life will be over
+Don't think you will forgive you
+
+Yah, you never said a word
+You didn't send me no letter
+Don't think I could forgive you
+
+See our world is slowly dying
+I'm not wasting no more time
+Don't think I could believe you
+
+Yah, you never said a word
+You didn't send me no letter
+Don't think I could forgive you
+
+See our world is slowly dying
+I'm not wasting no more time
+Don't think I could believe you
+
+Yah, our hands will get more wrinkled
+And our hair will be grey
+Don't think I could forgive you
+
+And see the children are starving
+And their houses were destroyed
+Don't think they could forgive you
+
+Hey, when seas will cover lands
+And when men will be no more
+Don't think you can forgive you
+
+Yah when there'll just be silence
+And when life will be over
+Don't think you will forgive you
+</pre>
+</div>
+
+<button class="accordion">Willst Du</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Robin Schulz Willst Du.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+Willst du mit mir Drogen nehmen?
+Dann wird es rote Rosen regnen
+[x3]
+
+Ich hab's in einer Soap gesehen
+Willst du mit mir Drogen nehmen?
+
+Willst du mit mir Drogen nehmen?
+
+Willst du mit mir Drogen nehmen?
+Dann wird es rote Rosen regnen
+[x3]
+
+Ich hab's in einer Soap gesehen
+Willst du mit mir Drogen nehmen?
+
+Willst du mit mir Drogen nehmen?
+
+Willst du mit mir Drogen nehmen?
+Dann wird es rote Rosen regnen
+Ich hab's in einer Soap gesehen
+Willst du mit mir Drogen nehmen?
+[x2]
+
+Willst du mit mir Drogen nehmen?
+
+Willst du mit mir Drogen nehmen?
+
+Willst du mit mir Drogen nehmen?
+  </pre>
+</div>
+
+<button class="accordion">Sun Goes Down</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Robin Schulz Sun Goes Down.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+Nothing's ever what we expect
+But they keep asking where we're going next
+All we're chasing is the sunset
+Got my mind on you
+
+Doesn't matter where we are are are are 
+Doesn't matter where we are are are ar-are
+Doesn't matter no
+If there's a moment when it's perfect
+We'll carve our names 
+
+As the sun goes down
+Hey
+As the sun goes down
+Hey
+As the sun goes down
+
+As the sun goes down
+Doesn't matter where we are are are are
+Doesn't matter where we are are are ar-are
+Doesn't matter now
+
+You are so lonely now [x2]
+
+Nothing's ever what we expect
+But they keep asking where we're going next
+All we're chasing is the sunset
+Got my mind on you
+
+Doesn't matter where we are are are are 
+Doesn't matter where we are are are ar-are
+Doesn't matter no
+If there's a moment when it's perfect
+We'll carve our names 
+
+As the sun goes down
+Hey
+As the sun goes down
+Hey
+
+You are so lonely now [x2]
+
+As the sun goes down.
+  </pre>
+</div>
+
+<button class="accordion">Shed A Light</button>
+<div class="panel">
+  <pre>
+Why are you keeping me at a distance?
+All that I'm asking for is forgiveness
+Are you even listening? Am I talking to myself again?
+I keep on staring up at the ceiling
+Waiting for you to give me some kind of reason
+Are you even listening? Am I talking to myself again?
+
+And I know you don't owe me your love
+And I know that you don't owe me nothing at all
+Ain't no way I'm giving up on you
+
+Don't leave me here in the dark when it's hard to see
+Show me your heart, shed a light on me
+If you love me, say so, If you love me, say so
+You know I can't live without you, I'm on my knees
+Where are you now? Shed a light on me
+If you love me, say so, If you love me, say so
+
+Why when I call, you never answer?
+I'll try to talk, you keep on dancing
+I can feel you on my skin, but am I only dancing with the wind?
+
+And I know you don't owe me your love
+And I know that you don't owe me nothing at all
+Ain't no way I'm giving up on you
+
+Don't leave me here in the dark when it's hard to see
+Show me your heart, shed a light on me
+If you love me, say so, If you love me, say so
+If you love me, say something
+You know I can't live without you, I'm on my knees
+Where are you now? Shed a light on me
+If you love me, say so, If you love me, say so
+
+Shed a light, shed a light on me
+Shed a light, shed a light on me
+Don't leave me here in the dark when it's hard to see
+Show me your heart, shed a light on me
+If you love me, say so, If you love me, say so
+  </pre>
+</div>
+
+
+
+
+<script type="text/javascript">
+	
+	var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+    }
+}
+</script>
+
+
+<script>
+// merre 'modal'-in
+var modal = document.getElementById('id01');
+
+// Kur useri klikon jasht 'modal'-it te mbyllet
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<script>
+// Grab the Canvas and Drawing Context
+var canvas = document.getElementById('c');
+var ctx = canvas.getContext('2d');
+
+
+
+// Create an image element
+var img = document.createElement('IMG');
+
+// When the image is loaded, draw it
+img.onload = function () {
+
+    // Save the state, so we can undo the clipping
+    ctx.save();
+    ctx.arc(450,300,380,0,2*Math.PI);      
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(450,300,380,0,2*Math.PI, false);
+    ctx.fill();
+    // Clip to the current path
+    ctx.clip();
+    
+    
+    ctx.drawImage(img, 0, 0);
+    
+    // Undo the clipping
+    ctx.restore();
+}
+
+// Specify the src to load the image
+img.src = "Images/robinschulz.jpg";
+</script>
+
+	
+</body>
+
+</html>

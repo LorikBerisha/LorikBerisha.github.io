@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="indexstyle.css"/>
+	
+	<style>
+	/* Style the buttons that are used to open and close the accordion panel */
+button.accordion {
+    background-color: black;
+    background-color: rgba(0,0,0,0.92);
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 50%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin-left: 410px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+button.accordion.active, button.accordion:hover {
+    background-color: #151313;
+    width: 53.65%;
+
+}
+
+/* Style the accordion panel. Note: hidden by default */
+div.panel {
+    padding: 0 18px;
+    width: 50.65%;
+    margin-left:410px;
+    color:black;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-weight: 800;
+    background-color: #D5D5D5;
+    background-color: rgba(225,225,225,0.5);
+    display: none;
+}
+
+/* The "show" class is added to the accordion panel when the user clicks on one of the buttons. This will show the panel content */
+div.panel.show {
+    display: block;
+}
+
+	div.svg-wrapper {
+  height: 100%;
+  max-height: 60px;
+  margin-top: -150px;
+  margin-left: 550px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 320px;
+}
+
+.shape {
+  fill: transparent;
+  stroke-dasharray: 205 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+  /*stroke: #1cb779;*/
+  stroke: #19f6e8;
+}
+
+.text {
+  height: 100%;
+  max-height: 60px;
+  margin-left: 10px;
+  text-align: center;
+  color: #fff;
+  /*font-family: 'Roboto Condensed';*/
+  font-size: 22px;
+  letter-spacing: 8px;
+  line-height: 20px;
+  position: relative;
+  top: -80px;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 8px;
+  }
+  100% {
+    stroke-dasharray: 760;
+    stroke-dashoffset: 0;
+    stroke-width: 2px;
+  }
+}
+
+.svg-wrapper:hover .shape {
+  -webkit-animation: 0.5s draw linear forwards;
+  animation: 0.5s draw linear forwards;
+}
+</style>
+	
+
+
+</head>
+
+<body>
+
+	<!-- Header-i (logoja dhe search box) -->
+  <h1 id="header"><a href="../index.html">Music</a>Book</span> </a>
+   
+   
+   
+   
+   <span><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-right: 200px;" 
+  target="buton1">Login</button> <input type="text" name="search" placeholder="      Search.." target="searchbox"> </span></h1>
+  
+
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close login">&times;</span>
+      
+    </div>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username"
+      target="login" name="uname" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" target="login" name="psw" required>
+        
+      <button type="submit" target="buton2">Login</button>
+      <input type="checkbox" checked="checked"> Remember me
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <span class="psw" style="padding-right:50px; ">Forgotten <a href="../index.html#contact">password?</a></span>
+    </div>
+  </form>
+</div>
+
+  
+
+  <!-- Modal per navigation menu -->
+<div id="id02" class="modal1">
+  <div class="">
+    <div class="modal1-content">
+      <span onclick="document.getElementById('id02').style.display='none'" 
+      style="margin: 20px;cursor:pointer;color:white;">&times;</span>
+     <ul>
+
+      <li><a href="../Piano.html">Piano</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="id03" class="modal1">
+  <div>
+    <div class="modal1-content" style="background-image:url(images2.jpg);background-size: 170px 128px;">
+      <span onclick="document.getElementById('id03').style.display='none'" 
+      style="margin: 20px;cursor:pointer; color:white;">&times;</span>
+     <ul>
+      <li><a href="../Electric Guitars.html">Electric</a></li>
+      <li><a href="../Acoustic Guitars.html">Acoustic</a></li>
+      <li><a href="../Bass Guitars.html">Bass</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Navigation Lista -->
+  <nav class="navLista">
+    <ul class="lista">
+    <li> <table cellpadding="0px" cellspacing="0px" style="margin: 0;padding:0;" id="navBar">
+    <tr>
+        <td>
+            <a class="selected" href="../index.html" style="margin-left: 10px;">Home</a>
+        </td>
+        
+    </tr>
+</table></li>
+      <li><a style="margin-left: 11px;">Products</a>
+        <ul id="submenu">
+          <li><a href="#" onclick="document.getElementById('id02').style.display='block'"> Piano </a>
+            </li>
+          <li><a href="##" onclick="document.getElementById('id03').style.display='block'"> Guitar </a>
+          </li>
+          
+        </ul>
+      </li>
+      <li><span><br></span><a href="../artist.html">Artists</a></li>
+      <li><a href="https://www.ultimate-guitar.com/" target="_blank">Chords</a>
+      </li>
+      <li><a href="#contact">Contact</a></li>
+
+    </ul>
+  </nav>
+  <div class="svg-wrapper">
+  <svg height="80" width="330" >
+    <rect class="shape" height="80" width="330" />
+  </svg>
+
+<div class="text" style="border: 1px solid black;color:white;font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;">A Head Full Of Dreams by  
+<span style="color:black;font-weight: bold;">Coldplay</span>
+</div>
+</div>
+
+<canvas id="c"  width="900px" height="600px" style="margin: 250px 0 0 280px;"></canvas>
+<button class="accordion" style="margin-left: 410px; margin-top: 5px;">A Head Full Of Dreams</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Coldplay  A Head Full Of Dreams.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+Oh, I think I landed
+In a world I hadn't seen
+When I'm feeling ordinary
+When I don't know what I mean
+
+Oh, I think I landed
+Where there are miracles at work
+For the thirst and for the hunger
+Come the conference of birds
+
+Saying it's true
+It's not what it seems
+Leave your broken windows open
+And in the light just streams
+
+And you get a head
+A head full of dreams
+You can see the change you want to
+Be what you want to be
+
+When you get a head
+A head full of dreams
+Into life I just been spoken
+With a head full, a head full of dreams
+
+Oh, I think I landed
+Where there are miracles at work
+When you got me open handed
+When you got me lost for words
+
+I sing, oh-ohohoh
+Oh-ohohoh
+Oh-ohohoh [repeats]
+
+A head full of dreams
+A head full of dreams
+
+Into life I just been spoken
+With a head full, a head full of dreams
+</pre>
+</div>
+
+<button class="accordion">Birds</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Coldplay Birds.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+Been standing in the corner
+Studying the lights
+The dreaming of escape
+Will keep you up at night
+
+But someone had put the flare up
+Got me in rays
+So... I guess I better stay
+
+"Uh uh, no come on!" you say
+
+It's a fools gold thunder
+It's just warning rain
+Don't let the fears just start, what if
+I won't see you again
+Around here you never want to
+Sleep all night
+
+So start falling in love,
+Start the riot
+And come on rage with me
+
+We don't need words
+We'll be birds
+Got to make our own key
+
+Only got this moment
+You and me
+Guilty of nothing
+But geography
+
+Come on and raise it
+Come on raise this noise
+For the million people
+Who got not one voice
+Come on, it's not over!
+If you mean it say loud
+Come on, all for love
+Out from the underground
+
+Away with me
+We don't need words
+Close your eyes and see
+We'll be birds
+Flying free
+Holding on in the mystery
+
+Fearless through this you said
+We'll go
+Through this together (ooohh)
+When you fly won't you
+Won't you take me too?
+In this world so cruel
+I think you're so cool
+  </pre>
+</div>
+
+<button class="accordion">Hymn For The Weekend</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Coldplay Hymn for the weekend.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+[Beyoncé:]
+Drink from me, drink from me
+Then we'll shoot across the sky
+Symphony
+Then we'll shoot across the sky
+We're on a...
+Drink from me, drink from me
+Then we'll shoot across the sky
+Symphony
+(So high, so high)
+Then we'll shoot across the sky
+
+[Coldplay:]
+Oh, angel sent from up above
+You know you make my world light up
+When I was down, when I was hurt
+You came to lift me up
+Life is a drink, and love's a drug
+Oh, now I think I must be miles up
+When I was a river, dried up
+You came to rain a flood
+
+[Coldplay &amp; Beyoncé:]
+And said drink from me, drink from me
+When I was so thirsty
+Pour on a symphony
+Now I just can't get enough
+Put your wings on me, wings on me
+When I was so heavy
+Pour on a symphony
+When I'm low, low, low, low
+
+[Coldplay:]
+I, oh, I, oh
+Got me feeling drunk and high
+So high, so high
+I, oh, I, oh, I, oh
+Now I'm feeling drunk and high
+So high, so high
+Woo!
+
+[Coldplay &amp; Beyoncé:]
+Oh, angel sent from up above
+I feel it coursing through my blood
+Life is a drink, your love's about
+To make the stars come out
+
+[Coldplay &amp; Beyoncé:]
+Put your wings on me, wings on me
+When I was so heavy
+Pour on a symphony
+When I'm low, low, low, low
+
+[Coldplay:]
+I, oh I, oh I
+Got me feeling drunk and high
+So high, so high
+Oh I, oh I, oh I
+I'm feeling drunk and high
+So high, so high
+
+[Beyoncé &amp; Coldplay:]
+I, oh I, oh I
+La la la la la la la
+So high, so high
+I, oh I, oh I
+I'm feeling drunk and high
+So high, so high
+
+[Beyoncé:]
+Then we'll shoot across the sky
+Then we'll shoot across the...
+Then we'll shoot across the sky
+Then we'll shoot across the...
+Then we'll shoot across the sky
+Then we'll shoot across the...
+Then we'll shoot across the sky
+Then we'll shoot across the...
+
+  </pre>
+</div>
+
+<button class="accordion">Everglow</button>
+<div class="panel">
+  <pre>
+Oh they say people come
+They say people go
+This particular diamond was extra special
+And though you might be gone
+And the world may not know
+Still I see you celestial
+
+Like a lion you ran
+A goddess you rolled
+Like an eagle you circled
+In perfect purple
+So how come things move on
+How come cars don't slow
+When it feels like the end of my world?
+When I should but I can't let you go?
+
+But when I'm cold, cold
+When I'm cold, cold
+There's a light that you give me
+When I'm in shadow
+There's a feeling within me, an everglow
+
+Like brothers in blood
+Sisters who ride
+Yeah, we swore on that night
+We'd be friends 'til we died
+But the changing of winds
+And the way waters flow
+Life as short as the falling of snow
+And now I'm gonna miss you, I know
+
+But when I'm cold, cold
+In water rolled, salt
+And I know that you're with me
+And the way you will show
+And you're with me wherever I go
+'Cause you give me this feeling, this everglow
+
+What I wouldn't give for just a moment to hold
+Yeah, I live for this feeling, this everglow
+
+So if you love someone, you should let them know
+Oh, the light that you left me will everglow
+  </pre>
+</div>
+
+<button class="accordion">Adventure Of A Lifetime</button>
+<div class="panel">
+  <pre>
+Turn your magic on
+Umi she'd say
+Everything you want's a dream away
+And we are legends every day
+That's what she told me
+
+Turn your magic on,
+To me she'd say
+Everything you want's a dream away
+Under this pressure, under this weight
+We are diamonds
+
+Now I feel my heart beating
+I feel my heart underneath my skin
+And I feel my heart beating
+Oh, you make me feel
+Like I'm alive again
+Alive again
+Oh, you make me feel
+Like I'm alive again
+
+Said I can't go on,
+Not in this way
+I'm a dream that died by light of day
+Gonna hold up half the sky and say
+Only I own me
+
+And I feel my heart beating
+I feel my heart underneath my skin
+Oh, I can feel my heart beating
+'Cause you make me feel
+Like I'm alive again
+Alive again
+Oh, you make me feel
+Like I'm alive again
+
+Turn your magic on,
+Umi she'd say
+Everything you want's a dream away
+Under this pressure under this weight
+We are diamonds taking shape
+We are diamonds taking shape
+
+If we've only got this life
+This adventure, oh, then I
+And if we've only got this life
+You get me through
+
+And if we've only got this life
+In this adventure, oh, then I
+Want to share it with you
+With you
+With you
+Yeah I do
+Woohoo
+Woohoo
+Woohoo
+  </pre>
+</div>
+
+<button class="accordion">Fun</button>
+<div class="panel">
+  <pre>
+[Coldplay:]
+I know it's over before she says
+I know it falls at the water face
+I know it's over, an ocean awaits
+For a storm
+The sun on snow, rivers in rain
+Crystal ball can foresee a change
+And I know it's over, a parting of ways
+And it's done
+
+[Coldplay:]
+But didn't we have fun?
+Don't say it was all a waste
+Didn't we have fun?
+From the top of the world
+Top of the waves
+We said forever, forever always
+We could have been lost
+We would have been saved
+Now we're stopping the world, stopping its spin
+Oh, come on don't give up
+Don't see me give in
+Don't say it's over
+Don't say we're done
+Oh, didn't we have fun?
+Oh, didn't we have fun?
+
+[Coldplay &amp; Tove Lo:]
+I know it's over before she says
+Know someone else has taken your place
+"I know it's over," Icarus says
+To the sun
+The sword sinks in, lightning strikes
+And two force, two forces collide
+And fight 'til it's over,
+Fight 'til it's done
+
+[Coldplay &amp; Tove Lo:]
+But didn't we have fun?
+Don't say it was all a waste
+Didn't we have fun?
+From the top of the world
+Top of the waves
+We said forever, forever always
+We could have been lost
+We would have been saved
+Now we're stopping the world, stopping in its tracks
+But nothing's too broken to find a way back
+Before it's over, before you run
+Ah, didn't we have fun?
+
+[Coldplay &amp; Tove Lo:]
+'Cause you and me
+We were always meant to... always meant to be
+We were always meant to... always meant to
+You and me
+We were always meant to... always meant to be
+
+Oh, didn't we have fun?
+Oh, didn't we have fun?
+
+[Coldplay:]
+But then...
+Maybe we could again
+  </pre>
+</div>
+
+<button class="accordion">Army Of One</button>
+<div class="panel">
+  <pre>
+Been around the world, the wonders to view
+Been around the world, looking for someone like you
+Pyramids try, Babylon too
+But the beautifullest treasures lie in the deepest blue
+
+So I never say die, aim never untrue
+I'm never so high as when I'm with you
+And there isn't a fire, that I wouldn't walk through
+My army of one is gonna fight for you
+
+Been around the world, universe too
+Been around flying, baby, there's nothing I wouldn't do
+Tanzaku stars, Lasso the moon
+And be standing there beside you
+Right when the storm comes through
+
+'Cause I never say die, aim never untrue
+Never so high as when I'm with you
+And there isn't a fire, that I wouldn't walk through
+My army of one is gonna fight for you
+My army of one is gonna fight for you, yeah!
+
+'Cause you reign, all 'cause you reign
+All 'cause you reign
+My army of one is gonna call it through
+
+Sayin my heart is my gun, army of one
+Yeah my heart is my gun, army of one
+It's my only weapon, army of one
+Yeah my heart is my gun, army of one
+  </pre>
+</div>
+
+<button class="accordion">Amazing Day</button>
+<div class="panel">
+  <pre>
+We sat on a roof, named every star
+Shared every bruise and showed every scar
+Hope has its proof put your hand in mine saying,
+"Life has a beautiful, crazy design."
+
+And time seemed to say,
+"Forget the world and its weight."
+And here I just want to stay
+
+Amazing day
+Amazing day
+
+We sat on a roof, named every star
+You showed me a place
+Where you can be what you are
+
+And the view, the whole Milky Way
+In your eyes, I drifted away
+And in your arms I just want to sway
+
+Amazing day
+Amazing day
+Amazing day
+Amazing day
+
+Oh-oh-oh-oh, oh-oh-oh-oh, oh-oh-oh-oh, oh-oh-oh-oh
+Oh-oh-oh-oh, oh-oh-oh-oh, oh-oh-oh-oh, oh
+
+And I asked
+Can the Birds in poetry, chime?
+Can there be breaks in the chaos sometimes?
+Oh, thanks God, must have heard when I prayed
+'Cause now I always want to feel this way
+
+Amazing day
+Amazing day
+Amazing day
+Amazing day
+Yeah, today
+  </pre>
+</div>
+
+<button class="accordion">Up&amp;Up</button>
+<div class="panel">
+  <pre>
+Fixing up a car to drive in it again
+Searching for the water, hoping for the rain
+Up and up
+Up and up
+
+Down upon the canvas, working meal to meal
+Waiting for a chance to pick on your orange field
+Up and up
+Up and up
+
+See a pearl form a diamond in the rough
+See a bird soaring high above the flood
+It's in your blood
+It's in your blood
+
+Underneath the storm, an umbrella is saying,
+"Sitting with the poison takes away the pain."
+Up and up
+Up and up, saying
+
+We're gonna get it, get it together right now
+Gonna get it, get it together somehow
+Gonna get it, get it together and flower
+We're gonna get it, get it together, I know
+Gonna get it, get it together and flow
+Gonna get it, get it together and go
+Up and up and up
+
+Lying in the gutter, aiming for the moon
+Trying to empty out the ocean with a spoon
+Up and up
+Up and up
+
+How come people suffer? How come people part?
+How come people struggle? How come people break your heart?
+Break your heart, oh
+
+Yes, I wanna grow, yes, I wanna feel
+Yes, I wanna know, show me how to heal it up
+Heal it up, oh
+
+Try and see the forest, there in every seed
+Angels in the marble waiting to be freed
+Just need love
+Just need love
+
+When the going is rough, saying
+
+We're gonna get it, get it together right now
+Gonna get it, get it together somehow
+Gonna get it, get it together and flower
+We're gonna get it, get it together, I know
+Gonna get it, get it together and flow
+Gonna get it, get it together and go
+
+But you can say what is, or fight for it
+Close your mind or take a risk
+You can say, "It's mine," and clench your fist
+Or see each sunrise as a gift
+
+[2x]
+We're gonna get it, get it together right now
+Gonna get it, get it together somehow
+Gonna get it, get it together and flower
+We're gonna get it, get it together, I know
+Gonna get it, get it together and flow
+Gonna get it, get it together and go
+
+Up and up and up
+
+Oh
+
+Fixing up a car to drive in it again
+When you're in pain, when you think you've had enough
+Don't ever give up
+Don't ever give up
+
+Believe in love
+  </pre>
+</div>
+
+
+
+
+
+<script type="text/javascript">
+	
+	var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+    }
+}
+</script>
+
+
+<script>
+// merre 'modal'-in
+var modal = document.getElementById('id01');
+
+// Kur useri klikon jasht 'modal'-it te mbyllet
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<script>
+// Grab the Canvas and Drawing Context
+var canvas = document.getElementById('c');
+var ctx = canvas.getContext('2d');
+
+
+
+// Create an image element
+var img = document.createElement('IMG');
+
+// When the image is loaded, draw it
+img.onload = function () {
+
+    // Save the state, so we can undo the clipping
+    ctx.save();
+    ctx.arc(450,300,380,0,2*Math.PI);      
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(450,300,380,0,2*Math.PI, false);
+    ctx.fill();
+    // Clip to the current path
+    ctx.clip();
+    
+    
+    ctx.drawImage(img, 0, 0);
+    
+    // Undo the clipping
+    ctx.restore();
+}
+
+// Specify the src to load the image
+img.src = "Images/coldplay.jpg";
+</script>
+
+	
+</body>
+
+</html>

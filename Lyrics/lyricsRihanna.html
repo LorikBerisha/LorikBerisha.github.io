@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="indexstyle.css"/>
+	
+	<style>
+	/* Style the buttons that are used to open and close the accordion panel */
+button.accordion {
+    background-color: black;
+    background-color: rgba(0,0,0,0.92);
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 50%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin-left: 410px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+button.accordion.active, button.accordion:hover {
+    background-color: #151313;
+    width: 53.65%;
+
+}
+
+/* Style the accordion panel. Note: hidden by default */
+div.panel {
+    padding: 0 18px;
+    width: 50.65%;
+    margin-left:410px;
+    color:black;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-weight: 800;
+    background-color: #D5D5D5;
+    background-color: rgba(225,225,225,0.5);
+    display: none;
+}
+
+/* The "show" class is added to the accordion panel when the user clicks on one of the buttons. This will show the panel content */
+div.panel.show {
+    display: block;
+}
+
+	div.svg-wrapper {
+  height: 100%;
+  max-height: 60px;
+  margin-top: -150px;
+  margin-left: 550px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 320px;
+}
+
+.shape {
+  fill: transparent;
+  stroke-dasharray: 205 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+  /*stroke: #1cb779;*/
+  stroke: #19f6e8;
+}
+
+.text {
+  height: 100%;
+  max-height: 60px;
+  margin-left: 10px;
+  text-align: center;
+  color: #fff;
+  /*font-family: 'Roboto Condensed';*/
+  font-size: 22px;
+  letter-spacing: 8px;
+  line-height: 55px;
+  position: relative;
+  top: -80px;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 8px;
+  }
+  100% {
+    stroke-dasharray: 760;
+    stroke-dashoffset: 0;
+    stroke-width: 2px;
+  }
+}
+
+.svg-wrapper:hover .shape {
+  -webkit-animation: 0.5s draw linear forwards;
+  animation: 0.5s draw linear forwards;
+}
+</style>
+	
+
+
+</head>
+
+<body>
+
+	<!-- Header-i (logoja dhe search box) -->
+  <h1 id="header"><a href="../index.html">Music</a>Book</span> </a>
+   
+   
+   
+   
+   <span><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-right: 200px;" 
+  target="buton1">Login</button> <input type="text" name="search" placeholder="      Search.." target="searchbox"> </span></h1>
+  
+
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close login">&times;</span>
+      
+    </div>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username"
+      target="login" name="uname" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" target="login" name="psw" required>
+        
+      <button type="submit" target="buton2">Login</button>
+      <input type="checkbox" checked="checked"> Remember me
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <span class="psw" style="padding-right:50px; ">Forgotten <a href="../index.html#contact">password?</a></span>
+    </div>
+  </form>
+</div>
+
+  
+
+  <!-- Modal per navigation menu -->
+<div id="id02" class="modal1">
+  <div class="">
+    <div class="modal1-content">
+      <span onclick="document.getElementById('id02').style.display='none'" 
+      style="margin: 20px;cursor:pointer;color:white;">&times;</span>
+     <ul>
+
+      <li><a href="../Piano.html">Piano</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="id03" class="modal1">
+  <div>
+    <div class="modal1-content" style="background-image:url(images2.jpg);background-size: 170px 128px;">
+      <span onclick="document.getElementById('id03').style.display='none'" 
+      style="margin: 20px;cursor:pointer; color:white;">&times;</span>
+     <ul>
+      <li><a href="../Electric Guitars.html">Electric</a></li>
+      <li><a href="../Acoustic Guitars.html">Acoustic</a></li>
+      <li><a href="../Bass Guitars.html">Bass</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Navigation Lista -->
+  <nav class="navLista">
+    <ul class="lista">
+    <li> <table cellpadding="0px" cellspacing="0px" style="margin: 0;padding:0;" id="navBar">
+    <tr>
+        <td>
+            <a class="selected" href="../index.html" style="margin-left: 10px;">Home</a>
+        </td>
+        
+    </tr>
+</table></li>
+      <li><a style="margin-left: 11px;">Products</a>
+        <ul id="submenu">
+          <li><a href="#" onclick="document.getElementById('id02').style.display='block'"> Piano </a>
+            </li>
+          <li><a href="##" onclick="document.getElementById('id03').style.display='block'"> Guitar </a>
+          </li>
+          
+        </ul>
+      </li>
+      <li><span><br></span><a href="../artist.html">Artists</a></li>
+      <li><a href="https://www.ultimate-guitar.com/" target="_blank">Chords</a>
+      </li>
+      <li><a href="#contact">Contact</a></li>
+
+
+    </ul>
+  </nav>
+  <div class="svg-wrapper">
+  <svg height="80" width="330" >
+    <rect class="shape" height="80" width="330" />
+  </svg>
+
+<div class="text" style="border: 1px solid black;color:white;font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;">Loud by          
+<span style="color:black;font-weight: bold;">Rihanna</span>
+</div>
+</div>
+
+<canvas id="c"  width="900px" height="600px" style="margin: 250px 0 0 280px;"></canvas>
+
+<button class="accordion" style="margin-left: 410px; margin-top: 5px;">S&amp;M</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Rihanna S&M.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+Na na na
+Come on
+Na na na
+Come on
+Na na na na na
+Come on
+Na na na
+Come on
+Come on
+Come on
+Na na na na
+Come on
+Na na na
+Come on
+Na na na na na
+Come on
+Na na na
+Come on
+Come on
+Come on
+Na na na na
+
+Feels so good being bad
+There's no way I'm turning back
+Now the pain is my pleasure
+Cause nothing could measure
+
+Love is great, love is fine
+Out the box, out of line
+The affliction of the feeling
+Leaves me wanting more
+
+[Chorus x2:]
+Cause I may be bad
+But I'm perfectly good at it
+Sex in the air
+I don't care
+I love the smell of it
+Sticks and stones
+May break my bones
+But chains and whips
+Excite me
+
+Na na na na
+Come on
+Come on
+Come on
+I like it
+Like it
+Come on
+Come on
+Come on
+I like it
+Like it
+Come on
+Come on
+Come on
+I like it
+Like it
+Come on
+Come on
+Come on
+I like it
+Like it
+
+Love is great, love is fine
+Out the box, out of line
+The affliction of the feeling
+Leaves me wanting more
+
+[Chorus:]
+Cause I may be bad
+But I'm perfectly good at it
+Sex in the air
+I don't care
+I love the smell of it
+Sticks and stones
+May break my bones
+But chains and whips
+Excite me
+
+Na na na na
+Come on
+Come on
+Come on
+I like it
+Like it
+Come on
+Come on
+Come on
+I like it
+Like it
+Come on
+Come on
+Come on
+I like it
+Like it
+Come on
+Come on
+Come on
+I like it
+Like it
+
+S...S...S
+And
+M...M...M
+S...S...S
+And
+M...M...M
+
+Oh
+I love the feeling
+You bring to me
+Oh, you turn me on
+It's exactly what
+I've been yearning for
+Give it to me strong
+
+And meet me in my boudoir
+Make my body say ah, ah, ah
+
+I like it
+Like it
+
+[Chorus x2:]
+Cause I may be bad
+But I'm perfectly good at it
+Sex in the air
+I don't care
+I love the smell of it
+Sticks and stones
+May break my bones
+But chains and whips
+Excite me
+
+Na na na na
+Come on
+Come on
+Come on
+I like it
+Like it
+Come on
+Come on
+Come on
+I like it
+Like it
+Come on
+Come on
+Come on
+I like it
+Like it
+Come on
+Come on
+Come on
+I like it
+Like it
+
+S...S...S
+And
+M...M...M
+S...S...S
+And
+M...M...M
+S...S...S
+And
+M...M...M
+S...S...S
+And
+M...M...M
+
+</pre>
+</div>
+
+<button class="accordion">What's My Name?</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Rihanna What's My Name.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+[Rihanna]
+Oh na na, what's my name?
+Oh na na, what's my name?
+Oh na na, what's my name?
+Oh na na, what's my name?
+Oh na na, what's my name?
+What's my name, what's my name?
+
+[Drake]
+I heard you good with them soft lips
+Yeah, you know word of mouth
+The square root of 69 is 8 some, right
+'Cause I've been tryna work it out, oooow
+Good weed, white wine
+I come alive in the night time
+Okay, away we go
+Only thing we have on is the radio
+Oh, let it play, say you gotta leave
+But I know you wanna stay
+You're just waiting on the traffic jam to finish, girl
+The things we could do in twenty minutes girl
+Say my name, say my name
+Wear it out, it's getting hot, crack a window, air it out
+I can get you through a mighty long day
+Soon as you go the text that I write is gonna say
+
+[Rihanna]
+Not everybody knows how to work my body
+Knows how to make me want it
+Boy, you stay up on it
+You got that something that keeps me so off balance
+Baby, you're a challenge, let's explore your talent
+
+[Chorus 2x:]
+Hey boy, I really wanna see if you can go downtown with a girl like me
+Hey boy, I really wanna be with you 'cause you just my type
+Oh na na na na
+I need a boy to take it over
+Looking for a guy to put you work up
+Oh, oh
+
+Oh na na, what's my name?
+Oh na na, what's my name?
+Oh na na, what's my name?
+What's my name, what's my name?
+
+[Rihanna]
+Baby, you got me, ain't nowhere that I'd be
+Than with your arms around me
+Back and forth you rock me
+So I surrender to every word you whisper
+Every door you enter, I will let you in
+
+[Chorus]
+
+You're so amazing, you took the time to figure me out
+That's why you take me, way past the point of turning me on
+You about to break me, I swear you got me losing my mind
+
+Ooh na na, what's my name?
+Ooh na na, what's my name?
+
+Ooh na na, what's my name?
+Ooh na na, what's my name?
+Ooh na na, what's my name?
+What's my name, what's my name?
+
+[Chorus 2x]
+  </pre>
+</div>
+
+<button class="accordion">Cheers (Drink To That)</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Rihanna Cheers (Drink To That).mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+
+  <pre>
+Cheers to the freakin' weekend
+I drink to that, yeah yeah
+Oh let the Jameson sink in
+I drink to that, yeah yeah
+Don't let the bastards get ya down
+Turn it around with another round
+There's a party at the bar everybody put your glasses up and I drink to that
+I drink to that.
+
+Life's too short to be sittin' round miserable
+People gon' talk whether you doing bad or good, yeah
+Got a drink on my mind and my mind on my money, yeah
+Looking so bomb, gonna find me a honey
+Got my Ray-Bans on and I'm feelin' hella cool tonight, yeah
+Everybody's vibin' so don't nobody start a fight, yeah-ah-ah-ah
+
+Cheers to the freakin' weekend
+I drink to that, yeah yeah
+Oh, let the Jameson sink in
+I drink to that, yeah yeah
+Don't let the bastards get ya down
+Turn it around with another round
+There's a party at the bar everybody put your glasses up and I drink to that
+I drink to that.
+
+'Bout to hop on the bar, put it all on my card tonight, yeah.
+
+Might be mad in the morning but you know we goin' hard tonight
+It's getting coyote ugly up in here, no tyra
+It's only up from here, no downward spiral
+Got my Ray-Bans on and I'm feelin' hella cool tonight, yeah
+Everybody's vibin' so don't nobody start a fight, yeah
+
+Cheers to the freakin' weekend
+I drink to that, yeah yeah
+Oh let the Jameson sink in
+I drink to that, yeah yeah
+Don't let the bastards get ya down
+Turn it around with another round
+There's a party at the bar everybody put your glasses up and I drink to that
+I drink to that.
+
+Cheers to the freakin weekend
+I drink to that, yeah yeah
+Oh let the Jameson sink in
+I drink to that, yeah yeah
+Don't let the bastards get ya down
+Turn it around with another round
+There's a party at the bar everybody put your glasses up and I drink to that
+I drink to that.
+And I drink to that.
+I drink to that.
+And I drink to that.
+  </pre>
+</div>
+
+<button class="accordion">Fading</button>
+<div class="panel">
+  <pre>
+You say you love me
+But they feel
+Like words to me
+Well this just
+Ain't working
+Stop thinking
+You can run over me
+Drifting
+Settling
+Off to
+A foreign place
+If I can't see
+What's in front of me
+It's a mystery
+Well then apparently
+
+[Chorus:]
+Things just ain't the same
+And I'm ready for change
+Go on, begone, bye bye, so long
+Can't you see that you're
+Fading, fading, fading, fading
+Away, away, away, away
+I opened up my eyes, and I finally realized
+Today, today, it's too late
+You're fading away
+
+Put a sock in it
+Just stop running your mouth
+Got my mind made up
+I ain't coming back again
+No way, no way, no way, no way
+Cause I'm so fed up
+You got me messed up
+If we hooking back up
+Don't press your luck today, today
+I'm blowing you away
+
+[Chorus:]
+Things just ain't the same
+And I'm ready for a change
+Go on, begone, ta ta, so long
+Can't you see that you're
+Fading, fading, fading, fading
+Away, away, away, away
+I opened up my eyes and I finally realized
+Today, today, it's too late
+You're fading away
+
+Saw you turn into a ghost right in front of my eyes
+Tell me what's a girl to do when she's crying inside?
+I'm about to go insane, I'm jumping off this train
+Whether wrong or right I'll be gone by night
+
+[Chorus:]
+Can't you see that you're
+Fading, fading, fading, fading
+Away, away, away, away
+I opened up my eyes and I finally realized
+Today, today, it's too late
+You're fading away
+  </pre>
+</div>
+
+<button class="accordion">Only Girl (In The World)</button>
+<div class="panel">
+  <pre>
+
+La la la la
+La la la la
+La la la la
+(Uh, yeah)
+La la la la
+
+[Verse 1:]
+I want you to love me, like I'm a hot pie
+Keep thinkin' of me, doin' what you like
+So boy forget about the world cause it's gon' be me and you tonight
+I wanna make you beg for it, then I'm a make you swallow your pride
+
+Ooh
+
+[Chorus:]
+Want you to make me feel like I'm the only girl in the world
+Like I'm the only one that you'll ever love
+Like I'm the only one who knows your heart
+Only girl in the world...
+Like I'm the only one that's in command
+Cause I'm the only one who understands how to make you feel like a man (yeah)
+Want you to make me feel like I'm the only girl in the world
+Like I'm the only one that you'll ever love
+Like I'm the only one who knows your heart
+Only one...
+
+[Verse 2:]
+Want you to take it, like a thief in the night
+Hold me like a pillow, make me feel right
+Baby I'll tell you all my secrets that I'm keepin', you can come inside
+And when you enter, you ain't leavin', be my prisoner for the night
+
+[Chorus:]
+Want you to make me feel like I'm the only girl in the world
+Like I'm the only one that you'll ever love
+Like I'm the only one who knows your heart
+Only girl in the world...
+Like I'm the only one that's in command
+Cause I'm the only one who understands, like I'm the only one who knows your heart,
+Only one...
+
+[Bridge:]
+Take me for a ride, ride
+Oh baby, take me high, high
+Let me make you first, first
+Oh make it last all night, night
+Take me for a ride, ride
+Oh baby, take me high, high
+Let me make you first, first
+Make it last all night
+
+[Chorus:]
+Want you to make me feel like I'm the only girl in the world
+Like I'm the only one that you'll ever love
+Like I'm the only one who knows your heart
+Only girl in the world...
+Like I'm the only one that's in command
+Cause I'm the only one who understands how to make you feel like a man
+Only girl in the world...
+Girl in the world...
+Only girl in the world...
+Girl in the world
+
+  </pre>
+</div>
+
+<button class="accordion">California King Bed</button>
+<div class="panel">
+  <pre>
+Chest to chest
+Nose to nose
+Palm to palm
+We were always just that close
+Wrist to wrist
+Toe to toe
+Lips that felt just like the inside of a rose
+So, how come when I reach out my finger
+It feels like more than distance between us
+
+In this California king bed
+We're ten thousand miles apart
+I've been California wishing on these stars
+For your heart for me
+My California king
+
+Eye to eye
+Cheek to cheek
+Side by side
+You were sleeping next to me
+Arm in arm
+Dusk to dawn
+With the curtains drawn
+And a little last night on these sheets
+So, how come when I reach out my fingers
+It seems like more than distance between us
+
+In this California king bed
+
+We're ten thousand miles apart
+I've been California wishing on these stars
+For your heart for me
+My California king
+
+Just when I felt like giving up on us
+You turned around and gave me one last touch
+That made everything feel better
+And even then my eyes got wetter
+So confused wanna ask you if you love me
+But I don't wanna seem so weak
+Maybe I've been California dreaming
+
+Yeah yeah yeah
+
+In this California king bed
+We're ten thousand miles apart
+I've been California wishing on these stars
+For your heart for me
+My California king
+My California king
+
+In this California king bed
+We're ten thousand miles apart
+I've been California wishing on these stars
+For your heart for me
+My California king
+
+  </pre>
+</div>
+
+<button class="accordion">Man Down</button>
+<div class="panel">
+  <pre>
+I didn't mean to end his life
+I know it wasn't right
+I can't even sleep at night
+Can't get it off my mind
+I need to get out of sight
+Before I end up behind bars
+
+What started out as a simple altercation
+Turned into a real sticky situation
+Me just thinking on the time that I'm facing
+Makes me wanna cry
+
+Cause I didn't mean to hurt him
+Could've been somebody's son
+And I took his heart when
+I pulled out that gun
+
+Rum, pum, pum rum, pum, pum, pum rum, pum, pum, pum
+Man Down
+Rum, pum, pum, pum rum, pum, pum, pum rum, pum, pum, pum
+Man Down
+
+Oh, mama, mama, mama
+I just shot a man down
+In central station
+In front of a big ol' crowd
+Oh, why? Oh, why?
+Oh, mama, mama, mama
+I just shot a man down
+In central station
+
+It's a 22
+I Call her Peggy Sue
+When she fits right down in my shoes
+What you expect me to do
+If you're playing me for a fool
+I will lose my cool
+And reach for my fire arm
+
+I didn't mean to lay him down
+But it's too late to turn back now
+Don't know what I was thinking
+Now he's no longer living
+So I'm ‘bout to leave town (yeah)
+
+Cause I didn't mean to hurt him
+Could've been somebody's son
+And I took his heart when
+I pulled out that gun
+
+Rum, pum, pum, pum rum, pum, pum, pum rum, pum, pum, pum
+Man Down
+Rum, pum, pum, pum rum, pum, pum, pum rum, pum, pum, pum
+Man Down
+
+Oh, mama, mama, mama
+I just shot a man down
+In central station
+In front of a big ol' crowd
+Oh, why? Oh, why?
+Oh, mama, mama, mama
+I just shot a man down
+In central station
+
+And I never thought I'd do it
+Never thought I'd do it
+Never thought I'd do it
+Oh, gosh
+Whatever happened to me
+Ever happened to me
+Ever happened to me
+Why did I pull the trigger
+Pull the trigger, pull the trigger – boom
+And end a nigga, end a nigga life so soon
+When me pull the trigger, pull the trigger, pull it 'pon you
+Somebody tell me what I'm gonna, what I'm gonna do
+
+Rum, pum, pum, pum rum, pum, pum, pum rum, pum, pum, pum
+Me say one man down (oh, let me say)
+Rum, pum, pum, pum rum, pum, pum, pum, rum, pum, pum, pum
+When we went downtown
+
+Cause now I am a criminal criminal criminal
+Oh, lord have mercy now I am a criminal
+Man Down
+Tell the judge please gimme minimal
+Run out a town none a them can see me now
+
+Oh, mama, mama, mama
+I just shot a man down
+In central station
+In front of a big ol' crowd
+Oh, why? Oh, why?
+Oh, mama, mama, mama
+I just shot a man down
+In central station
+
+  </pre>
+</div>
+
+<button class="accordion">Raining Men</button>
+<div class="panel">
+  <pre>
+Eenie, meenie, money, mo
+Catch a player by the toe
+If ya want to let him go
+
+[Chorus:]
+Ladies don’t worry cause they got plenty more
+Men be falling like the rain so we ain't running out
+Falling like the rain so we ain't running out
+Falling like the rain so we ain't running out
+Oh its raining men girl what you worry ’bout?
+
+[Verse 1:]
+Who you think you getting with that "Hi, let me freak ya"
+You got me mistaken thinking you gon get it easy
+First of all you need to know that I’m not the one
+Think you getting something baby, you ain't getting none
+All you need to know that I’m a 2 times 5
+Load it, cock it, aim it baby, boom bye bye
+Set your standards lower boy you’re aiming too high
+Matter of fact your friend looks better, so good bye
+
+Eenie, meenie, money, mo
+Catch a player by the toe
+If ya want to let him go
+
+[Chorus:]
+Ladies don’t worry cause they got plenty more
+Men be falling like the rain so we ain't running out
+Falling like the rain so we ain't running out
+Falling like the rain so we ain't running out
+Oh its raining men girl what you worry 'bout?
+
+Oh yeah yeah, oh whoa whoa
+Oh yeah yeah, oh whoa whoa
+Oh yeah yeah, oh whoa whoa
+Oh yeah yeah yeah yeah
+Oh whoa whoa whoa whoa
+
+[Verse 2 - Nicki Minaj:]
+Excuse me but who are you fixing to be?
+Let them muthafuckers know there’s plenty of fish in the sea
+And he sweating me just cause I got the tightest hole
+Bet I couldn’t find that thing with a microscope
+Give me dom dom, dadadada, dom dom dom
+I ain't tripping on your money, money long long long
+Want my own TV production company
+So tell Harpo to hit me Celie
+Anyway Ri-Ri, what rhymes with your name freely?
+Money got you vacationing in Chile
+Do you want to sit on the back while I wheelie, really? really?
+No for real, really?
+Laid down on the beach, they be feedin me my catfishes
+Cause it’s raining men
+Fat bitches
+
+[Chorus:]
+Ladies don't worry cause they got plenty more
+Men be falling like the rain so we ain't running out
+Falling like the rain so we ain't running out
+Falling like the rain so we ain't running out
+Oh its raining men girl what you worry 'bout?
+
+Oh yeah yeah, oh whoa whoa
+Oh yeah yeah, oh whoa whoa
+Oh yeah yeah, oh whoa whoa
+Oh yeah yeah yeah yeah
+Oh whoa whoa whoa whoa
+
+[Verse 3:]
+I said hey, outta my way, where my ladies
+Riding big, living good, doing they things
+Dancing, don't pay,
+player keep the money I can buy my own ring
+Up in the club, see me coming
+Dime a dozen so it don’t mean nothing to me
+And I ain't even worried about you
+Cause there’s plenty more fish in the sea, OK
+
+Eenie, meenie, money, mo
+Catch a player by the toe
+If ya want to let him go
+
+[Chorus:]
+Ladies don’t worry cause they got plenty more
+Men be falling like the rain so we ain't running out
+Falling like the rain so we ain't running out
+Falling like the rain so we ain't running out
+Oh its raining men girl what you worry 'bout?
+
+[x2]
+Oh yeah yeah, oh whoa whoa
+Oh yeah yeah, oh whoa whoa
+Oh yeah yeah, oh whoa whoa
+Oh yeah yeah yeah yeah
+Oh whoa whoa whoa whoa
+  </pre>
+</div>
+
+<button class="accordion">Complicated</button>
+<div class="panel">
+  <pre>
+You're not easy to love
+You're not easy to love, no
+You're not easy to love
+You're not easy to love, no
+
+Why is everything with you so complicated
+Why do you make it hard to love you
+Oh I hate it
+'Cause if you really wanna be alone
+I will throw my hands up 'Cause baby I tried
+But everything with you is so complicated
+Oh why
+
+Sometimes I get you
+Sometimes I don't understand
+Sometimes I love you
+Sometimes it's you I can't stand
+Sometimes I wanna hug you
+Sometimes I wanna push you away
+Most times I wanna kiss you
+Other times punch you in the face
+'Cause every minute you start switching up
+And you say things like you don't give a fuck
+Then I say I'm through with you
+Take my heart from you
+And you come running after me and baby I'm back with you
+
+Oh, you're not easy to love
+You're not easy to love, no
+You're not easy to love
+You're not easy to love, no
+
+Why is everything with you so complicated
+Why do you make it hard to love you
+Oh I hate it
+'Cause if you really wanna be alone
+I, will throw my hands up 'Cause baby I tried
+But everything with you is so complicated
+Oh why
+
+Sometimes I catch you
+Sometimes you get away
+Sometimes I read you
+Other times I'm like where are you on the page
+Sometimes I feel like we will be together forever
+But you're so complicated
+My heart knows better
+
+Why is everything with you so complicated
+Why do you make it hard to love you
+Oh I hate it
+'Cause if you really wanna be alone
+I, will throw my hands up 'Cause baby I tried
+Everything with you is so complicated
+Oh why
+
+I'ma stick around just a little while longer
+Just to make sure that you're really sure
+You like sleeping alone
+I'ma stick around just a little while longer
+Just to make sure that you're really sure
+You like sleeping alone
+
+Why is everything with you so complicated
+Why do you make it hard to love you
+Oh I hate it
+'Cause if you really wanna be alone
+I, will throw my hands up 'Cause baby I tried
+Everything with you is so complicated
+Oh why
+
+You're not easy to love
+You're not easy to love, no
+You're not easy to love
+You're not easy to love, no
+  </pre>
+</div>
+
+<button class="accordion">Am I Savage?</button>
+<div class="panel">
+  <pre>
+
+  </pre>
+</div>
+
+<button class="accordion">Skin</button>
+<div class="panel">
+  <pre>
+[Verse 1:]
+The mood is set,
+So you already know what's next.
+TV on blast,
+Turn it down,
+Turn it down.
+Don't want it to clash,
+When my body's screaming out now.
+I know you hearin' it,
+You got me moaning now.
+I got a secret that I wanna show you, oh.
+I got a secrets imma drop em to the floor, oh.
+
+[Hook:]
+No teasing,
+You waited long enough.
+Go deep,
+Imma throw it at ya,
+Can you catch it?
+Don't hold back,
+You know I like it rough.
+Know I'm feeling ya, huh.
+Know you liking it, huh.
+
+[Chorus:]
+So why you standing over there with ya clothes on,
+Baby strip down for me,
+Go on take em off.
+Don't worry baby,
+Imma meet you half way,
+Cause I know you wanna see me.
+
+[Verse 2:]
+Almost there,
+So baby don't stop what you're doing.
+Softer than them others
+Boy I know you wanna touch.
+Breathing down my neck,
+I can tell ya wanna -
+And now you want it like,
+Want you to feel it now.
+I got a secret that I wanna show you, oh.
+I got a secrets Imma drop em to the floor, oh.
+
+[Hook:]
+No teasing,
+You waited long enough.
+Go deep,
+Imma throw it at ya,
+Can you catch it?
+Don't hold back,
+You know I like it rough.
+Know I'm feeling ya, huh.
+Know you liking it, huh.
+
+[Chorus:]
+So why you standing over there with ya clothes on,
+Baby strip down for me,
+Go on take em off.
+Don't worry baby,
+Imma meet you half way,
+Cause I know you wanna see me.
+
+[Chorus 2:]
+No heels,
+No shirt,
+No skirt,
+All I'm in is just skin.
+No jeans,
+Take em off,
+Wanna feel your skin.
+You a beast, oh.
+You know that I like that.
+Come here baby,
+All I wanna see you in is just skin
+Oh oh oh your skin
+Oh oh oh just skin
+Oh oh oh I'm lovin' your skin
+Oh oh oh
+
+[Bridge:]
+All in baby,
+Don't hold nothing back.
+Wanna take control,
+Ain't nothing wrong with that.
+Say you liking how I feel,
+Ain't gotta tell me that.
+Just put your skin baby on my skin.
+
+[Chorus 2:]
+No heels,
+No shirt,
+No skirt,
+All I'm in is just skin.
+No jeans,
+Take em off,
+Wanna feel your skin.
+You a beast, oh.
+You know that I like that.
+Come on baby,
+All I wanna see you in is just skin
+Oh oh oh your skin
+Oh oh oh just skin
+Oh oh oh I'm lovin' your skin
+Oh oh oh
+All I wanna see you in is just...
+
+No heels,
+No shirt,
+No skirt,
+All I'm in is just skin.
+No jeans,
+Take em off,
+Wanna feel your skin.
+You a beast, oh.
+You know that I like that.
+Come on baby,
+All I wanna see you in is just skin.
+All I wanna see you in is just skin.
+All I wanna see you in is just skin.
+All I wanna see you in
+All I wanna see you in is your skin, oh.
+
+  </pre>
+</div>
+
+<button class="accordion">Love The Way You Lie Part II</button>
+<div class="panel">
+  <pre>
+[Rihanna]
+On the first page of our story
+The future seemed so bright
+Then this thing turned out so evil
+I don’t know why I’m still surprised
+Even angels have their wicked schemes
+And you take that to new extremes
+But you’ll always be my hero
+Even though you’ve lost your mind
+
+[Chorus:]
+Just gonna stand there and watch me burn
+But that’s all right because I like the way it hurts
+Just gonna stand there and hear me cry
+But that’s all right because I love the way you lie
+I love the way you lie
+Oh, I love the way you lie
+
+[Rihanna]
+Now there’s gravel in our voices
+Glass is shattered from the fight
+In this tug of war you’ll always win
+Even when I’m right
+‘Cause you feed me fables from your hand
+With violent words and empty threats
+And it’s sick that all these battles
+Are what keeps me satisfied
+
+[Chorus]
+
+[Rihanna]
+So maybe I’m a masochist
+I try to run but I don’t wanna ever leave
+'Til the walls are goin’ up
+In smoke with all our memories
+
+[Eminem]
+It's morning, you wake, a sun ray hits your face
+Smeared makeup as we lay in the wake of destruction
+Hush baby, speak softly, tell me you're awfully sorry
+That you pushed me into the coffee table last night
+So I can push you off me
+Try and touch me so I can scream at you not to touch me
+Run out the room and I’ll follow you like a lost puppy
+Baby, without you I’m nothing, I’m so lost, hug me
+Then tell me how ugly I am, but that you’ll always love me
+Then after that, shove me, in the aftermath of the
+Destructive path that we’re on, two psychopaths but we
+Know that no matter how many knives we put in each other’s backs
+That we’ll have each other’s backs, ’cause we’re that lucky
+Together, we move mountains, let’s not make mountains out of molehills,
+You hit me twice, yeah, but who’s countin’?
+I may have hit you three times, I’m startin’ to lose count
+But together, we’ll live forever, we found the youth fountain
+Our love is crazy, we’re nuts, but I refuse counsellin’
+This house is too huge, if you move out I’ll burn all two thousand
+Square feet of it to the ground, ain’t shit you can do about it
+'Cause with you I’m in my fuckin’ mind, without you I’m out it
+
+[Chorus]
+
+I love the way you lie [3x]
+
+  </pre>
+</div>
+
+
+
+
+<script type="text/javascript">
+	
+	var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+    }
+}
+</script>
+
+
+<script>
+// merre 'modal'-in
+var modal = document.getElementById('id01');
+
+// Kur useri klikon jasht 'modal'-it te mbyllet
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<script>
+// Grab the Canvas and Drawing Context
+var canvas = document.getElementById('c');
+var ctx = canvas.getContext('2d');
+
+
+
+// Create an image element
+var img = document.createElement('IMG');
+
+// When the image is loaded, draw it
+img.onload = function () {
+
+    // Save the state, so we can undo the clipping
+    ctx.save();
+    ctx.arc(450,300,380,0,2*Math.PI);      
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(450,300,380,0,2*Math.PI, false);
+    ctx.fill();
+    // Clip to the current path
+    ctx.clip();
+    
+    
+    ctx.drawImage(img, 0, 0);
+    
+    // Undo the clipping
+    ctx.restore();
+}
+
+// Specify the src to load the image
+img.src = "Images/rihanna.jpg";
+</script>
+
+	
+</body>
+
+</html>

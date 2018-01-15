@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="indexstyle.css"/>
+	
+	<style>
+	/* Style the buttons that are used to open and close the accordion panel */
+button.accordion {
+    background-color: black;
+    background-color: rgba(0,0,0,0.92);
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 50%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin-left: 410px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+button.accordion.active, button.accordion:hover {
+    background-color: #151313;
+    width: 53.65%;
+
+}
+
+/* Style the accordion panel. Note: hidden by default */
+div.panel {
+    padding: 0 18px;
+    width: 50.65%;
+    margin-left:410px;
+    color:black;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-weight: 800;
+    background-color: #D5D5D5;
+    background-color: rgba(225,225,225,0.5);
+    display: none;
+}
+
+/* The "show" class is added to the accordion panel when the user clicks on one of the buttons. This will show the panel content */
+div.panel.show {
+    display: block;
+}
+
+	div.svg-wrapper {
+  height: 100%;
+  max-height: 60px;
+  margin-top: -150px;
+  margin-left: 550px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 320px;
+}
+
+.shape {
+  fill: transparent;
+  stroke-dasharray: 205 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+  /*stroke: #1cb779;*/
+  stroke: #19f6e8;
+}
+
+.text {
+  height: 100%;
+  max-height: 60px;
+  margin-left: 10px;
+  text-align: center;
+  color: #fff;
+  /*font-family: 'Roboto Condensed';*/
+  font-size: 22px;
+  letter-spacing: 8px;
+  line-height: 26px;
+  position: relative;
+  top: -80px;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 8px;
+  }
+  100% {
+    stroke-dasharray: 760;
+    stroke-dashoffset: 0;
+    stroke-width: 2px;
+  }
+}
+
+.svg-wrapper:hover .shape {
+  -webkit-animation: 0.5s draw linear forwards;
+  animation: 0.5s draw linear forwards;
+}
+</style>
+	
+
+
+</head>
+
+<body>
+
+	<!-- Header-i (logoja dhe search box) -->
+  <h1 id="header"><a href="../index.html">Music</a>Book</span> </a>
+   
+   
+   
+   
+   <span><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-right: 200px;" 
+  target="buton1">Login</button> <input type="text" name="search" placeholder="      Search.." target="searchbox"> </span></h1>
+  
+
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close login">&times;</span>
+      
+    </div>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username"
+      target="login" name="uname" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" target="login" name="psw" required>
+        
+      <button type="submit" target="buton2">Login</button>
+      <input type="checkbox" checked="checked"> Remember me
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <span class="psw" style="padding-right:50px; ">Forgotten <a href="../index.html#contact">password?</a></span>
+    </div>
+  </form>
+</div>
+
+  
+
+  <!-- Modal per navigation menu -->
+<div id="id02" class="modal1">
+  <div class="">
+    <div class="modal1-content">
+      <span onclick="document.getElementById('id02').style.display='none'" 
+      style="margin: 20px;cursor:pointer;color:white;">&times;</span>
+     <ul>
+
+      <li><a href="../Piano.html">Piano</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="id03" class="modal1">
+  <div>
+    <div class="modal1-content" style="background-image:url(images2.jpg);background-size: 170px 128px;">
+      <span onclick="document.getElementById('id03').style.display='none'" 
+      style="margin: 20px;cursor:pointer; color:white;">&times;</span>
+     <ul>
+      <li><a href="../Electric Guitars.html">Electric</a></li>
+      <li><a href="../Acoustic Guitars.html">Acoustic</a></li>
+      <li><a href="../Bass Guitars.html">Bass</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Navigation Lista -->
+  <nav class="navLista">
+    <ul class="lista">
+    <li> <table cellpadding="0px" cellspacing="0px" style="margin: 0;padding:0;" id="navBar">
+    <tr>
+        <td>
+            <a class="selected" href="../index.html" style="margin-left: 10px;">Home</a>
+        </td>
+        
+    </tr>
+</table></li>
+      <li><a style="margin-left: 11px;">Products</a>
+        <ul id="submenu">
+          <li><a href="#" onclick="document.getElementById('id02').style.display='block'"> Piano </a>
+            </li>
+          <li><a href="##" onclick="document.getElementById('id03').style.display='block'"> Guitar </a>
+          </li>
+          
+        </ul>
+      </li>
+      <li><span><br></span><a href="../artist.html">Artists</a></li>
+      <li><a href="https://www.ultimate-guitar.com/" target="_blank">Chords</a>
+      </li>
+      <li><a href="#contact">Contact</a></li>
+
+    </ul>
+  </nav>
+  <div class="svg-wrapper">
+  <svg height="80" width="330" >
+    <rect class="shape" height="80" width="330" />
+  </svg>
+
+<div class="text" style="border: 1px solid black;color:white;font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;">My Way by          
+<span style="color:black;font-weight: bold;">Frank Sinatra</span>
+</div>
+</div>
+
+<canvas id="c"  width="900px" height="600px" style="margin: 250px 0 0 280px;"></canvas>
+
+<button class="accordion" style="margin-left: 410px; margin-top: 5px;">Didn't We?</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Frank Sinatra Didn't We.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+This time we almost made the pieces fit, didn't we?
+This time we almost some sense of it, didn't we?
+This time I have the answer right here in my hand,
+Then I touched it, and it has turned to sand.
+This time we almost sang the song in tune, didn't we?
+This time we almost made it to the moon, didn't we?
+This time, we almost made (almost made) a poem rhyme
+And this time we almost made that long hard climb.
+Didn't we almost make it this time... this time.
+</pre>
+</div>
+
+<button class="accordion">Watch What Happens</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Frank Sinatra Watch What Happens.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+Let someone start believing in you, let him hold out his hand
+Let him touch you and watch what happens
+One someone who can look in your eyes, and see into your heart
+Let him find you and watch what happens
+Cold, no I won't believe your heart is cold
+Maybe just afraid to be broken again
+Let someone with a deep love to give
+Give that deep love to you, and what magic you'll see
+Let someone with a deep love to give
+Give that deep love to you. and what magic you'll see
+Let someone give his heart, someone who cares like me
+Let someone give his heart who cares like me
+  </pre>
+</div>
+
+<button class="accordion">My Way</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Frank Sinatra My Way.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+And now, the end is near
+And so I face the final curtain
+My friend, I'll say it clear
+I'll state my case, of which I'm certain
+I've lived a life that's full
+I traveled each and every highway
+And more, much more than this, I did it my way
+
+Regrets, I've had a few
+But then again, too few to mention
+I did what I had to do and saw it through without exemption
+I planned each charted course, each careful step along the byway
+And more, much more than this, I did it my way
+
+Yes, there were times, I'm sure you knew
+When I bit off more than I could chew
+But through it all, when there was doubt
+I ate it up and spit it out
+I faced it all and I stood tall and did it my way
+
+I've loved, I've laughed and cried
+I've had my fill, my share of losing
+And now, as tears subside, I find it all so amusing
+To think I did all that
+And may I say, not in a shy way
+Oh, no, oh, no, not me, I did it my way
+
+For what is a man, what has he got?
+If not himself, then he has naught
+To say the things he truly feels and not the words of one who kneels
+The record shows I took the blows and did it my way
+
+[instrumental]
+
+Yes, it was my way
+
+  </pre>
+</div>
+
+<button class="accordion">If You Go Away</button>
+<div class="panel">
+  <pre>
+If you go away on this summer day,
+Then you might as well take the sun away;
+All the birds that flew in the summer sky,
+When our love was new and our hearts were high;
+When the day was young and the night was long,
+And the moon stood still for the night bird's song.
+If you go away, if you go away, if you go away.
+But if you stay, I'll make you a day
+Like no day has been, or will be again;
+We'll sail the sun, we'll ride on the rain,
+We'll talk to the trees and worship the wind.
+Then if you go, I'll understand,
+Leave me just enough love to fill up my hand,
+If you go away, if you go away, if you go away.
+If you go, as I know you will, you must tell the world to stop turning
+Till you return again, if you ever do, for what good is love without loving you,
+Can I tell you now, as you turn to go, I'll be dying slowly till the next hello,
+If you go away, if you go away, if you go away.
+But if you stay, I'll make you a night
+Like no night has been, or will be again.
+I'll sail on your smile, I'll ride on your touch,
+I'll talk to your eyes that I love so much.
+But if you go, go, I won't cry,
+Though the good is gone from the word goodbye,
+If you go away, if you go away, if you go away.
+If you go away, as I know you must,
+There'll be nothing left in the world to trust,
+Just an empty room, full of empty space,
+Like the empty look I see on your face.
+I'd have been the shadow of your shadow
+If I thought it might have kept me by your side.
+If you go away, if you go away, if you go away.
+  </pre>
+</div>
+
+<button class="accordion">Hallelujah, I Love Her So</button>
+<div class="panel">
+  <pre>
+Let me tell 'bout a gal I know,
+She's my baby and she lives next door.
+Every morning 'fore the sun comes up,
+She brings my coffee in my favorite cup.
+That's why I know, yes, I know,
+Hallelujah, I just love her so.
+When I'm in trouble and I got no friend,
+I know she'll go with me down to the end.
+Everybody asks me how do I know,
+I smile a damn and say she told me so.
+That why I know, yes I know,
+Hallelujah, I just love her so.
+Now if I call her on the telephone,
+Tell her that I'm all alone,
+By the time I count from one to four,
+I hear her on my door.
+In the evening when the sun goes down,
+When there ain't nobody hanging 'round,
+She just kisses me, and then holds me tight.
+And tells me, baby, everything's gonna be alright.
+That's why I know, yes I know,
+Hallelujah, I just love her so.
+That's why I know, yes I know,
+Hallelujah, I just, I love her so.
+That's why I know, yes I know,
+Hallelujah, I just love her so.
+</pre>
+
+</div>
+
+
+
+
+
+<script type="text/javascript">
+	
+	var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+    }
+}
+</script>
+
+
+<script>
+// merre 'modal'-in
+var modal = document.getElementById('id01');
+
+// Kur useri klikon jasht 'modal'-it te mbyllet
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<script>
+// Grab the Canvas and Drawing Context
+var canvas = document.getElementById('c');
+var ctx = canvas.getContext('2d');
+
+
+
+// Create an image element
+var img = document.createElement('IMG');
+
+// When the image is loaded, draw it
+img.onload = function () {
+
+    // Save the state, so we can undo the clipping
+    ctx.save();
+    ctx.arc(450,300,380,0,2*Math.PI);      
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(450,300,380,0,2*Math.PI, false);
+    ctx.fill();
+    // Clip to the current path
+    ctx.clip();
+    
+    
+    ctx.drawImage(img, 0, 0);
+    
+    // Undo the clipping
+    ctx.restore();
+}
+
+// Specify the src to load the image
+img.src = "Images/franksinatra.jpg";
+</script>
+
+	
+</body>
+
+</html>

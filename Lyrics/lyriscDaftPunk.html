@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="indexstyle.css"/>
+	
+	<style>
+	/* Style the buttons that are used to open and close the accordion panel */
+button.accordion {
+    background-color: black;
+    background-color: rgba(0,0,0,0.92);
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 50%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin-left: 410px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+button.accordion.active, button.accordion:hover {
+    background-color: #151313;
+    width: 53.65%;
+
+}
+
+/* Style the accordion panel. Note: hidden by default */
+div.panel {
+    padding: 0 18px;
+    width: 50.65%;
+    margin-left:410px;
+    color:black;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-weight: 800;
+    background-color: #D5D5D5;
+    background-color: rgba(225,225,225,0.5);
+    display: none;
+}
+
+/* The "show" class is added to the accordion panel when the user clicks on one of the buttons. This will show the panel content */
+div.panel.show {
+    display: block;
+}
+
+	div.svg-wrapper {
+  height: 100%;
+  max-height: 60px;
+  margin-top: -150px;
+  margin-left: 550px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 320px;
+}
+
+.shape {
+  fill: transparent;
+  stroke-dasharray: 205 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+  /*stroke: #1cb779;*/
+  stroke: #19f6e8;
+}
+
+.text {
+  height: 100%;
+  max-height: 60px;
+  margin-left: 10px;
+  text-align: center;
+  color: #fff;
+  /*font-family: 'Roboto Condensed';*/
+  font-size: 22px;
+  letter-spacing: 8px;
+  line-height: 20px;
+  position: relative;
+  top: -80px;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 8px;
+  }
+  100% {
+    stroke-dasharray: 760;
+    stroke-dashoffset: 0;
+    stroke-width: 2px;
+  }
+}
+
+.svg-wrapper:hover .shape {
+  -webkit-animation: 0.5s draw linear forwards;
+  animation: 0.5s draw linear forwards;
+}
+</style>
+	
+
+
+</head>
+
+<body>
+
+	<!-- Header-i (logoja dhe search box) -->
+  <h1 id="header"><a href="../index.html">Music</a>Book</span> </a>
+   
+   
+   
+   
+   <span><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-right: 200px;" 
+  target="buton1">Login</button> <input type="text" name="search" placeholder="      Search.." target="searchbox"> </span></h1>
+  
+
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close login">&times;</span>
+      
+    </div>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username"
+      target="login" name="uname" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" target="login" name="psw" required>
+        
+      <button type="submit" target="buton2">Login</button>
+      <input type="checkbox" checked="checked"> Remember me
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <span class="psw" style="padding-right:50px; ">Forgotten <a href="../index.html#contact">password?</a></span>
+    </div>
+  </form>
+</div>
+
+  
+
+  <!-- Modal per navigation menu -->
+<div id="id02" class="modal1">
+  <div class="">
+    <div class="modal1-content">
+      <span onclick="document.getElementById('id02').style.display='none'" 
+      style="margin: 20px;cursor:pointer;color:white;">&times;</span>
+     <ul>
+
+      <li><a href="../Piano.html">Piano</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="id03" class="modal1">
+  <div>
+    <div class="modal1-content" style="background-image:url(images2.jpg);background-size: 170px 128px;">
+      <span onclick="document.getElementById('id03').style.display='none'" 
+      style="margin: 20px;cursor:pointer; color:white;">&times;</span>
+     <ul>
+      <li><a href="../Electric Guitars.html">Electric</a></li>
+      <li><a href="../Acoustic Guitars.html">Acoustic</a></li>
+      <li><a href="../Bass Guitars.html">Bass</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Navigation Lista -->
+  <nav class="navLista">
+    <ul class="lista">
+    <li> <table cellpadding="0px" cellspacing="0px" style="margin: 0;padding:0;" id="navBar">
+    <tr>
+        <td>
+            <a class="selected" href="../index.html" style="margin-left: 10px;">Home</a>
+        </td>
+        
+    </tr>
+</table></li>
+      <li><a style="margin-left: 11px;">Products</a>
+        <ul id="submenu">
+          <li><a href="#" onclick="document.getElementById('id02').style.display='block'"> Piano </a>
+            </li>
+          <li><a href="##" onclick="document.getElementById('id03').style.display='block'"> Guitar </a>
+          </li>
+          
+        </ul>
+      </li>
+      <li><span><br></span><a href="../artist.html">Artists</a></li>
+      <li><a href="https://www.ultimate-guitar.com/" target="_blank">Chords</a>
+      </li>
+      <li><a href="#contact">Contact</a></li>
+
+
+    </ul>
+  </nav>
+  <div class="svg-wrapper">
+  <svg height="80" width="330" >
+    <rect class="shape" height="80" width="330" />
+  </svg>
+
+<div class="text" style="border: 1px solid black;color:white;font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;">Random Access Memories by          
+<span style="color:black;font-weight: bold;">Daft Punk</span>
+</div>
+</div>
+
+<canvas id="c"  width="900px" height="600px" style="margin: 250px 0 0 280px;"></canvas>
+
+<button class="accordion" style="margin-left: 410px; margin-top: 5px;">Give Life Back To Music</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Daft Punk Give Life Back To Music.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+Let the music in tonight
+(Just turn on the music)
+Let the music of your life
+(give life back to music) 
+[x4]
+
+Give life back to music
+[x2] 
+
+Let the music in tonight
+(Just turn on the music)
+Let the music of your life
+(give life back to music) 
+[x2]
+
+Let the music in tonight
+(Just turn on the music)
+Let the music of your life
+(give life back to music) 
+[x2]
+</pre>
+</div>
+
+<button class="accordion">The Game Of Love</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Daft Punk The Game Of Love.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+There is a game of love
+There is a game of love
+This is a game of love
+This is a game of love
+And it was you
+And it was you the one that would be breaking my heart
+When you decided to walk away
+When you decided to walk away
+The one that would be breaking my heart
+When you decided to walk away
+When you decided to walk away
+
+There is a game of love
+There is a game of love
+This is a game of love
+This is a game of love
+And it was you
+And it was you the one that would be breaking my heart
+When you decided to walk away
+When I wanted you to stay
+
+And it was you
+I just wanted you to stay
+Me, I just wanted you to stay
+Me, I just wanted you to stay
+
+  </pre>
+</div>
+
+<button class="accordion">Giorgio By Moroder</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Daft Punk Giorgio By Moroder.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+When I was fifteen, sixteen, when I started really to play the guitar.
+I definitely wanted to become a musician.
+It was almost impossible because it was, the dream was so big that
+I didn't see any chance because I was living in a little town.
+
+I was studying and when I finally broke away from school and became musician.
+I thought "Well, I may have a bit of a chance."
+Because all I ever wanted to do is music but not only play music but compose music.
+
+At that time, in Germany, in 1969-70, they had already discotheques
+So I would take my car and go to a discotheque, sing maybe thirty minutes
+I think I had about 7-8 songs.
+I would partially sleep in the car because I didn't want to drive home and that helped me for about almost two years to survive.
+In the beginning, I wanted to do an album with the sounds of the 50s, the sounds of the 60s, of the 70s, and then have a sound of the future.
+
+And I said, "Wait a second, I know the synthesizer. Why don't I use the synthesizer, which is the sound of the future?"
+And I didn't have any idea what to do but I knew I needed a click so we put a click on the 24 track which then was synced to the moog modular.
+I knew that it could be a sound of the future but I didn't realize how much impact it would be.
+
+My name is Giovanni Giorgio, but everybody calls me Giorgio
+
+Once you want to free your mind about a concept of harmony and music being correct, you can do whatever you want.
+So nobody told me what to do and there was no preconception of what to do
+  </pre>
+</div>
+
+<button class="accordion">Octopus's Garden</button>
+<div class="panel">
+  <pre>
+I'd like to be under the sea
+In an octopus's garden in the shade
+He'd let us in, knows where we've been
+In his octopus's garden in the shade
+
+I'd ask my friends to come and see
+An octopus's garden with me
+I'd like to be under the sea
+In an octopus's garden in the shade
+
+We would be warm below the storm
+In our little hideaway beneath the waves
+Resting our head on the sea bed
+In an octopus's garden near a cave
+
+We would sing and dance around
+Because we know we can't be found
+I'd like to be under the sea
+In an octopus's garden in the shade
+
+We would shout and swim about
+The coral that lies beneath the waves
+(Lies beneath the ocean waves)
+Oh what joy for every girl and boy
+Knowing they're happy and they're safe
+(Happy and they're safe)
+
+We would be so happy you and me
+No one there to tell us what to do
+I'd like to be under the sea
+In an octopus's garden with you
+In an octopus's garden with you
+In an octopus's garden with you
+
+  </pre>
+</div>
+
+<button class="accordion">Within</button>
+<div class="panel">
+  <pre>
+There are so many things that I don't understand
+There's a world within me that I cannot explain
+Many rooms to explore, but the doors look the same
+I am lost, I can't even remember my name
+
+I've been, for sometime, looking for someone
+I need to know now
+Please tell me who I am
+[2x]
+
+There are so many things that I don't understand
+There's a world within me that I cannot explain
+Many rooms to explore, but the doors look the same
+(where are the locks to try the key?)
+I am lost, I can't even remember my name
+(and I wonder why)
+
+I've been, for sometime, looking for someone
+I need to know now
+Please tell me who I am
+[4x]
+  </pre>
+</div>
+
+<button class="accordion">Here Comes The Sun</button>
+<div class="panel">
+  <pre>
+Here comes the sun, here comes the sun
+And I say it's all right
+
+Little darling, it's been a long cold lonely winter
+Little darling, it feels like years since it's been here
+
+Here comes the sun, here comes the sun
+And I say it's all right
+
+Little darling, the smiles returning to the faces
+Little darling, it seems like years since it's been here 
+
+Here comes the sun, here comes the sun
+And I say it's all right
+
+Sun, sun, sun, here it comes
+Sun, sun, sun, here it comes
+Sun, sun, sun, here it comes
+Sun, sun, sun, here it comes
+Sun, sun, sun, here it comes
+
+Little darling, I feel that ice is slowly melting
+Little darling, it seems like years since it's been clear
+
+Here comes the sun, here comes the sun
+And I say it's all right
+Here comes the sun, here comes the sun
+It's all right, it's all right
+
+  </pre>
+</div>
+
+<button class="accordion">Instant Crush</button>
+<div class="panel">
+  <pre>
+I didn't want to be the one to forget
+I thought of everything I'd never regret
+A little time with you is all that I get
+That's all we need because it's all we can take
+
+One thing I never see the same when you're 'round
+I don't believe in him—his lips on the ground
+I wanna take you to that place in the "Roche"
+But no one gives us any time anymore
+
+He ask me once if I'd look in on his dog
+You made an offer for it, then you ran off
+I got this picture of us kids in my head
+And all I hear is the last thing that you said
+
+[Pre-chorus]
+"I listened to your problems
+Now listen to mine."
+I didn't want to anymore, oh, oh, oh
+
+[Chorus]
+And we will never be alone again
+'Cause it doesn't happen every day
+Kinda counted on you being a friend
+Can I give it up or give it away?
+Now I thought about what I wanna say
+But I never really know where to go
+So I chained myself to a friend
+'Cause I know it unlocks like a door
+
+And we will never be alone again
+'Cause it doesn't happen every day
+Kinda counted on you being a friend
+Can I give it up or give it away?
+Now I thought about what I wanna say
+But I never really know where to go
+So I chained myself to a friend
+
+Some more again
+
+[Verse 2]
+It didn't matter what they wanted to see
+He thought he saw someone that looked just like me
+The summer memory that just never dies
+We worked too long and hard to give it no time
+He sees right through me, it's so easy with lies
+Cracks in the road that I would try and disguise
+He runs his scissor at the seem in the wall
+He cannot break it down or else he would fall
+One thousand lonely stars hiding in the cold
+Take it, I don't wanna sing anymore
+
+[Pre-chorus]
+"I listened to your problems
+Now listen to mine."
+I didn't want to anymore, oh, oh, oh
+
+[Chorus]
+And we will never be alone again
+'Cause it doesn't happen every day
+Kinda counted on you being a friend
+Can I give it up or give it away?
+Now I thought about what I wanna say
+But I never really know where to go
+So I chained myself to a friend
+'Cause I know it unlocks like a door
+
+And we will never be alone again
+'Cause it doesn't happen every day
+Kinda counted on you being a friend
+Can I give it up or give it away?
+Now I thought about what I wanna say
+But I never really know where to go
+So I chained myself to a friend
+'Cause I know it unlocks like a door...
+
+I don't understand, don't get upset
+I'm not with you
+We're swimming around,
+It's all I do, when I'm with you
+
+[Chorus]
+And we will never be alone again
+'Cause it doesn't happen every day
+Kinda counted on you being a friend
+Can I give it up or give it away?
+Now I thought about what I wanna say
+But I never really know where to go
+So I chained myself to a friend
+'Cause I know it unlocks like a door
+
+And we will never be alone again
+'Cause it doesn't happen every day
+Kinda counted on you being a friend
+Can I give it up or give it away?
+Now I thought about what I wanna say
+But I never really know where to go
+So I chained myself to a friend
+'Cause I know it unlocks like a door
+
+  </pre>
+</div>
+
+<button class="accordion">Lose Yourself To Dance</button>
+<div class="panel">
+  <pre>
+I know you don't get a chance to take a break this often
+I know your life is speeding and it isn't stopping
+Here take my shirt and just go ahead and wipe up all the
+Sweat, sweat, sweat
+
+Lose yourself to dance
+Lose yourself to dance
+Lose yourself to dance
+Lose yourself to dance
+
+Lose yourself to dance
+Lose yourself to dance
+Lose yourself to dance
+Lose yourself to dance
+
+Lose yourself to dance
+
+I know you don't get a chance to take a break this often
+I know your life is speeding and it isn't stopping
+Here take my shirt and just go ahead and wipe up all the
+Sweat, sweat, sweat
+
+[Repeating:]
+Lose yourself to dance (come on)
+Lose yourself to dance (at all)
+
+Everybody dancing on the floor
+Getting you ready for some more
+Everybody on the floor
+Yeah, come on
+
+I know you don't get a chance to take a break this often
+I know your life is speeding and it isn't stopping
+Here take my shirt and just go ahead and wipe up all the
+Sweat, sweat, sweat
+
+Lose yourself to dance (come on)
+Lose yourself to dance (at all)
+
+Everybody dancing on the floor
+Getting you ready for some more
+Everybody on the floor
+Yeah, come on
+
+  </pre>
+</div>
+
+<button class="accordion">Touch</button>
+<div class="panel">
+  <pre>
+Touch, I remember touch
+Pictures came with touch
+A painter in my mind
+Tell me what you see
+
+A tourist in a dream
+A visitor it seems
+A half-forgotten song
+Where do I belong?
+Tell me what you see
+I need something more
+
+Kiss, suddenly alive
+Happiness arrive
+Hunger like a storm
+How do I begin?
+
+A room within a room
+A door behind a door
+Touch, where do you lead?
+I need something more
+Tell me what you see
+I need something more
+
+Home
+Hold on
+If love is the answer you're home [8x]
+
+Touch, sweet touch
+You've given me too much to feel
+Sweet touch
+You've almost convinced me I'm real
+
+I need something more
+I need something more
+  </pre>
+</div>
+
+
+
+
+
+
+<script type="text/javascript">
+	
+	var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+    }
+}
+</script>
+
+
+<script>
+// merre 'modal'-in
+var modal = document.getElementById('id01');
+
+// Kur useri klikon jasht 'modal'-it te mbyllet
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<script>
+// Grab the Canvas and Drawing Context
+var canvas = document.getElementById('c');
+var ctx = canvas.getContext('2d');
+
+
+
+// Create an image element
+var img = document.createElement('IMG');
+
+// When the image is loaded, draw it
+img.onload = function () {
+
+    // Save the state, so we can undo the clipping
+    ctx.save();
+    ctx.arc(450,300,380,0,2*Math.PI);      
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(450,300,380,0,2*Math.PI, false);
+    ctx.fill();
+    // Clip to the current path
+    ctx.clip();
+    
+    
+    ctx.drawImage(img, 0, 0);
+    
+    // Undo the clipping
+    ctx.restore();
+}
+
+// Specify the src to load the image
+img.src = "Images/daftpunk.jpg";
+</script>
+
+	
+</body>
+
+</html>

@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="indexstyle.css"/>
+	
+	<style>
+	/* Style the buttons that are used to open and close the accordion panel */
+button.accordion {
+    background-color: black;
+    background-color: rgba(0,0,0,0.92);
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 50%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin-left: 410px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+button.accordion.active, button.accordion:hover {
+    background-color: #151313;
+    width: 53.65%;
+
+}
+
+/* Style the accordion panel. Note: hidden by default */
+div.panel {
+    padding: 0 18px;
+    width: 50.65%;
+    margin-left:410px;
+    color:black;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-weight: 800;
+    background-color: #D5D5D5;
+    background-color: rgba(225,225,225,0.5);
+    display: none;
+}
+
+/* The "show" class is added to the accordion panel when the user clicks on one of the buttons. This will show the panel content */
+div.panel.show {
+    display: block;
+}
+
+	div.svg-wrapper {
+  height: 100%;
+  max-height: 60px;
+  margin-top: -150px;
+  margin-left: 550px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 320px;
+}
+
+.shape {
+  fill: transparent;
+  stroke-dasharray: 205 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+  /*stroke: #1cb779;*/
+  stroke: #19f6e8;
+}
+
+.text {
+  height: 100%;
+  max-height: 60px;
+  margin-left: 10px;
+  text-align: center;
+  color: #fff;
+  /*font-family: 'Roboto Condensed';*/
+  font-size: 22px;
+  letter-spacing: 8px;
+  line-height: 26px;
+  position: relative;
+  top: -80px;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 8px;
+  }
+  100% {
+    stroke-dasharray: 760;
+    stroke-dashoffset: 0;
+    stroke-width: 2px;
+  }
+}
+
+.svg-wrapper:hover .shape {
+  -webkit-animation: 0.5s draw linear forwards;
+  animation: 0.5s draw linear forwards;
+}
+</style>
+	
+
+
+</head>
+
+<body>
+
+	<!-- Header-i (logoja dhe search box) -->
+  <h1 id="header"><a href="../index.html">Music</a>Book</span> </a>
+   
+   
+   
+   
+   <span><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-right: 200px;" 
+  target="buton1">Login</button> <input type="text" name="search" placeholder="      Search.." target="searchbox"> </span></h1>
+  
+
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close login">&times;</span>
+      
+    </div>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username"
+      target="login" name="uname" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" target="login" name="psw" required>
+        
+      <button type="submit" target="buton2">Login</button>
+      <input type="checkbox" checked="checked"> Remember me
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <span class="psw" style="padding-right:50px; ">Forgotten <a href="../index.html#contact">password?</a></span>
+    </div>
+  </form>
+</div>
+
+  
+
+  <!-- Modal per navigation menu -->
+<div id="id02" class="modal1">
+  <div class="">
+    <div class="modal1-content">
+      <span onclick="document.getElementById('id02').style.display='none'" 
+      style="margin: 20px;cursor:pointer;color:white;">&times;</span>
+     <ul>
+
+      <li><a href="../Piano.html">Piano</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="id03" class="modal1">
+  <div>
+    <div class="modal1-content" style="background-image:url(images2.jpg);background-size: 170px 128px;">
+      <span onclick="document.getElementById('id03').style.display='none'" 
+      style="margin: 20px;cursor:pointer; color:white;">&times;</span>
+     <ul>
+      <li><a href="../Electric Guitars.html">Electric</a></li>
+      <li><a href="../Acoustic Guitars.html">Acoustic</a></li>
+      <li><a href="../Bass Guitars.html">Bass</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Navigation Lista -->
+  <nav class="navLista">
+    <ul class="lista">
+    <li> <table cellpadding="0px" cellspacing="0px" style="margin: 0;padding:0;" id="navBar">
+    <tr>
+        <td>
+            <a class="selected" href="../index.html" style="margin-left: 10px;">Home</a>
+        </td>
+        
+    </tr>
+</table></li>
+      <li><a style="margin-left: 11px;">Products</a>
+        <ul id="submenu">
+          <li><a href="#" onclick="document.getElementById('id02').style.display='block'"> Piano </a>
+            </li>
+          <li><a href="##" onclick="document.getElementById('id03').style.display='block'"> Guitar </a>
+          </li>
+          
+        </ul>
+      </li>
+      <li><span><br></span><a href="../artist.html">Artists</a></li>
+      <li><a href="https://www.ultimate-guitar.com/" target="_blank">Chords</a>
+      </li>
+      <li><a href="#contact">Contact</a></li>
+
+
+    </ul>
+  </nav>
+  <div class="svg-wrapper">
+  <svg height="80" width="330" >
+    <rect class="shape" height="80" width="330" />
+  </svg>
+
+<div class="text" style="border: 1px solid black;color:white;font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;">Crazy World by
+<span style="color:black;font-weight: bold;">Scorpions</span>
+</div>
+</div>
+
+<canvas id="c"  width="900px" height="600px" style="margin: 250px 0 0 280px;"></canvas>
+
+<button class="accordion" style="margin-left: 410px; margin-top: 5px;">Tease Me Please Me</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Scorpions Tease Me Please Me.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+I've been around the world
+I've known a lot of girls
+Livin' and lovin'
+It's hard to keep them all in line
+I've seen a lot of sights
+Many crazy nights
+Cruisin' and boozin'
+It's a wonder that I'm still alive
+
+Never wasted any time
+Never missed a beat
+Total satisfaction
+Always guaranteed
+
+Tease me
+Please me
+No one needs to know
+Tease me
+Please me
+Before I have to go
+
+Spead the world around
+The boys are back in town
+Reelin' and rockin'
+We're rollin' with it win or lose
+The girls are dressed to kill
+Lookin' for a thrill
+Slidin' and glidin'
+Sometimes they make it hard to choose
+
+I never wasted any time
+Never missed a beat
+Total satisfaction
+Always guaranteed
+
+Tease me
+Please me
+No one needs to know
+Tease me
+Please me
+Before I have to go
+Tease me
+Please me
+We'll take it nice and slow
+Tease me
+Please me
+Just let the feeling grow
+
+</pre>
+</div>
+
+<button class="accordion">Don't Believe Her</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Scorpions Don't Believe Her.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+Out for a thrill
+Got time to kill
+Just livin' up my dreams
+for heaven's sake
+She's on the make
+A twisted vicar's queen
+And then one night we took a ride
+She was all over me
+Outrageous
+Just ain't real
+I was too wasted to see
+
+Before you get in too deep
+And you get burned by the heat
+Oh yeah
+She'll take you there
+You know it happened to me
+
+She'll make your heart break
+She'll give you fever
+She'll tell you everything but don't believe her
+A perfect stranger
+She knows the game
+She'll promise heaven on earth
+But don't believe her
+
+Out on the street of broken dreams
+Where no one ever wins
+Just when you thought you'd made a start
+You're back where you begin
+
+Before you get in too deep
+And you get burned by the heat
+Oh yeah
+She'll take you there
+I think you know what I mean
+
+She'll make you crazy
+She's such a teaser
+Says you're the only one but don't believe her
+She deals in danger
+The girl's insane
+She'll promise heaven on earth
+But don't believe her
+
+Before you get in too deep
+And you get burned by the heat
+Oh yeah
+She'll take you there
+You know it happened to me
+
+Don't believe her (Don't believe her)
+Don't believe her (Don't believe her)
+Don't believe her (Don't believe her)
+I can't believe her (Don't believe her)
+
+She'll make your heart break
+She'll give you fever
+She'll tell you everything but don't believe her
+A perfect stranger
+She knows the game
+She'll promise heaven on earth
+
+She'll make you crazy
+She's such a teaser
+Says you're the only one but don't believe her
+She deals in danger
+The girl's insane
+She'll promise heaven on earth
+But don't believe her
+
+Don't believe her
+Don't believe her
+Don't believe her
+Don't believe her
+  </pre>
+</div>
+
+<button class="accordion">Wind Of Change</button>
+<div class="panel">
+<audio controls>
+  <source src="Songs/Scorpions Wind Of Change.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <pre>
+I follow the Moskva
+Down to Gorky Park
+Listening to the wind of change
+An August summer night
+Soldiers passing by
+Listening to the wind of change
+
+The world is closing in
+Did you ever think
+That we could be so close, like brothers
+The future's in the air
+I can feel it everywhere
+Blowing with the wind of change
+
+Take me to the magic of the moment
+On a glory night
+Where the children of tomorrow dream away
+in the wind of change
+
+Walking down the street
+Distant memories
+Are buried in the past forever
+I follow the Moskva
+Down to Gorky Park
+Listening to the wind of change
+
+Take me to the magic of the moment
+On a glory night
+Where the children of tomorrow share their dreams
+With you and me
+Take me to the magic of the moment
+On a glory night
+Where the children of tomorrow dream away
+in the wind of change
+
+The wind of change
+Blows straight into the face of time
+Like a stormwind that will ring the freedom bell
+For peace of mind
+Let your balalaika sing
+What my guitar wants to say
+
+Take me to the magic of the moment
+On a glory night
+Where the children of tomorrow share their dreams
+With you and me
+Take me to the magic of the moment
+On a glory night
+Where the children of tomorrow dream away
+in the wind of change
+  </pre>
+</div>
+
+<button class="accordion">Restless Nights</button>
+<div class="panel">
+  <pre>
+Blackout in London
+Just slip'n slide
+Blackout in London
+I'm just about to lose my mind
+Big time in Paris
+Time's gonna fly
+Big time in Paris
+It's c'est la vie for me tonight
+
+Here I go
+To take the one and only road I know
+In my life
+Here I go
+Another place to bare my heart and soul
+Restless nights
+
+Hot shot in Dallas
+A wild horse to ride
+Hot shot in Dallas
+I don't know how but I survived
+Rock hard in Rio
+Pure sex and crime
+Rock hard in Rio
+It's just too much to take tonight
+
+Here I go
+To take the one and only road I know
+In my life
+Here I go
+Another place to bare my heart and soul
+Restless nights
+
+Restless nights
+Restless nights
+
+Red hot in Moscow
+Turn back the tide
+Red hot in Moscow
+The eagle rocks the bear tonight
+Die hard in Tokyo
+Lexington nights
+Die hard in Tokyo
+I barely made it out alive
+
+Here I go
+To take the one and only road I know
+In my life
+Here I go
+Another place to bare my heart and soul
+Restless nights
+
+  </pre>
+</div>
+
+<button class="accordion">Kicks After Six</button>
+<div class="panel">
+  <pre>
+Another morning, such as ordinary day
+She's doin' time from nine to five
+The hours waste away
+There's no escape, She's a part of the bog machine
+She's a slave to the suit and tie
+Seven days a week
+
+But every night
+She can hardly wait
+It feels alright
+To give it all away
+
+Good girls get their kicks after six
+Good girls get their kicks after six
+(She needs it bad, real real bad)
+She wants what she never had
+All the things that make a good girl bad
+She gets her kicks after six
+
+Some days its hard to face the cruel reality
+Just waitin' for the bell to ring
+She wants to be free
+It feels so good to start another endless night
+She spreads her wings for another flight
+She's running wild
+
+But every night
+She can hardly wait
+It feels alright
+To give it all away
+
+Good girls get their kicks after six
+(She needs it bad, real real bad)
+Good girls get their kicks after six
+(Ooh yeah shake it for me baby)
+She wants what she never had
+All the things that make a good girl bad
+She gets her kicks after six
+
+Good girls get their kicks after six
+(She needs it bad, real real bad)
+Good girls get their kicks after six
+(Ooh yeah nothin's gonna stop her)
+She wants what she never had
+All the things that make a good girl bad
+She gets her kicks after six
+
+Good girls get their kicks after six
+(She needs it bad, real real bad)
+Good girls get their kicks after six
+(C'mon baby take it to the limit)
+She wants what she never had
+All the things that make a good girl bad
+She gets her kicks after six
+  </pre>
+</div>
+
+<button class="accordion">Hit Between The Eyes</button>
+<div class="panel">
+  <pre>
+
+Late at night when you're all alone
+Take a ride to the danger zone
+If someone wants to cut you down to size
+You never argue with a loaded .45
+
+Just when you've had enough
+It's really getting tough
+
+I'm ready for that hit between the eyes
+Someone get me out of here alive
+I'm ready for that hit between the eyes
+Can't you see I'm much too young to die
+
+You can feel the tension in the street
+There's no escape, getting closer to the heat
+You play with fire, get your fingers burned
+It's too late, past the point of no return
+
+Just when you've had enough
+It's really getting tough
+
+I'm ready for that hit between the eyes
+Someone get me out of here alive
+I'm ready for that hit between the eyes
+Can't you see I'm much too young to die
+
+Late at night when you're all alone
+Take a ride to the danger zone
+If someone wants to cut you down to size
+You never argue with a loaded .45
+
+Just when you've had enough
+It's really getting tough
+
+I'm ready for that hit between the eyes
+Someone get me out of here alive
+I'm ready for that hit between the eyes
+Can't you see I'm much too young to die
+
+I'm ready for that hit between the eyes
+Someone get me out of here alive
+I'm ready for that hit between the eyes
+Can't you see I'm much too young to die
+  </pre>
+</div>
+
+<button class="accordion">Money And Fame</button>
+<div class="panel">
+  <pre>
+You know nothing about loving
+You lost somewhere down the line
+You know nothing about giving
+You should draw the line
+
+You keep looking out for something
+Something you're never gonna find
+When will, will you show your feelings
+You will lose your mind
+
+Who's to blame my love
+You play a dangerous game
+Who's to blame my love
+All you want is money and fame
+
+You play, play with emotions
+You need, need a stepping stone
+You're out, out for sensations
+Don't you, don't you feel alone
+
+Who's to blame my love
+You play a dangerous game
+Who's to blame my love
+All you want is money and fame
+
+Who's to blame my love
+You play a dangerous game
+Who's to blame my love
+All you want is money and fame
+
+Money and fame
+Money and fame
+Money and fame
+Money and fame
+Money and fame
+Money and fame
+Money and fame
+
+  </pre>
+</div>
+
+<button class="accordion">Crazy World</button>
+<div class="panel">
+  <pre>
+I get up in the morning
+For my dose of the news
+Crawl right back in the sack girl
+Had enough of the truth
+Spend your dollars and rubels
+Buy a piece of the wall
+Build it up in your backyard
+I'm so sick of it all
+
+Ooh, it's a crazy world
+Ooh, it's a crazy world
+
+Drivin' down to the city
+Doin' 155
+Better late than never
+I'm more dead than alive
+We can find the Titanic
+Put a man on the moon
+But we can't fix out backyard
+Man we better start soon
+
+Ooh, it's a crazy world
+Ooh, it's a crazy world
+Ooh, it's a crazy world
+Ooh, it's a crazy world
+
+I don't want to hear about it
+I wish it would be worlds away
+You know the more I think about it
+The more I feel we need to change
+I get up (In a crazy, crazy world)
+We all live (In a crazy, crazy world)
+Ooh yeah (It's a crazy, crazy world)
+I gotta get out (Of this crazy, crazy world)
+
+Goin' home to my baby
+It's been another hard day
+Bust my balls for the tax man
+So what else can I say
+They spent our money on missiles
+For the third world war
+Now they're stacked in my backyard
+We don't need them no more
+
+Ooh, it's a crazy world
+Ooh, it's a crazy world
+Ooh, it's a crazy world
+Ooh, it's a crazy world
+
+  </pre>
+</div>
+
+<button class="accordion">Send Me An Angel</button>
+<div class="panel">
+  <pre>
+The wise man said just walk this way
+To the dawn of the light
+The wind will blow into your face
+As the years pass you by
+
+Hear this voice from deep inside
+It's the call of your heart
+Close your eyes and you will find
+The passage out of the dark
+
+Here I am
+Will you send me an angel?
+Here I am
+In the land of the morning star
+
+The wise man said just find your place
+In the eye of the storm
+Seek the roses along the way
+Just beware of the thorns
+
+Here I am
+Will you send me an angel?
+Here I am
+In the land of the morning star
+
+The wise man said just raise your hand
+And reach out for the spell
+Find the door to the promised land
+Just believe in yourself
+
+Hear this voice from deep inside
+It's the call of your heart
+Close your eyes and you will find
+The way out of the dark
+
+[4x]
+Here I am
+Will you send me an angel?
+Here I am
+In the land of the morning star
+
+  </pre>
+</div>
+
+
+
+
+<script type="text/javascript">
+	
+	var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+    }
+}
+</script>
+
+
+<script>
+// merre 'modal'-in
+var modal = document.getElementById('id01');
+
+// Kur useri klikon jasht 'modal'-it te mbyllet
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<script>
+// Grab the Canvas and Drawing Context
+var canvas = document.getElementById('c');
+var ctx = canvas.getContext('2d');
+
+
+
+// Create an image element
+var img = document.createElement('IMG');
+
+// When the image is loaded, draw it
+img.onload = function () {
+
+    // Save the state, so we can undo the clipping
+    ctx.save();
+    ctx.arc(450,300,380,0,2*Math.PI);      
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(450,300,380,0,2*Math.PI, false);
+    ctx.fill();
+    // Clip to the current path
+    ctx.clip();
+    
+    
+    ctx.drawImage(img, 0, 0);
+    
+    // Undo the clipping
+    ctx.restore();
+}
+
+// Specify the src to load the image
+img.src = "Images/scorpions.jpg";
+</script>
+
+	
+</body>
+
+</html>

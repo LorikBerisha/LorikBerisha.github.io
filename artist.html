@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<head>
+	<meta charset="UTF-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="localStorage.js"></script>
+	<script>
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+</script>
+	<title>MusicBook - Artists</title>
+	<link rel="stylesheet" href="indexstyle.css"/>
+	<link rel="stylesheet" href="loadMore.css">
+	<style>
+	div#myDiv {
+		-ms-transform: rotate(5deg);
+		-webkit-transform: rotate(5deg);
+		transform: rotate(5deg);
+	}
+
+
+#tableart  {
+	 /*color: blue;*/
+	 /*color: #1cb779;*/
+	 /*color: #63D8FA;*/
+	 color: #BBE5E3;
+	 padding: 60px 0 0 0;
+	 /*border: 2px dotted blue;*/
+
+	 /*margin: 60px 0 0 0;*/
+	 
+}
+
+#tableart td {
+	/*padding-left:10px;*/
+	/*margin-left:100px;*/
+}
+
+
+
+#tableart td {
+	/*margin-right: 20px;	*/
+	box-shadow: 0px 0px 25px #888888;
+	background-color: rgba(0,0,0,0.7);
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 5px;
+	max-width: 500px;
+	max-height: 160px;
+}
+
+#tableart td:hover {
+	border: 2px solid #777 ;
+	
+}
+#tableart td a {
+	
+	color: #1cb779;	
+	text-decoration: none;
+	cursor: pointer;
+	
+}		
+#tableart td p {
+	color: #C4F8BF;
+	text-decoration: none;
+	cursor: default;
+}
+		
+.svg-wrapper {
+  height: 40px;
+  width: 160px;
+  font-size: 1px;
+  margin: 45px 0 0 400px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+}
+
+.shape {
+  fill: transparent;
+  stroke-dasharray: 120 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+  stroke: #19f6e8;
+}
+
+.text {
+	padding-top: 15px;
+  color: #fff;
+  /*font-family: 'Roboto Condensed';*/
+  font-size: 22px;
+  /*letter-spacing: 8px;*/
+  line-height: 32px;
+  position: relative;
+  top: -48px;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 8px;
+  }
+  100% {
+    stroke-dasharray: 760;
+    stroke-dashoffset: 0;
+    stroke-width: 2px;
+  }
+}
+
+.svg-wrapper:hover .shape {
+	width: 160px;
+  -webkit-animation: 0.5s draw linear forwards;
+  animation: 0.5s draw linear forwards;
+  
+}
+
+#div1 
+{
+	width: 150px;
+	height: 60px;
+	margin: 0px;
+	padding-bottom: 120px;
+}
+
+#result {
+    display:none;
+    }
+
+	</style>
+	<script>
+	$(document).ready(function(){
+    	$("#yes").click(function(){
+        	$("#result").toggle();
+    
+    });
+});
+</script>
+</head>
+<body>
+
+	<!-- Header-i (logoja dhe search box) -->
+	<h1 id="header"><a href="index.html">Music</a>Book</span>
+
+<!-- 
+<span> <img src="http://bestanimations.com/Music/Notation/music-notes-animated-gif-2.gif" style="padding-left: 10px;" alt="musicgif"> <img src="http://bestanimations.com/Music/Notation/music-notes-animated-gif-2.gif" style="padding-left:-20px;" alt="musicgif"> </span> 
+	 -->
+
+
+
+
+
+
+	<span><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-right: 200px;" target="buton1">Login</button> <input type="text" name="search" placeholder="      Search.." target="searchbox"> </span></h1>
+	
+
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close login">&times;</span>
+      
+    </div>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username"
+      target="login" name="uname" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" target="login" name="psw" required>
+        
+      <button type="submit" target="buton2">Login</button>
+      <input type="checkbox" checked="checked"> Remember me
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <span class="psw" style="padding-right:50px; ">Forgotten <a href="index.html#contact">password?</a></span>
+    </div>
+  </form>
+</div>
+
+	
+
+	<!-- Modal per navigation menu -->
+<div id="id02" class="modal1">
+  <div class="">
+    <div class="modal1-content">
+      <span onclick="document.getElementById('id02').style.display='none'" 
+      style="margin: 20px;cursor:pointer;color:white;">&times;</span>
+     <ul>
+
+      <li><a href="Piano.html">Piano</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="id03" class="modal1">
+  <div>
+    <div class="modal1-content" style="background-image:url(Images/images2.jpg);background-size: 170px 128px;">
+      <span onclick="document.getElementById('id03').style.display='none'" 
+      style="margin: 20px;cursor:pointer; color:white;">&times;</span>
+     <ul>
+      <li><a href="Electric Guitars.html">Electric</a></li>
+      <li><a href="Acoustic Guitars.html">Acoustic</a></li>
+      <li><a href="Bass Guitars.html">Bass</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+	<!-- Navigation Lista -->
+	<nav class="navLista">
+		<ul class="lista">
+		<li> <table cellpadding="0px" cellspacing="0px" style="margin: 0;padding:0;" id="navBar">
+    <tr>
+        <td>
+            <a class="selected" href="index.html" style="margin-left: 10px;">Home</a>
+        </td>
+        
+    </tr>
+</table></li>
+			<li><a style="margin-left: 11px;">Products</a>
+				<ul id="submenu">
+					<li><a href="#" onclick="document.getElementById('id02').style.display='block'"> Piano </a>
+						</li>
+					<li><a href="##" onclick="document.getElementById('id03').style.display='block'"> Guitar </a>
+					</li>
+					
+				</ul>
+			</li>
+			<li><span><br></span><a href="artist.html">Artists</a></li>
+			<li><a href="https://www.ultimate-guitar.com/" target="_blank">Chords</a>
+			</li>
+			<li><a href="index.html#contact">Contact</a></li>
+
+
+		</ul>
+	</nav>
+
+
+
+
+
+
+
+<div id="tableart" class="body">
+	<div class="tableartt">
+	<table  style="margin-left: 400px; border-color: blue;" cellpadding="0" cellspacing="2">
+		<tr>
+			<td><div id="div1" style="" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<a href="Lyrics/lyrics.html" title="Metallica"><img src="Artistat/metallica.jpg" draggable="true" ondragstart="drag(event)" id="drag1"/>
+				 <br><strong> Metallica </strong></a>
+				<br><br>
+			</td> 
+			<td><div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<div id="myDiv">
+				<p>Metallica is an American heavy metal band formed in Los Angeles, California. The band was formed in 1981 when vocalist/guitarist James Hetfield responded to an advertisement posted by drummer Lars Ulrich in a local newspaper.</p>
+				</div>
+				</div>
+			</td>
+		</tr>
+	</table>
+	</div>
+	<div class="tableartt">
+	<table  style="margin-left: 400px; border-color: blue;">
+		<tr>
+			<td>
+				<a href="Lyrics/lyricsWeeknd.html" title="The Weeknd"><img src="Artistat/theweeknd.jpg"/>
+				<br><strong> The Weeknd </strong></a><br><br>
+			</td> 
+			<td>
+				<p>Abel Makkonen Tesfaye, known professionally as The Weeknd, is a Canadian singer, songwriter, and record producer. In late 2010, Tesfaye anonymously uploaded several songs to YouTube under the name "The Weeknd".</p>
+			</td>
+		</tr>
+
+	</table>
+	</div>
+	<div class="tableartt">
+	<table  style="margin-left: 400px; border-color: blue;">
+		<tr>
+			<td>
+				<a href="Lyrics/lyricsJCole.html" title="J. Cole"><img src="Artistat/03-j-cole.w529.h529.jpg"/>
+				<br><strong> J. Cole </strong></a><br><br>
+			</td> 
+			<td>
+				<p>Jermaine Lamarr Cole, better known by his stage name J. Cole, is an American hip hop recording artist and record producer. Cole first received recognition in 2007, following the release of his debut mixtape The Come Up.</p>
+			</td>
+		</tr>
+	</table>
+	</div>
+	<div class="tableartt">
+	<table  style="margin-left: 400px; border-color: blue;">
+		<tr>
+			<td>
+				<a href="Lyrics/lyricsJohnLegend.html" title="John Legend"><img src="Artistat/johnlegend.jpg"/>
+				<br><strong> John Legend </strong></a><br><br>
+			</td> 
+			<td>
+				<p>John Roger Stephens, known professionally as John Legend, is an American singer, songwriter, musician and actor. He has won ten Grammy Awards, one Golden Globe Award, and one Academy Award. </p>
+			</td>
+		</tr>
+	</table>
+	</div>
+	<div class="tableartt">
+	<table  style="margin-left: 400px; border-color: blue;">
+		<tr>
+			<td>
+				<a href="Lyrics/lyricsArcticMonkeys.html" title="arcticmonkeys"><img src="Artistat/Arctic-Monkeys-break.png"/><br><strong> Arctic Monkeys </strong></a><br><br>
+			</td> 
+			<td>
+				<p>"Death Ramps" is an alias for British indie rock band Arctic Monkeys. They usually go under this name in collaboration with Miles Kane and fellow Sheffield artist Richard Hawley, and have released five tracks, all B-Sides to Arctic Monkeys singles.</p>
+			</td>
+		</tr>
+	</table>
+	</div>
+	<div class="tableartt">
+	<table  style="margin-left: 400px; border-color: blue; max-width: 720px;">
+		<tr>
+			<td>
+				<a href="Lyrics/lyricsSwedish.html" title="swedishhousemafia"><img src="Artistat/swedish.jpg"/>
+				<br><strong> Swedish House Mafia </strong></a><br><br>
+			</td> 
+			<td>
+				<p>Swedish House Mafia was a Swedish electronic music supergroup consisting of Axwell, Steve Angello and Sebastian Ingrosso. The group officially formed in late 2008. </p>
+			</td>
+		</tr>
+	</table>
+	</div>
+	<div class="tableartt">
+	<table  style="margin-left: 400px; border-color: blue;max-width: 720px">
+		<tr>
+			<td>
+				<a href="Lyrics/lyricsJayZ.html" title="JayZ"> <img src="Artistat/300x300 (1).jpg"/>
+				<br><strong> JayZ </strong></a><br><br>
+			</td> 
+			<td>
+				<p>Shawn Corey Carter, best known as his stage name Jay Z, is an American rapper, businessman, and investor. </p>
+			</td>
+		</tr>
+	</table>
+	</div>
+	<div class="tableartt">
+	<table  style="margin-left: 400px; border-color: blue;">
+		<tr>
+			<td>
+				<a href="Lyrics/lyricsColdplay.html" title="Coldplay"><img src="Artistat/coldplay.jpg"/>
+				<br><strong> Coldplay </strong></a><br><br>
+			</td> 
+			<td>
+				<p>Coldplay are a British rock band formed in 1996 by lead vocalist and keyboardist Chris Martin and lead guitarist Jonny Buckland at University College London. </p>
+			</td>
+		</tr>
+	</table>
+	</div>
+	<div class="tableartt">
+	<table  style="margin-left: 400px; border-color: blue;">
+		<tr>
+			<td>
+				<a href="Lyrics/lyricsBeyonce.html" title="Beyonce"><img src="Artistat/300x300.jpg"/>
+				<br><strong> Beyonce </strong></a><br><br>
+			</td> 
+			<td>
+				<p>Beyoncé Giselle Knowles-Carter is an American singer, songwriter and actress. Born and raised in Houston, Texas, she performed in various singing and dancing competitions as a child and rose to fame in the late 1990s as lead singer of <abbr title="Rythm and Blues">R&#38;B</abbr> girl-group <mark>Destiny's Child.</mark> </p>
+			</td>
+		</tr>
+	</table>
+	</div>
+	<div class="tableartt">
+	<table  style="margin-left: 400px; border-color: blue;">
+		<tr>
+			<td>
+				<a href="Lyrics/lyricsOneRepublic.html" title="OneRepublic"><img src="Artistat/onerpublic.jpg"/>
+				<br><strong> One Republic </strong></a><br><br>
+			</td> 
+			<td>
+				<p>OneRepublic is an American pop rock band formed in Colorado Springs, Colorado in 2002 by lead vocalist Ryan Tedder and guitarist Zach Filkins. </p>
+			</td>
+		</tr>
+	</table>
+	</div>
+	<div class="tableartt">
+	<table  style="margin-left: 400px; border-color: blue;">
+		<tr>
+			<td>
+				<a href="Lyrics/lyricsRihanna.html" title="Rihanna"><img src="Artistat/rihanna_416x416.jpg"/>
+				<br><strong> Rihanna </strong></a><br><br>
+			</td> 
+			<td>
+				<p>Robyn Rihanna Fenty, known mononymously as Rihanna, is a Barbadian singer and songwriter. Born in Saint Michael and raised in Bridgetown, she first entered the music industry by recording demo tapes. </p>
+			</td>
+		</tr>
+	</table>
+	</div>
+	<div class="tableartt">
+	<table  style="margin-left: 400px; border-color: blue;">
+		<tr>
+			<td>
+				<a href="Lyrics/lyricsBruno.html" title="BrunoMars"><img src="Artistat/bruno-mars.jpg"/>
+				<br><strong> Bruno Mars </strong></a><br><br>
+			</td> 
+			<td>
+				<p>Peter Gene Hernandez, known professionally as Bruno Mars, is an American singer-songwriter, multi-instrumentalist, record producer, and choreographer.</p>
+			</td>
+		</tr>
+	</table>
+	</div>
+	<div class="tableartt">
+	<table  style="margin-left: 400px; border-color: blue;">
+		<tr>
+			<td>
+				<a href="Lyrics/lyricsScorpions.html" title="Scorpions">
+				<img src="Artistat/Scorpions-rhythm-of-love-harvest.jpg"/>
+				<br><strong> Scorpions </strong></a><br><br>
+			</td> 
+			<td>
+				<article>The Scorpions are a German rock band formed in 1965 in Hanover by Rudolf Schenker. Since the band's inception, its musical style has ranged from hard rock to heavy metal.</article>
+			</td>
+		</tr>
+	</table>
+	</div>
+	<div class="tableartt">
+	<table  style="margin-left: 400px; border-color: blue;">
+		<tr>
+			<td>
+				<a href="Lyrics/lyricsRobin.html" title="Robin Schulz"><img src="Artistat/Robin_Schulz_02.jpg"/>
+				<br><strong> Robin Schulz </strong></a><br><br>
+			</td> 
+			<td>
+				<p>Robin Schulz is a German musician, DJ and record producer. Most of his songs make use of manual guitar riffs. On 4 February 2014, he released the first single from his debut album, a remix of "Waves" by Dutch hip hop artist Mr Probz.</p>
+			</td>
+		</tr>
+	</table>
+	</div>
+	<div class="tableartt">
+	<table  style="margin-left: 400px; border-color: blue;">
+		<tr>
+			<td>
+				<a href="Lyrics/lyricsLana.html" title="Lana Del Rey"><img src="Artistat/lana.jpg"/>
+				<br><strong> Lana Del Rey </strong></a><br><br>
+			</td> 
+			<td>
+				<p>Elizabeth Woolridge Grant, better known by the stage name <u> Lana Del Rey</u>, is an American singer, songwriter, and model.</p>
+			</td>
+		</tr>
+	</table>
+	</div>
+	<div class="tableartt">
+	<table  style="margin-left: 400px; border-color: blue;">
+		<tr>
+			<td>
+				<a href="Lyrics/lyricsBonjovi.html" title="Bon Jovi"><img src="Artistat/Bon-Jovi-4.jpg"/>
+				<br><strong> Bon Jovi </strong></a><br><br>
+			</td> 
+			<td>
+				<p>Bon Jovi is an American rock band from Sayreville, New Jersey. Formed in 1983, Bon Jovi consists of lead singer and namesake Jon Bon Jovi, pianist and keyboardist David Bryan, drummer Tico Torres, lead guitarist Phil X, and bassist Hugh McDonald.</p>
+			</td>
+		</tr>
+	</table>
+	</div>
+	<div class="tableartt">
+	<table  style="margin-left: 400px; border-color: blue;">
+		<tr>
+			<td>
+				<a href="Lyrics/lyricsKanye.html" title="Kanye West"><img src="Artistat/kanja.jpg"/>
+				<br><strong> Kanye West </strong></a><br><br>
+			</td> 
+			<td>
+				<p>Kanye Omari West is an American rapper, songwriter, record producer, fashion designer, and entrepreneur.</p>
+			</td>
+		</tr>
+	</table>
+	</div>
+	<div class="tableartt">
+	<table  style="margin-left: 400px; border-color: blue;">
+		<tr>
+			<td>
+				<a href="Lyrics/lyricsRadiohead.html" title="Radiohead"><img src="Artistat/radia.jpg"/>
+				<br><strong> Radiohead </strong></a><br><br>
+			</td> 
+			<td>
+				<p>Radiohead are an English rock band from Abingdon, Oxfordshire, formed in 1985. The band consists of Thom Yorke, Jonny Greenwood, Ed O'Brien, Colin Greenwood, and Phil Selway.</p>
+			</td>
+		</tr>
+	</table>
+	</div>
+	<div class="tableartt">
+	<table  style="margin-left: 400px; border-color: blue;">
+		<tr>
+			<td>
+				<a href="Lyrics/lyricsReed.html" title="Lou Reed"><img src="Artistat/lou_reed.jpg"/>
+				<br><strong> Lou Reed </strong></a><br><br>
+			</td> 
+			<td>
+				<p>Lewis Allan "Lou" Reed was an American musician, singer, and songwriter. He was the guitarist, vocalist, and principal songwriter of the Velvet Underground, and his solo career spanned five decades.</p>
+			</td>
+		</tr>
+	</table>
+	</div>
+	<div class="tableartt">
+	<table  style="margin-left: 400px; border-color: blue;">
+		<tr>
+			<td>
+				<a href="Lyrics/lyricsEminem.html" title="Eminem"><img src="Artistat/2017eminem2016.jpg"/>
+				<br><strong> Eminem </strong></a><br><br>
+			</td> 
+			<td>
+				<p>Marshall Bruce Mathers III, known professionally as Eminem, is an American rapper, record producer, and actor. Eminem is the best-selling artist of the 2000s in the United States. </p>
+			</td>
+		</tr>
+	</table>
+	</div>
+	<div class="tableartt">
+	<table  style="margin-left: 400px; border-color: blue;">
+		<tr>
+			<td>
+				<a href="Lyrics/lyriscJohnnyCash.html" title="Johnny Cash"><img src="Artistat/johnnycash.jpg"/>
+				<br><strong> Johnny Cash </strong></a><br><br>
+			</td> 
+			<td>
+				<p>John R. "Johnny" Cash was an American singer-songwriter, guitarist, actor, and author. He was widely considered one of the most influential musicians of the 20th century and one of the best-selling music artists of all time, having sold more than 90 million records worldwide. </p>
+			</td>
+		</tr>
+	</table>
+	</div>
+	<div class="tableartt">
+	<table  style="margin-left: 400px; border-color: blue;">
+		<tr>
+			<td>
+				<a href="Lyrics/lyricsSinatra.html" title="Frank Sinatra"><img src="Artistat/HUae-foP_400x400.JPEG"/>
+				<br><strong> Frank Sinatra </strong></a><br><br>
+			</td> 
+			<td>
+				<p>Francis Albert Sinatra was an American singer, actor, and producer who was one of the most popular and influential musical artists of the 20th century.</p>
+			</td>
+		</tr>
+	</table>
+	</div>
+	<div class="tableartt">
+	<table  style="margin-left: 400px; border-color: blue;">
+		<tr>
+			<td>
+				 <a href="Lyrics/lyriscJenniferLopez.html" title="Jennifer Lopez">
+				 <img src="Artistat/jennifer-lopez-dances-with-her-kids-in-christmas-eve-photos.jpg"/>
+				 <br><strong> Jennifer Lopez </strong></a><br><br>
+			</td> 
+			<td>
+				<p>Jennifer Lynn Lopez (born July 24, 1969), also known as JLo, is an American singer, actress, dancer, fashion designer, author, and producer.</p>
+			</td>
+		</tr>
+	</table>
+	</div>
+	<div class="tableartt">
+	<table  style="margin-left: 400px; border-color: blue;">
+		<tr>
+			<td>
+				<a href="Lyrics/lyriscJassieJ.html" title="Jessie J"><img src="Artistat/download.jpg"/>
+				<br><strong> Jessie J </strong></a><br><br>
+			</td> 
+			<td>
+				<p>Jessica Ellen Cornish, better known by her stage name Jessie J, is an English singer and songwriter. Born and raised in London, she began her career on stage, aged 11, with a role in the West End musical Whistle Down the Wind.</p>
+				<p>She won several awards: </p>
+				<ol type="1">
+					<li>MOBO Awards for Best Album</li>
+					<li>Glamour Award for Editor&rsquo;s Special</li>
+					<li>Brit Award for Critics&rsquo; Choice etc.</li>
+				</ol>
+			</td>
+		</tr>
+	</table>
+	</div>
+	<div class="tableartt">
+	<table  style="margin-left: 400px; border-color: blue;">
+		<tr>
+			<td>
+				<a href="Lyrics/lyrisCqueen.html" title="Queen"><img src="Artistat/QueenBandBohemNew600.jpg"/>
+				<br><strong> Queen </strong></a><br><br>
+			</td> 
+			<td>
+				<p>Queen are a British rock band that formed in London in 1970. Their classic line-up was:</p>
+				<ul style="list-style-type:bullet">
+				<li>Freddie Mercury,</li>
+				<li>Brian May,</li> 
+				<li>Roger Taylor,</li>
+				<li>and John Deacon.</li>
+				</ul>
+			</td>	
+		</tr>
+	</table>
+	</div>
+	<div class="tableartt">
+	<table  style="margin-left: 400px; border-color: blue;">
+		<tr>
+			<td>
+				<a href="Lyrics/lyriscCatStevens.html" title="Cat Stevens"><img src="Artistat/cat.jpg"/>
+				<br><strong> Cat Stevens </strong></a><br><br>
+			</td> 
+			<td>
+				<p>Yusuf Islam, commonly known by his former stage name Cat Stevens, is a British singer-songwriter, multi-instrumentalist.He also is a:</p>
+				<dl>
+					<dt>humanitarian</dt>
+					<dd>-concerned with or seeking to promote human welfare.</dd>
+					<dt>and education philanthropist</dt>
+					<dd>-a person who seeks to promote the education of others, especially by the generous donation of money to that field.</dd>
+				</dl> 
+				<p>Kur u pyet se &ccedil;&rsquo;ndikim ka lumturia ai u p&euml;rgjigj:<br>
+				<q>I always knew looking back on my tears would bring me laughter, but I never knew looking back on my laughter would make me cry.</q></p>
+			</td>
+		</tr>
+	</table>
+	</div>
+	<div class="tableartt">
+	<table  style="margin-left: 400px; border-color: blue;">
+		<tr>
+			<td>
+				<a href="Lyrics/lyriscJohnLennon.html" title="John Lennon"><img src="Artistat/john-lennon.jpg"/>
+				<br><strong>John Lennon</strong></a><br><br>
+			</td> 
+			<td>
+				<p>John Winston Ono Lennon, MBE was an English singer and songwriter who co-founded the Beatles, the most commercially successful band in the history of popular music. With fellow member Paul McCartney, he formed a celebrated songwriting partnership.  </p>
+			</td>
+		</tr>
+	</table>
+	</div>
+	<div class="tableartt">
+	<table  style="margin-left: 400px; border-color: blue;">
+		<tr>
+			<td>
+				<a href="Lyrics/lyriscKendricKlamar.html" title="Kendrick Lamar"><img src="Artistat/og.jpg"/>
+				 <br><strong>Kendrick Lamar </strong></a><br><br>
+			</td> 
+			<td>
+				<p>Kendrick Lamar Duckworth is an American rapper and songwriter. He embarked on his musical career as a teenager under the stage name K-Dot, releasing a mixtape that garnered local attention and led to his signing with indie record label Top Dawg Entertainment (TDE).</p>
+			</td>
+		</tr>
+	</table>
+	</div>
+	<div class="tableartt">
+	<table  style="margin-left: 400px; border-color: blue;">
+		<tr>
+			<td>
+				<a href="Lyrics/lyriscDaftPunk.html" title="Daft Punk"><img src="Artistat/daft.jpg"/>
+				<br><strong>Daft Punk </strong></a><br><br>
+			</td> 
+			<td>
+				<p>Daft Punk is a French electronic music duo formed in 1993 by Guy-Manuel de Homem-Christo and Thomas Bangalter. </p>
+			</td>
+		</tr>
+	</table>
+	</div>
+	<div class="tableartt">
+	<table  style="margin-left: 400px; border-color: blue;">
+		<tr>
+			<td>
+				<a href="Lyrics/lyriscThebeatles.html" title="The Beatles"><img src="Artistat/beatles-1964-350.jpg"/>
+				<br><strong>The Beatles </strong></a><br><br>
+			</td> 
+			<td>
+				<p>The Beatles were an English rock band, formed in Liverpool in 1960. With members John Lennon, Paul McCartney, George Harrison and Ringo Starr, they became widely regarded as the foremost and most influential act of the rock era.</p>
+			</td>
+		</tr>
+	</table>
+	</div>
+	<div class="tableartt">
+	<table  style="margin-left: 400px; border-color: blue;">
+		<tr>
+			<td>
+				<a href="Lyrics/lyriscAdele.html" title="Adele"><img src="Artistat/EBEIl2ol.jpg"/>
+				<br><strong>Adele </strong></a><br><br>
+			</td> 
+			<td>
+				<p>Adele Laurie Blue Adkins MBE is an English singer-songwriter. Graduating from the BRIT School for Performing Arts and Technology in 2006, Adele was given a recording contract by XL Recordings after a friend posted her demo on Myspace the same year.</p>
+			</td>
+		</tr>
+	</table>
+	</div>
+	<div class="tableartt">
+	<table  style="margin-left: 400px; border-color: blue;">
+		<tr>
+			<td>
+				<a href="Lyrics/lyricsDion.html" title="Celine Dion"><img src="Artistat/JrzvO3Y7.jpg"/>
+				<br><strong>Celine Dion </strong></a><br><br>
+			</td> 
+			<td>
+				<p>Céline Marie Claudette Dion, CC OQ ChLD is a French Canadian singer and businesswoman. Born into a large family from Charlemagne, Quebec, Dion emerged as a teen star in the French-speaking world after her manager and future husband René Angélil mortgaged his home to finance her first record.</p>
+			</td>
+		</tr>
+	</table>
+</div>
+</div>
+<div class="svg-wrapper">
+<svg height="45" width="160" >
+    <rect class="shape" height="45" width="160" />
+  </svg>
+   <div class="text" id="loadMore">Load More</div>
+   </div>
+
+<p class="totop"> 
+    <a href="#top">Back to top</a> 
+</p>
+
+</div>
+
+<br><br>
+<p style="text-align: center;font-family: impact; color: #8BD678;">Who was your favorite artist? Let us know.</p>
+<form style="text-align: center;margin-left: 18px; color: #8BD678;">
+  Name:<br>
+  <input id="edit" type="text" name="firstname" required="">
+</form>
+<form style="text-align: center; margin-left: 18px; color: #8BD678;">
+  <input type="radio" name="gender" value="male" checked> Male<br>
+  <input type="radio" name="gender" value="female"> Female<br>
+  <input type="radio" name="gender" value="band"> Band<br>
+   <input type="submit" value="Submit">  
+</form> 
+
+<p style="text-align: center;color: white;"> Wanna know the most clicked artist of the week?</p>
+<button id="yes" style="margin-left: 630px;">Yes</button>
+<div style="text-align:  center;color:white;" id="result"></div>
+
+<script>
+// A e suporton browseri
+if (typeof(Storage) !== "undefined") {
+    // Futi te dhenat
+    localStorage.setItem("lastname", "The Weeknd");
+    // Kthej te dhenat
+    document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+} else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+}
+</script>
+
+
+<script>
+// merre 'modal'-in
+var modal = document.getElementById('id01');
+
+// Kur useri klikon jasht 'modal'-it te mbyllet
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+	</div>
+
+	<script src="loadMore.js"></script>
+</body>
+
+</html>
